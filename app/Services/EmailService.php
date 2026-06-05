@@ -17,7 +17,7 @@ class EmailService
             $mail->Host       = 'smtp.gmail.com';
             $mail->SMTPAuth   = true;
             $mail->Username   = 'dte.megaload@gmail.com';
-            $mail->Password   = 'yfox sqrj wgvd orec';
+            $mail->Password   = 'dfqa kjpk ggsk lene';
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port       = 587;
 
