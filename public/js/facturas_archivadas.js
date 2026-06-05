@@ -9,79 +9,185 @@ $(document).ready(function () {
         }
     });
 
+    let tablaSellos = null;
+    let sellosData = [];
+
     function inicializarDataTable(data) {
 
-        var tableBody = $('#tablaSellos tbody');
+        sellosData = data || [];
+
+        cargarFiltrosDinamicos(sellosData);
+
+        let tableBody = $('#tablaSellos tbody');
         tableBody.empty();
 
-        $.each(data, function (index, sello) {
-            let btnMensaje = '';
+        $.each(sellosData, function (index, sello) {
 
-            btnMensaje = '<button type="button" class="btn btn-success mensajeMH" data-target="#modalMensaje" data-codigo-generacion="' + sello.codigoGeneracion + '">Ver Mensaje</button>';
+            let btnMensaje = `
+            <button type="button" 
+                    class="btn btn-success btn-sm mensajeMH" 
+                    data-target="#modalMensaje" 
+                    data-codigo-generacion="${sello.codigoGeneracion}">
+                Ver Mensaje
+            </button>
+        `;
 
             let estadoCorreo = '';
 
             if (parseInt(sello.correoEnviado) === 1) {
                 estadoCorreo = `
-                    <span class="badge badge-success" title="Correo enviado correctamente">
-                        <i class="fas fa-check-circle"></i> Enviado
-                    </span>
-                `;
+                <span class="badge badge-success" title="Correo enviado correctamente">
+                    <i class="fas fa-check-circle"></i> Enviado
+                </span>
+            `;
             } else {
                 let mensajeErrorCorreo = sello.errorCorreo ? sello.errorCorreo : 'Correo no enviado';
 
                 estadoCorreo = `
-                    <span class="badge badge-danger" title="${mensajeErrorCorreo}">
-                        <i class="fas fa-times-circle"></i> No enviado
-                    </span>
-                `;
+                <span class="badge badge-danger" title="${mensajeErrorCorreo}">
+                    <i class="fas fa-times-circle"></i> No enviado
+                </span>
+            `;
             }
 
-            // 🎨 Fila con color especial si el estado es 4
-            let rowClass = sello.idEstadoDTE == 4 ? 'fila-inactiva' : '';
+            let rowClass = parseInt(sello.idEstadoDTE) === 4 ? 'fila-inactiva' : '';
 
-            // ❌ No mostrar botón "Invalidar DTE" si estado es 4
             let btnInvalidar = '';
-            if (sello.idEstadoDTE != 4) {
-                btnInvalidar = '<a href="facturas/invalidar-json/' + sello.codigoGeneracion + '" class="btn btn-sm btn-outline-primary invalidarDTE" data-codigo-generacion="' + sello.codigoGeneracion + '">Invalidar DTE</a>';
+
+            if (parseInt(sello.idEstadoDTE) !== 4) {
+                btnInvalidar = `
+                <a href="facturas/invalidar-json/${sello.codigoGeneracion}" 
+                   class="btn btn-sm btn-outline-primary invalidarDTE" 
+                   data-codigo-generacion="${sello.codigoGeneracion}">
+                    Invalidar DTE
+                </a>
+            `;
             }
 
-            let row = '<tr class="' + rowClass + '">' +
-                '<td>' + (index + 1) + '</td>' +
-                '<td>' + sello.TipoDTE + '</td>' +
-                '<td><span style="font-weight: bold">ERP:</span> <em> CRM id</em> ' + sello.identicadorNumInterno + ', <em> CRM #</em> ' + sello.numeroCRM +'<br><span style="font-weight: bold">Codigo de Generacion:</span> ' + sello.codigoGeneracion + '</td>' +
-                '<td>' + sello.numeroControlMH + '</td>' +
-                '<td>' + sello.Empresa + '</td>' +
-                '<td>' + sello.fechaFactura + '</td>' +
-                '<td>' + sello.estadoNombre + '</td>' +
-                '<td>' + btnMensaje + '</td>' +
-                '<td>' + estadoCorreo + '</td>' +
-                '<td>' +
-                '<a target="_blank" href="facturas/generar-pdf/' + sello.codigoGeneracion + '" class="btn btn-sm btn-outline-primary">Generar PDF</a><br>' +
-                '<a target="_blank" href="facturas/descargar-json/' + sello.codigoGeneracion + '" class="btn btn-sm btn-outline-primary">Descargar JSON</a><br>' +
-                '<a href="facturas/enviar-correo/' + sello.codigoGeneracion + '" class="btn btn-sm btn-outline-primary enviarCorreo" data-codigo-generacion="' + sello.codigoGeneracion + '">Enviar Correo</a><br>' +
-                btnInvalidar +
-                '</td>' +
-                '</tr>';
+            let row = `
+            <tr class="${rowClass}" 
+                data-tipo-dte="${sello.TipoDTE}" 
+                data-estado-dte="${sello.estadoNombre}" 
+                data-fecha-factura="${sello.fechaFactura}">
+                
+                <td>${index + 1}</td>
+                <td>${sello.TipoDTE}</td>
+                <td>
+                    <span style="font-weight: bold">ERP:</span> 
+                    <em>CRM id</em> ${sello.identicadorNumInterno}, 
+                    <em>CRM #</em> ${sello.numeroCRM}
+                    <br>
+                    <span style="font-weight: bold">Código de Generación:</span> 
+                    ${sello.codigoGeneracion}
+                </td>
+                <td>${sello.numeroControlMH}</td>
+                <td>${sello.Empresa}</td>
+                <td>${sello.fechaFactura}</td>
+                <td>${sello.estadoNombre}</td>
+                <td>${btnMensaje}</td>
+                <td>${estadoCorreo}</td>
+                <td>
+                    <a target="_blank" href="facturas/generar-pdf/${sello.codigoGeneracion}" class="btn btn-sm btn-outline-primary">Generar PDF</a><br>
+                    <a target="_blank" href="facturas/descargar-json/${sello.codigoGeneracion}" class="btn btn-sm btn-outline-primary">Descargar JSON</a><br>
+                    <a href="facturas/enviar-correo/${sello.codigoGeneracion}" class="btn btn-sm btn-outline-primary enviarCorreo" data-codigo-generacion="${sello.codigoGeneracion}">Enviar Correo</a><br>
+                    ${btnInvalidar}
+                </td>
+            </tr>
+        `;
 
             tableBody.append(row);
         });
 
-        // Inicializar DataTable si aún no ha sido inicializado
-        if (!$.fn.DataTable.isDataTable('#tablaSellos')) {
-            $('#tablaSellos').DataTable({
-                order: [[5, 'desc']],
-                destroy: true,
-                pageLength: 10,
-                dom: 'Bfrtip',
-                pageLength: 10,
-                language: {
-                    url: "/plugins/datatables/i18n/es-ES.json"
-                }
-            });
+        if ($.fn.DataTable.isDataTable('#tablaSellos')) {
+            $('#tablaSellos').DataTable().clear().destroy();
         }
 
+        tablaSellos = $('#tablaSellos').DataTable({
+            order: [[5, 'desc']],
+            pageLength: 10,
+            dom: 'Bfrtip',
+            language: {
+                url: "/plugins/datatables/i18n/es-ES.json"
+            }
+        });
+
+        aplicarEventosFiltros();
     }
+
+    function cargarFiltrosDinamicos(data) {
+
+        let tipos = [...new Set(data.map(item => item.TipoDTE).filter(Boolean))];
+        let estados = [...new Set(data.map(item => item.estadoNombre).filter(Boolean))];
+
+        let filtroTipo = $('#filtroTipoDTE');
+        let filtroEstado = $('#filtroEstadoDTE');
+
+        filtroTipo.empty().append('<option value="">Todos</option>');
+        filtroEstado.empty().append('<option value="">Todos</option>');
+
+        tipos.sort().forEach(function (tipo) {
+            filtroTipo.append(`<option value="${tipo}">${tipo}</option>`);
+        });
+
+        estados.sort().forEach(function (estado) {
+            filtroEstado.append(`<option value="${estado}">${estado}</option>`);
+        });
+    }
+
+    function aplicarEventosFiltros() {
+
+        $('#filtroTipoDTE, #filtroEstadoDTE, #filtroFechaDesde, #filtroFechaHasta').off('change').on('change', function () {
+            tablaSellos.draw();
+        });
+
+        $('#btnLimpiarFiltros').off('click').on('click', function () {
+            $('#filtroTipoDTE').val('');
+            $('#filtroEstadoDTE').val('');
+            $('#filtroFechaDesde').val('');
+            $('#filtroFechaHasta').val('');
+
+            tablaSellos.search('').columns().search('');
+            tablaSellos.draw();
+        });
+    }
+
+    $.fn.dataTable.ext.search.push(function (settings, data, dataIndex) {
+
+        if (settings.nTable.id !== 'tablaSellos') {
+            return true;
+        }
+
+        let tipoFiltro = $('#filtroTipoDTE').val();
+        let estadoFiltro = $('#filtroEstadoDTE').val();
+        let fechaDesde = $('#filtroFechaDesde').val();
+        let fechaHasta = $('#filtroFechaHasta').val();
+
+        let tipoTabla = data[1];
+        let fechaTabla = data[5];
+        let estadoTabla = data[6];
+
+        if (tipoFiltro && tipoTabla !== tipoFiltro) {
+            return false;
+        }
+
+        if (estadoFiltro && estadoTabla !== estadoFiltro) {
+            return false;
+        }
+
+        if (fechaDesde || fechaHasta) {
+            let fechaSoloDia = fechaTabla.substring(0, 10);
+
+            if (fechaDesde && fechaSoloDia < fechaDesde) {
+                return false;
+            }
+
+            if (fechaHasta && fechaSoloDia > fechaHasta) {
+                return false;
+            }
+        }
+
+        return true;
+    });
 
     $(document).on('click', '.descargarJSON', function () {
 

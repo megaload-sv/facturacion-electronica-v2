@@ -25,6 +25,51 @@ Facturas Archivadas
     </div>
     <!-- /.card-header -->
     <div class="card-body p-0">
+
+        <div class="card mb-3">
+            <div class="card-header bg-light">
+                <h3 class="card-title mb-0">
+                    <i class="fas fa-filter"></i> Filtros de búsqueda
+                </h3>
+            </div>
+
+            <div class="card-body">
+                <div class="row">
+
+                    <div class="col-md-3">
+                        <label>Tipo de documento</label>
+                        <select id="filtroTipoDTE" class="form-control">
+                            <option value="">Todos</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label>Estado</label>
+                        <select id="filtroEstadoDTE" class="form-control">
+                            <option value="">Todos</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-2">
+                        <label>Fecha desde</label>
+                        <input type="date" id="filtroFechaDesde" class="form-control">
+                    </div>
+
+                    <div class="col-md-2">
+                        <label>Fecha hasta</label>
+                        <input type="date" id="filtroFechaHasta" class="form-control">
+                    </div>
+
+                    <div class="col-md-2 d-flex align-items-end">
+                        <button type="button" id="btnLimpiarFiltros" class="btn btn-secondary btn-block">
+                            <i class="fas fa-eraser"></i> Limpiar
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
         <table class="table table-striped" id="tablaSellos">
             <thead>
             <tr>
