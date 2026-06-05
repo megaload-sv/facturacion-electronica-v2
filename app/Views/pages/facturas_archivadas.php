@@ -36,6 +36,7 @@ Facturas Archivadas
                 <th>Fecha</th>
                 <th>Nombre de Estado DTE</th>
                 <th>Estado/Respuesta</th>
+                <th>Correo</th>
                 <th>Accion</th>
             </tr>
             </thead>

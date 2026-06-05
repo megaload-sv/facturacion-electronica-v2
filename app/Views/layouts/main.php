@@ -92,6 +92,16 @@
             border-color: #095c6b;
             color: #fff;
         }
+
+        .badge {
+            font-size: 13px;
+            padding: 7px 10px;
+            border-radius: 8px;
+        }
+
+        .badge i {
+            margin-right: 4px;
+        }
     </style>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
