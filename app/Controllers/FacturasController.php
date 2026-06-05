@@ -2485,7 +2485,7 @@ class FacturasController extends BaseController
         // Imprimir o registrar el resultado del envío de correo
         log_message('info', $resultadoCorreo);
 
-        // Mover el archivo después de enviar el correo
+        /*// Mover el archivo después de enviar el correo
         $directorioBase = 'G:/My Drive/archivos_procesados/';
 
         $anio = date('Y');
@@ -2503,7 +2503,7 @@ class FacturasController extends BaseController
         rename($rutaArchivo, $nuevaRutaArchivo);
         rename($rutaPDF, $nuevaRutaPDF);
 
-        log_message('info', 'Archivos movidos a ' . $directorioDestino);
+        log_message('info', 'Archivos movidos a ' . $directorioDestino);*/
     }
 
     public function descargarJSON($codigoGeneracion)
