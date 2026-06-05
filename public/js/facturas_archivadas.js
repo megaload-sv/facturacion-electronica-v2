@@ -19,6 +19,23 @@ $(document).ready(function () {
 
             btnMensaje = '<button type="button" class="btn btn-success mensajeMH" data-target="#modalMensaje" data-codigo-generacion="' + sello.codigoGeneracion + '">Ver Mensaje</button>';
 
+            let estadoCorreo = '';
+
+            if (parseInt(sello.correoEnviado) === 1) {
+                estadoCorreo = `
+                    <span class="badge badge-success" title="Correo enviado correctamente">
+                        <i class="fas fa-check-circle"></i> Enviado
+                    </span>
+                `;
+            } else {
+                let mensajeErrorCorreo = sello.errorCorreo ? sello.errorCorreo : 'Correo no enviado';
+
+                estadoCorreo = `
+                    <span class="badge badge-danger" title="${mensajeErrorCorreo}">
+                        <i class="fas fa-times-circle"></i> No enviado
+                    </span>
+                `;
+            }
 
             // 🎨 Fila con color especial si el estado es 4
             let rowClass = sello.idEstadoDTE == 4 ? 'fila-inactiva' : '';
@@ -38,6 +55,7 @@ $(document).ready(function () {
                 '<td>' + sello.fechaFactura + '</td>' +
                 '<td>' + sello.estadoNombre + '</td>' +
                 '<td>' + btnMensaje + '</td>' +
+                '<td>' + estadoCorreo + '</td>' +
                 '<td>' +
                 '<a target="_blank" href="facturas/generar-pdf/' + sello.codigoGeneracion + '" class="btn btn-sm btn-outline-primary">Generar PDF</a><br>' +
                 '<a target="_blank" href="facturas/descargar-json/' + sello.codigoGeneracion + '" class="btn btn-sm btn-outline-primary">Descargar JSON</a><br>' +
@@ -299,7 +317,7 @@ $(document).ready(function () {
 
                 success: function (response) {
 
-                    if (response || response.success === true) {
+                    if (response && response.success === true) {
 
                         Swal.fire({
                             icon: 'success',
@@ -335,13 +353,13 @@ $(document).ready(function () {
                             icon: 'error',
                             title: 'No fue posible invalidar el DTE',
                             html: `
-            <div style="font-size:14px;text-align:left;">
-                <div style="margin-bottom:10px;">
-                    <b>${response && response.message ? response.message : 'Ha ocurrido un problema inesperado en el proceso.'}</b>
-                </div>
-                ${detalleHtml || '<div>No se recibieron detalles adicionales del error.</div>'}
-            </div>
-        `,
+                                    <div style="font-size:14px;text-align:left;">
+                                        <div style="margin-bottom:10px;">
+                                            <b>${response && response.message ? response.message : 'Ha ocurrido un problema inesperado en el proceso.'}</b>
+                                        </div>
+                                        ${detalleHtml || '<div>No se recibieron detalles adicionales del error.</div>'}
+                                    </div>
+                                `,
                             width: 600,
                             confirmButtonText: 'Entendido',
                             confirmButtonColor: '#d33'
@@ -421,26 +439,50 @@ $(document).ready(function () {
     });
 
     $(document).on('click', '.reenviarCorreoFrm', function(e){
+        e.preventDefault();
 
         var codigoGeneracion = $('#reenvioCorreo').find('#dteUUID').val();
 
         $.ajax({
             url: '/facturas/dte-correo-data-process/' + codigoGeneracion,
             type: 'POST',
+            dataType: 'json',
             success: function (response) {
 
-                $('#correoReenvio').val(response.correoReceptor);
-
-
+                if (response.error === false) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Correo reenviado',
+                        text: response.message || 'El correo fue reenviado correctamente.',
+                        confirmButtonColor: '#1a1bb3'
+                    }).then(() => {
+                        $('#modalReenvioCorreo').modal('hide');
+                        location.reload();
+                    });
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'No se pudo reenviar',
+                        text: response.message || 'No fue posible reenviar el correo.',
+                        confirmButtonColor: '#d33'
+                    });
+                }
             },
-            error: function () {
+            error: function (xhr) {
+                let message = 'No se pudo reenviar el correo.';
 
-            },
-            complete: function () {
-                $('#modalReenvioCorreo').modal('hide');
+                if (xhr.responseJSON && xhr.responseJSON.message) {
+                    message = xhr.responseJSON.message;
+                }
+
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: message,
+                    confirmButtonColor: '#d33'
+                });
             }
         });
-
     });
 
     $(document).on('change', '#mhc_invalidation_type_id', function (e) {

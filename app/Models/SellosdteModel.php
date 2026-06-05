@@ -9,7 +9,9 @@ class SellosdteModel extends Model
     protected $table = 'sellosdte';
     protected $primaryKey = 'idsellosDTE';
 
-    protected $allowedFields = ['identicadorNumInterno', 'codigoGeneracion', 'correlativoFactCRM', 'numeroControlMH', 'numberInvoiceCRM', 'codigoTipoDTE', 'version', 'fechaFactura', 'jsonDTE', 'firmaFactura', 'fechaFirma', 'usuarioFirma', 'usuarioSello', 'fechaSello', 'errorMH', 'jsonAnulacion', 'firmaAnulacion', 'selloAnulacion', 'fechaAnulacion', 'usuarioAnulacion', 'solicitanteAnulacion', 'anulacionMotivo', 'anulacionTipoDoc', 'anulacionNumDoc', 'anulacionTelefono', 'anulacionEmail', 'anulacionTipo', 'usuarioImprime', 'fechaImprime', 'codigoPuntoVenta', 'facturaPDF', 'idEstadoDTE'];
+    protected $allowedFields = ['identicadorNumInterno', 'codigoGeneracion', 'correlativoFactCRM', 'numeroControlMH', 'numberInvoiceCRM', 'codigoTipoDTE', 'version', 'fechaFactura', 'jsonDTE', 'firmaFactura', 'fechaFirma', 'usuarioFirma', 'usuarioSello', 'fechaSello', 'errorMH', 'jsonAnulacion', 'firmaAnulacion', 'selloAnulacion', 'fechaAnulacion', 'usuarioAnulacion', 'solicitanteAnulacion', 'anulacionMotivo', 'anulacionTipoDoc', 'anulacionNumDoc', 'anulacionTelefono', 'anulacionEmail', 'anulacionTipo', 'usuarioImprime', 'fechaImprime', 'codigoPuntoVenta', 'facturaPDF', 'idEstadoDTE', 'correoEnviado',
+        'fechaCorreoEnviado',
+        'errorCorreo',];
     protected $returnType = 'array';
 
     public function getDTEByCodigoGeneracion($factura)
@@ -95,7 +97,11 @@ class SellosdteModel extends Model
                        numeroControlMH,
                        fechaFactura,
                        dte.idEstadoDTE,
-                       case when dte.idEstadoDTE = 1 then \'Transmitido\' when dte.idEstadoDTE = 4 then \'Anulado\' end as estadoNombre')
+                       case when dte.idEstadoDTE = 1 then \'Transmitido\' when dte.idEstadoDTE = 4 then \'Anulado\' end as estadoNombre,
+                       dte.correoEnviado,
+                       dte.fechaCorreoEnviado,
+                       dte.errorCorreo',
+            )
             ->join('cattipodocumento tdoc', 'dte.codigoTipoDTE = tdoc.codigo')
             ->join('puntosdeventa pv', 'dte.codigoPuntoVenta = pv.codigoPuntoVenta')
             ->join('sucursales suc', 'suc.idSucursal = pv.idSucursal')
@@ -256,7 +262,8 @@ class SellosdteModel extends Model
         return $query->getRowArray();
     }
 
-    public function getCorreoReceptor($codigoGeneracion){
+    public function getCorreoReceptor($codigoGeneracion)
+    {
 
         $db = \Config\Database::connect();
 
