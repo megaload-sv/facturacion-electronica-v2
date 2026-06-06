@@ -1,11 +1,34 @@
 $(document).ready(function () {
 
+    $(document).ajaxStop($.unblockUI);
+
     $.ajax({
         url: '/facturas/sellos-archivo',
         type: 'GET',
         dataType: 'json',
+        beforeSend: function () {
+            $.blockUI({
+                message: `
+                <div style="padding:15px;">
+                    <i class="fas fa-spinner fa-spin fa-2x"></i>
+                    <h5>Cargando facturas...</h5>
+                </div>
+            `,
+                css: {
+                    border: 'none',
+                    padding: '15px',
+                    backgroundColor: '#000',
+                    borderRadius: '10px',
+                    opacity: .7,
+                    color: '#fff'
+                }
+            });
+        },
         success: function (json) {
             inicializarDataTable(json.data);
+        },
+        complete: function () {
+            $.unblockUI();
         }
     });
 
@@ -15,6 +38,8 @@ $(document).ready(function () {
     function inicializarDataTable(data) {
 
         sellosData = data || [];
+
+
 
         cargarFiltrosDinamicos(sellosData);
 
@@ -548,13 +573,28 @@ $(document).ready(function () {
         e.preventDefault();
 
         var codigoGeneracion = $('#reenvioCorreo').find('#dteUUID').val();
+        var btn = $(this);
 
         $.ajax({
             url: '/facturas/dte-correo-data-process/' + codigoGeneracion,
             type: 'POST',
             dataType: 'json',
-            success: function (response) {
 
+            beforeSend: function () {
+                btn.prop('disabled', true);
+
+                Swal.fire({
+                    title: 'Procesando...',
+                    html: 'Reenviando correo del DTE, por favor espere.',
+                    allowOutsideClick: false,
+                    allowEscapeKey: false,
+                    didOpen: () => {
+                        Swal.showLoading();
+                    }
+                });
+            },
+
+            success: function (response) {
                 if (response.error === false) {
                     Swal.fire({
                         icon: 'success',
@@ -574,6 +614,7 @@ $(document).ready(function () {
                     });
                 }
             },
+
             error: function (xhr) {
                 let message = 'No se pudo reenviar el correo.';
 
@@ -587,6 +628,10 @@ $(document).ready(function () {
                     text: message,
                     confirmButtonColor: '#d33'
                 });
+            },
+
+            complete: function () {
+                btn.prop('disabled', false);
             }
         });
     });
