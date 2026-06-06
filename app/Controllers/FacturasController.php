@@ -2291,7 +2291,51 @@ class FacturasController extends BaseController
 
             $db->transCommit();
 
-            $this->procesarCorreoConArchivosAdjuntos($codigoGeneracion, $factura[0]['jsonDTE'], $datos);
+            $correo = trim((string)($datos->receptor->correo ?? ''));
+
+            if (
+                ($respSelloDoc->estado ?? '') !== 'RECHAZADO' &&
+                !empty($correo) &&
+                filter_var($correo, FILTER_VALIDATE_EMAIL)
+            ) {
+                try {
+                    $this->procesarCorreoConArchivosAdjuntos(
+                        $codigoGeneracion,
+                        $factura[0]['jsonDTE'],
+                        $datos,
+                        ""
+                    );
+
+                    $modelSellos->update($factura[0]['idsellosDTE'], [
+                        'correoEnviado'      => 1,
+                        'fechaCorreoEnviado' => date('Y-m-d H:i:s'),
+                        'errorCorreo'        => null,
+                    ]);
+
+                    $dataSelloProcesado['correoEnviado'] = true;
+
+                } catch (\Throwable $e) {
+                    log_message('error', 'Error reenviando correo DTE ' . $codigoGeneracion . ': ' . $e->getMessage());
+
+                    $modelSellos->update($factura[0]['idsellosDTE'], [
+                        'correoEnviado'      => 0,
+                        'fechaCorreoEnviado' => null,
+                        'errorCorreo'        => $e->getMessage(),
+                    ]);
+
+                    $dataSelloProcesado['correoEnviado'] = false;
+                    $dataSelloProcesado['correoError'] = $e->getMessage();
+                }
+            } else {
+                $modelSellos->update($factura[0]['idsellosDTE'], [
+                    'correoEnviado'      => 0,
+                    'fechaCorreoEnviado' => null,
+                    'errorCorreo'        => 'Correo omitido: DTE rechazado, correo vacío o correo inválido.',
+                ]);
+
+                $dataSelloProcesado['correoEnviado'] = false;
+                $dataSelloProcesado['correoOmitido'] = true;
+            }
 
             $dataSelloProcesado['error'] = false;
             $dataSelloProcesado['message'] = "Se ha reenviado el DTE.";
@@ -2585,24 +2629,48 @@ class FacturasController extends BaseController
         ];
 
 
-       // dd($datos->receptor->correo);
+        // dd($datos->receptor->correo);
 
         try {
             $this->procesarCorreoConArchivosAdjuntos($codigoGeneracion, $row['jsonDTE'], $datos, "");
 
+            // Marcar correo como enviado después del reenvío exitoso
+            $model->where('codigoGeneracion', $codigoGeneracion)
+                ->set([
+                    'correoEnviado'      => 1,
+                    'fechaCorreoEnviado' => date('Y-m-d H:i:s'),
+                    'errorCorreo'        => null,
+                ])
+                ->update();
+
             return $this->response->setJSON([
-                'error' => false,
-                'message' => 'Correo reenviado correctamente.',
-                'correo' => $correo,
+                'error'            => false,
+                'message'          => 'Correo reenviado correctamente.',
+                'correo'           => $correo,
+                'correoReceptor'   => $correo,
+                'correoEnviado'    => true,
                 'codigoGeneracion' => $codigoGeneracion
             ]);
         } catch (\Throwable $e) {
             log_message('error', 'Error reenviando correo DTE: ' . $e->getMessage());
 
+            // Marcar correo como no enviado y guardar error
+            $model->where('codigoGeneracion', $codigoGeneracion)
+                ->set([
+                    'correoEnviado'      => 0,
+                    'fechaCorreoEnviado' => null,
+                    'errorCorreo'        => $e->getMessage(),
+                ])
+                ->update();
+
+
+
             return $this->response->setStatusCode(500)->setJSON([
-                'error' => true,
-                'message' => 'No se pudo reenviar el correo.',
-                'detalle' => $e->getMessage(),
+                'error'            => true,
+                'message'          => 'No se pudo reenviar el correo.',
+                'detalle'          => $e->getMessage(),
+                'correoEnviado'    => false,
+                'codigoGeneracion' => $codigoGeneracion
             ]);
         }
     }
