@@ -50,7 +50,15 @@ Procesar JSON
                     <td><small><?= esc($group['folder_path']) ?></small></td>
                     <td><small><?= esc($group['excel_file_path']) ?></small></td>
                     <td>
-                        <a href="<?= base_url('procesar-json/descargar/' . $group['id']) ?>" class="btn btn-sm btn-success">Descargar Excel</a>
+                        <a href="<?= base_url('procesar-json/descargar-csv/' . $group['id']) ?>"
+                           class="btn btn-sm btn-success">
+                            Descargar CSV
+                        </a>
+
+                        <a href="<?= base_url('procesar-json/descargar-xls/' . $group['id']) ?>"
+                           class="btn btn-sm btn-primary">
+                            Descargar Excel
+                        </a>
                         <form action="<?= base_url('procesar-json/eliminar/' . $group['id']) ?>" method="post" style="display:inline-block;" onsubmit="return confirm('¿Seguro que deseas eliminar este grupo y su carpeta?');">
                             <?= csrf_field() ?>
                             <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
