@@ -329,6 +329,13 @@ class FacturasController extends BaseController
                             $newData->datainfo->adminnote ?? ''
                         );
 
+                        // Actualizar estado de correo enviado
+                        $modelSellos->update($idSelloInterno, [
+                            'correoEnviado'      => 1,
+                            'fechaCorreoEnviado' => date('Y-m-d H:i:s'),
+                            'errorCorreo'        => null,
+                        ]);
+
                         $dataSelloProcesado['correoEnviado'] = true;
                     } catch (\Throwable $e) {
                         log_message('error', 'Error enviando correo DTE ' . $newData->datainfo->codigoGeneracion . ': ' . $e->getMessage());
@@ -337,6 +344,14 @@ class FacturasController extends BaseController
                         $dataSelloProcesado['correoError'] = $e->getMessage();
                     }
                 } else {
+
+                    // Correo omitido: rechazado, vacío o inválido
+                    $modelSellos->update($idSelloInterno, [
+                        'correoEnviado'      => 0,
+                        'fechaCorreoEnviado' => null,
+                        'errorCorreo'        => 'Correo omitido: DTE rechazado, correo vacío o correo inválido.',
+                    ]);
+
                     $dataSelloProcesado['correoEnviado'] = false;
                     $dataSelloProcesado['correoOmitido'] = true;
                 }
