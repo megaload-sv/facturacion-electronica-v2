@@ -1,0 +1,344 @@
+#nota de Credito 16
+
+{
+    "extension": {
+        "docuEntrega": null,
+        "observaciones": null,
+        "nombRecibe": null,
+        "nombEntrega": null,
+        "docuRecibe": null
+    },
+    "receptor": {
+        "descActividad": "Construcción de edificios residenciales",
+        "codActividad": "41001",
+        "correo": "facturaelectronica@geocimtec.com",
+        "nit": "06140402021029",
+        "direccion": {
+            "complemento": "Pasaje 3, calle principal, Pol G, brisas de candelaria, lotes 15 y 16",
+            "municipio": "23",
+            "departamento": "06"
+        },
+        "nombreComercial": "GEOTECNIA CIMENTACIONES Y TÉCNICAS ESPECIALES, S.A. DE C.V.",
+        "telefono": "25003203",
+        "nombre": "GEOTECNIA CIMENTACIONES Y TÉCNICAS ESPECIALES, S.A. DE C.V.",
+        "nrc": "1389346"
+    },
+    "identificacion": {
+        "codigoGeneracion": "C92E2CD5-8702-4EAF-A2F7-F17C7AF8576C",
+        "tipoContingencia": null,
+        "numeroControl": "DTE-05-M001P001-000000000000016",
+        "tipoOperacion": 1,
+        "ambiente": "01",
+        "fecEmi": "2025-07-31",
+        "tipoModelo": 1,
+        "tipoDte": "05",
+        "version": 3,
+        "tipoMoneda": "USD",
+        "motivoContin": null,
+        "horEmi": "09:50:00"
+    },
+    "resumen": {
+        "totalNoSuj": 0,
+        "ivaPerci1": 0,
+        "descuNoSuj": 0,
+        "totalLetras": "TRECE MIL VEINTIDOS CON 13/100 U.S. DOLARES",
+        "ivaRete1": 0,
+        "subTotal": 11524,
+        "reteRenta": 0,
+        "subTotalVentas": 11524,
+        "tributos": [
+            {
+                "descripcion": "Impuesto al Valor Agregado 13%",
+                "codigo": "20",
+                "valor": 1498.13
+            }
+        ],
+        "descuExenta": 0,
+        "totalDescu": 0,
+        "descuGravada": 0,
+        "totalGravada": 11524,
+        "montoTotalOperacion": 13022.13,
+        "totalExenta": 0,
+        "condicionOperacion": 1
+    },
+    "cuerpoDocumento": [
+        {
+            "montoDescu": 0,
+            "descripcion": "Grúa telescópica de 50 tons - transporte ida y regreso (Traslado de equipo hacia nuevo estadio de El Salvador para desarme y carga de accesorios de piloteadoras)",
+            "codigo": null,
+            "ventaGravada": 600,
+            "ventaNoSuj": 0,
+            "ventaExenta": 0,
+            "tributos": [
+                "20"
+            ],
+            "numItem": 1,
+            "tipoItem": 2,
+            "uniMedida": 59,
+            "codTributo": null,
+            "numeroDocumento": "C79025FB-B0BA-49A5-AF0E-2D84C6181AA1",
+            "cantidad": 1,
+            "precioUni": 600
+        },
+        {
+            "montoDescu": 0,
+            "descripcion": "Grúa telescópica de 50 tons - por día (28 horas ordinarias para carga y descarga de accesorios  de piloteadora Zoomlion, los dias del 30/06/25 al 3/07/25)",
+            "codigo": null,
+            "ventaGravada": 2380,
+            "ventaNoSuj": 0,
+            "ventaExenta": 0,
+            "tributos": [
+                "20"
+            ],
+            "numItem": 2,
+            "tipoItem": 2,
+            "uniMedida": 59,
+            "codTributo": null,
+            "numeroDocumento": "C79025FB-B0BA-49A5-AF0E-2D84C6181AA1",
+            "cantidad": 28,
+            "precioUni": 85
+        },
+        {
+            "montoDescu": 0,
+            "descripcion": "Grúa telescópica de 50 tons - por día (3 horas extra hombre para carga y descarga de accesorios  de piloteadora Zoomlion, los dias del 30/06/25 al 3/07/25)",
+            "codigo": null,
+            "ventaGravada": 51,
+            "ventaNoSuj": 0,
+            "ventaExenta": 0,
+            "tributos": [
+                "20"
+            ],
+            "numItem": 3,
+            "tipoItem": 2,
+            "uniMedida": 59,
+            "codTributo": null,
+            "numeroDocumento": "C79025FB-B0BA-49A5-AF0E-2D84C6181AA1",
+            "cantidad": 3,
+            "precioUni": 17
+        },
+        {
+            "montoDescu": 0,
+            "descripcion": "Grúa telescópica de 50 tons - transporte ida y regreso (Traslado de equipo hacia Portal Acala Para descarga y armado de accesorios de piloteadora Zoomlion, el dia 02/07/25)",
+            "codigo": null,
+            "ventaGravada": 200,
+            "ventaNoSuj": 0,
+            "ventaExenta": 0,
+            "tributos": [
+                "20"
+            ],
+            "numItem": 4,
+            "tipoItem": 2,
+            "uniMedida": 59,
+            "codTributo": null,
+            "numeroDocumento": "C79025FB-B0BA-49A5-AF0E-2D84C6181AA1",
+            "cantidad": 1,
+            "precioUni": 200
+        },
+        {
+            "montoDescu": 0,
+            "descripcion": "Cabezal y lowboy convencional desenganchable (Traslado de piloteadora Zoomlion desde nuevo estadio El Salvador hacia Portal Acala)",
+            "codigo": null,
+            "ventaGravada": 1600,
+            "ventaNoSuj": 0,
+            "ventaExenta": 0,
+            "tributos": [
+                "20"
+            ],
+            "numItem": 5,
+            "tipoItem": 2,
+            "uniMedida": 59,
+            "codTributo": null,
+            "numeroDocumento": "C79025FB-B0BA-49A5-AF0E-2D84C6181AA1",
+            "cantidad": 1,
+            "precioUni": 1600
+        },
+        {
+            "montoDescu": 0,
+            "descripcion": "Cabezal y plataformas desde 40 hasta 48 pies (Traslado de accesorios de piloteadora Zoomlion, desde estadio de El Salvador hacia Portal Acala.)",
+            "codigo": null,
+            "ventaGravada": 1000,
+            "ventaNoSuj": 0,
+            "ventaExenta": 0,
+            "tributos": [
+                "20"
+            ],
+            "numItem": 6,
+            "tipoItem": 2,
+            "uniMedida": 59,
+            "codTributo": null,
+            "numeroDocumento": "C79025FB-B0BA-49A5-AF0E-2D84C6181AA1",
+            "cantidad": 2,
+            "precioUni": 500
+        },
+        {
+            "montoDescu": 0,
+            "descripcion": "Grúa telescópica de 50 tons - transporte ida y regreso (Traslado de grúa de regreso al estadio de El Salvador desde Portal Acala el dia 04/07/25.)",
+            "codigo": null,
+            "ventaGravada": 200,
+            "ventaNoSuj": 0,
+            "ventaExenta": 0,
+            "tributos": [
+                "20"
+            ],
+            "numItem": 7,
+            "tipoItem": 2,
+            "uniMedida": 59,
+            "codTributo": null,
+            "numeroDocumento": "C79025FB-B0BA-49A5-AF0E-2D84C6181AA1",
+            "cantidad": 1,
+            "precioUni": 200
+        },
+        {
+            "montoDescu": 0,
+            "descripcion": "Grúa telescópica de 50 tons - por día (23.5 horas ordinarias para carga  y descarga de accesorios y herramientas de piloteadora Mait Cat los dias 04 al 05/07/25.)",
+            "codigo": null,
+            "ventaGravada": 1997.5,
+            "ventaNoSuj": 0,
+            "ventaExenta": 0,
+            "tributos": [
+                "20"
+            ],
+            "numItem": 8,
+            "tipoItem": 2,
+            "uniMedida": 59,
+            "codTributo": null,
+            "numeroDocumento": "C79025FB-B0BA-49A5-AF0E-2D84C6181AA1",
+            "cantidad": 23.5,
+            "precioUni": 85
+        },
+        {
+            "montoDescu": 0,
+            "descripcion": "Grúa telescópica de 50 tons - por día (11.5 horas ordinarias para carga  y descarga de accesorios y herramientas de piloteadora Mait Cat los dias 04 al 05/07/25.)",
+            "codigo": null,
+            "ventaGravada": 195.5,
+            "ventaNoSuj": 0,
+            "ventaExenta": 0,
+            "tributos": [
+                "20"
+            ],
+            "numItem": 9,
+            "tipoItem": 2,
+            "uniMedida": 59,
+            "codTributo": null,
+            "numeroDocumento": "C79025FB-B0BA-49A5-AF0E-2D84C6181AA1",
+            "cantidad": 11.5,
+            "precioUni": 17
+        },
+        {
+            "montoDescu": 0,
+            "descripcion": "Grúa telescópica de 50 tons - transporte ida y regreso (Traslado de equipo hacia San Martin para descarga de accesorios y herramientas de piloteadora Miat Cat el dia 05/07/25.)",
+            "codigo": null,
+            "ventaGravada": 400,
+            "ventaNoSuj": 0,
+            "ventaExenta": 0,
+            "tributos": [
+                "20"
+            ],
+            "numItem": 10,
+            "tipoItem": 2,
+            "uniMedida": 59,
+            "codTributo": null,
+            "numeroDocumento": "C79025FB-B0BA-49A5-AF0E-2D84C6181AA1",
+            "cantidad": 1,
+            "precioUni": 400
+        },
+        {
+            "montoDescu": 0,
+            "descripcion": "Cabezal y lowboy convencional desenganchable (Traslado de piloteadora Mait Cat desde nuevo estadio El Salvador hacia San Martin)",
+            "codigo": null,
+            "ventaGravada": 1200,
+            "ventaNoSuj": 0,
+            "ventaExenta": 0,
+            "tributos": [
+                "20"
+            ],
+            "numItem": 11,
+            "tipoItem": 2,
+            "uniMedida": 59,
+            "codTributo": null,
+            "numeroDocumento": "C79025FB-B0BA-49A5-AF0E-2D84C6181AA1",
+            "cantidad": 1,
+            "precioUni": 1200
+        },
+        {
+            "montoDescu": 0,
+            "descripcion": "Cabezal y plataformas desde 40 hasta 48 pies (Traslado hacia San Martin de accesorios de piloteadora Miat Cat.<br />\r\n5 dias de estadia $100 = $500<br />\r\nTraslado = $400)",
+            "codigo": null,
+            "ventaGravada": 900,
+            "ventaNoSuj": 0,
+            "ventaExenta": 0,
+            "tributos": [
+                "20"
+            ],
+            "numItem": 12,
+            "tipoItem": 2,
+            "uniMedida": 59,
+            "codTributo": null,
+            "numeroDocumento": "C79025FB-B0BA-49A5-AF0E-2D84C6181AA1",
+            "cantidad": 1,
+            "precioUni": 900
+        },
+        {
+            "montoDescu": 0,
+            "descripcion": "Cabezal y plataformas desde 40 hasta 48 pies (Traslado de Herramientas de piloteadora desde nue vo estadio El Salvador hacia San Martin)",
+            "codigo": null,
+            "ventaGravada": 800,
+            "ventaNoSuj": 0,
+            "ventaExenta": 0,
+            "tributos": [
+                "20"
+            ],
+            "numItem": 13,
+            "tipoItem": 2,
+            "uniMedida": 59,
+            "codTributo": null,
+            "numeroDocumento": "C79025FB-B0BA-49A5-AF0E-2D84C6181AA1",
+            "cantidad": 2,
+            "precioUni": 400
+        }
+    ],
+    "ventaTercero": null,
+    "apendice": null,
+    "documentoRelacionado": [
+        {
+            "tipoDocumento": "03",
+            "fechaEmision": "2025-07-16",
+            "numeroDocumento": "C79025FB-B0BA-49A5-AF0E-2D84C6181AA1",
+            "tipoGeneracion": 2
+        }
+    ],
+    "emisor": {
+        "descActividad": "Transporte de carga internacional",
+        "tipoEstablecimiento": "02",
+        "codActividad": "49233",
+        "correo": "info@grupomegaload.com",
+        "nit": "06141101161042",
+        "direccion": {
+            "complemento": "POLIG. E, CTON. FLOR AMARILLA, LOTE 626 C,",
+            "municipio": "25",
+            "departamento": "05"
+        },
+        "nombreComercial": "MEGALOAD, S.A. DE C.V.",
+        "telefono": "25305293",
+        "nombre": "MEGALOAD, S.A. DE C.V.",
+        "nrc": "2473109"
+    }
+}
+
+eyJhbGciOiJSUzUxMiJ9.ew0KICAiZXh0ZW5zaW9uIiA6IHsNCiAgICAiZG9jdUVudHJlZ2EiIDogbnVsbCwNCiAgICAib2JzZXJ2YWNpb25lcyIgOiBudWxsLA0KICAgICJub21iUmVjaWJlIiA6IG51bGwsDQogICAgIm5vbWJFbnRyZWdhIiA6IG51bGwsDQogICAgImRvY3VSZWNpYmUiIDogbnVsbA0KICB9LA0KICAicmVjZXB0b3IiIDogew0KICAgICJkZXNjQWN0aXZpZGFkIiA6ICJDb25zdHJ1Y2Npw7NuIGRlIGVkaWZpY2lvcyByZXNpZGVuY2lhbGVzIiwNCiAgICAiY29kQWN0aXZpZGFkIiA6ICI0MTAwMSIsDQogICAgImNvcnJlbyIgOiAiZmFjdHVyYWVsZWN0cm9uaWNhQGdlb2NpbXRlYy5jb20iLA0KICAgICJuaXQiIDogIjA2MTQwNDAyMDIxMDI5IiwNCiAgICAiZGlyZWNjaW9uIiA6IHsNCiAgICAgICJjb21wbGVtZW50byIgOiAiUGFzYWplIDMsIGNhbGxlIHByaW5jaXBhbCwgUG9sIEcsIGJyaXNhcyBkZSBjYW5kZWxhcmlhLCBsb3RlcyAxNSB5IDE2IiwNCiAgICAgICJtdW5pY2lwaW8iIDogIjIzIiwNCiAgICAgICJkZXBhcnRhbWVudG8iIDogIjA2Ig0KICAgIH0sDQogICAgIm5vbWJyZUNvbWVyY2lhbCIgOiAiR0VPVEVDTklBIENJTUVOVEFDSU9ORVMgWSBUw4lDTklDQVMgRVNQRUNJQUxFUywgUy5BLiBERSBDLlYuIiwNCiAgICAidGVsZWZvbm8iIDogIjI1MDAzMjAzIiwNCiAgICAibm9tYnJlIiA6ICJHRU9URUNOSUEgQ0lNRU5UQUNJT05FUyBZIFTDiUNOSUNBUyBFU1BFQ0lBTEVTLCBTLkEuIERFIEMuVi4iLA0KICAgICJucmMiIDogIjEzODkzNDYiDQogIH0sDQogICJpZGVudGlmaWNhY2lvbiIgOiB7DQogICAgImNvZGlnb0dlbmVyYWNpb24iIDogIkM5MkUyQ0Q1LTg3MDItNEVBRi1BMkY3LUYxN0M3QUY4NTc2QyIsDQogICAgInRpcG9Db250aW5nZW5jaWEiIDogbnVsbCwNCiAgICAibnVtZXJvQ29udHJvbCIgOiAiRFRFLTA1LU0wMDFQMDAxLTAwMDAwMDAwMDAwMDAxNiIsDQogICAgInRpcG9PcGVyYWNpb24iIDogMSwNCiAgICAiYW1iaWVudGUiIDogIjAxIiwNCiAgICAiZmVjRW1pIiA6ICIyMDI1LTA3LTMxIiwNCiAgICAidGlwb01vZGVsbyIgOiAxLA0KICAgICJ0aXBvRHRlIiA6ICIwNSIsDQogICAgInZlcnNpb24iIDogMywNCiAgICAidGlwb01vbmVkYSIgOiAiVVNEIiwNCiAgICAibW90aXZvQ29udGluIiA6IG51bGwsDQogICAgImhvckVtaSIgOiAiMDk6NTA6MDAiDQogIH0sDQogICJyZXN1bWVuIiA6IHsNCiAgICAidG90YWxOb1N1aiIgOiAwLA0KICAgICJpdmFQZXJjaTEiIDogMCwNCiAgICAiZGVzY3VOb1N1aiIgOiAwLA0KICAgICJ0b3RhbExldHJhcyIgOiAiVFJFQ0UgTUlMIFZFSU5USURPUyBDT04gMTMvMTAwIFUuUy4gRE9MQVJFUyIsDQogICAgIml2YVJldGUxIiA6IDAsDQogICAgInN1YlRvdGFsIiA6IDExNTI0LA0KICAgICJyZXRlUmVudGEiIDogMCwNCiAgICAic3ViVG90YWxWZW50YXMiIDogMTE1MjQsDQogICAgInRyaWJ1dG9zIiA6IFsgew0KICAgICAgImRlc2NyaXBjaW9uIiA6ICJJbXB1ZXN0byBhbCBWYWxvciBBZ3JlZ2FkbyAxMyUiLA0KICAgICAgImNvZGlnbyIgOiAiMjAiLA0KICAgICAgInZhbG9yIiA6IDE0OTguMTMNCiAgICB9IF0sDQogICAgImRlc2N1RXhlbnRhIiA6IDAsDQogICAgInRvdGFsRGVzY3UiIDogMCwNCiAgICAiZGVzY3VHcmF2YWRhIiA6IDAsDQogICAgInRvdGFsR3JhdmFkYSIgOiAxMTUyNCwNCiAgICAibW9udG9Ub3RhbE9wZXJhY2lvbiIgOiAxMzAyMi4xMywNCiAgICAidG90YWxFeGVudGEiIDogMCwNCiAgICAiY29uZGljaW9uT3BlcmFjaW9uIiA6IDENCiAgfSwNCiAgImN1ZXJwb0RvY3VtZW50byIgOiBbIHsNCiAgICAibW9udG9EZXNjdSIgOiAwLA0KICAgICJkZXNjcmlwY2lvbiIgOiAiR3LDumEgdGVsZXNjw7NwaWNhIGRlIDUwIHRvbnMgLSB0cmFuc3BvcnRlIGlkYSB5IHJlZ3Jlc28gKFRyYXNsYWRvIGRlIGVxdWlwbyBoYWNpYSBudWV2byBlc3RhZGlvIGRlIEVsIFNhbHZhZG9yIHBhcmEgZGVzYXJtZSB5IGNhcmdhIGRlIGFjY2Vzb3Jpb3MgZGUgcGlsb3RlYWRvcmFzKSIsDQogICAgImNvZGlnbyIgOiBudWxsLA0KICAgICJ2ZW50YUdyYXZhZGEiIDogNjAwLA0KICAgICJ2ZW50YU5vU3VqIiA6IDAsDQogICAgInZlbnRhRXhlbnRhIiA6IDAsDQogICAgInRyaWJ1dG9zIiA6IFsgIjIwIiBdLA0KICAgICJudW1JdGVtIiA6IDEsDQogICAgInRpcG9JdGVtIiA6IDIsDQogICAgInVuaU1lZGlkYSIgOiA1OSwNCiAgICAiY29kVHJpYnV0byIgOiBudWxsLA0KICAgICJudW1lcm9Eb2N1bWVudG8iIDogIkM3OTAyNUZCLUIwQkEtNDlBNS1BRjBFLTJEODRDNjE4MUFBMSIsDQogICAgImNhbnRpZGFkIiA6IDEsDQogICAgInByZWNpb1VuaSIgOiA2MDANCiAgfSwgew0KICAgICJtb250b0Rlc2N1IiA6IDAsDQogICAgImRlc2NyaXBjaW9uIiA6ICJHcsO6YSB0ZWxlc2PDs3BpY2EgZGUgNTAgdG9ucyAtIHBvciBkw61hICgyOCBob3JhcyBvcmRpbmFyaWFzIHBhcmEgY2FyZ2EgeSBkZXNjYXJnYSBkZSBhY2Nlc29yaW9zICBkZSBwaWxvdGVhZG9yYSBab29tbGlvbiwgbG9zIGRpYXMgZGVsIDMwLzA2LzI1IGFsIDMvMDcvMjUpIiwNCiAgICAiY29kaWdvIiA6IG51bGwsDQogICAgInZlbnRhR3JhdmFkYSIgOiAyMzgwLA0KICAgICJ2ZW50YU5vU3VqIiA6IDAsDQogICAgInZlbnRhRXhlbnRhIiA6IDAsDQogICAgInRyaWJ1dG9zIiA6IFsgIjIwIiBdLA0KICAgICJudW1JdGVtIiA6IDIsDQogICAgInRpcG9JdGVtIiA6IDIsDQogICAgInVuaU1lZGlkYSIgOiA1OSwNCiAgICAiY29kVHJpYnV0byIgOiBudWxsLA0KICAgICJudW1lcm9Eb2N1bWVudG8iIDogIkM3OTAyNUZCLUIwQkEtNDlBNS1BRjBFLTJEODRDNjE4MUFBMSIsDQogICAgImNhbnRpZGFkIiA6IDI4LA0KICAgICJwcmVjaW9VbmkiIDogODUNCiAgfSwgew0KICAgICJtb250b0Rlc2N1IiA6IDAsDQogICAgImRlc2NyaXBjaW9uIiA6ICJHcsO6YSB0ZWxlc2PDs3BpY2EgZGUgNTAgdG9ucyAtIHBvciBkw61hICgzIGhvcmFzIGV4dHJhIGhvbWJyZSBwYXJhIGNhcmdhIHkgZGVzY2FyZ2EgZGUgYWNjZXNvcmlvcyAgZGUgcGlsb3RlYWRvcmEgWm9vbWxpb24sIGxvcyBkaWFzIGRlbCAzMC8wNi8yNSBhbCAzLzA3LzI1KSIsDQogICAgImNvZGlnbyIgOiBudWxsLA0KICAgICJ2ZW50YUdyYXZhZGEiIDogNTEsDQogICAgInZlbnRhTm9TdWoiIDogMCwNCiAgICAidmVudGFFeGVudGEiIDogMCwNCiAgICAidHJpYnV0b3MiIDogWyAiMjAiIF0sDQogICAgIm51bUl0ZW0iIDogMywNCiAgICAidGlwb0l0ZW0iIDogMiwNCiAgICAidW5pTWVkaWRhIiA6IDU5LA0KICAgICJjb2RUcmlidXRvIiA6IG51bGwsDQogICAgIm51bWVyb0RvY3VtZW50byIgOiAiQzc5MDI1RkItQjBCQS00OUE1LUFGMEUtMkQ4NEM2MTgxQUExIiwNCiAgICAiY2FudGlkYWQiIDogMywNCiAgICAicHJlY2lvVW5pIiA6IDE3DQogIH0sIHsNCiAgICAibW9udG9EZXNjdSIgOiAwLA0KICAgICJkZXNjcmlwY2lvbiIgOiAiR3LDumEgdGVsZXNjw7NwaWNhIGRlIDUwIHRvbnMgLSB0cmFuc3BvcnRlIGlkYSB5IHJlZ3Jlc28gKFRyYXNsYWRvIGRlIGVxdWlwbyBoYWNpYSBQb3J0YWwgQWNhbGEgUGFyYSBkZXNjYXJnYSB5IGFybWFkbyBkZSBhY2Nlc29yaW9zIGRlIHBpbG90ZWFkb3JhIFpvb21saW9uLCBlbCBkaWEgMDIvMDcvMjUpIiwNCiAgICAiY29kaWdvIiA6IG51bGwsDQogICAgInZlbnRhR3JhdmFkYSIgOiAyMDAsDQogICAgInZlbnRhTm9TdWoiIDogMCwNCiAgICAidmVudGFFeGVudGEiIDogMCwNCiAgICAidHJpYnV0b3MiIDogWyAiMjAiIF0sDQogICAgIm51bUl0ZW0iIDogNCwNCiAgICAidGlwb0l0ZW0iIDogMiwNCiAgICAidW5pTWVkaWRhIiA6IDU5LA0KICAgICJjb2RUcmlidXRvIiA6IG51bGwsDQogICAgIm51bWVyb0RvY3VtZW50byIgOiAiQzc5MDI1RkItQjBCQS00OUE1LUFGMEUtMkQ4NEM2MTgxQUExIiwNCiAgICAiY2FudGlkYWQiIDogMSwNCiAgICAicHJlY2lvVW5pIiA6IDIwMA0KICB9LCB7DQogICAgIm1vbnRvRGVzY3UiIDogMCwNCiAgICAiZGVzY3JpcGNpb24iIDogIkNhYmV6YWwgeSBsb3dib3kgY29udmVuY2lvbmFsIGRlc2VuZ2FuY2hhYmxlIChUcmFzbGFkbyBkZSBwaWxvdGVhZG9yYSBab29tbGlvbiBkZXNkZSBudWV2byBlc3RhZGlvIEVsIFNhbHZhZG9yIGhhY2lhIFBvcnRhbCBBY2FsYSkiLA0KICAgICJjb2RpZ28iIDogbnVsbCwNCiAgICAidmVudGFHcmF2YWRhIiA6IDE2MDAsDQogICAgInZlbnRhTm9TdWoiIDogMCwNCiAgICAidmVudGFFeGVudGEiIDogMCwNCiAgICAidHJpYnV0b3MiIDogWyAiMjAiIF0sDQogICAgIm51bUl0ZW0iIDogNSwNCiAgICAidGlwb0l0ZW0iIDogMiwNCiAgICAidW5pTWVkaWRhIiA6IDU5LA0KICAgICJjb2RUcmlidXRvIiA6IG51bGwsDQogICAgIm51bWVyb0RvY3VtZW50byIgOiAiQzc5MDI1RkItQjBCQS00OUE1LUFGMEUtMkQ4NEM2MTgxQUExIiwNCiAgICAiY2FudGlkYWQiIDogMSwNCiAgICAicHJlY2lvVW5pIiA6IDE2MDANCiAgfSwgew0KICAgICJtb250b0Rlc2N1IiA6IDAsDQogICAgImRlc2NyaXBjaW9uIiA6ICJDYWJlemFsIHkgcGxhdGFmb3JtYXMgZGVzZGUgNDAgaGFzdGEgNDggcGllcyAoVHJhc2xhZG8gZGUgYWNjZXNvcmlvcyBkZSBwaWxvdGVhZG9yYSBab29tbGlvbiwgZGVzZGUgZXN0YWRpbyBkZSBFbCBTYWx2YWRvciBoYWNpYSBQb3J0YWwgQWNhbGEuKSIsDQogICAgImNvZGlnbyIgOiBudWxsLA0KICAgICJ2ZW50YUdyYXZhZGEiIDogMTAwMCwNCiAgICAidmVudGFOb1N1aiIgOiAwLA0KICAgICJ2ZW50YUV4ZW50YSIgOiAwLA0KICAgICJ0cmlidXRvcyIgOiBbICIyMCIgXSwNCiAgICAibnVtSXRlbSIgOiA2LA0KICAgICJ0aXBvSXRlbSIgOiAyLA0KICAgICJ1bmlNZWRpZGEiIDogNTksDQogICAgImNvZFRyaWJ1dG8iIDogbnVsbCwNCiAgICAibnVtZXJvRG9jdW1lbnRvIiA6ICJDNzkwMjVGQi1CMEJBLTQ5QTUtQUYwRS0yRDg0QzYxODFBQTEiLA0KICAgICJjYW50aWRhZCIgOiAyLA0KICAgICJwcmVjaW9VbmkiIDogNTAwDQogIH0sIHsNCiAgICAibW9udG9EZXNjdSIgOiAwLA0KICAgICJkZXNjcmlwY2lvbiIgOiAiR3LDumEgdGVsZXNjw7NwaWNhIGRlIDUwIHRvbnMgLSB0cmFuc3BvcnRlIGlkYSB5IHJlZ3Jlc28gKFRyYXNsYWRvIGRlIGdyw7phIGRlIHJlZ3Jlc28gYWwgZXN0YWRpbyBkZSBFbCBTYWx2YWRvciBkZXNkZSBQb3J0YWwgQWNhbGEgZWwgZGlhIDA0LzA3LzI1LikiLA0KICAgICJjb2RpZ28iIDogbnVsbCwNCiAgICAidmVudGFHcmF2YWRhIiA6IDIwMCwNCiAgICAidmVudGFOb1N1aiIgOiAwLA0KICAgICJ2ZW50YUV4ZW50YSIgOiAwLA0KICAgICJ0cmlidXRvcyIgOiBbICIyMCIgXSwNCiAgICAibnVtSXRlbSIgOiA3LA0KICAgICJ0aXBvSXRlbSIgOiAyLA0KICAgICJ1bmlNZWRpZGEiIDogNTksDQogICAgImNvZFRyaWJ1dG8iIDogbnVsbCwNCiAgICAibnVtZXJvRG9jdW1lbnRvIiA6ICJDNzkwMjVGQi1CMEJBLTQ5QTUtQUYwRS0yRDg0QzYxODFBQTEiLA0KICAgICJjYW50aWRhZCIgOiAxLA0KICAgICJwcmVjaW9VbmkiIDogMjAwDQogIH0sIHsNCiAgICAibW9udG9EZXNjdSIgOiAwLA0KICAgICJkZXNjcmlwY2lvbiIgOiAiR3LDumEgdGVsZXNjw7NwaWNhIGRlIDUwIHRvbnMgLSBwb3IgZMOtYSAoMjMuNSBob3JhcyBvcmRpbmFyaWFzIHBhcmEgY2FyZ2EgIHkgZGVzY2FyZ2EgZGUgYWNjZXNvcmlvcyB5IGhlcnJhbWllbnRhcyBkZSBwaWxvdGVhZG9yYSBNYWl0IENhdCBsb3MgZGlhcyAwNCBhbCAwNS8wNy8yNS4pIiwNCiAgICAiY29kaWdvIiA6IG51bGwsDQogICAgInZlbnRhR3JhdmFkYSIgOiAxOTk3LjUsDQogICAgInZlbnRhTm9TdWoiIDogMCwNCiAgICAidmVudGFFeGVudGEiIDogMCwNCiAgICAidHJpYnV0b3MiIDogWyAiMjAiIF0sDQogICAgIm51bUl0ZW0iIDogOCwNCiAgICAidGlwb0l0ZW0iIDogMiwNCiAgICAidW5pTWVkaWRhIiA6IDU5LA0KICAgICJjb2RUcmlidXRvIiA6IG51bGwsDQogICAgIm51bWVyb0RvY3VtZW50byIgOiAiQzc5MDI1RkItQjBCQS00OUE1LUFGMEUtMkQ4NEM2MTgxQUExIiwNCiAgICAiY2FudGlkYWQiIDogMjMuNSwNCiAgICAicHJlY2lvVW5pIiA6IDg1DQogIH0sIHsNCiAgICAibW9udG9EZXNjdSIgOiAwLA0KICAgICJkZXNjcmlwY2lvbiIgOiAiR3LDumEgdGVsZXNjw7NwaWNhIGRlIDUwIHRvbnMgLSBwb3IgZMOtYSAoMTEuNSBob3JhcyBvcmRpbmFyaWFzIHBhcmEgY2FyZ2EgIHkgZGVzY2FyZ2EgZGUgYWNjZXNvcmlvcyB5IGhlcnJhbWllbnRhcyBkZSBwaWxvdGVhZG9yYSBNYWl0IENhdCBsb3MgZGlhcyAwNCBhbCAwNS8wNy8yNS4pIiwNCiAgICAiY29kaWdvIiA6IG51bGwsDQogICAgInZlbnRhR3JhdmFkYSIgOiAxOTUuNSwNCiAgICAidmVudGFOb1N1aiIgOiAwLA0KICAgICJ2ZW50YUV4ZW50YSIgOiAwLA0KICAgICJ0cmlidXRvcyIgOiBbICIyMCIgXSwNCiAgICAibnVtSXRlbSIgOiA5LA0KICAgICJ0aXBvSXRlbSIgOiAyLA0KICAgICJ1bmlNZWRpZGEiIDogNTksDQogICAgImNvZFRyaWJ1dG8iIDogbnVsbCwNCiAgICAibnVtZXJvRG9jdW1lbnRvIiA6ICJDNzkwMjVGQi1CMEJBLTQ5QTUtQUYwRS0yRDg0QzYxODFBQTEiLA0KICAgICJjYW50aWRhZCIgOiAxMS41LA0KICAgICJwcmVjaW9VbmkiIDogMTcNCiAgfSwgew0KICAgICJtb250b0Rlc2N1IiA6IDAsDQogICAgImRlc2NyaXBjaW9uIiA6ICJHcsO6YSB0ZWxlc2PDs3BpY2EgZGUgNTAgdG9ucyAtIHRyYW5zcG9ydGUgaWRhIHkgcmVncmVzbyAoVHJhc2xhZG8gZGUgZXF1aXBvIGhhY2lhIFNhbiBNYXJ0aW4gcGFyYSBkZXNjYXJnYSBkZSBhY2Nlc29yaW9zIHkgaGVycmFtaWVudGFzIGRlIHBpbG90ZWFkb3JhIE1pYXQgQ2F0IGVsIGRpYSAwNS8wNy8yNS4pIiwNCiAgICAiY29kaWdvIiA6IG51bGwsDQogICAgInZlbnRhR3JhdmFkYSIgOiA0MDAsDQogICAgInZlbnRhTm9TdWoiIDogMCwNCiAgICAidmVudGFFeGVudGEiIDogMCwNCiAgICAidHJpYnV0b3MiIDogWyAiMjAiIF0sDQogICAgIm51bUl0ZW0iIDogMTAsDQogICAgInRpcG9JdGVtIiA6IDIsDQogICAgInVuaU1lZGlkYSIgOiA1OSwNCiAgICAiY29kVHJpYnV0byIgOiBudWxsLA0KICAgICJudW1lcm9Eb2N1bWVudG8iIDogIkM3OTAyNUZCLUIwQkEtNDlBNS1BRjBFLTJEODRDNjE4MUFBMSIsDQogICAgImNhbnRpZGFkIiA6IDEsDQogICAgInByZWNpb1VuaSIgOiA0MDANCiAgfSwgew0KICAgICJtb250b0Rlc2N1IiA6IDAsDQogICAgImRlc2NyaXBjaW9uIiA6ICJDYWJlemFsIHkgbG93Ym95IGNvbnZlbmNpb25hbCBkZXNlbmdhbmNoYWJsZSAoVHJhc2xhZG8gZGUgcGlsb3RlYWRvcmEgTWFpdCBDYXQgZGVzZGUgbnVldm8gZXN0YWRpbyBFbCBTYWx2YWRvciBoYWNpYSBTYW4gTWFydGluKSIsDQogICAgImNvZGlnbyIgOiBudWxsLA0KICAgICJ2ZW50YUdyYXZhZGEiIDogMTIwMCwNCiAgICAidmVudGFOb1N1aiIgOiAwLA0KICAgICJ2ZW50YUV4ZW50YSIgOiAwLA0KICAgICJ0cmlidXRvcyIgOiBbICIyMCIgXSwNCiAgICAibnVtSXRlbSIgOiAxMSwNCiAgICAidGlwb0l0ZW0iIDogMiwNCiAgICAidW5pTWVkaWRhIiA6IDU5LA0KICAgICJjb2RUcmlidXRvIiA6IG51bGwsDQogICAgIm51bWVyb0RvY3VtZW50byIgOiAiQzc5MDI1RkItQjBCQS00OUE1LUFGMEUtMkQ4NEM2MTgxQUExIiwNCiAgICAiY2FudGlkYWQiIDogMSwNCiAgICAicHJlY2lvVW5pIiA6IDEyMDANCiAgfSwgew0KICAgICJtb250b0Rlc2N1IiA6IDAsDQogICAgImRlc2NyaXBjaW9uIiA6ICJDYWJlemFsIHkgcGxhdGFmb3JtYXMgZGVzZGUgNDAgaGFzdGEgNDggcGllcyAoVHJhc2xhZG8gaGFjaWEgU2FuIE1hcnRpbiBkZSBhY2Nlc29yaW9zIGRlIHBpbG90ZWFkb3JhIE1pYXQgQ2F0LjxiciAvPlxyXG41IGRpYXMgZGUgZXN0YWRpYSAkMTAwID0gJDUwMDxiciAvPlxyXG5UcmFzbGFkbyA9ICQ0MDApIiwNCiAgICAiY29kaWdvIiA6IG51bGwsDQogICAgInZlbnRhR3JhdmFkYSIgOiA5MDAsDQogICAgInZlbnRhTm9TdWoiIDogMCwNCiAgICAidmVudGFFeGVudGEiIDogMCwNCiAgICAidHJpYnV0b3MiIDogWyAiMjAiIF0sDQogICAgIm51bUl0ZW0iIDogMTIsDQogICAgInRpcG9JdGVtIiA6IDIsDQogICAgInVuaU1lZGlkYSIgOiA1OSwNCiAgICAiY29kVHJpYnV0byIgOiBudWxsLA0KICAgICJudW1lcm9Eb2N1bWVudG8iIDogIkM3OTAyNUZCLUIwQkEtNDlBNS1BRjBFLTJEODRDNjE4MUFBMSIsDQogICAgImNhbnRpZGFkIiA6IDEsDQogICAgInByZWNpb1VuaSIgOiA5MDANCiAgfSwgew0KICAgICJtb250b0Rlc2N1IiA6IDAsDQogICAgImRlc2NyaXBjaW9uIiA6ICJDYWJlemFsIHkgcGxhdGFmb3JtYXMgZGVzZGUgNDAgaGFzdGEgNDggcGllcyAoVHJhc2xhZG8gZGUgSGVycmFtaWVudGFzIGRlIHBpbG90ZWFkb3JhIGRlc2RlIG51ZSB2byBlc3RhZGlvIEVsIFNhbHZhZG9yIGhhY2lhIFNhbiBNYXJ0aW4pIiwNCiAgICAiY29kaWdvIiA6IG51bGwsDQogICAgInZlbnRhR3JhdmFkYSIgOiA4MDAsDQogICAgInZlbnRhTm9TdWoiIDogMCwNCiAgICAidmVudGFFeGVudGEiIDogMCwNCiAgICAidHJpYnV0b3MiIDogWyAiMjAiIF0sDQogICAgIm51bUl0ZW0iIDogMTMsDQogICAgInRpcG9JdGVtIiA6IDIsDQogICAgInVuaU1lZGlkYSIgOiA1OSwNCiAgICAiY29kVHJpYnV0byIgOiBudWxsLA0KICAgICJudW1lcm9Eb2N1bWVudG8iIDogIkM3OTAyNUZCLUIwQkEtNDlBNS1BRjBFLTJEODRDNjE4MUFBMSIsDQogICAgImNhbnRpZGFkIiA6IDIsDQogICAgInByZWNpb1VuaSIgOiA0MDANCiAgfSBdLA0KICAidmVudGFUZXJjZXJvIiA6IG51bGwsDQogICJhcGVuZGljZSIgOiBudWxsLA0KICAiZG9jdW1lbnRvUmVsYWNpb25hZG8iIDogWyB7DQogICAgInRpcG9Eb2N1bWVudG8iIDogIjAzIiwNCiAgICAiZmVjaGFFbWlzaW9uIiA6ICIyMDI1LTA3LTE2IiwNCiAgICAibnVtZXJvRG9jdW1lbnRvIiA6ICJDNzkwMjVGQi1CMEJBLTQ5QTUtQUYwRS0yRDg0QzYxODFBQTEiLA0KICAgICJ0aXBvR2VuZXJhY2lvbiIgOiAyDQogIH0gXSwNCiAgImVtaXNvciIgOiB7DQogICAgImRlc2NBY3RpdmlkYWQiIDogIlRyYW5zcG9ydGUgZGUgY2FyZ2EgaW50ZXJuYWNpb25hbCIsDQogICAgInRpcG9Fc3RhYmxlY2ltaWVudG8iIDogIjAyIiwNCiAgICAiY29kQWN0aXZpZGFkIiA6ICI0OTIzMyIsDQogICAgImNvcnJlbyIgOiAiaW5mb0BncnVwb21lZ2Fsb2FkLmNvbSIsDQogICAgIm5pdCIgOiAiMDYxNDExMDExNjEwNDIiLA0KICAgICJkaXJlY2Npb24iIDogew0KICAgICAgImNvbXBsZW1lbnRvIiA6ICJQT0xJRy4gRSwgQ1RPTi4gRkxPUiBBTUFSSUxMQSwgTE9URSA2MjYgQywiLA0KICAgICAgIm11bmljaXBpbyIgOiAiMjUiLA0KICAgICAgImRlcGFydGFtZW50byIgOiAiMDUiDQogICAgfSwNCiAgICAibm9tYnJlQ29tZXJjaWFsIiA6ICJNRUdBTE9BRCwgUy5BLiBERSBDLlYuIiwNCiAgICAidGVsZWZvbm8iIDogIjI1MzA1MjkzIiwNCiAgICAibm9tYnJlIiA6ICJNRUdBTE9BRCwgUy5BLiBERSBDLlYuIiwNCiAgICAibnJjIiA6ICIyNDczMTA5Ig0KICB9DQp9.vAaFLTYucA0KoYxBBI56cTHlHHAIBHqY-UEvzC9LBJ1ESurGagq88x_aczrY5DHLdOFzkyNwh1YoBxFaBOx0fjp_km2Nwp8Be3cETht29ES1S7DjoRn3KOw9B9V7QOQ5qEb8ACuRVtdrzufgXMKJuHyFhrR-CG0aMuYiEvGjdUUglbkFj-5_rZpvK_CHFlZ-djVQkpmK4K6jhXqvpkK2uMUIllZQp9SH9_yGZBGysB5py31JYniN5jdwO-v7nLKWDrQ9lLssEKe_XgT_br0uBge2dTDuIbjqkUVZF8mSfTS0-bgLFlKrlMfl-VboAIqs6Pmm5fZo5cCkR_CiySvEAw
+
+{
+	"version": 2,
+	"ambiente": "01",
+	"versionApp": 2,
+	"estado": "PROCESADO",
+	"codigoGeneracion": "C92E2CD5-8702-4EAF-A2F7-F17C7AF8576C",
+	"selloRecibido": "2025893FBD72B2984D81B6ED534CC3A2FA1BMBSI",
+	"fhProcesamiento": "13/08/2025 14:51:30",
+	"clasificaMsg": "10",
+	"codigoMsg": "002",
+	"descripcionMsg": "RECIBIDO CON OBSERVACIONES",
+	"observaciones": [
+		"identificacion.fecEmi Difiere de la fecha de envío."
+	]
+}

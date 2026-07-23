@@ -1,0 +1,184 @@
+#nota Debito 1, este se fue con correlativo 3
+
+
+
+
+{
+	"identificacion": {
+		"version": 3,
+	    "ambiente": "01",
+	    "tipoDte": "06",
+	    "numeroControl": "DTE-06-M001P001-000000000000003",
+	    "codigoGeneracion": "41FCB399-AD52-41AC-8758-2BF5812F9555",
+	    "tipoModelo": 1,
+	    "tipoOperacion": 1,
+	    "tipoContingencia": null,
+	    "motivoContin": null,
+	    "fecEmi": "2025-06-13",
+	    "horEmi": "08:00:00",
+	    "tipoMoneda": "USD"
+	},
+	"documentoRelacionado": [
+	    {
+	      "tipoDocumento": "03",
+	      "tipoGeneracion": 2,
+	      "numeroDocumento": "EF6FAC9D-FBCC-460E-B3DE-15FC5EA2FEF9",
+	      "fechaEmision": "2025-05-20"
+	    }
+	],
+	"emisor": {
+		"nit": "06141101161042",
+		"nrc": "2473109",
+		"nombre": "MEGALOAD, S.A. DE C.V.",
+		"codActividad": "49233",
+		"descActividad": "Transporte de carga internacional",
+		"nombreComercial": "MEGALOAD, S.A. DE C.V.",
+		"tipoEstablecimiento": "02",
+		"direccion": {
+			"departamento": "05",
+			"municipio": "25",
+			"complemento": "POLIG. E, CTON. FLOR AMARILLA, LOTE 626 C,"
+		},
+		"telefono": "25305293",
+		"correo": "info@grupomegaload.com"
+	},
+	"receptor": {
+		"nit": "06140704081039",
+		"nrc": "1865930",
+		"nombre": "HOLCIM CONCRETOS, S.A. DE C.V.",
+		"codActividad": "23990",
+		"descActividad": "Fabricación de productos minerales no metálicos ncp",
+		"nombreComercial": "HOLCIM CONCRETOS, S.A. DE C.V.",
+		"direccion": {
+			"departamento": "05",
+			"municipio": "27",
+			"complemento": "CARRETERA A SANTA ANA KM 25"
+		},
+		"telefono": "25050000",
+		"correo": "recepcionfe-sv@holcim.com"
+	},
+	"ventaTercero": null,
+	"cuerpoDocumento": [
+		{
+			"numItem": 1,
+			"tipoItem": 2,
+			"numeroDocumento": "EF6FAC9D-FBCC-460E-B3DE-15FC5EA2FEF9",
+			"codigo": null,
+			"codTributo": null,
+			"descripcion": "Grúa telescópica de 50 tons - transporte ida y regreso (Traslado hacia Lourdes y La Paz.)",
+			"cantidad": 1,
+			"uniMedida": 59,
+			"precioUni": 1200,
+			"montoDescu": 0,
+			"ventaNoSuj": 0,
+			"ventaExenta": 0,
+			"ventaGravada": 1200,
+			"tributos": [
+				"20"
+			]
+		},
+		{
+			"numItem": 2,
+			"tipoItem": 2,
+			"numeroDocumento": "EF6FAC9D-FBCC-460E-B3DE-15FC5EA2FEF9",
+			"codigo": null,
+			"codTributo": null,
+			"descripcion": "Grúa telescópica de 50 tons - por día (Carga de trompo en Lourdes, 6 horas minimas ordinarias.)",
+			"cantidad": 1,
+			"uniMedida": 59,
+			"precioUni": 540,
+			"montoDescu": 0,
+			"ventaNoSuj": 0,
+			"ventaExenta": 0,
+			"ventaGravada": 540,
+			"tributos": [
+				"20"
+			]
+		},
+		{
+			"numItem": 3,
+			"tipoItem": 2,
+			"numeroDocumento": "EF6FAC9D-FBCC-460E-B3DE-15FC5EA2FEF9",
+			"codigo": null,
+			"codTributo": null,
+			"descripcion": "Cabezal y lowboy dropdeck cama baja (Traslado de trompo de Lourdes hacia La Paz.)",
+			"cantidad": 1,
+			"uniMedida": 59,
+			"precioUni": 750,
+			"montoDescu": 0,
+			"ventaNoSuj": 0,
+			"ventaExenta": 0,
+			"ventaGravada": 750,
+			"tributos": [
+				"20"
+			]
+		},
+		{
+			"numItem": 4,
+			"tipoItem": 2,
+			"numeroDocumento": "EF6FAC9D-FBCC-460E-B3DE-15FC5EA2FEF9",
+			"codigo": null,
+			"codTributo": null,
+			"descripcion": "Grúa telescópica de 50 tons - por día (Descarga de trompo en La Paz, 6 horas minimas ordinarias.)",
+			"cantidad": 1,
+			"uniMedida": 59,
+			"precioUni": 540,
+			"montoDescu": 0,
+			"ventaNoSuj": 0,
+			"ventaExenta": 0,
+			"ventaGravada": 540,
+			"tributos": [
+				"20"
+			]
+		}
+	],
+	"resumen": {
+	    "totalNoSuj": 0,
+	    "totalExenta": 0,
+	    "totalGravada": 3030,
+	    "subTotalVentas": 3030,
+	    "descuNoSuj": 0,
+	    "descuExenta": 0,
+	    "descuGravada": 0,
+	    "totalDescu": 0,
+	    "tributos": [
+	      {
+	        "codigo": "20",
+	        "descripcion": "Impuesto al Valor Agregado 13%",
+	        "valor": 393.9
+	      }
+	    ],
+	    "subTotal": 3030,
+	    "ivaPerci1": 0,
+	    "ivaRete1": 0,
+	    "reteRenta": 0,
+	    "montoTotalOperacion": 3423.9,
+	    "totalLetras": "TRES MIL TRESCIENTOS NOVENTA Y TRES CON 60/100 U.S. DOLARES",
+	    "condicionOperacion": 1,
+	    "numPagoElectronico": null
+  },
+  "extension": {
+    "nombEntrega": null,
+    "docuEntrega": null,
+    "nombRecibe": null,
+    "docuRecibe": null,
+    "observaciones": null
+  },
+  "apendice": null
+}
+
+{
+	"version": 2,
+	"ambiente": "01",
+	"versionApp": 2,
+	"estado": "PROCESADO",
+	"codigoGeneracion": "41FCB399-AD52-41AC-8758-2BF5812F9555",
+	"selloRecibido": "202554E80E880B7F4667A8C67878604629B5D3AZ",
+	"fhProcesamiento": "13/06/2025 13:53:59",
+	"clasificaMsg": "10",
+	"codigoMsg": "001",
+	"descripcionMsg": "RECIBIDO",
+	"observaciones": []
+}
+
+

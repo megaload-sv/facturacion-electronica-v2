@@ -1,0 +1,164 @@
+
+{
+  "identificacion": {
+    "codigoGeneracion": "1B9094BE-B3F1-4925-B35B-36CCAE06A142",
+    "tipoContingencia": null,
+    "numeroControl": "DTE-05-M001P001-000000000000022",
+    "tipoOperacion": 1,
+    "ambiente": "01",
+    "fecEmi": "2026-05-23",
+    "tipoModelo": 1,
+    "tipoDte": "05",
+    "version": 3,
+    "tipoMoneda": "USD",
+    "motivoContin": null,
+    "horEmi": "13:30:00"
+  },
+  "emisor": {
+    "descActividad": "Transporte de carga internacional",
+    "tipoEstablecimiento": "02",
+    "codActividad": "49233",
+    "correo": "info@grupomegaload.com",
+    "nit": "06141101161042",
+    "direccion": {
+      "complemento": "POLIG. E, CTON. FLOR AMARILLA, LOTE 626 C,",
+      "municipio": "25",
+      "departamento": "05"
+    },
+    "nombreComercial": "MEGALOAD, S.A. DE C.V.",
+    "telefono": "25305293",
+    "nombre": "MEGALOAD, S.A. DE C.V.",
+    "nrc": "2473109"
+  },
+  "receptor": {
+    "nit": "06140402021029",
+    "nrc": "1389346",
+    "correo": "facturaelectronica@geocimtec.com",
+    "nombre": "GEOTECNIA CIMENTACIONES Y TÉCNICAS ESPECIALES, S.A. DE C.V.",
+    "telefono": "25003203",
+    "direccion": {
+      "complemento": "Pasaje 3, calle principal, Pol G, brisas de candelaria, lotes 15 y 16",
+      "municipio": "23",
+      "departamento": "06"
+    },
+    "codActividad": "41001",
+    "descActividad": "Construcción de edificios residenciales",
+    "nombreComercial": "GEOTECNIA CIMENTACIONES Y TÉCNICAS ESPECIALES, S.A. DE C.V."
+  },
+  "documentoRelacionado": [
+    {
+      "tipoDocumento": "03",
+      "fechaEmision": "2026-05-20",
+      "numeroDocumento": "68B0A748-8F0C-4F24-A7BB-2E7152C25AA3",
+      "tipoGeneracion": 1
+    }
+  ],
+  "resumen": {
+    "totalNoSuj": 0,
+    "ivaPerci1": 0,
+    "descuNoSuj": 0,
+    "totalLetras": "SEIS MIL OCHOCIENTOS CUARENTA Y TRES CON 28/100 U.S. DOLARES",
+    "ivaRete1": 0,
+    "subTotal": 6056,
+    "reteRenta": 0,
+    "subTotalVentas": 6056,
+    "tributos": [
+      {
+        "descripcion": "Impuesto al Valor Agregado 13%",
+        "codigo": "20",
+        "valor": 787.28
+      }
+    ],
+    "descuExenta": 0,
+    "totalDescu": 0,
+    "descuGravada": 0,
+    "totalGravada": 6056,
+    "montoTotalOperacion": 6843.28,
+    "totalExenta": 0,
+    "condicionOperacion": 2
+  },
+  "cuerpoDocumento": [
+    {
+      "codigo": null,
+      "numItem": 1,
+      "cantidad": 1,
+      "tipoItem": 2,
+      "tributos": [
+        "20"
+      ],
+      "precioUni": 600,
+      "uniMedida": 59,
+      "codTributo": null,
+      "montoDescu": 0,
+      "ventaNoSuj": 0,
+      "descripcion": "Cabezal y lowboy convencional desenganchable (Traslado de equipo hacia Zaragoza)",
+      "ventaExenta": 0,
+      "ventaGravada": 600,
+      "numeroDocumento": "68B0A748-8F0C-4F24-A7BB-2E7152C25AA3"
+    },
+    {
+      "codigo": null,
+      "numItem": 2,
+      "cantidad": 88,
+      "tipoItem": 2,
+      "tributos": [
+        "20"
+      ],
+      "precioUni": 44,
+      "uniMedida": 59,
+      "codTributo": null,
+      "montoDescu": 0,
+      "ventaNoSuj": 0,
+      "descripcion": "Man Lift 26 metros de altura - por Semana (88 horas ordinarias realizadas desde 14/04/26 hasta 30/04/26)",
+      "ventaExenta": 0,
+      "ventaGravada": 3872,
+      "numeroDocumento": "68B0A748-8F0C-4F24-A7BB-2E7152C25AA3"
+    },
+    {
+      "codigo": null,
+      "numItem": 3,
+      "cantidad": 30,
+      "tipoItem": 2,
+      "tributos": [
+        "20"
+      ],
+      "precioUni": 52.8,
+      "uniMedida": 59,
+      "codTributo": null,
+      "montoDescu": 0,
+      "ventaNoSuj": 0,
+      "descripcion": "Man Lift 26 metros de altura - por horas (30 horas extraordinarias desde 14/04/26 hasta 30/04/26)",
+      "ventaExenta": 0,
+      "ventaGravada": 1584,
+      "numeroDocumento": "68B0A748-8F0C-4F24-A7BB-2E7152C25AA3"
+    }
+  ],
+  "extension": {
+    "docuEntrega": null,
+    "observaciones": "",
+    "nombRecibe": null,
+    "nombEntrega": null,
+    "docuRecibe": null
+  },
+  "ventaTercero": null,
+  "apendice": null
+}
+
+
+eyJhbGciOiJSUzUxMiJ9.ew0KICAiaWRlbnRpZmljYWNpb24iIDogew0KICAgICJjb2RpZ29HZW5lcmFjaW9uIiA6ICIxQjkwOTRCRS1CM0YxLTQ5MjUtQjM1Qi0zNkNDQUUwNkExNDIiLA0KICAgICJ0aXBvQ29udGluZ2VuY2lhIiA6IG51bGwsDQogICAgIm51bWVyb0NvbnRyb2wiIDogIkRURS0wNS1NMDAxUDAwMS0wMDAwMDAwMDAwMDAwMjIiLA0KICAgICJ0aXBvT3BlcmFjaW9uIiA6IDEsDQogICAgImFtYmllbnRlIiA6ICIwMSIsDQogICAgImZlY0VtaSIgOiAiMjAyNi0wNS0yMyIsDQogICAgInRpcG9Nb2RlbG8iIDogMSwNCiAgICAidGlwb0R0ZSIgOiAiMDUiLA0KICAgICJ2ZXJzaW9uIiA6IDMsDQogICAgInRpcG9Nb25lZGEiIDogIlVTRCIsDQogICAgIm1vdGl2b0NvbnRpbiIgOiBudWxsLA0KICAgICJob3JFbWkiIDogIjEzOjMwOjAwIg0KICB9LA0KICAiZW1pc29yIiA6IHsNCiAgICAiZGVzY0FjdGl2aWRhZCIgOiAiVHJhbnNwb3J0ZSBkZSBjYXJnYSBpbnRlcm5hY2lvbmFsIiwNCiAgICAidGlwb0VzdGFibGVjaW1pZW50byIgOiAiMDIiLA0KICAgICJjb2RBY3RpdmlkYWQiIDogIjQ5MjMzIiwNCiAgICAiY29ycmVvIiA6ICJpbmZvQGdydXBvbWVnYWxvYWQuY29tIiwNCiAgICAibml0IiA6ICIwNjE0MTEwMTE2MTA0MiIsDQogICAgImRpcmVjY2lvbiIgOiB7DQogICAgICAiY29tcGxlbWVudG8iIDogIlBPTElHLiBFLCBDVE9OLiBGTE9SIEFNQVJJTExBLCBMT1RFIDYyNiBDLCIsDQogICAgICAibXVuaWNpcGlvIiA6ICIyNSIsDQogICAgICAiZGVwYXJ0YW1lbnRvIiA6ICIwNSINCiAgICB9LA0KICAgICJub21icmVDb21lcmNpYWwiIDogIk1FR0FMT0FELCBTLkEuIERFIEMuVi4iLA0KICAgICJ0ZWxlZm9ubyIgOiAiMjUzMDUyOTMiLA0KICAgICJub21icmUiIDogIk1FR0FMT0FELCBTLkEuIERFIEMuVi4iLA0KICAgICJucmMiIDogIjI0NzMxMDkiDQogIH0sDQogICJyZWNlcHRvciIgOiB7DQogICAgIm5pdCIgOiAiMDYxNDA0MDIwMjEwMjkiLA0KICAgICJucmMiIDogIjEzODkzNDYiLA0KICAgICJjb3JyZW8iIDogImZhY3R1cmFlbGVjdHJvbmljYUBnZW9jaW10ZWMuY29tIiwNCiAgICAibm9tYnJlIiA6ICJHRU9URUNOSUEgQ0lNRU5UQUNJT05FUyBZIFTDiUNOSUNBUyBFU1BFQ0lBTEVTLCBTLkEuIERFIEMuVi4iLA0KICAgICJ0ZWxlZm9ubyIgOiAiMjUwMDMyMDMiLA0KICAgICJkaXJlY2Npb24iIDogew0KICAgICAgImNvbXBsZW1lbnRvIiA6ICJQYXNhamUgMywgY2FsbGUgcHJpbmNpcGFsLCBQb2wgRywgYnJpc2FzIGRlIGNhbmRlbGFyaWEsIGxvdGVzIDE1IHkgMTYiLA0KICAgICAgIm11bmljaXBpbyIgOiAiMjMiLA0KICAgICAgImRlcGFydGFtZW50byIgOiAiMDYiDQogICAgfSwNCiAgICAiY29kQWN0aXZpZGFkIiA6ICI0MTAwMSIsDQogICAgImRlc2NBY3RpdmlkYWQiIDogIkNvbnN0cnVjY2nDs24gZGUgZWRpZmljaW9zIHJlc2lkZW5jaWFsZXMiLA0KICAgICJub21icmVDb21lcmNpYWwiIDogIkdFT1RFQ05JQSBDSU1FTlRBQ0lPTkVTIFkgVMOJQ05JQ0FTIEVTUEVDSUFMRVMsIFMuQS4gREUgQy5WLiINCiAgfSwNCiAgImRvY3VtZW50b1JlbGFjaW9uYWRvIiA6IFsgew0KICAgICJ0aXBvRG9jdW1lbnRvIiA6ICIwMyIsDQogICAgImZlY2hhRW1pc2lvbiIgOiAiMjAyNi0wNS0yMCIsDQogICAgIm51bWVyb0RvY3VtZW50byIgOiAiNjhCMEE3NDgtOEYwQy00RjI0LUE3QkItMkU3MTUyQzI1QUEzIiwNCiAgICAidGlwb0dlbmVyYWNpb24iIDogMQ0KICB9IF0sDQogICJyZXN1bWVuIiA6IHsNCiAgICAidG90YWxOb1N1aiIgOiAwLA0KICAgICJpdmFQZXJjaTEiIDogMCwNCiAgICAiZGVzY3VOb1N1aiIgOiAwLA0KICAgICJ0b3RhbExldHJhcyIgOiAiU0VJUyBNSUwgT0NIT0NJRU5UT1MgQ1VBUkVOVEEgWSBUUkVTIENPTiAyOC8xMDAgVS5TLiBET0xBUkVTIiwNCiAgICAiaXZhUmV0ZTEiIDogMCwNCiAgICAic3ViVG90YWwiIDogNjA1NiwNCiAgICAicmV0ZVJlbnRhIiA6IDAsDQogICAgInN1YlRvdGFsVmVudGFzIiA6IDYwNTYsDQogICAgInRyaWJ1dG9zIiA6IFsgew0KICAgICAgImRlc2NyaXBjaW9uIiA6ICJJbXB1ZXN0byBhbCBWYWxvciBBZ3JlZ2FkbyAxMyUiLA0KICAgICAgImNvZGlnbyIgOiAiMjAiLA0KICAgICAgInZhbG9yIiA6IDc4Ny4yOA0KICAgIH0gXSwNCiAgICAiZGVzY3VFeGVudGEiIDogMCwNCiAgICAidG90YWxEZXNjdSIgOiAwLA0KICAgICJkZXNjdUdyYXZhZGEiIDogMCwNCiAgICAidG90YWxHcmF2YWRhIiA6IDYwNTYsDQogICAgIm1vbnRvVG90YWxPcGVyYWNpb24iIDogNjg0My4yOCwNCiAgICAidG90YWxFeGVudGEiIDogMCwNCiAgICAiY29uZGljaW9uT3BlcmFjaW9uIiA6IDINCiAgfSwNCiAgImN1ZXJwb0RvY3VtZW50byIgOiBbIHsNCiAgICAiY29kaWdvIiA6IG51bGwsDQogICAgIm51bUl0ZW0iIDogMSwNCiAgICAiY2FudGlkYWQiIDogMSwNCiAgICAidGlwb0l0ZW0iIDogMiwNCiAgICAidHJpYnV0b3MiIDogWyAiMjAiIF0sDQogICAgInByZWNpb1VuaSIgOiA2MDAsDQogICAgInVuaU1lZGlkYSIgOiA1OSwNCiAgICAiY29kVHJpYnV0byIgOiBudWxsLA0KICAgICJtb250b0Rlc2N1IiA6IDAsDQogICAgInZlbnRhTm9TdWoiIDogMCwNCiAgICAiZGVzY3JpcGNpb24iIDogIkNhYmV6YWwgeSBsb3dib3kgY29udmVuY2lvbmFsIGRlc2VuZ2FuY2hhYmxlIChUcmFzbGFkbyBkZSBlcXVpcG8gaGFjaWEgWmFyYWdvemEpIiwNCiAgICAidmVudGFFeGVudGEiIDogMCwNCiAgICAidmVudGFHcmF2YWRhIiA6IDYwMCwNCiAgICAibnVtZXJvRG9jdW1lbnRvIiA6ICI2OEIwQTc0OC04RjBDLTRGMjQtQTdCQi0yRTcxNTJDMjVBQTMiDQogIH0sIHsNCiAgICAiY29kaWdvIiA6IG51bGwsDQogICAgIm51bUl0ZW0iIDogMiwNCiAgICAiY2FudGlkYWQiIDogODgsDQogICAgInRpcG9JdGVtIiA6IDIsDQogICAgInRyaWJ1dG9zIiA6IFsgIjIwIiBdLA0KICAgICJwcmVjaW9VbmkiIDogNDQsDQogICAgInVuaU1lZGlkYSIgOiA1OSwNCiAgICAiY29kVHJpYnV0byIgOiBudWxsLA0KICAgICJtb250b0Rlc2N1IiA6IDAsDQogICAgInZlbnRhTm9TdWoiIDogMCwNCiAgICAiZGVzY3JpcGNpb24iIDogIk1hbiBMaWZ0IDI2IG1ldHJvcyBkZSBhbHR1cmEgLSBwb3IgU2VtYW5hICg4OCBob3JhcyBvcmRpbmFyaWFzIHJlYWxpemFkYXMgZGVzZGUgMTQvMDQvMjYgaGFzdGEgMzAvMDQvMjYpIiwNCiAgICAidmVudGFFeGVudGEiIDogMCwNCiAgICAidmVudGFHcmF2YWRhIiA6IDM4NzIsDQogICAgIm51bWVyb0RvY3VtZW50byIgOiAiNjhCMEE3NDgtOEYwQy00RjI0LUE3QkItMkU3MTUyQzI1QUEzIg0KICB9LCB7DQogICAgImNvZGlnbyIgOiBudWxsLA0KICAgICJudW1JdGVtIiA6IDMsDQogICAgImNhbnRpZGFkIiA6IDMwLA0KICAgICJ0aXBvSXRlbSIgOiAyLA0KICAgICJ0cmlidXRvcyIgOiBbICIyMCIgXSwNCiAgICAicHJlY2lvVW5pIiA6IDUyLjgsDQogICAgInVuaU1lZGlkYSIgOiA1OSwNCiAgICAiY29kVHJpYnV0byIgOiBudWxsLA0KICAgICJtb250b0Rlc2N1IiA6IDAsDQogICAgInZlbnRhTm9TdWoiIDogMCwNCiAgICAiZGVzY3JpcGNpb24iIDogIk1hbiBMaWZ0IDI2IG1ldHJvcyBkZSBhbHR1cmEgLSBwb3IgaG9yYXMgKDMwIGhvcmFzIGV4dHJhb3JkaW5hcmlhcyBkZXNkZSAxNC8wNC8yNiBoYXN0YSAzMC8wNC8yNikiLA0KICAgICJ2ZW50YUV4ZW50YSIgOiAwLA0KICAgICJ2ZW50YUdyYXZhZGEiIDogMTU4NCwNCiAgICAibnVtZXJvRG9jdW1lbnRvIiA6ICI2OEIwQTc0OC04RjBDLTRGMjQtQTdCQi0yRTcxNTJDMjVBQTMiDQogIH0gXSwNCiAgImV4dGVuc2lvbiIgOiB7DQogICAgImRvY3VFbnRyZWdhIiA6IG51bGwsDQogICAgIm9ic2VydmFjaW9uZXMiIDogIiIsDQogICAgIm5vbWJSZWNpYmUiIDogbnVsbCwNCiAgICAibm9tYkVudHJlZ2EiIDogbnVsbCwNCiAgICAiZG9jdVJlY2liZSIgOiBudWxsDQogIH0sDQogICJ2ZW50YVRlcmNlcm8iIDogbnVsbCwNCiAgImFwZW5kaWNlIiA6IG51bGwNCn0.Yf67jywu8UM-EL80y1tsWG8BzBVrE2-CBcAuMHojNLCuq8oU8VHYYL2nPg0H9d3C7-0xCIfoVWQBWlZgsJa4ncwEo6lA51TIM7KAhxr0KEaGS0l6YIvO0iddfGwFe0DJmcP34JXAMxssl2RODLvj1hE-P3VT14F2Wycb8J71AOMeIPXSP7NK9-q4edGIA72fnWn37YgbBHv775Er_clFKmDcDF88jvjaBwLjGKMAl5s1Too7OLhpGdVgMdEp0yuQQzd1GSRFgYGBi4VcykpnMcxdKgIz316P_Q04Xyeo-c-klcTnFa6J54yP7EpC0NtAEekG6oF_HZBHYiyRq31F8w
+
+{
+  "version": 2,
+  "ambiente": "01",
+  "versionApp": 2,
+  "estado": "PROCESADO",
+  "codigoGeneracion": "1B9094BE-B3F1-4925-B35B-36CCAE06A142",
+  "selloRecibido": "2026249C2360050048868904ED5E952BEF67RBQE",
+  "fhProcesamiento": "28/05/2026 13:46:21",
+  "clasificaMsg": "10",
+  "codigoMsg": "002",
+  "descripcionMsg": "RECIBIDO CON OBSERVACIONES",
+  "observaciones": [
+    "[identificacion.fecEmi] DIFIERE DE LA FECHA DE ENVIO"
+  ]
+}

@@ -1,0 +1,218 @@
+Nota de credito 37
+
+{
+	"identificacion": {
+        "codigoGeneracion": "006A3FE1-3FA8-45F9-889D-56ADFCC64513",
+        "tipoContingencia": null,
+        "numeroControl": "DTE-05-M001P001-000000000000037",
+        "tipoOperacion": 1,
+        "ambiente": "01",
+        "fecEmi": "2025-12-09",
+        "tipoModelo": 1,
+        "tipoDte": "05",
+        "version": 3,
+        "tipoMoneda": "USD",
+        "motivoContin": null,
+        "horEmi": "10:00:00"
+    },
+	"emisor": {
+        "descActividad": "Transporte de carga internacional",
+        "tipoEstablecimiento": "02",
+        "codActividad": "49233",
+        "correo": "info@grupomegaload.com",
+        "nit": "06141101161042",
+        "direccion": {
+            "complemento": "POLIG. E, CTON. FLOR AMARILLA, LOTE 626 C,",
+            "municipio": "25",
+            "departamento": "05"
+        },
+        "nombreComercial": "MEGALOAD, S.A. DE C.V.",
+        "telefono": "25305293",
+        "nombre": "MEGALOAD, S.A. DE C.V.",
+        "nrc": "2473109"
+    },
+    "receptor": {
+    	"nit": "06142604231010",
+    	"nrc": "3276116",
+    	"correo": "facturacion@constructoraelsalvador.com.sv",
+    	"nombre": "CONSTRUCTORA EL SALVADOR, S.A. DE C.V.",
+    	"telefono": "78525529",
+    	"direccion": {
+            "complemento": "CALLE CIRCUNVALACION, COL. SAN BENITO, #130",
+            "municipio": "23",
+            "departamento": "06"
+        },        
+        "codActividad": "42900",
+        "descActividad": "Construcción de obras de ingeniería civil n.c.p.",
+        "nombreComercial": "CONSTRUCTORA EL SALVADOR, S.A. DE C.V."
+    },
+    "documentoRelacionado": [
+        {
+            "tipoDocumento": "03",
+            "fechaEmision": "2025-12-04",
+            "numeroDocumento": "E8C9ED61-DD24-4EFA-B3DC-2136A26AB748",
+            "tipoGeneracion": 1
+        }
+    ],    
+    "resumen": {
+        "totalNoSuj": 0,
+        "ivaPerci1": 0,
+        "descuNoSuj": 0,
+        "totalLetras": "SIETE MIL CUATROCIENTOS TRES CON 76/100 U.S. DOLARES",
+        "ivaRete1": 0,
+        "subTotal": 6552,
+        "reteRenta": 0,
+        "subTotalVentas": 6552,
+        "tributos": [
+            {
+                "descripcion": "Impuesto al Valor Agregado 13%",
+                "codigo": "20",
+                "valor": 851.76
+            }
+        ],
+        "descuExenta": 0,
+        "totalDescu": 0,
+        "descuGravada": 0,
+        "totalGravada": 6552,
+        "montoTotalOperacion": 7403.76,
+        "totalExenta": 0,
+        "condicionOperacion": 1
+    },
+    "cuerpoDocumento": [
+    	{
+            "codigo": null,
+            "numItem": 1,
+            "cantidad": 1,
+            "tipoItem": 2,
+            "tributos": [
+                "20"
+            ],
+            "precioUni": 600,
+            "uniMedida": 59,
+            "codTributo": null,
+            "montoDescu": 0,
+            "ventaNoSuj": 0,
+            "descripcion": "Grúa telescópica de 50 tons - transporte ida y regreso (Traslado de Grúa hacia Proyecto Hospital Rosales San Salvador.)",
+            "ventaExenta": 0,
+            "ventaGravada": 600,
+            "numeroDocumento": "E8C9ED61-DD24-4EFA-B3DC-2136A26AB748"
+        },
+        {
+            "codigo": null,
+            "numItem": 2,
+            "cantidad": 8,
+            "tipoItem": 2,
+            "tributos": [
+                "20"
+            ],
+            "precioUni": 108,
+            "uniMedida": 59,
+            "codTributo": null,
+            "montoDescu": 0,
+            "ventaNoSuj": 0,
+            "descripcion": "Grúa telescópica de 50 tons - por hora (Servicio de Grúa en Horario Nocturno.)",
+            "ventaExenta": 0,
+            "ventaGravada": 864,
+            "numeroDocumento": "E8C9ED61-DD24-4EFA-B3DC-2136A26AB748"
+        },
+        {
+            "codigo": null,
+            "numItem": 3,
+            "cantidad": 2,
+            "tipoItem": 2,
+            "tributos": [
+                "20"
+            ],
+            "precioUni": 400,
+            "uniMedida": 59,
+            "codTributo": null,
+            "montoDescu": 0,
+            "ventaNoSuj": 0,
+            "descripcion": "Cabezal y plataforma - Por viaje. (Movimiento de 4 Transformadores en Hospital Rosales Internamente.)",
+            "ventaExenta": 0,
+            "ventaGravada": 800,
+            "numeroDocumento": "E8C9ED61-DD24-4EFA-B3DC-2136A26AB748"
+        },
+        {
+            "codigo": null,
+            "numItem": 4,
+            "cantidad": 1,
+            "tipoItem": 2,
+            "tributos": [
+                "20"
+            ],
+            "precioUni": 1200,
+            "uniMedida": 59,
+            "codTributo": null,
+            "montoDescu": 0,
+            "ventaNoSuj": 0,
+            "descripcion": "Grúa telescópica de 100 tons - transporte ida y regreso (Traslado de Grúa hacia Proyecto Hospital Rosales San Salvador.)",
+            "ventaExenta": 0,
+            "ventaGravada": 1200,
+            "numeroDocumento": "E8C9ED61-DD24-4EFA-B3DC-2136A26AB748"
+        },
+        {
+            "codigo": null,
+            "numItem": 5,
+            "cantidad": 1,
+            "tipoItem": 2,
+            "tributos": [
+                "20"
+            ],
+            "precioUni": 2688,
+            "uniMedida": 59,
+            "codTributo": null,
+            "montoDescu": 0,
+            "ventaNoSuj": 0,
+            "descripcion": "Grúa telescópica de 100 tons - por día (Servicio de Grúa en Horario Nocturno.)",
+            "ventaExenta": 0,
+            "ventaGravada": 2688,
+            "numeroDocumento": "E8C9ED61-DD24-4EFA-B3DC-2136A26AB748"
+        },
+        {
+            "codigo": null,
+            "numItem": 6,
+            "cantidad": 1,
+            "tipoItem": 2,
+            "tributos": [
+                "20"
+            ],
+            "precioUni": 400,
+            "uniMedida": 59,
+            "codTributo": null,
+            "montoDescu": 0,
+            "ventaNoSuj": 0,
+            "descripcion": "Cabezal y plataforma - Por viaje. (Traslado de contrapeso de plantel hacia Hospital Rosales.)",
+            "ventaExenta": 0,
+            "ventaGravada": 400,
+            "numeroDocumento": "E8C9ED61-DD24-4EFA-B3DC-2136A26AB748"
+        }
+    ],
+    "extension": {
+        "docuEntrega": null,
+        "observaciones": null,
+        "nombRecibe": null,
+        "nombEntrega": null,
+        "docuRecibe": null
+    },
+    "ventaTercero": null,
+    "apendice": null
+}
+
+
+eyJhbGciOiJSUzUxMiJ9.ew0KICAiaWRlbnRpZmljYWNpb24iIDogew0KICAgICJjb2RpZ29HZW5lcmFjaW9uIiA6ICIwMDZBM0ZFMS0zRkE4LTQ1RjktODg5RC01NkFERkNDNjQ1MTMiLA0KICAgICJ0aXBvQ29udGluZ2VuY2lhIiA6IG51bGwsDQogICAgIm51bWVyb0NvbnRyb2wiIDogIkRURS0wNS1NMDAxUDAwMS0wMDAwMDAwMDAwMDAwMzciLA0KICAgICJ0aXBvT3BlcmFjaW9uIiA6IDEsDQogICAgImFtYmllbnRlIiA6ICIwMSIsDQogICAgImZlY0VtaSIgOiAiMjAyNS0xMi0wOSIsDQogICAgInRpcG9Nb2RlbG8iIDogMSwNCiAgICAidGlwb0R0ZSIgOiAiMDUiLA0KICAgICJ2ZXJzaW9uIiA6IDMsDQogICAgInRpcG9Nb25lZGEiIDogIlVTRCIsDQogICAgIm1vdGl2b0NvbnRpbiIgOiBudWxsLA0KICAgICJob3JFbWkiIDogIjEwOjAwOjAwIg0KICB9LA0KICAiZW1pc29yIiA6IHsNCiAgICAiZGVzY0FjdGl2aWRhZCIgOiAiVHJhbnNwb3J0ZSBkZSBjYXJnYSBpbnRlcm5hY2lvbmFsIiwNCiAgICAidGlwb0VzdGFibGVjaW1pZW50byIgOiAiMDIiLA0KICAgICJjb2RBY3RpdmlkYWQiIDogIjQ5MjMzIiwNCiAgICAiY29ycmVvIiA6ICJpbmZvQGdydXBvbWVnYWxvYWQuY29tIiwNCiAgICAibml0IiA6ICIwNjE0MTEwMTE2MTA0MiIsDQogICAgImRpcmVjY2lvbiIgOiB7DQogICAgICAiY29tcGxlbWVudG8iIDogIlBPTElHLiBFLCBDVE9OLiBGTE9SIEFNQVJJTExBLCBMT1RFIDYyNiBDLCIsDQogICAgICAibXVuaWNpcGlvIiA6ICIyNSIsDQogICAgICAiZGVwYXJ0YW1lbnRvIiA6ICIwNSINCiAgICB9LA0KICAgICJub21icmVDb21lcmNpYWwiIDogIk1FR0FMT0FELCBTLkEuIERFIEMuVi4iLA0KICAgICJ0ZWxlZm9ubyIgOiAiMjUzMDUyOTMiLA0KICAgICJub21icmUiIDogIk1FR0FMT0FELCBTLkEuIERFIEMuVi4iLA0KICAgICJucmMiIDogIjI0NzMxMDkiDQogIH0sDQogICJyZWNlcHRvciIgOiB7DQogICAgIm5pdCIgOiAiMDYxNDI2MDQyMzEwMTAiLA0KICAgICJucmMiIDogIjMyNzYxMTYiLA0KICAgICJjb3JyZW8iIDogImZhY3R1cmFjaW9uQGNvbnN0cnVjdG9yYWVsc2FsdmFkb3IuY29tLnN2IiwNCiAgICAibm9tYnJlIiA6ICJDT05TVFJVQ1RPUkEgRUwgU0FMVkFET1IsIFMuQS4gREUgQy5WLiIsDQogICAgInRlbGVmb25vIiA6ICI3ODUyNTUyOSIsDQogICAgImRpcmVjY2lvbiIgOiB7DQogICAgICAiY29tcGxlbWVudG8iIDogIkNBTExFIENJUkNVTlZBTEFDSU9OLCBDT0wuIFNBTiBCRU5JVE8sICMxMzAiLA0KICAgICAgIm11bmljaXBpbyIgOiAiMjMiLA0KICAgICAgImRlcGFydGFtZW50byIgOiAiMDYiDQogICAgfSwNCiAgICAiY29kQWN0aXZpZGFkIiA6ICI0MjkwMCIsDQogICAgImRlc2NBY3RpdmlkYWQiIDogIkNvbnN0cnVjY2nDs24gZGUgb2JyYXMgZGUgaW5nZW5pZXLDrWEgY2l2aWwgbi5jLnAuIiwNCiAgICAibm9tYnJlQ29tZXJjaWFsIiA6ICJDT05TVFJVQ1RPUkEgRUwgU0FMVkFET1IsIFMuQS4gREUgQy5WLiINCiAgfSwNCiAgImRvY3VtZW50b1JlbGFjaW9uYWRvIiA6IFsgew0KICAgICJ0aXBvRG9jdW1lbnRvIiA6ICIwMyIsDQogICAgImZlY2hhRW1pc2lvbiIgOiAiMjAyNS0xMi0wNCIsDQogICAgIm51bWVyb0RvY3VtZW50byIgOiAiRThDOUVENjEtREQyNC00RUZBLUIzREMtMjEzNkEyNkFCNzQ4IiwNCiAgICAidGlwb0dlbmVyYWNpb24iIDogMQ0KICB9IF0sDQogICJyZXN1bWVuIiA6IHsNCiAgICAidG90YWxOb1N1aiIgOiAwLA0KICAgICJpdmFQZXJjaTEiIDogMCwNCiAgICAiZGVzY3VOb1N1aiIgOiAwLA0KICAgICJ0b3RhbExldHJhcyIgOiAiU0lFVEUgTUlMIENVQVRST0NJRU5UT1MgVFJFUyBDT04gNzYvMTAwIFUuUy4gRE9MQVJFUyIsDQogICAgIml2YVJldGUxIiA6IDAsDQogICAgInN1YlRvdGFsIiA6IDY1NTIsDQogICAgInJldGVSZW50YSIgOiAwLA0KICAgICJzdWJUb3RhbFZlbnRhcyIgOiA2NTUyLA0KICAgICJ0cmlidXRvcyIgOiBbIHsNCiAgICAgICJkZXNjcmlwY2lvbiIgOiAiSW1wdWVzdG8gYWwgVmFsb3IgQWdyZWdhZG8gMTMlIiwNCiAgICAgICJjb2RpZ28iIDogIjIwIiwNCiAgICAgICJ2YWxvciIgOiA4NTEuNzYNCiAgICB9IF0sDQogICAgImRlc2N1RXhlbnRhIiA6IDAsDQogICAgInRvdGFsRGVzY3UiIDogMCwNCiAgICAiZGVzY3VHcmF2YWRhIiA6IDAsDQogICAgInRvdGFsR3JhdmFkYSIgOiA2NTUyLA0KICAgICJtb250b1RvdGFsT3BlcmFjaW9uIiA6IDc0MDMuNzYsDQogICAgInRvdGFsRXhlbnRhIiA6IDAsDQogICAgImNvbmRpY2lvbk9wZXJhY2lvbiIgOiAxDQogIH0sDQogICJjdWVycG9Eb2N1bWVudG8iIDogWyB7DQogICAgImNvZGlnbyIgOiBudWxsLA0KICAgICJudW1JdGVtIiA6IDEsDQogICAgImNhbnRpZGFkIiA6IDEsDQogICAgInRpcG9JdGVtIiA6IDIsDQogICAgInRyaWJ1dG9zIiA6IFsgIjIwIiBdLA0KICAgICJwcmVjaW9VbmkiIDogNjAwLA0KICAgICJ1bmlNZWRpZGEiIDogNTksDQogICAgImNvZFRyaWJ1dG8iIDogbnVsbCwNCiAgICAibW9udG9EZXNjdSIgOiAwLA0KICAgICJ2ZW50YU5vU3VqIiA6IDAsDQogICAgImRlc2NyaXBjaW9uIiA6ICJHcsO6YSB0ZWxlc2PDs3BpY2EgZGUgNTAgdG9ucyAtIHRyYW5zcG9ydGUgaWRhIHkgcmVncmVzbyAoVHJhc2xhZG8gZGUgR3LDumEgaGFjaWEgUHJveWVjdG8gSG9zcGl0YWwgUm9zYWxlcyBTYW4gU2FsdmFkb3IuKSIsDQogICAgInZlbnRhRXhlbnRhIiA6IDAsDQogICAgInZlbnRhR3JhdmFkYSIgOiA2MDAsDQogICAgIm51bWVyb0RvY3VtZW50byIgOiAiRThDOUVENjEtREQyNC00RUZBLUIzREMtMjEzNkEyNkFCNzQ4Ig0KICB9LCB7DQogICAgImNvZGlnbyIgOiBudWxsLA0KICAgICJudW1JdGVtIiA6IDIsDQogICAgImNhbnRpZGFkIiA6IDgsDQogICAgInRpcG9JdGVtIiA6IDIsDQogICAgInRyaWJ1dG9zIiA6IFsgIjIwIiBdLA0KICAgICJwcmVjaW9VbmkiIDogMTA4LA0KICAgICJ1bmlNZWRpZGEiIDogNTksDQogICAgImNvZFRyaWJ1dG8iIDogbnVsbCwNCiAgICAibW9udG9EZXNjdSIgOiAwLA0KICAgICJ2ZW50YU5vU3VqIiA6IDAsDQogICAgImRlc2NyaXBjaW9uIiA6ICJHcsO6YSB0ZWxlc2PDs3BpY2EgZGUgNTAgdG9ucyAtIHBvciBob3JhIChTZXJ2aWNpbyBkZSBHcsO6YSBlbiBIb3JhcmlvIE5vY3R1cm5vLikiLA0KICAgICJ2ZW50YUV4ZW50YSIgOiAwLA0KICAgICJ2ZW50YUdyYXZhZGEiIDogODY0LA0KICAgICJudW1lcm9Eb2N1bWVudG8iIDogIkU4QzlFRDYxLUREMjQtNEVGQS1CM0RDLTIxMzZBMjZBQjc0OCINCiAgfSwgew0KICAgICJjb2RpZ28iIDogbnVsbCwNCiAgICAibnVtSXRlbSIgOiAzLA0KICAgICJjYW50aWRhZCIgOiAyLA0KICAgICJ0aXBvSXRlbSIgOiAyLA0KICAgICJ0cmlidXRvcyIgOiBbICIyMCIgXSwNCiAgICAicHJlY2lvVW5pIiA6IDQwMCwNCiAgICAidW5pTWVkaWRhIiA6IDU5LA0KICAgICJjb2RUcmlidXRvIiA6IG51bGwsDQogICAgIm1vbnRvRGVzY3UiIDogMCwNCiAgICAidmVudGFOb1N1aiIgOiAwLA0KICAgICJkZXNjcmlwY2lvbiIgOiAiQ2FiZXphbCB5IHBsYXRhZm9ybWEgLSBQb3IgdmlhamUuIChNb3ZpbWllbnRvIGRlIDQgVHJhbnNmb3JtYWRvcmVzIGVuIEhvc3BpdGFsIFJvc2FsZXMgSW50ZXJuYW1lbnRlLikiLA0KICAgICJ2ZW50YUV4ZW50YSIgOiAwLA0KICAgICJ2ZW50YUdyYXZhZGEiIDogODAwLA0KICAgICJudW1lcm9Eb2N1bWVudG8iIDogIkU4QzlFRDYxLUREMjQtNEVGQS1CM0RDLTIxMzZBMjZBQjc0OCINCiAgfSwgew0KICAgICJjb2RpZ28iIDogbnVsbCwNCiAgICAibnVtSXRlbSIgOiA0LA0KICAgICJjYW50aWRhZCIgOiAxLA0KICAgICJ0aXBvSXRlbSIgOiAyLA0KICAgICJ0cmlidXRvcyIgOiBbICIyMCIgXSwNCiAgICAicHJlY2lvVW5pIiA6IDEyMDAsDQogICAgInVuaU1lZGlkYSIgOiA1OSwNCiAgICAiY29kVHJpYnV0byIgOiBudWxsLA0KICAgICJtb250b0Rlc2N1IiA6IDAsDQogICAgInZlbnRhTm9TdWoiIDogMCwNCiAgICAiZGVzY3JpcGNpb24iIDogIkdyw7phIHRlbGVzY8OzcGljYSBkZSAxMDAgdG9ucyAtIHRyYW5zcG9ydGUgaWRhIHkgcmVncmVzbyAoVHJhc2xhZG8gZGUgR3LDumEgaGFjaWEgUHJveWVjdG8gSG9zcGl0YWwgUm9zYWxlcyBTYW4gU2FsdmFkb3IuKSIsDQogICAgInZlbnRhRXhlbnRhIiA6IDAsDQogICAgInZlbnRhR3JhdmFkYSIgOiAxMjAwLA0KICAgICJudW1lcm9Eb2N1bWVudG8iIDogIkU4QzlFRDYxLUREMjQtNEVGQS1CM0RDLTIxMzZBMjZBQjc0OCINCiAgfSwgew0KICAgICJjb2RpZ28iIDogbnVsbCwNCiAgICAibnVtSXRlbSIgOiA1LA0KICAgICJjYW50aWRhZCIgOiAxLA0KICAgICJ0aXBvSXRlbSIgOiAyLA0KICAgICJ0cmlidXRvcyIgOiBbICIyMCIgXSwNCiAgICAicHJlY2lvVW5pIiA6IDI2ODgsDQogICAgInVuaU1lZGlkYSIgOiA1OSwNCiAgICAiY29kVHJpYnV0byIgOiBudWxsLA0KICAgICJtb250b0Rlc2N1IiA6IDAsDQogICAgInZlbnRhTm9TdWoiIDogMCwNCiAgICAiZGVzY3JpcGNpb24iIDogIkdyw7phIHRlbGVzY8OzcGljYSBkZSAxMDAgdG9ucyAtIHBvciBkw61hIChTZXJ2aWNpbyBkZSBHcsO6YSBlbiBIb3JhcmlvIE5vY3R1cm5vLikiLA0KICAgICJ2ZW50YUV4ZW50YSIgOiAwLA0KICAgICJ2ZW50YUdyYXZhZGEiIDogMjY4OCwNCiAgICAibnVtZXJvRG9jdW1lbnRvIiA6ICJFOEM5RUQ2MS1ERDI0LTRFRkEtQjNEQy0yMTM2QTI2QUI3NDgiDQogIH0sIHsNCiAgICAiY29kaWdvIiA6IG51bGwsDQogICAgIm51bUl0ZW0iIDogNiwNCiAgICAiY2FudGlkYWQiIDogMSwNCiAgICAidGlwb0l0ZW0iIDogMiwNCiAgICAidHJpYnV0b3MiIDogWyAiMjAiIF0sDQogICAgInByZWNpb1VuaSIgOiA0MDAsDQogICAgInVuaU1lZGlkYSIgOiA1OSwNCiAgICAiY29kVHJpYnV0byIgOiBudWxsLA0KICAgICJtb250b0Rlc2N1IiA6IDAsDQogICAgInZlbnRhTm9TdWoiIDogMCwNCiAgICAiZGVzY3JpcGNpb24iIDogIkNhYmV6YWwgeSBwbGF0YWZvcm1hIC0gUG9yIHZpYWplLiAoVHJhc2xhZG8gZGUgY29udHJhcGVzbyBkZSBwbGFudGVsIGhhY2lhIEhvc3BpdGFsIFJvc2FsZXMuKSIsDQogICAgInZlbnRhRXhlbnRhIiA6IDAsDQogICAgInZlbnRhR3JhdmFkYSIgOiA0MDAsDQogICAgIm51bWVyb0RvY3VtZW50byIgOiAiRThDOUVENjEtREQyNC00RUZBLUIzREMtMjEzNkEyNkFCNzQ4Ig0KICB9IF0sDQogICJleHRlbnNpb24iIDogew0KICAgICJkb2N1RW50cmVnYSIgOiBudWxsLA0KICAgICJvYnNlcnZhY2lvbmVzIiA6IG51bGwsDQogICAgIm5vbWJSZWNpYmUiIDogbnVsbCwNCiAgICAibm9tYkVudHJlZ2EiIDogbnVsbCwNCiAgICAiZG9jdVJlY2liZSIgOiBudWxsDQogIH0sDQogICJ2ZW50YVRlcmNlcm8iIDogbnVsbCwNCiAgImFwZW5kaWNlIiA6IG51bGwNCn0.v_HKi1cMeWZ6EcGgpFsQQEG7XLxeUbeq0nulioAO2l9VSUx9nEzs6rYVbhQg_ngGQoqUBEwwCAXVNZFcK3V5I1bWqfBcggQ-q0wwILLNyoh075Im7EZmsAMnETisJny3Av4ZhkToV-OGqllAtpZHGBb0BZ5JUErLsrZkXwhRQNlByyRGAxKGQnI2ltWxSGLcLvZQCE70-00BLsJVpajyDwr3ihkwSLhdC6Mh-EzDuxNDHC0wL9ni7T8g9NUo5WDPd9oFoCQkiiduYn5W7rTuN-bcCK-lsMsUh42BDJ0drTYbAI4K1HGG1bDTwvWT4nVtMA5g07iXQwRqIJT4XMCFcg
+
+
+{
+    "version": 2,
+    "ambiente": "01",
+    "versionApp": 2,
+    "estado": "PROCESADO",
+    "codigoGeneracion": "006A3FE1-3FA8-45F9-889D-56ADFCC64513",
+    "selloRecibido": "202512C9E805797B4012B23F6796F1B376179JKX",
+    "fhProcesamiento": "09/12/2025 23:20:15",
+    "clasificaMsg": "10",
+    "codigoMsg": "001",
+    "descripcionMsg": "RECIBIDO",
+    "observaciones": []
+}

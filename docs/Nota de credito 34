@@ -1,0 +1,129 @@
+Nota de credito 34
+
+
+
+{
+	"identificacion": {
+        "codigoGeneracion": "62C9EEDB-CF87-4786-ABA3-9AA3F4446731",
+        "tipoContingencia": null,
+        "numeroControl": "DTE-05-M001P001-000000000000034",
+        "tipoOperacion": 1,
+        "ambiente": "01",
+        "fecEmi": "2025-12-10",
+        "tipoModelo": 1,
+        "tipoDte": "05",
+        "version": 3,
+        "tipoMoneda": "USD",
+        "motivoContin": null,
+        "horEmi": "08:02:00"
+    },
+	"emisor": {
+        "descActividad": "Transporte de carga internacional",
+        "tipoEstablecimiento": "02",
+        "codActividad": "49233",
+        "correo": "info@grupomegaload.com",
+        "nit": "06141101161042",
+        "direccion": {
+            "complemento": "POLIG. E, CTON. FLOR AMARILLA, LOTE 626 C,",
+            "municipio": "25",
+            "departamento": "05"
+        },
+        "nombreComercial": "MEGALOAD, S.A. DE C.V.",
+        "telefono": "25305293",
+        "nombre": "MEGALOAD, S.A. DE C.V.",
+        "nrc": "2473109"
+    },
+    "receptor": {
+    	"nit": "06143011211027",
+    	"nrc": "3090628",
+    	"correo": "facturas@pec-sv.com",
+    	"nombre": "POTENCIA Y ENERGIA CORP., S.A. DE C.V.",
+    	"telefono": "25007800",
+    	"direccion": {
+            "complemento": "COL ESCALON PASEO GENERAL ESCALON EDIF 5457 SAN SALVADOR",
+            "municipio": "23",
+            "departamento": "06"
+        },        
+        "codActividad": "35101",
+        "descActividad": "Generación de energía eléctrica",
+        "nombreComercial": "POTENCIA Y ENERGIA CORP., S.A. DE C.V."
+    },
+    "documentoRelacionado": [
+        {
+            "tipoDocumento": "03",
+            "fechaEmision": "2025-11-17",
+            "numeroDocumento": "AF83A7E3-2A3F-4BAC-B368-F5CEB4A41DC5",
+            "tipoGeneracion": 1
+        }
+    ],    
+    "resumen": {
+        "totalNoSuj": 0,
+        "ivaPerci1": 0,
+        "descuNoSuj": 0,
+        "totalLetras": "SEISCIENTOS OCHENTA Y SEIS 48/100",
+        "ivaRete1": 0,
+        "subTotal": 607.50,
+        "reteRenta": 0,
+        "subTotalVentas": 607.50,
+        "tributos": [
+            {
+                "descripcion": "Impuesto al Valor Agregado 13%",
+                "codigo": "20",
+                "valor": 78.98
+            }
+        ],
+        "descuExenta": 0,
+        "totalDescu": 0,
+        "descuGravada": 0,
+        "totalGravada": 607.50,
+        "montoTotalOperacion": 686.48,
+        "totalExenta": 0,
+        "condicionOperacion": 1
+    },
+    "cuerpoDocumento": [
+    	{
+            "codigo": null,
+            "numItem": 1,
+            "cantidad": 1,
+            "tipoItem": 2,
+            "tributos": [
+                "20"
+            ],
+            "precioUni": 607.50,
+            "uniMedida": 59,
+            "codTributo": null,
+            "montoDescu": 0,
+            "ventaNoSuj": 0,
+            "descripcion": "Grúa telescópica de 150 tons - por día (Servicio de Grúa 8 hrs mínimas. $486 por hora extraordinaria.)",
+            "ventaExenta": 0,
+            "ventaGravada": 607.50,
+            "numeroDocumento": "AF83A7E3-2A3F-4BAC-B368-F5CEB4A41DC5"
+        }      
+    ],
+    "extension": {
+        "docuEntrega": null,
+        "observaciones": null,
+        "nombRecibe": null,
+        "nombEntrega": null,
+        "docuRecibe": null
+    },
+    "ventaTercero": null,
+    "apendice": null
+}
+
+eyJhbGciOiJSUzUxMiJ9.ew0KICAiaWRlbnRpZmljYWNpb24iIDogew0KICAgICJjb2RpZ29HZW5lcmFjaW9uIiA6ICI2MkM5RUVEQi1DRjg3LTQ3ODYtQUJBMy05QUEzRjQ0NDY3MzEiLA0KICAgICJ0aXBvQ29udGluZ2VuY2lhIiA6IG51bGwsDQogICAgIm51bWVyb0NvbnRyb2wiIDogIkRURS0wNS1NMDAxUDAwMS0wMDAwMDAwMDAwMDAwMzQiLA0KICAgICJ0aXBvT3BlcmFjaW9uIiA6IDEsDQogICAgImFtYmllbnRlIiA6ICIwMSIsDQogICAgImZlY0VtaSIgOiAiMjAyNS0xMi0xMCIsDQogICAgInRpcG9Nb2RlbG8iIDogMSwNCiAgICAidGlwb0R0ZSIgOiAiMDUiLA0KICAgICJ2ZXJzaW9uIiA6IDMsDQogICAgInRpcG9Nb25lZGEiIDogIlVTRCIsDQogICAgIm1vdGl2b0NvbnRpbiIgOiBudWxsLA0KICAgICJob3JFbWkiIDogIjA4OjAyOjAwIg0KICB9LA0KICAiZW1pc29yIiA6IHsNCiAgICAiZGVzY0FjdGl2aWRhZCIgOiAiVHJhbnNwb3J0ZSBkZSBjYXJnYSBpbnRlcm5hY2lvbmFsIiwNCiAgICAidGlwb0VzdGFibGVjaW1pZW50byIgOiAiMDIiLA0KICAgICJjb2RBY3RpdmlkYWQiIDogIjQ5MjMzIiwNCiAgICAiY29ycmVvIiA6ICJpbmZvQGdydXBvbWVnYWxvYWQuY29tIiwNCiAgICAibml0IiA6ICIwNjE0MTEwMTE2MTA0MiIsDQogICAgImRpcmVjY2lvbiIgOiB7DQogICAgICAiY29tcGxlbWVudG8iIDogIlBPTElHLiBFLCBDVE9OLiBGTE9SIEFNQVJJTExBLCBMT1RFIDYyNiBDLCIsDQogICAgICAibXVuaWNpcGlvIiA6ICIyNSIsDQogICAgICAiZGVwYXJ0YW1lbnRvIiA6ICIwNSINCiAgICB9LA0KICAgICJub21icmVDb21lcmNpYWwiIDogIk1FR0FMT0FELCBTLkEuIERFIEMuVi4iLA0KICAgICJ0ZWxlZm9ubyIgOiAiMjUzMDUyOTMiLA0KICAgICJub21icmUiIDogIk1FR0FMT0FELCBTLkEuIERFIEMuVi4iLA0KICAgICJucmMiIDogIjI0NzMxMDkiDQogIH0sDQogICJyZWNlcHRvciIgOiB7DQogICAgIm5pdCIgOiAiMDYxNDMwMTEyMTEwMjciLA0KICAgICJucmMiIDogIjMwOTA2MjgiLA0KICAgICJjb3JyZW8iIDogImZhY3R1cmFzQHBlYy1zdi5jb20iLA0KICAgICJub21icmUiIDogIlBPVEVOQ0lBIFkgRU5FUkdJQSBDT1JQLiwgUy5BLiBERSBDLlYuIiwNCiAgICAidGVsZWZvbm8iIDogIjI1MDA3ODAwIiwNCiAgICAiZGlyZWNjaW9uIiA6IHsNCiAgICAgICJjb21wbGVtZW50byIgOiAiQ09MIEVTQ0FMT04gUEFTRU8gR0VORVJBTCBFU0NBTE9OIEVESUYgNTQ1NyBTQU4gU0FMVkFET1IiLA0KICAgICAgIm11bmljaXBpbyIgOiAiMjMiLA0KICAgICAgImRlcGFydGFtZW50byIgOiAiMDYiDQogICAgfSwNCiAgICAiY29kQWN0aXZpZGFkIiA6ICIzNTEwMSIsDQogICAgImRlc2NBY3RpdmlkYWQiIDogIkdlbmVyYWNpw7NuIGRlIGVuZXJnw61hIGVsw6ljdHJpY2EiLA0KICAgICJub21icmVDb21lcmNpYWwiIDogIlBPVEVOQ0lBIFkgRU5FUkdJQSBDT1JQLiwgUy5BLiBERSBDLlYuIg0KICB9LA0KICAiZG9jdW1lbnRvUmVsYWNpb25hZG8iIDogWyB7DQogICAgInRpcG9Eb2N1bWVudG8iIDogIjAzIiwNCiAgICAiZmVjaGFFbWlzaW9uIiA6ICIyMDI1LTExLTE3IiwNCiAgICAibnVtZXJvRG9jdW1lbnRvIiA6ICJBRjgzQTdFMy0yQTNGLTRCQUMtQjM2OC1GNUNFQjRBNDFEQzUiLA0KICAgICJ0aXBvR2VuZXJhY2lvbiIgOiAxDQogIH0gXSwNCiAgInJlc3VtZW4iIDogew0KICAgICJ0b3RhbE5vU3VqIiA6IDAsDQogICAgIml2YVBlcmNpMSIgOiAwLA0KICAgICJkZXNjdU5vU3VqIiA6IDAsDQogICAgInRvdGFsTGV0cmFzIiA6ICJTRUlTQ0lFTlRPUyBPQ0hFTlRBIFkgU0VJUyA0OC8xMDAiLA0KICAgICJpdmFSZXRlMSIgOiAwLA0KICAgICJzdWJUb3RhbCIgOiA2MDcuNSwNCiAgICAicmV0ZVJlbnRhIiA6IDAsDQogICAgInN1YlRvdGFsVmVudGFzIiA6IDYwNy41LA0KICAgICJ0cmlidXRvcyIgOiBbIHsNCiAgICAgICJkZXNjcmlwY2lvbiIgOiAiSW1wdWVzdG8gYWwgVmFsb3IgQWdyZWdhZG8gMTMlIiwNCiAgICAgICJjb2RpZ28iIDogIjIwIiwNCiAgICAgICJ2YWxvciIgOiA3OC45OA0KICAgIH0gXSwNCiAgICAiZGVzY3VFeGVudGEiIDogMCwNCiAgICAidG90YWxEZXNjdSIgOiAwLA0KICAgICJkZXNjdUdyYXZhZGEiIDogMCwNCiAgICAidG90YWxHcmF2YWRhIiA6IDYwNy41LA0KICAgICJtb250b1RvdGFsT3BlcmFjaW9uIiA6IDY4Ni40OCwNCiAgICAidG90YWxFeGVudGEiIDogMCwNCiAgICAiY29uZGljaW9uT3BlcmFjaW9uIiA6IDENCiAgfSwNCiAgImN1ZXJwb0RvY3VtZW50byIgOiBbIHsNCiAgICAiY29kaWdvIiA6IG51bGwsDQogICAgIm51bUl0ZW0iIDogMSwNCiAgICAiY2FudGlkYWQiIDogMSwNCiAgICAidGlwb0l0ZW0iIDogMiwNCiAgICAidHJpYnV0b3MiIDogWyAiMjAiIF0sDQogICAgInByZWNpb1VuaSIgOiA2MDcuNSwNCiAgICAidW5pTWVkaWRhIiA6IDU5LA0KICAgICJjb2RUcmlidXRvIiA6IG51bGwsDQogICAgIm1vbnRvRGVzY3UiIDogMCwNCiAgICAidmVudGFOb1N1aiIgOiAwLA0KICAgICJkZXNjcmlwY2lvbiIgOiAiR3LDumEgdGVsZXNjw7NwaWNhIGRlIDE1MCB0b25zIC0gcG9yIGTDrWEgKFNlcnZpY2lvIGRlIEdyw7phIDggaHJzIG3DrW5pbWFzLiAkNDg2IHBvciBob3JhIGV4dHJhb3JkaW5hcmlhLikiLA0KICAgICJ2ZW50YUV4ZW50YSIgOiAwLA0KICAgICJ2ZW50YUdyYXZhZGEiIDogNjA3LjUsDQogICAgIm51bWVyb0RvY3VtZW50byIgOiAiQUY4M0E3RTMtMkEzRi00QkFDLUIzNjgtRjVDRUI0QTQxREM1Ig0KICB9IF0sDQogICJleHRlbnNpb24iIDogew0KICAgICJkb2N1RW50cmVnYSIgOiBudWxsLA0KICAgICJvYnNlcnZhY2lvbmVzIiA6IG51bGwsDQogICAgIm5vbWJSZWNpYmUiIDogbnVsbCwNCiAgICAibm9tYkVudHJlZ2EiIDogbnVsbCwNCiAgICAiZG9jdVJlY2liZSIgOiBudWxsDQogIH0sDQogICJ2ZW50YVRlcmNlcm8iIDogbnVsbCwNCiAgImFwZW5kaWNlIiA6IG51bGwNCn0.DcfVb2OIuclkKHl8sNdmCfhcCrBiQg7SvJvrurC-93x0aEae_U6OjERQ7AOMIty5tALfXzKUfIwSgYiyDNfgNJGyehGeEmAWiLrZrWEy-ytTrQHfZU4mKh24yytyOg6fK8UnhEgC-o3j7PFCvQGHzJ99vlBoykS2oriDGRjyVuuY_uBIk85u-YujIzFg43k7x6pQL9ztQzWivrgEbKqedzw-qho0xQhgPRWBVV6ELCOgh1bQBsED65M1ghBNiYRgPrbOA1zdMum9dZN1l08Zz9phUfdSaGFGiJwCmLaBO5Pm6JiakoHABMNAcM4Zyv7HZDpOTP7epeLf83SocWfLDQ
+
+
+{
+    "version": 2,
+    "ambiente": "01",
+    "versionApp": 2,
+    "estado": "PROCESADO",
+    "codigoGeneracion": "62C9EEDB-CF87-4786-ABA3-9AA3F4446731",
+    "selloRecibido": "20258086C772E65F4068B3A0BED179D93CC5MBT1",
+    "fhProcesamiento": "10/12/2025 13:09:44",
+    "clasificaMsg": "10",
+    "codigoMsg": "001",
+    "descripcionMsg": "RECIBIDO",
+    "observaciones": []
+}

@@ -1,0 +1,128 @@
+Nota de credito 39
+
+
+{
+	"identificacion": {
+        "codigoGeneracion": "1B02A182-FBC0-41DB-B502-E225EACFF735",
+        "tipoContingencia": null,
+        "numeroControl": "DTE-05-M001P001-000000000000039",
+        "tipoOperacion": 1,
+        "ambiente": "01",
+        "fecEmi": "2025-12-13",
+        "tipoModelo": 1,
+        "tipoDte": "05",
+        "version": 3,
+        "tipoMoneda": "USD",
+        "motivoContin": null,
+        "horEmi": "10:10:00"
+    },
+	"emisor": {
+        "descActividad": "Transporte de carga internacional",
+        "tipoEstablecimiento": "02",
+        "codActividad": "49233",
+        "correo": "info@grupomegaload.com",
+        "nit": "06141101161042",
+        "direccion": {
+            "complemento": "POLIG. E, CTON. FLOR AMARILLA, LOTE 626 C,",
+            "municipio": "25",
+            "departamento": "05"
+        },
+        "nombreComercial": "MEGALOAD, S.A. DE C.V.",
+        "telefono": "25305293",
+        "nombre": "MEGALOAD, S.A. DE C.V.",
+        "nrc": "2473109"
+    },
+    "receptor": {
+    	"nit": "06142312740013",
+    	"nrc": "205001",
+    	"correo": "facturacion.electronica@almapac.com",
+    	"nombre": "ALMACENADORA DEL PACIFICO, S.A DE C.V",
+    	"telefono": "7986-3211",
+    	"direccion": {
+            "complemento": "89 AV NORTE, COL ESCALON, #350, 2 NIVEL, SAN SALVADOR, EL SALVADOR",
+            "municipio": "23",
+            "departamento": "06"
+        },        
+        "codActividad": "52109",
+        "descActividad": "Alquiler de bodegas para almacenamiento y depósito n.c.p.",
+        "nombreComercial": "ALMACENADORA DEL PACIFICO, S.A DE C.V"
+    },
+    "documentoRelacionado": [
+        {
+            "tipoDocumento": "03",
+            "fechaEmision": "2025-12-03",
+            "numeroDocumento": "B02F6DA9-CDDE-446D-BA53-F01EB2F318E4",
+            "tipoGeneracion": 1
+        }
+    ],    
+    "resumen": {
+        "totalNoSuj": 0,
+        "ivaPerci1": 9,
+        "descuNoSuj": 0,
+        "totalLetras": "MIL DIECISIETE CON 00/100 U.S. DOLARES",
+        "ivaRete1": 9,
+        "subTotal": 900,
+        "reteRenta": 0,
+        "subTotalVentas": 900,
+        "tributos": [
+            {
+                "descripcion": "Impuesto al Valor Agregado 13%",
+                "codigo": "20",
+                "valor": 117
+            }
+        ],
+        "descuExenta": 0,
+        "totalDescu": 0,
+        "descuGravada": 0,
+        "totalGravada": 900,
+        "montoTotalOperacion": 1017,
+        "totalExenta": 0,
+        "condicionOperacion": 1
+    },
+    "cuerpoDocumento": [
+    	{
+            "codigo": null,
+            "numItem": 1,
+            "cantidad": 1,
+            "tipoItem": 2,
+            "tributos": [
+                "20"
+            ],
+            "precioUni": 900,
+            "uniMedida": 59,
+            "codTributo": null,
+            "montoDescu": 0,
+            "ventaNoSuj": 0,
+            "descripcion": "Grúa telescópica de 25 tons - Servicio Completo (Servicio completo de grua, 8 horas mínimas ordinarias. $75.00 por hora extra.)",
+            "ventaExenta": 0,
+            "ventaGravada": 900,
+            "numeroDocumento": "B02F6DA9-CDDE-446D-BA53-F01EB2F318E4"
+        }
+    ],
+    "extension": {
+        "docuEntrega": null,
+        "observaciones": null,
+        "nombRecibe": null,
+        "nombEntrega": null,
+        "docuRecibe": null
+    },
+    "ventaTercero": null,
+    "apendice": null
+}
+
+eyJhbGciOiJSUzUxMiJ9.ew0KICAiaWRlbnRpZmljYWNpb24iIDogew0KICAgICJjb2RpZ29HZW5lcmFjaW9uIiA6ICIxQjAyQTE4Mi1GQkMwLTQxREItQjUwMi1FMjI1RUFDRkY3MzUiLA0KICAgICJ0aXBvQ29udGluZ2VuY2lhIiA6IG51bGwsDQogICAgIm51bWVyb0NvbnRyb2wiIDogIkRURS0wNS1NMDAxUDAwMS0wMDAwMDAwMDAwMDAwMzkiLA0KICAgICJ0aXBvT3BlcmFjaW9uIiA6IDEsDQogICAgImFtYmllbnRlIiA6ICIwMSIsDQogICAgImZlY0VtaSIgOiAiMjAyNS0xMi0xMyIsDQogICAgInRpcG9Nb2RlbG8iIDogMSwNCiAgICAidGlwb0R0ZSIgOiAiMDUiLA0KICAgICJ2ZXJzaW9uIiA6IDMsDQogICAgInRpcG9Nb25lZGEiIDogIlVTRCIsDQogICAgIm1vdGl2b0NvbnRpbiIgOiBudWxsLA0KICAgICJob3JFbWkiIDogIjEwOjEwOjAwIg0KICB9LA0KICAiZW1pc29yIiA6IHsNCiAgICAiZGVzY0FjdGl2aWRhZCIgOiAiVHJhbnNwb3J0ZSBkZSBjYXJnYSBpbnRlcm5hY2lvbmFsIiwNCiAgICAidGlwb0VzdGFibGVjaW1pZW50byIgOiAiMDIiLA0KICAgICJjb2RBY3RpdmlkYWQiIDogIjQ5MjMzIiwNCiAgICAiY29ycmVvIiA6ICJpbmZvQGdydXBvbWVnYWxvYWQuY29tIiwNCiAgICAibml0IiA6ICIwNjE0MTEwMTE2MTA0MiIsDQogICAgImRpcmVjY2lvbiIgOiB7DQogICAgICAiY29tcGxlbWVudG8iIDogIlBPTElHLiBFLCBDVE9OLiBGTE9SIEFNQVJJTExBLCBMT1RFIDYyNiBDLCIsDQogICAgICAibXVuaWNpcGlvIiA6ICIyNSIsDQogICAgICAiZGVwYXJ0YW1lbnRvIiA6ICIwNSINCiAgICB9LA0KICAgICJub21icmVDb21lcmNpYWwiIDogIk1FR0FMT0FELCBTLkEuIERFIEMuVi4iLA0KICAgICJ0ZWxlZm9ubyIgOiAiMjUzMDUyOTMiLA0KICAgICJub21icmUiIDogIk1FR0FMT0FELCBTLkEuIERFIEMuVi4iLA0KICAgICJucmMiIDogIjI0NzMxMDkiDQogIH0sDQogICJyZWNlcHRvciIgOiB7DQogICAgIm5pdCIgOiAiMDYxNDIzMTI3NDAwMTMiLA0KICAgICJucmMiIDogIjIwNTAwMSIsDQogICAgImNvcnJlbyIgOiAiZmFjdHVyYWNpb24uZWxlY3Ryb25pY2FAYWxtYXBhYy5jb20iLA0KICAgICJub21icmUiIDogIkFMTUFDRU5BRE9SQSBERUwgUEFDSUZJQ08sIFMuQSBERSBDLlYiLA0KICAgICJ0ZWxlZm9ubyIgOiAiNzk4Ni0zMjExIiwNCiAgICAiZGlyZWNjaW9uIiA6IHsNCiAgICAgICJjb21wbGVtZW50byIgOiAiODkgQVYgTk9SVEUsIENPTCBFU0NBTE9OLCAjMzUwLCAyIE5JVkVMLCBTQU4gU0FMVkFET1IsIEVMIFNBTFZBRE9SIiwNCiAgICAgICJtdW5pY2lwaW8iIDogIjIzIiwNCiAgICAgICJkZXBhcnRhbWVudG8iIDogIjA2Ig0KICAgIH0sDQogICAgImNvZEFjdGl2aWRhZCIgOiAiNTIxMDkiLA0KICAgICJkZXNjQWN0aXZpZGFkIiA6ICJBbHF1aWxlciBkZSBib2RlZ2FzIHBhcmEgYWxtYWNlbmFtaWVudG8geSBkZXDDs3NpdG8gbi5jLnAuIiwNCiAgICAibm9tYnJlQ29tZXJjaWFsIiA6ICJBTE1BQ0VOQURPUkEgREVMIFBBQ0lGSUNPLCBTLkEgREUgQy5WIg0KICB9LA0KICAiZG9jdW1lbnRvUmVsYWNpb25hZG8iIDogWyB7DQogICAgInRpcG9Eb2N1bWVudG8iIDogIjAzIiwNCiAgICAiZmVjaGFFbWlzaW9uIiA6ICIyMDI1LTEyLTAzIiwNCiAgICAibnVtZXJvRG9jdW1lbnRvIiA6ICJCMDJGNkRBOS1DRERFLTQ0NkQtQkE1My1GMDFFQjJGMzE4RTQiLA0KICAgICJ0aXBvR2VuZXJhY2lvbiIgOiAxDQogIH0gXSwNCiAgInJlc3VtZW4iIDogew0KICAgICJ0b3RhbE5vU3VqIiA6IDAsDQogICAgIml2YVBlcmNpMSIgOiA5LA0KICAgICJkZXNjdU5vU3VqIiA6IDAsDQogICAgInRvdGFsTGV0cmFzIiA6ICJNSUwgRElFQ0lTSUVURSBDT04gMDAvMTAwIFUuUy4gRE9MQVJFUyIsDQogICAgIml2YVJldGUxIiA6IDksDQogICAgInN1YlRvdGFsIiA6IDkwMCwNCiAgICAicmV0ZVJlbnRhIiA6IDAsDQogICAgInN1YlRvdGFsVmVudGFzIiA6IDkwMCwNCiAgICAidHJpYnV0b3MiIDogWyB7DQogICAgICAiZGVzY3JpcGNpb24iIDogIkltcHVlc3RvIGFsIFZhbG9yIEFncmVnYWRvIDEzJSIsDQogICAgICAiY29kaWdvIiA6ICIyMCIsDQogICAgICAidmFsb3IiIDogMTE3DQogICAgfSBdLA0KICAgICJkZXNjdUV4ZW50YSIgOiAwLA0KICAgICJ0b3RhbERlc2N1IiA6IDAsDQogICAgImRlc2N1R3JhdmFkYSIgOiAwLA0KICAgICJ0b3RhbEdyYXZhZGEiIDogOTAwLA0KICAgICJtb250b1RvdGFsT3BlcmFjaW9uIiA6IDEwMTcsDQogICAgInRvdGFsRXhlbnRhIiA6IDAsDQogICAgImNvbmRpY2lvbk9wZXJhY2lvbiIgOiAxDQogIH0sDQogICJjdWVycG9Eb2N1bWVudG8iIDogWyB7DQogICAgImNvZGlnbyIgOiBudWxsLA0KICAgICJudW1JdGVtIiA6IDEsDQogICAgImNhbnRpZGFkIiA6IDEsDQogICAgInRpcG9JdGVtIiA6IDIsDQogICAgInRyaWJ1dG9zIiA6IFsgIjIwIiBdLA0KICAgICJwcmVjaW9VbmkiIDogOTAwLA0KICAgICJ1bmlNZWRpZGEiIDogNTksDQogICAgImNvZFRyaWJ1dG8iIDogbnVsbCwNCiAgICAibW9udG9EZXNjdSIgOiAwLA0KICAgICJ2ZW50YU5vU3VqIiA6IDAsDQogICAgImRlc2NyaXBjaW9uIiA6ICJHcsO6YSB0ZWxlc2PDs3BpY2EgZGUgMjUgdG9ucyAtIFNlcnZpY2lvIENvbXBsZXRvIChTZXJ2aWNpbyBjb21wbGV0byBkZSBncnVhLCA4IGhvcmFzIG3DrW5pbWFzIG9yZGluYXJpYXMuICQ3NS4wMCBwb3IgaG9yYSBleHRyYS4pIiwNCiAgICAidmVudGFFeGVudGEiIDogMCwNCiAgICAidmVudGFHcmF2YWRhIiA6IDkwMCwNCiAgICAibnVtZXJvRG9jdW1lbnRvIiA6ICJCMDJGNkRBOS1DRERFLTQ0NkQtQkE1My1GMDFFQjJGMzE4RTQiDQogIH0gXSwNCiAgImV4dGVuc2lvbiIgOiB7DQogICAgImRvY3VFbnRyZWdhIiA6IG51bGwsDQogICAgIm9ic2VydmFjaW9uZXMiIDogbnVsbCwNCiAgICAibm9tYlJlY2liZSIgOiBudWxsLA0KICAgICJub21iRW50cmVnYSIgOiBudWxsLA0KICAgICJkb2N1UmVjaWJlIiA6IG51bGwNCiAgfSwNCiAgInZlbnRhVGVyY2VybyIgOiBudWxsLA0KICAiYXBlbmRpY2UiIDogbnVsbA0KfQ.CxQpOc14dO4hLRbB-Jf2TXB4EH9II--QVD2e4x22fYbAeuTejw9qRj-FzK23oWz5OpT4MrJH5TsJWHpK7xMOoT3_jGzsmUaaas9rVUueIP8NcO3cMnkXJOhcDhOhDYnBbCZs5JrFPERrbrV7H49E1E-Vje3uUDiKM-tvQZfpxwXIf7BerE0YfxSWIZkDsQsJCkjRe9HsbCrGCP71LfL8RKIIxFmm-ZGLf5gkfE-MKDmc7SAhVUNI_DDafl5S-eSfabKtKdzoN5ceyPKWk3zFEUERctg5PZfaf1tNJiReFobyG3COuL_4G_KSAQ4RVdLeHFwzUzZbe0uYAWL8hbe92A
+
+
+{
+	"version": 2,
+	"ambiente": "01",
+	"versionApp": 2,
+	"estado": "PROCESADO",
+	"codigoGeneracion": "1B02A182-FBC0-41DB-B502-E225EACFF735",
+	"selloRecibido": "2025E1ADEE289CBE4818BF23A84F6FFDCC98XFQC",
+	"fhProcesamiento": "13/12/2025 22:31:02",
+	"clasificaMsg": "10",
+	"codigoMsg": "001",
+	"descripcionMsg": "RECIBIDO",
+	"observaciones": []
+}

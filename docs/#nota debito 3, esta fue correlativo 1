@@ -1,0 +1,167 @@
+#nota debito 3, esta fue correlativo 1
+
+ 
+
+{
+	"identificacion": {
+		"version": 3,
+	    "ambiente": "01",
+	    "tipoDte": "06",
+	    "numeroControl": "DTE-06-M001P001-000000000000001",
+	    "codigoGeneracion": "1B09D8A6-0EAC-4937-AF93-5833B6CCE542",
+	    "tipoModelo": 1,
+	    "tipoOperacion": 1,
+	    "tipoContingencia": null,
+	    "motivoContin": null,
+	    "fecEmi": "2025-06-13",
+	    "horEmi": "08:15:00",
+	    "tipoMoneda": "USD"
+	},
+	"documentoRelacionado": [
+	    {
+	      "tipoDocumento": "03",
+	      "tipoGeneracion": 2,
+	      "numeroDocumento": "BC1482AB-9852-4AA4-AF1D-F8B5E16682A3",
+	      "fechaEmision": "2025-05-22"
+	    }
+	],
+	"emisor": {
+		"nit": "06141101161042",
+		"nrc": "2473109",
+		"nombre": "MEGALOAD, S.A. DE C.V.",
+		"codActividad": "49233",
+		"descActividad": "Transporte de carga internacional",
+		"nombreComercial": "MEGALOAD, S.A. DE C.V.",
+		"tipoEstablecimiento": "02",
+		"direccion": {
+			"departamento": "05",
+			"municipio": "25",
+			"complemento": "POLIG. E, CTON. FLOR AMARILLA, LOTE 626 C,"
+		},
+		"telefono": "25305293",
+		"correo": "info@grupomegaload.com"
+	},
+	"receptor": {
+    "nit": "06142604231010",
+    "nrc": "3276116",
+    "nombre": "CONSTRUCTORA EL SALVADOR, S.A. DE C.V.",
+    "codActividad": "42900",
+    "descActividad": "Construcción de obras de ingeniería civil n.c.p.",
+    "nombreComercial": "CONSTRUCTORA EL SALVADOR, S.A. DE C.V.",
+    "direccion": {
+      "departamento": "06",
+      "municipio": "23",
+      "complemento": "CALLE CIRCUNVALACION, COL. SAN BENITO, #130"
+    },
+    "telefono": null,
+    "correo": "facturacion@constructoraelsalvador.com.sv"
+  },
+  "ventaTercero": null,
+  "cuerpoDocumento": [
+    {
+      "numItem": 1,
+      "tipoItem": 2,
+      "numeroDocumento": "BC1482AB-9852-4AA4-AF1D-F8B5E16682A3",
+      "codigo": null,
+      "codTributo": null,
+      "descripcion": "Cabezal y lowboy convencional desenganchable (Traslado ida y regreso de 4 Manlift)",
+      "cantidad": 0.8,
+      "uniMedida": 59,
+      "precioUni": 500,
+      "montoDescu": 0,
+      "ventaNoSuj": 0,
+      "ventaExenta": 0,
+      "ventaGravada": 400,
+      "tributos": [
+        "20"
+      ]
+    },
+    {
+      "numItem": 2,
+      "tipoItem": 2,
+      "numeroDocumento": "BC1482AB-9852-4AA4-AF1D-F8B5E16682A3",
+      "codigo": null,
+      "codTributo": null,
+      "descripcion": "Man Lift 26 metros de altura - por mes (Jornada Ordinaria 2 Manlift 30 dias de servicio; 8 horas minimas por dia; de lunes a sabado de 8am a 5pm; $52.80 por hora adicional)",
+      "cantidad": 384,
+      "uniMedida": 59,
+      "precioUni": 44,
+      "montoDescu": 0,
+      "ventaNoSuj": 0,
+      "ventaExenta": 0,
+      "ventaGravada": 16896,
+      "tributos": [
+        "20"
+      ]
+    },
+    {
+      "numItem": 3,
+      "tipoItem": 2,
+      "numeroDocumento": "BC1482AB-9852-4AA4-AF1D-F8B5E16682A3",
+      "codigo": null,
+      "codTributo": null,
+      "descripcion": "Man Lift 26 metros de altura - por mes (Jornada Nocturna 2 Manlift 30 dias de servicio; 8 horas minimas por dia; de lunes a sabado de 19hs a 0300hrs; $52.80 por hora adicional)",
+      "cantidad": 384,
+      "uniMedida": 59,
+      "precioUni": 52.8,
+      "montoDescu": 0,
+      "ventaNoSuj": 0,
+      "ventaExenta": 0,
+      "ventaGravada": 20275.2,
+      "tributos": [
+        "20"
+      ]
+    }
+  ],
+  "resumen": {
+    "totalNoSuj": 0,
+    "totalExenta": 0,
+    "totalGravada": 37571.2,
+    "subTotalVentas": 37571.2,
+    "descuNoSuj": 0,
+    "descuExenta": 0,
+    "descuGravada": 0,
+    "totalDescu": 0,
+    "tributos": [
+      {
+        "codigo": "20",
+        "descripcion": "Impuesto al Valor Agregado 13%",
+        "valor": 4884.26
+      }
+    ],
+    "subTotal": 37571.2,
+    "ivaPerci1": 0,
+    "ivaRete1": 0,
+    "reteRenta": 0,
+    "montoTotalOperacion": 42455.46,
+    "totalLetras": "CUARENTA Y DOS MIL CUATROCIENTOS CINCUENTA Y CINCO CON 46/100 U.S. DOLARES",
+    "condicionOperacion": 1,
+    "numPagoElectronico": null
+  },
+  "extension": {
+    "nombEntrega": null,
+    "docuEntrega": null,
+    "nombRecibe": null,
+    "docuRecibe": null,
+    "observaciones": null
+  },
+  "apendice": null
+}
+
+
+{
+  "version": 2,
+  "ambiente": "01",
+  "versionApp": 2,
+  "estado": "PROCESADO",
+  "codigoGeneracion": "1B09D8A6-0EAC-4937-AF93-5833B6CCE542",
+  "selloRecibido": "20254CF3A1B7F8DA48BC9A445F037B5DB99EZ3XS",
+  "fhProcesamiento": "13/06/2025 10:52:21",
+  "clasificaMsg": "10",
+  "codigoMsg": "001",
+  "descripcionMsg": "RECIBIDO",
+  "observaciones": []
+}
+
+
+eyJhbGciOiJSUzUxMiJ9.ew0KICAiaWRlbnRpZmljYWNpb24iIDogew0KICAgICJ2ZXJzaW9uIiA6IDMsDQogICAgImFtYmllbnRlIiA6ICIwMSIsDQogICAgInRpcG9EdGUiIDogIjA2IiwNCiAgICAibnVtZXJvQ29udHJvbCIgOiAiRFRFLTA2LU0wMDFQMDAxLTAwMDAwMDAwMDAwMDAwMSIsDQogICAgImNvZGlnb0dlbmVyYWNpb24iIDogIjFCMDlEOEE2LTBFQUMtNDkzNy1BRjkzLTU4MzNCNkNDRTU0MiIsDQogICAgInRpcG9Nb2RlbG8iIDogMSwNCiAgICAidGlwb09wZXJhY2lvbiIgOiAxLA0KICAgICJ0aXBvQ29udGluZ2VuY2lhIiA6IG51bGwsDQogICAgIm1vdGl2b0NvbnRpbiIgOiBudWxsLA0KICAgICJmZWNFbWkiIDogIjIwMjUtMDYtMTMiLA0KICAgICJob3JFbWkiIDogIjA4OjE1OjAwIiwNCiAgICAidGlwb01vbmVkYSIgOiAiVVNEIg0KICB9LA0KICAiZG9jdW1lbnRvUmVsYWNpb25hZG8iIDogWyB7DQogICAgInRpcG9Eb2N1bWVudG8iIDogIjAzIiwNCiAgICAidGlwb0dlbmVyYWNpb24iIDogMiwNCiAgICAibnVtZXJvRG9jdW1lbnRvIiA6ICJCQzE0ODJBQi05ODUyLTRBQTQtQUYxRC1GOEI1RTE2NjgyQTMiLA0KICAgICJmZWNoYUVtaXNpb24iIDogIjIwMjUtMDUtMjIiDQogIH0gXSwNCiAgImVtaXNvciIgOiB7DQogICAgIm5pdCIgOiAiMDYxNDExMDExNjEwNDIiLA0KICAgICJucmMiIDogIjI0NzMxMDkiLA0KICAgICJub21icmUiIDogIk1FR0FMT0FELCBTLkEuIERFIEMuVi4iLA0KICAgICJjb2RBY3RpdmlkYWQiIDogIjQ5MjMzIiwNCiAgICAiZGVzY0FjdGl2aWRhZCIgOiAiVHJhbnNwb3J0ZSBkZSBjYXJnYSBpbnRlcm5hY2lvbmFsIiwNCiAgICAibm9tYnJlQ29tZXJjaWFsIiA6ICJNRUdBTE9BRCwgUy5BLiBERSBDLlYuIiwNCiAgICAidGlwb0VzdGFibGVjaW1pZW50byIgOiAiMDIiLA0KICAgICJkaXJlY2Npb24iIDogew0KICAgICAgImRlcGFydGFtZW50byIgOiAiMDUiLA0KICAgICAgIm11bmljaXBpbyIgOiAiMjUiLA0KICAgICAgImNvbXBsZW1lbnRvIiA6ICJQT0xJRy4gRSwgQ1RPTi4gRkxPUiBBTUFSSUxMQSwgTE9URSA2MjYgQywiDQogICAgfSwNCiAgICAidGVsZWZvbm8iIDogIjI1MzA1MjkzIiwNCiAgICAiY29ycmVvIiA6ICJpbmZvQGdydXBvbWVnYWxvYWQuY29tIg0KICB9LA0KICAicmVjZXB0b3IiIDogew0KICAgICJuaXQiIDogIjA2MTQyNjA0MjMxMDEwIiwNCiAgICAibnJjIiA6ICIzMjc2MTE2IiwNCiAgICAibm9tYnJlIiA6ICJDT05TVFJVQ1RPUkEgRUwgU0FMVkFET1IsIFMuQS4gREUgQy5WLiIsDQogICAgImNvZEFjdGl2aWRhZCIgOiAiNDI5MDAiLA0KICAgICJkZXNjQWN0aXZpZGFkIiA6ICJDb25zdHJ1Y2Npw7NuIGRlIG9icmFzIGRlIGluZ2VuaWVyw61hIGNpdmlsIG4uYy5wLiIsDQogICAgIm5vbWJyZUNvbWVyY2lhbCIgOiAiQ09OU1RSVUNUT1JBIEVMIFNBTFZBRE9SLCBTLkEuIERFIEMuVi4iLA0KICAgICJkaXJlY2Npb24iIDogew0KICAgICAgImRlcGFydGFtZW50byIgOiAiMDYiLA0KICAgICAgIm11bmljaXBpbyIgOiAiMjMiLA0KICAgICAgImNvbXBsZW1lbnRvIiA6ICJDQUxMRSBDSVJDVU5WQUxBQ0lPTiwgQ09MLiBTQU4gQkVOSVRPLCAjMTMwIg0KICAgIH0sDQogICAgInRlbGVmb25vIiA6IG51bGwsDQogICAgImNvcnJlbyIgOiAiZmFjdHVyYWNpb25AY29uc3RydWN0b3JhZWxzYWx2YWRvci5jb20uc3YiDQogIH0sDQogICJ2ZW50YVRlcmNlcm8iIDogbnVsbCwNCiAgImN1ZXJwb0RvY3VtZW50byIgOiBbIHsNCiAgICAibnVtSXRlbSIgOiAxLA0KICAgICJ0aXBvSXRlbSIgOiAyLA0KICAgICJudW1lcm9Eb2N1bWVudG8iIDogIkJDMTQ4MkFCLTk4NTItNEFBNC1BRjFELUY4QjVFMTY2ODJBMyIsDQogICAgImNvZGlnbyIgOiBudWxsLA0KICAgICJjb2RUcmlidXRvIiA6IG51bGwsDQogICAgImRlc2NyaXBjaW9uIiA6ICJDYWJlemFsIHkgbG93Ym95IGNvbnZlbmNpb25hbCBkZXNlbmdhbmNoYWJsZSAoVHJhc2xhZG8gaWRhIHkgcmVncmVzbyBkZSA0IE1hbmxpZnQpIiwNCiAgICAiY2FudGlkYWQiIDogMC44LA0KICAgICJ1bmlNZWRpZGEiIDogNTksDQogICAgInByZWNpb1VuaSIgOiA1MDAsDQogICAgIm1vbnRvRGVzY3UiIDogMCwNCiAgICAidmVudGFOb1N1aiIgOiAwLA0KICAgICJ2ZW50YUV4ZW50YSIgOiAwLA0KICAgICJ2ZW50YUdyYXZhZGEiIDogNDAwLA0KICAgICJ0cmlidXRvcyIgOiBbICIyMCIgXQ0KICB9LCB7DQogICAgIm51bUl0ZW0iIDogMiwNCiAgICAidGlwb0l0ZW0iIDogMiwNCiAgICAibnVtZXJvRG9jdW1lbnRvIiA6ICJCQzE0ODJBQi05ODUyLTRBQTQtQUYxRC1GOEI1RTE2NjgyQTMiLA0KICAgICJjb2RpZ28iIDogbnVsbCwNCiAgICAiY29kVHJpYnV0byIgOiBudWxsLA0KICAgICJkZXNjcmlwY2lvbiIgOiAiTWFuIExpZnQgMjYgbWV0cm9zIGRlIGFsdHVyYSAtIHBvciBtZXMgKEpvcm5hZGEgT3JkaW5hcmlhIDIgTWFubGlmdCAzMCBkaWFzIGRlIHNlcnZpY2lvOyA4IGhvcmFzIG1pbmltYXMgcG9yIGRpYTsgZGUgbHVuZXMgYSBzYWJhZG8gZGUgOGFtIGEgNXBtOyAkNTIuODAgcG9yIGhvcmEgYWRpY2lvbmFsKSIsDQogICAgImNhbnRpZGFkIiA6IDM4NCwNCiAgICAidW5pTWVkaWRhIiA6IDU5LA0KICAgICJwcmVjaW9VbmkiIDogNDQsDQogICAgIm1vbnRvRGVzY3UiIDogMCwNCiAgICAidmVudGFOb1N1aiIgOiAwLA0KICAgICJ2ZW50YUV4ZW50YSIgOiAwLA0KICAgICJ2ZW50YUdyYXZhZGEiIDogMTY4OTYsDQogICAgInRyaWJ1dG9zIiA6IFsgIjIwIiBdDQogIH0sIHsNCiAgICAibnVtSXRlbSIgOiAzLA0KICAgICJ0aXBvSXRlbSIgOiAyLA0KICAgICJudW1lcm9Eb2N1bWVudG8iIDogIkJDMTQ4MkFCLTk4NTItNEFBNC1BRjFELUY4QjVFMTY2ODJBMyIsDQogICAgImNvZGlnbyIgOiBudWxsLA0KICAgICJjb2RUcmlidXRvIiA6IG51bGwsDQogICAgImRlc2NyaXBjaW9uIiA6ICJNYW4gTGlmdCAyNiBtZXRyb3MgZGUgYWx0dXJhIC0gcG9yIG1lcyAoSm9ybmFkYSBOb2N0dXJuYSAyIE1hbmxpZnQgMzAgZGlhcyBkZSBzZXJ2aWNpbzsgOCBob3JhcyBtaW5pbWFzIHBvciBkaWE7IGRlIGx1bmVzIGEgc2FiYWRvIGRlIDE5aHMgYSAwMzAwaHJzOyAkNTIuODAgcG9yIGhvcmEgYWRpY2lvbmFsKSIsDQogICAgImNhbnRpZGFkIiA6IDM4NCwNCiAgICAidW5pTWVkaWRhIiA6IDU5LA0KICAgICJwcmVjaW9VbmkiIDogNTIuOCwNCiAgICAibW9udG9EZXNjdSIgOiAwLA0KICAgICJ2ZW50YU5vU3VqIiA6IDAsDQogICAgInZlbnRhRXhlbnRhIiA6IDAsDQogICAgInZlbnRhR3JhdmFkYSIgOiAyMDI3NS4yLA0KICAgICJ0cmlidXRvcyIgOiBbICIyMCIgXQ0KICB9IF0sDQogICJyZXN1bWVuIiA6IHsNCiAgICAidG90YWxOb1N1aiIgOiAwLA0KICAgICJ0b3RhbEV4ZW50YSIgOiAwLA0KICAgICJ0b3RhbEdyYXZhZGEiIDogMzc1NzEuMiwNCiAgICAic3ViVG90YWxWZW50YXMiIDogMzc1NzEuMiwNCiAgICAiZGVzY3VOb1N1aiIgOiAwLA0KICAgICJkZXNjdUV4ZW50YSIgOiAwLA0KICAgICJkZXNjdUdyYXZhZGEiIDogMCwNCiAgICAidG90YWxEZXNjdSIgOiAwLA0KICAgICJ0cmlidXRvcyIgOiBbIHsNCiAgICAgICJjb2RpZ28iIDogIjIwIiwNCiAgICAgICJkZXNjcmlwY2lvbiIgOiAiSW1wdWVzdG8gYWwgVmFsb3IgQWdyZWdhZG8gMTMlIiwNCiAgICAgICJ2YWxvciIgOiA0ODg0LjI2DQogICAgfSBdLA0KICAgICJzdWJUb3RhbCIgOiAzNzU3MS4yLA0KICAgICJpdmFQZXJjaTEiIDogMCwNCiAgICAiaXZhUmV0ZTEiIDogMCwNCiAgICAicmV0ZVJlbnRhIiA6IDAsDQogICAgIm1vbnRvVG90YWxPcGVyYWNpb24iIDogNDI0NTUuNDYsDQogICAgInRvdGFsTGV0cmFzIiA6ICJDVUFSRU5UQSBZIERPUyBNSUwgQ1VBVFJPQ0lFTlRPUyBDSU5DVUVOVEEgWSBDSU5DTyBDT04gNDYvMTAwIFUuUy4gRE9MQVJFUyIsDQogICAgImNvbmRpY2lvbk9wZXJhY2lvbiIgOiAxLA0KICAgICJudW1QYWdvRWxlY3Ryb25pY28iIDogbnVsbA0KICB9LA0KICAiZXh0ZW5zaW9uIiA6IHsNCiAgICAibm9tYkVudHJlZ2EiIDogbnVsbCwNCiAgICAiZG9jdUVudHJlZ2EiIDogbnVsbCwNCiAgICAibm9tYlJlY2liZSIgOiBudWxsLA0KICAgICJkb2N1UmVjaWJlIiA6IG51bGwsDQogICAgIm9ic2VydmFjaW9uZXMiIDogbnVsbA0KICB9LA0KICAiYXBlbmRpY2UiIDogbnVsbA0KfQ.L-z9AwiX1SR12EIz3-inenhzo45PflXWTZgmJ4hDKusHZcfalCl7tgq2s0c4UD48og7YiKFlGM0D3fUciUK_U5IH7gSKEPzQrRlkEuXyvQbIldRU-_Ahjr5ia0R8ATl7kPMRnfucdTWWtng6Tnp8UoE0d11pFnJZXj2oz33hh0nym6RAK9hP5DaGPZOXVtNw_w_d8iK5Zya6odVyScvwa-SZei8AC9gUw-pqOHcNIlnwAjU2eOXzDn7iVoctNv-BUEzUFkR1I5wG97vTxzyGgGRj3ZSQSafOXyIMTowvWkZZbHjVcMozb1x8SKrlj0bTf2d4i0qZUnuT5zAvwxJaQg

@@ -1,0 +1,165 @@
+Nota de Credito 25
+
+{
+	"identificacion": {
+        "codigoGeneracion": "476BB392-1AE0-4F4D-9E53-333216DE2CAA",
+        "tipoContingencia": null,
+        "numeroControl": "DTE-05-M001P001-000000000000025",
+        "tipoOperacion": 1,
+        "ambiente": "01",
+        "fecEmi": "2025-08-27",
+        "tipoModelo": 1,
+        "tipoDte": "05",
+        "version": 3,
+        "tipoMoneda": "USD",
+        "motivoContin": null,
+        "horEmi": "08:25:00"
+    },
+	"emisor": {
+        "descActividad": "Transporte de carga internacional",
+        "tipoEstablecimiento": "02",
+        "codActividad": "49233",
+        "correo": "info@grupomegaload.com",
+        "nit": "06141101161042",
+        "direccion": {
+            "complemento": "POLIG. E, CTON. FLOR AMARILLA, LOTE 626 C,",
+            "municipio": "25",
+            "departamento": "05"
+        },
+        "nombreComercial": "MEGALOAD, S.A. DE C.V.",
+        "telefono": "25305293",
+        "nombre": "MEGALOAD, S.A. DE C.V.",
+        "nrc": "2473109"
+    },
+    "receptor": {
+    	"nit": "06143105031022",
+    	"nrc": "1503251",
+    	"correo": "facturaelectronica@corporacionprisma.com",
+    	"nombre": "PRISMA DE CENTROAMERICA S. A. DE C. V.",
+    	"telefono": "21057700",
+    	"direccion": {
+            "complemento": "7 AV. SUR, RES. UTILA, #5B, ENTRE 10 Y 12 CALLE ORIENTE",
+            "municipio": "27",
+            "departamento": "05"
+        },        
+        "codActividad": "42900",
+        "descActividad": "Construcción de obras de ingeniería civil n.c.p.",
+        "nombreComercial": "PRISMA DE CENTROAMERICA S. A. DE C. V."
+    },
+    "documentoRelacionado": [
+        {
+            "tipoDocumento": "03",
+            "fechaEmision": "2025-08-09",
+            "numeroDocumento": "91F314B5-9273-48AC-A0FC-CD60FAD57916",
+            "tipoGeneracion": 1
+        }
+    ],    
+    "resumen": {
+        "totalNoSuj": 0,
+        "ivaPerci1": 0,
+        "descuNoSuj": 0,
+        "totalLetras": "MIL QUINIENTOS VEINTICINCO CON 50/100 U.S. DOLARES",
+        "ivaRete1": 0,
+        "subTotal": 1350,
+        "reteRenta": 0,
+        "subTotalVentas": 1350,
+        "tributos": [
+            {
+                "descripcion": "Impuesto al Valor Agregado 13%",
+                "codigo": "20",
+                "valor": 175.5
+            }
+        ],
+        "descuExenta": 0,
+        "totalDescu": 0,
+        "descuGravada": 0,
+        "totalGravada": 1350,
+        "montoTotalOperacion": 1525.5,
+        "totalExenta": 0,
+        "condicionOperacion": 1
+    },
+    "cuerpoDocumento": [
+    	{
+            "codigo": null,
+            "numItem": 1,
+            "cantidad": 2,
+            "tipoItem": 2,
+            "tributos": [
+                "20"
+            ],
+            "precioUni": 600,
+            "uniMedida": 59,
+            "codTributo": null,
+            "montoDescu": 0,
+            "ventaNoSuj": 0,
+            "descripcion": "Grúa telescópica de 30 tons - Servicio Completo (Traslado de la grúa y Servicio de la grúa 6 hrs mínimas. Fecha 10/07/2025 y 11/07/2025.)",
+            "ventaExenta": 0,
+            "ventaGravada": 1200,
+            "numeroDocumento": "91F314B5-9273-48AC-A0FC-CD60FAD57916"
+        },
+        {
+            "codigo": null,
+            "numItem": 2,
+            "cantidad": 2,
+            "tipoItem": 2,
+            "tributos": [
+                "20"
+            ],
+            "precioUni": 50,
+            "uniMedida": 59,
+            "codTributo": null,
+            "montoDescu": 0,
+            "ventaNoSuj": 0,
+            "descripcion": "Alquiler de Operador de Telehandler (Servicio de alquiler de operador en Armenia Fecha 08/07/2025 y 09/07/2025.)",
+            "ventaExenta": 0,
+            "ventaGravada": 100,
+            "numeroDocumento": "91F314B5-9273-48AC-A0FC-CD60FAD57916"
+        },
+        {
+            "codigo": null,
+            "numItem": 3,
+            "cantidad": 1,
+            "tipoItem": 2,
+            "tributos": [
+                "20"
+            ],
+            "precioUni": 50,
+            "uniMedida": 59,
+            "codTributo": null,
+            "montoDescu": 0,
+            "ventaNoSuj": 0,
+            "descripcion": "Alquiler de Operador de Telehandler (Servicio de alquiler de operador en Santa Ana Fecha 14/07/2025)",
+            "ventaExenta": 0,
+            "ventaGravada": 50,
+            "numeroDocumento": "91F314B5-9273-48AC-A0FC-CD60FAD57916"
+        }     
+    ],
+    "extension": {
+        "docuEntrega": null,
+        "observaciones": null,
+        "nombRecibe": null,
+        "nombEntrega": null,
+        "docuRecibe": null
+    },
+    "ventaTercero": null,
+    "apendice": null
+}
+
+
+eyJhbGciOiJSUzUxMiJ9.ew0KICAiaWRlbnRpZmljYWNpb24iIDogew0KICAgICJjb2RpZ29HZW5lcmFjaW9uIiA6ICI0NzZCQjM5Mi0xQUUwLTRGNEQtOUU1My0zMzMyMTZERTJDQUEiLA0KICAgICJ0aXBvQ29udGluZ2VuY2lhIiA6IG51bGwsDQogICAgIm51bWVyb0NvbnRyb2wiIDogIkRURS0wNS1NMDAxUDAwMS0wMDAwMDAwMDAwMDAwMjUiLA0KICAgICJ0aXBvT3BlcmFjaW9uIiA6IDEsDQogICAgImFtYmllbnRlIiA6ICIwMSIsDQogICAgImZlY0VtaSIgOiAiMjAyNS0wOC0yNyIsDQogICAgInRpcG9Nb2RlbG8iIDogMSwNCiAgICAidGlwb0R0ZSIgOiAiMDUiLA0KICAgICJ2ZXJzaW9uIiA6IDMsDQogICAgInRpcG9Nb25lZGEiIDogIlVTRCIsDQogICAgIm1vdGl2b0NvbnRpbiIgOiBudWxsLA0KICAgICJob3JFbWkiIDogIjA4OjI1OjAwIg0KICB9LA0KICAiZW1pc29yIiA6IHsNCiAgICAiZGVzY0FjdGl2aWRhZCIgOiAiVHJhbnNwb3J0ZSBkZSBjYXJnYSBpbnRlcm5hY2lvbmFsIiwNCiAgICAidGlwb0VzdGFibGVjaW1pZW50byIgOiAiMDIiLA0KICAgICJjb2RBY3RpdmlkYWQiIDogIjQ5MjMzIiwNCiAgICAiY29ycmVvIiA6ICJpbmZvQGdydXBvbWVnYWxvYWQuY29tIiwNCiAgICAibml0IiA6ICIwNjE0MTEwMTE2MTA0MiIsDQogICAgImRpcmVjY2lvbiIgOiB7DQogICAgICAiY29tcGxlbWVudG8iIDogIlBPTElHLiBFLCBDVE9OLiBGTE9SIEFNQVJJTExBLCBMT1RFIDYyNiBDLCIsDQogICAgICAibXVuaWNpcGlvIiA6ICIyNSIsDQogICAgICAiZGVwYXJ0YW1lbnRvIiA6ICIwNSINCiAgICB9LA0KICAgICJub21icmVDb21lcmNpYWwiIDogIk1FR0FMT0FELCBTLkEuIERFIEMuVi4iLA0KICAgICJ0ZWxlZm9ubyIgOiAiMjUzMDUyOTMiLA0KICAgICJub21icmUiIDogIk1FR0FMT0FELCBTLkEuIERFIEMuVi4iLA0KICAgICJucmMiIDogIjI0NzMxMDkiDQogIH0sDQogICJyZWNlcHRvciIgOiB7DQogICAgIm5pdCIgOiAiMDYxNDMxMDUwMzEwMjIiLA0KICAgICJucmMiIDogIjE1MDMyNTEiLA0KICAgICJjb3JyZW8iIDogImZhY3R1cmFlbGVjdHJvbmljYUBjb3Jwb3JhY2lvbnByaXNtYS5jb20iLA0KICAgICJub21icmUiIDogIlBSSVNNQSBERSBDRU5UUk9BTUVSSUNBIFMuIEEuIERFIEMuIFYuIiwNCiAgICAidGVsZWZvbm8iIDogIjIxMDU3NzAwIiwNCiAgICAiZGlyZWNjaW9uIiA6IHsNCiAgICAgICJjb21wbGVtZW50byIgOiAiNyBBVi4gU1VSLCBSRVMuIFVUSUxBLCAjNUIsIEVOVFJFIDEwIFkgMTIgQ0FMTEUgT1JJRU5URSIsDQogICAgICAibXVuaWNpcGlvIiA6ICIyNyIsDQogICAgICAiZGVwYXJ0YW1lbnRvIiA6ICIwNSINCiAgICB9LA0KICAgICJjb2RBY3RpdmlkYWQiIDogIjQyOTAwIiwNCiAgICAiZGVzY0FjdGl2aWRhZCIgOiAiQ29uc3RydWNjacOzbiBkZSBvYnJhcyBkZSBpbmdlbmllcsOtYSBjaXZpbCBuLmMucC4iLA0KICAgICJub21icmVDb21lcmNpYWwiIDogIlBSSVNNQSBERSBDRU5UUk9BTUVSSUNBIFMuIEEuIERFIEMuIFYuIg0KICB9LA0KICAiZG9jdW1lbnRvUmVsYWNpb25hZG8iIDogWyB7DQogICAgInRpcG9Eb2N1bWVudG8iIDogIjAzIiwNCiAgICAiZmVjaGFFbWlzaW9uIiA6ICIyMDI1LTA4LTA5IiwNCiAgICAibnVtZXJvRG9jdW1lbnRvIiA6ICI5MUYzMTRCNS05MjczLTQ4QUMtQTBGQy1DRDYwRkFENTc5MTYiLA0KICAgICJ0aXBvR2VuZXJhY2lvbiIgOiAxDQogIH0gXSwNCiAgInJlc3VtZW4iIDogew0KICAgICJ0b3RhbE5vU3VqIiA6IDAsDQogICAgIml2YVBlcmNpMSIgOiAwLA0KICAgICJkZXNjdU5vU3VqIiA6IDAsDQogICAgInRvdGFsTGV0cmFzIiA6ICJNSUwgUVVJTklFTlRPUyBWRUlOVElDSU5DTyBDT04gNTAvMTAwIFUuUy4gRE9MQVJFUyIsDQogICAgIml2YVJldGUxIiA6IDAsDQogICAgInN1YlRvdGFsIiA6IDEzNTAsDQogICAgInJldGVSZW50YSIgOiAwLA0KICAgICJzdWJUb3RhbFZlbnRhcyIgOiAxMzUwLA0KICAgICJ0cmlidXRvcyIgOiBbIHsNCiAgICAgICJkZXNjcmlwY2lvbiIgOiAiSW1wdWVzdG8gYWwgVmFsb3IgQWdyZWdhZG8gMTMlIiwNCiAgICAgICJjb2RpZ28iIDogIjIwIiwNCiAgICAgICJ2YWxvciIgOiAxNzUuNQ0KICAgIH0gXSwNCiAgICAiZGVzY3VFeGVudGEiIDogMCwNCiAgICAidG90YWxEZXNjdSIgOiAwLA0KICAgICJkZXNjdUdyYXZhZGEiIDogMCwNCiAgICAidG90YWxHcmF2YWRhIiA6IDEzNTAsDQogICAgIm1vbnRvVG90YWxPcGVyYWNpb24iIDogMTUyNS41LA0KICAgICJ0b3RhbEV4ZW50YSIgOiAwLA0KICAgICJjb25kaWNpb25PcGVyYWNpb24iIDogMQ0KICB9LA0KICAiY3VlcnBvRG9jdW1lbnRvIiA6IFsgew0KICAgICJjb2RpZ28iIDogbnVsbCwNCiAgICAibnVtSXRlbSIgOiAxLA0KICAgICJjYW50aWRhZCIgOiAyLA0KICAgICJ0aXBvSXRlbSIgOiAyLA0KICAgICJ0cmlidXRvcyIgOiBbICIyMCIgXSwNCiAgICAicHJlY2lvVW5pIiA6IDYwMCwNCiAgICAidW5pTWVkaWRhIiA6IDU5LA0KICAgICJjb2RUcmlidXRvIiA6IG51bGwsDQogICAgIm1vbnRvRGVzY3UiIDogMCwNCiAgICAidmVudGFOb1N1aiIgOiAwLA0KICAgICJkZXNjcmlwY2lvbiIgOiAiR3LDumEgdGVsZXNjw7NwaWNhIGRlIDMwIHRvbnMgLSBTZXJ2aWNpbyBDb21wbGV0byAoVHJhc2xhZG8gZGUgbGEgZ3LDumEgeSBTZXJ2aWNpbyBkZSBsYSBncsO6YSA2IGhycyBtw61uaW1hcy4gRmVjaGEgMTAvMDcvMjAyNSB5IDExLzA3LzIwMjUuKSIsDQogICAgInZlbnRhRXhlbnRhIiA6IDAsDQogICAgInZlbnRhR3JhdmFkYSIgOiAxMjAwLA0KICAgICJudW1lcm9Eb2N1bWVudG8iIDogIjkxRjMxNEI1LTkyNzMtNDhBQy1BMEZDLUNENjBGQUQ1NzkxNiINCiAgfSwgew0KICAgICJjb2RpZ28iIDogbnVsbCwNCiAgICAibnVtSXRlbSIgOiAyLA0KICAgICJjYW50aWRhZCIgOiAyLA0KICAgICJ0aXBvSXRlbSIgOiAyLA0KICAgICJ0cmlidXRvcyIgOiBbICIyMCIgXSwNCiAgICAicHJlY2lvVW5pIiA6IDUwLA0KICAgICJ1bmlNZWRpZGEiIDogNTksDQogICAgImNvZFRyaWJ1dG8iIDogbnVsbCwNCiAgICAibW9udG9EZXNjdSIgOiAwLA0KICAgICJ2ZW50YU5vU3VqIiA6IDAsDQogICAgImRlc2NyaXBjaW9uIiA6ICJBbHF1aWxlciBkZSBPcGVyYWRvciBkZSBUZWxlaGFuZGxlciAoU2VydmljaW8gZGUgYWxxdWlsZXIgZGUgb3BlcmFkb3IgZW4gQXJtZW5pYSBGZWNoYSAwOC8wNy8yMDI1IHkgMDkvMDcvMjAyNS4pIiwNCiAgICAidmVudGFFeGVudGEiIDogMCwNCiAgICAidmVudGFHcmF2YWRhIiA6IDEwMCwNCiAgICAibnVtZXJvRG9jdW1lbnRvIiA6ICI5MUYzMTRCNS05MjczLTQ4QUMtQTBGQy1DRDYwRkFENTc5MTYiDQogIH0sIHsNCiAgICAiY29kaWdvIiA6IG51bGwsDQogICAgIm51bUl0ZW0iIDogMywNCiAgICAiY2FudGlkYWQiIDogMSwNCiAgICAidGlwb0l0ZW0iIDogMiwNCiAgICAidHJpYnV0b3MiIDogWyAiMjAiIF0sDQogICAgInByZWNpb1VuaSIgOiA1MCwNCiAgICAidW5pTWVkaWRhIiA6IDU5LA0KICAgICJjb2RUcmlidXRvIiA6IG51bGwsDQogICAgIm1vbnRvRGVzY3UiIDogMCwNCiAgICAidmVudGFOb1N1aiIgOiAwLA0KICAgICJkZXNjcmlwY2lvbiIgOiAiQWxxdWlsZXIgZGUgT3BlcmFkb3IgZGUgVGVsZWhhbmRsZXIgKFNlcnZpY2lvIGRlIGFscXVpbGVyIGRlIG9wZXJhZG9yIGVuIFNhbnRhIEFuYSBGZWNoYSAxNC8wNy8yMDI1KSIsDQogICAgInZlbnRhRXhlbnRhIiA6IDAsDQogICAgInZlbnRhR3JhdmFkYSIgOiA1MCwNCiAgICAibnVtZXJvRG9jdW1lbnRvIiA6ICI5MUYzMTRCNS05MjczLTQ4QUMtQTBGQy1DRDYwRkFENTc5MTYiDQogIH0gXSwNCiAgImV4dGVuc2lvbiIgOiB7DQogICAgImRvY3VFbnRyZWdhIiA6IG51bGwsDQogICAgIm9ic2VydmFjaW9uZXMiIDogbnVsbCwNCiAgICAibm9tYlJlY2liZSIgOiBudWxsLA0KICAgICJub21iRW50cmVnYSIgOiBudWxsLA0KICAgICJkb2N1UmVjaWJlIiA6IG51bGwNCiAgfSwNCiAgInZlbnRhVGVyY2VybyIgOiBudWxsLA0KICAiYXBlbmRpY2UiIDogbnVsbA0KfQ.fF-ZQ5TJ_PJkGX1v-KvSCdrypGgjkyVijYuEX36eywo9W88DtUahYSjmqpyBJ8_h-SFj2J23ogUt2hsLdstvKmxMu1nx-uA5NdAGswZ1fwM4XItRB6TOf8H2r-8QiF0NpBKBRxIRvsJSQ9Yjvg2oTLr7l79Tz4m-GeXg3Mm9gOy0bMJdWvhV3Y8PLp6ziGm9q8NNCeBw6VExC86CqJdd9ysKaMypWFVAuI5-9YAnI-_i7ed5TTVJ-jmWO54c0MjCwYm9P3fWrEEO67xpQuRU12bnO1D-p8jl1q5zKQ8TItfUboOePXc2KgkCh6c_tdXO2Tf67R3k2tKn3tHvPdsVOg
+
+{
+	"version": 2,
+	"ambiente": "01",
+	"versionApp": 2,
+	"estado": "PROCESADO",
+	"codigoGeneracion": "476BB392-1AE0-4F4D-9E53-333216DE2CAA",
+	"selloRecibido": "202514CD183CE4A14F5AA1E0D64DE761A274EZMA",
+	"fhProcesamiento": "06/09/2025 05:22:54",
+	"clasificaMsg": "10",
+	"codigoMsg": "002",
+	"descripcionMsg": "RECIBIDO CON OBSERVACIONES",
+	"observaciones": [
+		"identificacion.fecEmi Difiere de la fecha de envío."
+	]
+}

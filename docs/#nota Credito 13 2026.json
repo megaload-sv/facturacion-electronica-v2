@@ -1,0 +1,125 @@
+
+{
+  "identificacion": {
+    "codigoGeneracion": "6974F1BC-2A20-486F-8875-AB45C7CB30D0",
+    "tipoContingencia": null,
+    "numeroControl": "DTE-05-M001P001-000000000000013",
+    "tipoOperacion": 1,
+    "ambiente": "01",
+    "fecEmi": "2026-03-19",
+    "tipoModelo": 1,
+    "tipoDte": "05",
+    "version": 3,
+    "tipoMoneda": "USD",
+    "motivoContin": null,
+    "horEmi": "08:00:00"
+  },
+  "emisor": {
+    "descActividad": "Transporte de carga internacional",
+    "tipoEstablecimiento": "02",
+    "codActividad": "49233",
+    "correo": "info@grupomegaload.com",
+    "nit": "06141101161042",
+    "direccion": {
+      "complemento": "POLIG. E, CTON. FLOR AMARILLA, LOTE 626 C,",
+      "municipio": "25",
+      "departamento": "05"
+    },
+    "nombreComercial": "MEGALOAD, S.A. DE C.V.",
+    "telefono": "25305293",
+    "nombre": "MEGALOAD, S.A. DE C.V.",
+    "nrc": "2473109"
+  },
+  "receptor": {
+    "nit": "06142309061056",
+    "nrc": "1766820",
+    "correo": "corpacsa@yahoo.com",
+    "nombre": "CORPORACIÓN ALVARADO CASTILLO S.A DE C.V",
+    "telefono": "78480654",
+    "direccion": {
+      "complemento": "CALLE EL TRAPICHE, BLOCK H #3, COL JARDINES DE LA HACIENDA 3 ETAPA CIUDAD MERLIOT ANTIGUO CUSCATLAN LA LIBERTAD",
+      "municipio": "27",
+      "departamento": "05"
+    },
+    "codActividad": "68109",
+    "descActividad": "Actividades inmobiliarias realizadas con bienes propios o arrendados n.c.p.",
+    "nombreComercial": "CORPORACIÓN ALVARADO CASTILLO S.A DE C.V"
+  },
+  "documentoRelacionado": [
+    {
+      "tipoDocumento": "03",
+      "fechaEmision": "2026-02-26",
+      "numeroDocumento": "9B0A21C5-6A63-4545-A77F-EBB8E56D93CB",
+      "tipoGeneracion": 1
+    }
+  ],
+  "resumen": {
+    "totalNoSuj": 0,
+    "ivaPerci1": 0,
+    "descuNoSuj": 0,
+    "totalLetras": "TRESCIENTOS CINCO CON 10/100 U.S. DOLARES",
+    "ivaRete1": 0,
+    "subTotal": 270,
+    "reteRenta": 0,
+    "subTotalVentas": 270,
+    "tributos": [
+      {
+        "descripcion": "Impuesto al Valor Agregado 13%",
+        "codigo": "20",
+        "valor": 35.1
+      }
+    ],
+    "descuExenta": 0,
+    "totalDescu": 0,
+    "descuGravada": 0,
+    "totalGravada": 270,
+    "montoTotalOperacion": 305.1,
+    "totalExenta": 0,
+    "condicionOperacion": 1
+  },
+  "cuerpoDocumento": [
+    {
+      "codigo": null,
+      "numItem": 1,
+      "cantidad": 1,
+      "tipoItem": 2,
+      "tributos": [
+        "20"
+      ],
+      "precioUni": 270,
+      "uniMedida": 59,
+      "codTributo": null,
+      "montoDescu": 0,
+      "ventaNoSuj": 0,
+      "descripcion": "Grúa telescópica de 30 tons - por semana (4 horas mínimas ordinarias, Lunes a Viernes: 8:00am - 17:00pm Sábado: 8:00am - 12:00pm Domingo: Jornada Extraordinaria.)",
+      "ventaExenta": 0,
+      "ventaGravada": 270,
+      "numeroDocumento": "9B0A21C5-6A63-4545-A77F-EBB8E56D93CB"
+    }
+  ],
+  "extension": {
+    "docuEntrega": null,
+    "observaciones": "Descuento por 4 horas de servicio no realizadas.",
+    "nombRecibe": null,
+    "nombEntrega": null,
+    "docuRecibe": null
+  },
+  "ventaTercero": null,
+  "apendice": null
+}
+
+eyJhbGciOiJSUzUxMiJ9.ew0KICAiaWRlbnRpZmljYWNpb24iIDogew0KICAgICJjb2RpZ29HZW5lcmFjaW9uIiA6ICI2OTc0RjFCQy0yQTIwLTQ4NkYtODg3NS1BQjQ1QzdDQjMwRDAiLA0KICAgICJ0aXBvQ29udGluZ2VuY2lhIiA6IG51bGwsDQogICAgIm51bWVyb0NvbnRyb2wiIDogIkRURS0wNS1NMDAxUDAwMS0wMDAwMDAwMDAwMDAwMTMiLA0KICAgICJ0aXBvT3BlcmFjaW9uIiA6IDEsDQogICAgImFtYmllbnRlIiA6ICIwMSIsDQogICAgImZlY0VtaSIgOiAiMjAyNi0wMy0xOSIsDQogICAgInRpcG9Nb2RlbG8iIDogMSwNCiAgICAidGlwb0R0ZSIgOiAiMDUiLA0KICAgICJ2ZXJzaW9uIiA6IDMsDQogICAgInRpcG9Nb25lZGEiIDogIlVTRCIsDQogICAgIm1vdGl2b0NvbnRpbiIgOiBudWxsLA0KICAgICJob3JFbWkiIDogIjA4OjAwOjAwIg0KICB9LA0KICAiZW1pc29yIiA6IHsNCiAgICAiZGVzY0FjdGl2aWRhZCIgOiAiVHJhbnNwb3J0ZSBkZSBjYXJnYSBpbnRlcm5hY2lvbmFsIiwNCiAgICAidGlwb0VzdGFibGVjaW1pZW50byIgOiAiMDIiLA0KICAgICJjb2RBY3RpdmlkYWQiIDogIjQ5MjMzIiwNCiAgICAiY29ycmVvIiA6ICJpbmZvQGdydXBvbWVnYWxvYWQuY29tIiwNCiAgICAibml0IiA6ICIwNjE0MTEwMTE2MTA0MiIsDQogICAgImRpcmVjY2lvbiIgOiB7DQogICAgICAiY29tcGxlbWVudG8iIDogIlBPTElHLiBFLCBDVE9OLiBGTE9SIEFNQVJJTExBLCBMT1RFIDYyNiBDLCIsDQogICAgICAibXVuaWNpcGlvIiA6ICIyNSIsDQogICAgICAiZGVwYXJ0YW1lbnRvIiA6ICIwNSINCiAgICB9LA0KICAgICJub21icmVDb21lcmNpYWwiIDogIk1FR0FMT0FELCBTLkEuIERFIEMuVi4iLA0KICAgICJ0ZWxlZm9ubyIgOiAiMjUzMDUyOTMiLA0KICAgICJub21icmUiIDogIk1FR0FMT0FELCBTLkEuIERFIEMuVi4iLA0KICAgICJucmMiIDogIjI0NzMxMDkiDQogIH0sDQogICJyZWNlcHRvciIgOiB7DQogICAgIm5pdCIgOiAiMDYxNDIzMDkwNjEwNTYiLA0KICAgICJucmMiIDogIjE3NjY4MjAiLA0KICAgICJjb3JyZW8iIDogImNvcnBhY3NhQHlhaG9vLmNvbSIsDQogICAgIm5vbWJyZSIgOiAiQ09SUE9SQUNJw5NOIEFMVkFSQURPIENBU1RJTExPIFMuQSBERSBDLlYiLA0KICAgICJ0ZWxlZm9ubyIgOiAiNzg0ODA2NTQiLA0KICAgICJkaXJlY2Npb24iIDogew0KICAgICAgImNvbXBsZW1lbnRvIiA6ICJDQUxMRSBFTCBUUkFQSUNIRSwgQkxPQ0sgSCAjMywgQ09MIEpBUkRJTkVTIERFIExBIEhBQ0lFTkRBIDMgRVRBUEEgQ0lVREFEIE1FUkxJT1QgQU5USUdVTyBDVVNDQVRMQU4gTEEgTElCRVJUQUQiLA0KICAgICAgIm11bmljaXBpbyIgOiAiMjciLA0KICAgICAgImRlcGFydGFtZW50byIgOiAiMDUiDQogICAgfSwNCiAgICAiY29kQWN0aXZpZGFkIiA6ICI2ODEwOSIsDQogICAgImRlc2NBY3RpdmlkYWQiIDogIkFjdGl2aWRhZGVzIGlubW9iaWxpYXJpYXMgcmVhbGl6YWRhcyBjb24gYmllbmVzIHByb3Bpb3MgbyBhcnJlbmRhZG9zIG4uYy5wLiIsDQogICAgIm5vbWJyZUNvbWVyY2lhbCIgOiAiQ09SUE9SQUNJw5NOIEFMVkFSQURPIENBU1RJTExPIFMuQSBERSBDLlYiDQogIH0sDQogICJkb2N1bWVudG9SZWxhY2lvbmFkbyIgOiBbIHsNCiAgICAidGlwb0RvY3VtZW50byIgOiAiMDMiLA0KICAgICJmZWNoYUVtaXNpb24iIDogIjIwMjYtMDItMjYiLA0KICAgICJudW1lcm9Eb2N1bWVudG8iIDogIjlCMEEyMUM1LTZBNjMtNDU0NS1BNzdGLUVCQjhFNTZEOTNDQiIsDQogICAgInRpcG9HZW5lcmFjaW9uIiA6IDENCiAgfSBdLA0KICAicmVzdW1lbiIgOiB7DQogICAgInRvdGFsTm9TdWoiIDogMCwNCiAgICAiaXZhUGVyY2kxIiA6IDAsDQogICAgImRlc2N1Tm9TdWoiIDogMCwNCiAgICAidG90YWxMZXRyYXMiIDogIlRSRVNDSUVOVE9TIENJTkNPIENPTiAxMC8xMDAgVS5TLiBET0xBUkVTIiwNCiAgICAiaXZhUmV0ZTEiIDogMCwNCiAgICAic3ViVG90YWwiIDogMjcwLA0KICAgICJyZXRlUmVudGEiIDogMCwNCiAgICAic3ViVG90YWxWZW50YXMiIDogMjcwLA0KICAgICJ0cmlidXRvcyIgOiBbIHsNCiAgICAgICJkZXNjcmlwY2lvbiIgOiAiSW1wdWVzdG8gYWwgVmFsb3IgQWdyZWdhZG8gMTMlIiwNCiAgICAgICJjb2RpZ28iIDogIjIwIiwNCiAgICAgICJ2YWxvciIgOiAzNS4xDQogICAgfSBdLA0KICAgICJkZXNjdUV4ZW50YSIgOiAwLA0KICAgICJ0b3RhbERlc2N1IiA6IDAsDQogICAgImRlc2N1R3JhdmFkYSIgOiAwLA0KICAgICJ0b3RhbEdyYXZhZGEiIDogMjcwLA0KICAgICJtb250b1RvdGFsT3BlcmFjaW9uIiA6IDMwNS4xLA0KICAgICJ0b3RhbEV4ZW50YSIgOiAwLA0KICAgICJjb25kaWNpb25PcGVyYWNpb24iIDogMQ0KICB9LA0KICAiY3VlcnBvRG9jdW1lbnRvIiA6IFsgew0KICAgICJjb2RpZ28iIDogbnVsbCwNCiAgICAibnVtSXRlbSIgOiAxLA0KICAgICJjYW50aWRhZCIgOiAxLA0KICAgICJ0aXBvSXRlbSIgOiAyLA0KICAgICJ0cmlidXRvcyIgOiBbICIyMCIgXSwNCiAgICAicHJlY2lvVW5pIiA6IDI3MCwNCiAgICAidW5pTWVkaWRhIiA6IDU5LA0KICAgICJjb2RUcmlidXRvIiA6IG51bGwsDQogICAgIm1vbnRvRGVzY3UiIDogMCwNCiAgICAidmVudGFOb1N1aiIgOiAwLA0KICAgICJkZXNjcmlwY2lvbiIgOiAiR3LDumEgdGVsZXNjw7NwaWNhIGRlIDMwIHRvbnMgLSBwb3Igc2VtYW5hICg0IGhvcmFzIG3DrW5pbWFzIG9yZGluYXJpYXMsIEx1bmVzIGEgVmllcm5lczogODowMGFtIC0gMTc6MDBwbSBTw6FiYWRvOiA4OjAwYW0gLSAxMjowMHBtIERvbWluZ286IEpvcm5hZGEgRXh0cmFvcmRpbmFyaWEuKSIsDQogICAgInZlbnRhRXhlbnRhIiA6IDAsDQogICAgInZlbnRhR3JhdmFkYSIgOiAyNzAsDQogICAgIm51bWVyb0RvY3VtZW50byIgOiAiOUIwQTIxQzUtNkE2My00NTQ1LUE3N0YtRUJCOEU1NkQ5M0NCIg0KICB9IF0sDQogICJleHRlbnNpb24iIDogew0KICAgICJkb2N1RW50cmVnYSIgOiBudWxsLA0KICAgICJvYnNlcnZhY2lvbmVzIiA6ICJEZXNjdWVudG8gcG9yIDQgaG9yYXMgZGUgc2VydmljaW8gbm8gcmVhbGl6YWRhcy4iLA0KICAgICJub21iUmVjaWJlIiA6IG51bGwsDQogICAgIm5vbWJFbnRyZWdhIiA6IG51bGwsDQogICAgImRvY3VSZWNpYmUiIDogbnVsbA0KICB9LA0KICAidmVudGFUZXJjZXJvIiA6IG51bGwsDQogICJhcGVuZGljZSIgOiBudWxsDQp9.FEp7YZXi9CTVlMyNYYq_ese62ofwHVFogytXGspl720uSUIgTUSwa8K9awNvy-8dZZlpCfRHdSFD_MPvD6Gj6_QAvO799NZXfVBPGtf9c67EMedLZJuBzVrtqbXBWM5biU6mG16jBqoSCXaAmES2mSrxkA7w3aoY5qykVfMJ75Irg6Zycr0D8OW_O1HhdV8UBUA4uW5CciKWKPXX0NM8XHw2PlTiAnB7xLbwp2CRgtJgnJ07klFWXQ0EYvWacvYQrgeZK06mn5gbpAAVudFdZGUUm8fvxRLc-Jl5SH_Ak6nR-LEOM_n9fLdSMkw15h8OV00l0VNn-_G20BzSpMCjxw
+
+{
+  "version": 2,
+  "ambiente": "01",
+  "versionApp": 2,
+  "estado": "PROCESADO",
+  "codigoGeneracion": "6974F1BC-2A20-486F-8875-AB45C7CB30D0",
+  "selloRecibido": "2026DD4CDAB907754AC4930FFDC0236B2EECMSGQ",
+  "fhProcesamiento": "19/03/2026 15:02:28",
+  "clasificaMsg": "10",
+  "codigoMsg": "001",
+  "descripcionMsg": "RECIBIDO",
+  "observaciones": []
+}
