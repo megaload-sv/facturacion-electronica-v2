@@ -1,0 +1,130 @@
+
+{
+  "identificacion": {
+    "codigoGeneracion": "1690838F-B8CD-4F25-844D-362AFD7F7037",
+    "tipoContingencia": null,
+    "numeroControl": "DTE-05-M001P001-000000000000019",
+    "tipoOperacion": 1,
+    "ambiente": "01",
+    "fecEmi": "2026-05-23",
+    "tipoModelo": 1,
+    "tipoDte": "05",
+    "version": 3,
+    "tipoMoneda": "USD",
+    "motivoContin": null,
+    "horEmi": "14:30:00"
+  },
+  "emisor": {
+    "descActividad": "Transporte de carga internacional",
+    "tipoEstablecimiento": "02",
+    "codActividad": "49233",
+    "correo": "info@grupomegaload.com",
+    "nit": "06141101161042",
+    "direccion": {
+      "complemento": "POLIG. E, CTON. FLOR AMARILLA, LOTE 626 C,",
+      "municipio": "25",
+      "departamento": "05"
+    },
+    "nombreComercial": "MEGALOAD, S.A. DE C.V.",
+    "telefono": "25305293",
+    "nombre": "MEGALOAD, S.A. DE C.V.",
+    "nrc": "2473109"
+  },
+  "receptor": {
+    "nit": "06142202640012",
+    "nrc": "60712",
+    "correo": "recepcion.facturas@grupocassa.com",
+    "nombre": "COMPAÑIA AZUCARERA SALVADOREÑA, S. A. DE C. V.",
+    "telefono": "78515925",
+    "direccion": {
+      "complemento": "CARRETERA A SONSONATE, KILOMETRO 62 Y 1/2 CANTÓN HUISCOYOLATE",
+      "municipio": "19",
+      "departamento": "03"
+    },
+    "codActividad": "10721",
+    "descActividad": "Ingenios azucareros",
+    "nombreComercial": "COMPAÑIA AZUCARERA SALVADOREÑA, S. A. DE C. V."
+  },
+  "documentoRelacionado": [
+    {
+      "tipoDocumento": "03",
+      "fechaEmision": "2026-04-07",
+      "numeroDocumento": "B66196F9-BEB1-4A2A-8357-066656B40C7A",
+      "tipoGeneracion": 1
+    }
+  ],
+  "resumen": {
+    "totalNoSuj": 0,
+    "ivaPerci1": 0,
+    "descuNoSuj": 0,
+    "totalLetras": "OCHO MIL SEISCIENTOS UNO CON 60/100 U.S. DOLARES",
+    "ivaRete1": 76.8,
+    "subTotal": 7680,
+    "reteRenta": 0,
+    "subTotalVentas": 7680,
+    "tributos": [
+      {
+        "descripcion": "Impuesto al Valor Agregado 13%",
+        "codigo": "20",
+        "valor": 998.4
+      }
+    ],
+    "descuExenta": 0,
+    "totalDescu": 0,
+    "descuGravada": 0,
+    "totalGravada": 7680,
+    "montoTotalOperacion": 8601.6,
+    "totalExenta": 0,
+    "condicionOperacion": 1
+  },
+  "cuerpoDocumento": [
+    {
+      "codigo": null,
+      "numItem": 1,
+      "cantidad": 1,
+      "tipoItem": 2,
+      "tributos": [
+        "20"
+      ],
+      "precioUni": 7680,
+      "uniMedida": 59,
+      "codTributo": null,
+      "montoDescu": 0,
+      "ventaNoSuj": 0,
+      "descripcion": "Telehander de 5 tons - por mes (SERVICIO DE ARRENDAMIENTO DE TELEHANDER DE 5<br />\\r\\nTONS POR MES 182 HORAS ORDINARIAS MINIMAS<br />\\r\\nPOR MES)",
+      "ventaExenta": 0,
+      "ventaGravada": 7680,
+      "numeroDocumento": "B66196F9-BEB1-4A2A-8357-066656B40C7A"
+    }
+  ],
+  "extension": {
+    "docuEntrega": null,
+    "observaciones": "",
+    "nombRecibe": null,
+    "nombEntrega": null,
+    "docuRecibe": null
+  },
+  "ventaTercero": null,
+  "apendice": null
+}
+
+
+
+eyJhbGciOiJSUzUxMiJ9.ew0KICAiaWRlbnRpZmljYWNpb24iIDogew0KICAgICJjb2RpZ29HZW5lcmFjaW9uIiA6ICIxNjkwODM4Ri1COENELTRGMjUtODQ0RC0zNjJBRkQ3RjcwMzciLA0KICAgICJ0aXBvQ29udGluZ2VuY2lhIiA6IG51bGwsDQogICAgIm51bWVyb0NvbnRyb2wiIDogIkRURS0wNS1NMDAxUDAwMS0wMDAwMDAwMDAwMDAwMTkiLA0KICAgICJ0aXBvT3BlcmFjaW9uIiA6IDEsDQogICAgImFtYmllbnRlIiA6ICIwMSIsDQogICAgImZlY0VtaSIgOiAiMjAyNi0wNS0yMyIsDQogICAgInRpcG9Nb2RlbG8iIDogMSwNCiAgICAidGlwb0R0ZSIgOiAiMDUiLA0KICAgICJ2ZXJzaW9uIiA6IDMsDQogICAgInRpcG9Nb25lZGEiIDogIlVTRCIsDQogICAgIm1vdGl2b0NvbnRpbiIgOiBudWxsLA0KICAgICJob3JFbWkiIDogIjE0OjMwOjAwIg0KICB9LA0KICAiZW1pc29yIiA6IHsNCiAgICAiZGVzY0FjdGl2aWRhZCIgOiAiVHJhbnNwb3J0ZSBkZSBjYXJnYSBpbnRlcm5hY2lvbmFsIiwNCiAgICAidGlwb0VzdGFibGVjaW1pZW50byIgOiAiMDIiLA0KICAgICJjb2RBY3RpdmlkYWQiIDogIjQ5MjMzIiwNCiAgICAiY29ycmVvIiA6ICJpbmZvQGdydXBvbWVnYWxvYWQuY29tIiwNCiAgICAibml0IiA6ICIwNjE0MTEwMTE2MTA0MiIsDQogICAgImRpcmVjY2lvbiIgOiB7DQogICAgICAiY29tcGxlbWVudG8iIDogIlBPTElHLiBFLCBDVE9OLiBGTE9SIEFNQVJJTExBLCBMT1RFIDYyNiBDLCIsDQogICAgICAibXVuaWNpcGlvIiA6ICIyNSIsDQogICAgICAiZGVwYXJ0YW1lbnRvIiA6ICIwNSINCiAgICB9LA0KICAgICJub21icmVDb21lcmNpYWwiIDogIk1FR0FMT0FELCBTLkEuIERFIEMuVi4iLA0KICAgICJ0ZWxlZm9ubyIgOiAiMjUzMDUyOTMiLA0KICAgICJub21icmUiIDogIk1FR0FMT0FELCBTLkEuIERFIEMuVi4iLA0KICAgICJucmMiIDogIjI0NzMxMDkiDQogIH0sDQogICJyZWNlcHRvciIgOiB7DQogICAgIm5pdCIgOiAiMDYxNDIyMDI2NDAwMTIiLA0KICAgICJucmMiIDogIjYwNzEyIiwNCiAgICAiY29ycmVvIiA6ICJyZWNlcGNpb24uZmFjdHVyYXNAZ3J1cG9jYXNzYS5jb20iLA0KICAgICJub21icmUiIDogIkNPTVBBw5FJQSBBWlVDQVJFUkEgU0FMVkFET1JFw5FBLCBTLiBBLiBERSBDLiBWLiIsDQogICAgInRlbGVmb25vIiA6ICI3ODUxNTkyNSIsDQogICAgImRpcmVjY2lvbiIgOiB7DQogICAgICAiY29tcGxlbWVudG8iIDogIkNBUlJFVEVSQSBBIFNPTlNPTkFURSwgS0lMT01FVFJPIDYyIFkgMS8yIENBTlTDk04gSFVJU0NPWU9MQVRFIiwNCiAgICAgICJtdW5pY2lwaW8iIDogIjE5IiwNCiAgICAgICJkZXBhcnRhbWVudG8iIDogIjAzIg0KICAgIH0sDQogICAgImNvZEFjdGl2aWRhZCIgOiAiMTA3MjEiLA0KICAgICJkZXNjQWN0aXZpZGFkIiA6ICJJbmdlbmlvcyBhenVjYXJlcm9zIiwNCiAgICAibm9tYnJlQ29tZXJjaWFsIiA6ICJDT01QQcORSUEgQVpVQ0FSRVJBIFNBTFZBRE9SRcORQSwgUy4gQS4gREUgQy4gVi4iDQogIH0sDQogICJkb2N1bWVudG9SZWxhY2lvbmFkbyIgOiBbIHsNCiAgICAidGlwb0RvY3VtZW50byIgOiAiMDMiLA0KICAgICJmZWNoYUVtaXNpb24iIDogIjIwMjYtMDQtMDciLA0KICAgICJudW1lcm9Eb2N1bWVudG8iIDogIkI2NjE5NkY5LUJFQjEtNEEyQS04MzU3LTA2NjY1NkI0MEM3QSIsDQogICAgInRpcG9HZW5lcmFjaW9uIiA6IDENCiAgfSBdLA0KICAicmVzdW1lbiIgOiB7DQogICAgInRvdGFsTm9TdWoiIDogMCwNCiAgICAiaXZhUGVyY2kxIiA6IDAsDQogICAgImRlc2N1Tm9TdWoiIDogMCwNCiAgICAidG90YWxMZXRyYXMiIDogIk9DSE8gTUlMIFNFSVNDSUVOVE9TIFVOTyBDT04gNjAvMTAwIFUuUy4gRE9MQVJFUyIsDQogICAgIml2YVJldGUxIiA6IDc2LjgsDQogICAgInN1YlRvdGFsIiA6IDc2ODAsDQogICAgInJldGVSZW50YSIgOiAwLA0KICAgICJzdWJUb3RhbFZlbnRhcyIgOiA3NjgwLA0KICAgICJ0cmlidXRvcyIgOiBbIHsNCiAgICAgICJkZXNjcmlwY2lvbiIgOiAiSW1wdWVzdG8gYWwgVmFsb3IgQWdyZWdhZG8gMTMlIiwNCiAgICAgICJjb2RpZ28iIDogIjIwIiwNCiAgICAgICJ2YWxvciIgOiA5OTguNA0KICAgIH0gXSwNCiAgICAiZGVzY3VFeGVudGEiIDogMCwNCiAgICAidG90YWxEZXNjdSIgOiAwLA0KICAgICJkZXNjdUdyYXZhZGEiIDogMCwNCiAgICAidG90YWxHcmF2YWRhIiA6IDc2ODAsDQogICAgIm1vbnRvVG90YWxPcGVyYWNpb24iIDogODYwMS42LA0KICAgICJ0b3RhbEV4ZW50YSIgOiAwLA0KICAgICJjb25kaWNpb25PcGVyYWNpb24iIDogMQ0KICB9LA0KICAiY3VlcnBvRG9jdW1lbnRvIiA6IFsgew0KICAgICJjb2RpZ28iIDogbnVsbCwNCiAgICAibnVtSXRlbSIgOiAxLA0KICAgICJjYW50aWRhZCIgOiAxLA0KICAgICJ0aXBvSXRlbSIgOiAyLA0KICAgICJ0cmlidXRvcyIgOiBbICIyMCIgXSwNCiAgICAicHJlY2lvVW5pIiA6IDc2ODAsDQogICAgInVuaU1lZGlkYSIgOiA1OSwNCiAgICAiY29kVHJpYnV0byIgOiBudWxsLA0KICAgICJtb250b0Rlc2N1IiA6IDAsDQogICAgInZlbnRhTm9TdWoiIDogMCwNCiAgICAiZGVzY3JpcGNpb24iIDogIlRlbGVoYW5kZXIgZGUgNSB0b25zIC0gcG9yIG1lcyAoU0VSVklDSU8gREUgQVJSRU5EQU1JRU5UTyBERSBURUxFSEFOREVSIERFIDU8YnIgLz5cXHJcXG5UT05TIFBPUiBNRVMgMTgyIEhPUkFTIE9SRElOQVJJQVMgTUlOSU1BUzxiciAvPlxcclxcblBPUiBNRVMpIiwNCiAgICAidmVudGFFeGVudGEiIDogMCwNCiAgICAidmVudGFHcmF2YWRhIiA6IDc2ODAsDQogICAgIm51bWVyb0RvY3VtZW50byIgOiAiQjY2MTk2RjktQkVCMS00QTJBLTgzNTctMDY2NjU2QjQwQzdBIg0KICB9IF0sDQogICJleHRlbnNpb24iIDogew0KICAgICJkb2N1RW50cmVnYSIgOiBudWxsLA0KICAgICJvYnNlcnZhY2lvbmVzIiA6ICIiLA0KICAgICJub21iUmVjaWJlIiA6IG51bGwsDQogICAgIm5vbWJFbnRyZWdhIiA6IG51bGwsDQogICAgImRvY3VSZWNpYmUiIDogbnVsbA0KICB9LA0KICAidmVudGFUZXJjZXJvIiA6IG51bGwsDQogICJhcGVuZGljZSIgOiBudWxsDQp9.GEz9-BAFFNT-CTjKGKHJ9oSCrjIjgZxPJ7TSiqx71wDMVo38Dd2a4HDsAowHrjmYpgrXcZ1eQcDgURc3zZFQZ9X274nqpfJ3Y8dbhdIF8pakfXHO6aFmu6Pcgig6HLe-3RwMRPmT_hJXRmDU6-O0v0k2K35ravuNbnF85InRSpAjJmeGakUpfaYb7igxbwrwanu5vVib8AVHARcrGEiNfU9pWGPj0u7QDxCRegRJC0GN7hxTI9-rxSbB9TpDTKborjXlD5ywOi5BvsfpgBfHWsvDVqR8BkQm8Q5qLgnyRb1qN8Hf4rs0R0ZpOLBj6YHooi48xqXlurNHV0UQPPhP3Q
+
+
+{
+  "version": 2,
+  "ambiente": "01",
+  "versionApp": 2,
+  "estado": "PROCESADO",
+  "codigoGeneracion": "1690838F-B8CD-4F25-844D-362AFD7F7037",
+  "selloRecibido": "2026FFE19D39DEB94709B35AA15F8C3F154DQSTW",
+  "fhProcesamiento": "27/05/2026 17:56:09",
+  "clasificaMsg": "10",
+  "codigoMsg": "002",
+  "descripcionMsg": "RECIBIDO CON OBSERVACIONES",
+  "observaciones": [
+    "[identificacion.fecEmi] DIFIERE DE LA FECHA DE ENVIO"
+  ]
+}

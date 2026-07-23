@@ -1,0 +1,146 @@
+
+{
+  "identificacion": {
+    "codigoGeneracion": "48E54A4B-7673-432C-B987-BD9E5C442C57",
+    "tipoContingencia": null,
+    "numeroControl": "DTE-05-M001P001-000000000000029",
+    "tipoOperacion": 1,
+    "ambiente": "01",
+    "fecEmi": "2026-05-30",
+    "tipoModelo": 1,
+    "tipoDte": "05",
+    "version": 3,
+    "tipoMoneda": "USD",
+    "motivoContin": null,
+    "horEmi": "10:00:00"
+  },
+  "emisor": {
+    "descActividad": "Transporte de carga internacional",
+    "tipoEstablecimiento": "02",
+    "codActividad": "49233",
+    "correo": "info@grupomegaload.com",
+    "nit": "06141101161042",
+    "direccion": {
+      "complemento": "POLIG. E, CTON. FLOR AMARILLA, LOTE 626 C,",
+      "municipio": "25",
+      "departamento": "05"
+    },
+    "nombreComercial": "MEGALOAD, S.A. DE C.V.",
+    "telefono": "25305293",
+    "nombre": "MEGALOAD, S.A. DE C.V.",
+    "nrc": "2473109"
+  },
+  "receptor": {
+    "nit": "94112202781013",
+    "nrc": "1932607",
+    "correo": "facturaelectronicasv@constructorameco.com",
+    "nombre": "CONSTRUCTORA MECO, SOCIEDAD ANONIMA, SUCURSAL EL SALVADOR",
+    "telefono": "23556194",
+    "direccion": {
+      "municipio": "23",
+      "complemento": "BLVD. DEL HIPODROMO, LOCAL 202, COL. SAN BENITO EDIF. 237",
+      "departamento": "06"
+    },
+    "codActividad": "42900",
+    "descActividad": "Construcción de obras de ingeniería civil n.c.p.",
+    "nombreComercial": "CONSTRUCTORA MECO, SOCIEDAD ANONIMA, SUCURSAL EL SALVADOR"
+  },
+  "documentoRelacionado": [
+    {
+      "tipoDocumento": "03",
+      "fechaEmision": "2026-04-25",
+      "numeroDocumento": "8FCE4615-446E-48F4-9129-E57AE9500978",
+      "tipoGeneracion": 1
+    }
+  ],
+  "resumen": {
+    "totalNoSuj": 0,
+    "ivaPerci1": 0,
+    "descuNoSuj": 0,
+    "totalLetras": "CINCO MIL NOVENTA Y CINCO CON 17/100 U.S. DOLARES",
+    "ivaRete1": 0,
+    "subTotal": 4509,
+    "reteRenta": 0,
+    "subTotalVentas": 4509,
+    "tributos": [
+      {
+        "descripcion": "Impuesto al Valor Agregado 13%",
+        "codigo": "20",
+        "valor": 586.17
+      }
+    ],
+    "descuExenta": 0,
+    "totalDescu": 0,
+    "descuGravada": 0,
+    "totalGravada": 4509,
+    "montoTotalOperacion": 5095.17,
+    "totalExenta": 0,
+    "condicionOperacion": 1
+  },
+  "cuerpoDocumento": [
+    {
+      "codigo": null,
+      "numItem": 1,
+      "cantidad": 6,
+      "tipoItem": 2,
+      "tributos": [
+        "20"
+      ],
+      "precioUni": 360,
+      "uniMedida": 59,
+      "codTributo": null,
+      "montoDescu": 0,
+      "ventaNoSuj": 0,
+      "descripcion": "Telehander de 4 tons - por día (44 horas ordinarias mínimas, $54.00 por hora extra.<br />\\r\\n<br />\\r\\nLunes a Viernes: 8:00 a 17:00 <br />\\r\\nSábado: 8:00 a 12:00<br />\\r\\nDomingo: Jornada extraordinaria.<br />\\r\\n <br />\\r\\n13 de Abril al 18 de Abril.)",
+      "ventaExenta": 0,
+      "ventaGravada": 2160,
+      "numeroDocumento": "8FCE4615-446E-48F4-9129-E57AE9500978"
+    },
+    {
+      "codigo": null,
+      "numItem": 2,
+      "cantidad": 43.5,
+      "tipoItem": 2,
+      "tributos": [
+        "20"
+      ],
+      "precioUni": 54,
+      "uniMedida": 59,
+      "codTributo": null,
+      "montoDescu": 0,
+      "ventaNoSuj": 0,
+      "descripcion": "Telehander de 4 tons - por hora (38 horas extra. <br />\\r\\n<br />\\r\\n13 de Abril al 19 de Abril.)",
+      "ventaExenta": 0,
+      "ventaGravada": 2349,
+      "numeroDocumento": "8FCE4615-446E-48F4-9129-E57AE9500978"
+    }
+  ],
+  "extension": {
+    "docuEntrega": null,
+    "observaciones": "",
+    "nombRecibe": null,
+    "nombEntrega": null,
+    "docuRecibe": null
+  },
+  "ventaTercero": null,
+  "apendice": null
+}
+
+
+eyJhbGciOiJSUzUxMiJ9.ew0KICAiaWRlbnRpZmljYWNpb24iIDogew0KICAgICJjb2RpZ29HZW5lcmFjaW9uIiA6ICI0OEU1NEE0Qi03NjczLTQzMkMtQjk4Ny1CRDlFNUM0NDJDNTciLA0KICAgICJ0aXBvQ29udGluZ2VuY2lhIiA6IG51bGwsDQogICAgIm51bWVyb0NvbnRyb2wiIDogIkRURS0wNS1NMDAxUDAwMS0wMDAwMDAwMDAwMDAwMjkiLA0KICAgICJ0aXBvT3BlcmFjaW9uIiA6IDEsDQogICAgImFtYmllbnRlIiA6ICIwMSIsDQogICAgImZlY0VtaSIgOiAiMjAyNi0wNS0zMCIsDQogICAgInRpcG9Nb2RlbG8iIDogMSwNCiAgICAidGlwb0R0ZSIgOiAiMDUiLA0KICAgICJ2ZXJzaW9uIiA6IDMsDQogICAgInRpcG9Nb25lZGEiIDogIlVTRCIsDQogICAgIm1vdGl2b0NvbnRpbiIgOiBudWxsLA0KICAgICJob3JFbWkiIDogIjEwOjAwOjAwIg0KICB9LA0KICAiZW1pc29yIiA6IHsNCiAgICAiZGVzY0FjdGl2aWRhZCIgOiAiVHJhbnNwb3J0ZSBkZSBjYXJnYSBpbnRlcm5hY2lvbmFsIiwNCiAgICAidGlwb0VzdGFibGVjaW1pZW50byIgOiAiMDIiLA0KICAgICJjb2RBY3RpdmlkYWQiIDogIjQ5MjMzIiwNCiAgICAiY29ycmVvIiA6ICJpbmZvQGdydXBvbWVnYWxvYWQuY29tIiwNCiAgICAibml0IiA6ICIwNjE0MTEwMTE2MTA0MiIsDQogICAgImRpcmVjY2lvbiIgOiB7DQogICAgICAiY29tcGxlbWVudG8iIDogIlBPTElHLiBFLCBDVE9OLiBGTE9SIEFNQVJJTExBLCBMT1RFIDYyNiBDLCIsDQogICAgICAibXVuaWNpcGlvIiA6ICIyNSIsDQogICAgICAiZGVwYXJ0YW1lbnRvIiA6ICIwNSINCiAgICB9LA0KICAgICJub21icmVDb21lcmNpYWwiIDogIk1FR0FMT0FELCBTLkEuIERFIEMuVi4iLA0KICAgICJ0ZWxlZm9ubyIgOiAiMjUzMDUyOTMiLA0KICAgICJub21icmUiIDogIk1FR0FMT0FELCBTLkEuIERFIEMuVi4iLA0KICAgICJucmMiIDogIjI0NzMxMDkiDQogIH0sDQogICJyZWNlcHRvciIgOiB7DQogICAgIm5pdCIgOiAiOTQxMTIyMDI3ODEwMTMiLA0KICAgICJucmMiIDogIjE5MzI2MDciLA0KICAgICJjb3JyZW8iIDogImZhY3R1cmFlbGVjdHJvbmljYXN2QGNvbnN0cnVjdG9yYW1lY28uY29tIiwNCiAgICAibm9tYnJlIiA6ICJDT05TVFJVQ1RPUkEgTUVDTywgU09DSUVEQUQgQU5PTklNQSwgU1VDVVJTQUwgRUwgU0FMVkFET1IiLA0KICAgICJ0ZWxlZm9ubyIgOiAiMjM1NTYxOTQiLA0KICAgICJkaXJlY2Npb24iIDogew0KICAgICAgIm11bmljaXBpbyIgOiAiMjMiLA0KICAgICAgImNvbXBsZW1lbnRvIiA6ICJCTFZELiBERUwgSElQT0RST01PLCBMT0NBTCAyMDIsIENPTC4gU0FOIEJFTklUTyBFRElGLiAyMzciLA0KICAgICAgImRlcGFydGFtZW50byIgOiAiMDYiDQogICAgfSwNCiAgICAiY29kQWN0aXZpZGFkIiA6ICI0MjkwMCIsDQogICAgImRlc2NBY3RpdmlkYWQiIDogIkNvbnN0cnVjY2nDs24gZGUgb2JyYXMgZGUgaW5nZW5pZXLDrWEgY2l2aWwgbi5jLnAuIiwNCiAgICAibm9tYnJlQ29tZXJjaWFsIiA6ICJDT05TVFJVQ1RPUkEgTUVDTywgU09DSUVEQUQgQU5PTklNQSwgU1VDVVJTQUwgRUwgU0FMVkFET1IiDQogIH0sDQogICJkb2N1bWVudG9SZWxhY2lvbmFkbyIgOiBbIHsNCiAgICAidGlwb0RvY3VtZW50byIgOiAiMDMiLA0KICAgICJmZWNoYUVtaXNpb24iIDogIjIwMjYtMDQtMjUiLA0KICAgICJudW1lcm9Eb2N1bWVudG8iIDogIjhGQ0U0NjE1LTQ0NkUtNDhGNC05MTI5LUU1N0FFOTUwMDk3OCIsDQogICAgInRpcG9HZW5lcmFjaW9uIiA6IDENCiAgfSBdLA0KICAicmVzdW1lbiIgOiB7DQogICAgInRvdGFsTm9TdWoiIDogMCwNCiAgICAiaXZhUGVyY2kxIiA6IDAsDQogICAgImRlc2N1Tm9TdWoiIDogMCwNCiAgICAidG90YWxMZXRyYXMiIDogIkNJTkNPIE1JTCBOT1ZFTlRBIFkgQ0lOQ08gQ09OIDE3LzEwMCBVLlMuIERPTEFSRVMiLA0KICAgICJpdmFSZXRlMSIgOiAwLA0KICAgICJzdWJUb3RhbCIgOiA0NTA5LA0KICAgICJyZXRlUmVudGEiIDogMCwNCiAgICAic3ViVG90YWxWZW50YXMiIDogNDUwOSwNCiAgICAidHJpYnV0b3MiIDogWyB7DQogICAgICAiZGVzY3JpcGNpb24iIDogIkltcHVlc3RvIGFsIFZhbG9yIEFncmVnYWRvIDEzJSIsDQogICAgICAiY29kaWdvIiA6ICIyMCIsDQogICAgICAidmFsb3IiIDogNTg2LjE3DQogICAgfSBdLA0KICAgICJkZXNjdUV4ZW50YSIgOiAwLA0KICAgICJ0b3RhbERlc2N1IiA6IDAsDQogICAgImRlc2N1R3JhdmFkYSIgOiAwLA0KICAgICJ0b3RhbEdyYXZhZGEiIDogNDUwOSwNCiAgICAibW9udG9Ub3RhbE9wZXJhY2lvbiIgOiA1MDk1LjE3LA0KICAgICJ0b3RhbEV4ZW50YSIgOiAwLA0KICAgICJjb25kaWNpb25PcGVyYWNpb24iIDogMQ0KICB9LA0KICAiY3VlcnBvRG9jdW1lbnRvIiA6IFsgew0KICAgICJjb2RpZ28iIDogbnVsbCwNCiAgICAibnVtSXRlbSIgOiAxLA0KICAgICJjYW50aWRhZCIgOiA2LA0KICAgICJ0aXBvSXRlbSIgOiAyLA0KICAgICJ0cmlidXRvcyIgOiBbICIyMCIgXSwNCiAgICAicHJlY2lvVW5pIiA6IDM2MCwNCiAgICAidW5pTWVkaWRhIiA6IDU5LA0KICAgICJjb2RUcmlidXRvIiA6IG51bGwsDQogICAgIm1vbnRvRGVzY3UiIDogMCwNCiAgICAidmVudGFOb1N1aiIgOiAwLA0KICAgICJkZXNjcmlwY2lvbiIgOiAiVGVsZWhhbmRlciBkZSA0IHRvbnMgLSBwb3IgZMOtYSAoNDQgaG9yYXMgb3JkaW5hcmlhcyBtw61uaW1hcywgJDU0LjAwIHBvciBob3JhIGV4dHJhLjxiciAvPlxcclxcbjxiciAvPlxcclxcbkx1bmVzIGEgVmllcm5lczogODowMCBhIDE3OjAwIDxiciAvPlxcclxcblPDoWJhZG86IDg6MDAgYSAxMjowMDxiciAvPlxcclxcbkRvbWluZ286IEpvcm5hZGEgZXh0cmFvcmRpbmFyaWEuPGJyIC8-XFxyXFxuIDxiciAvPlxcclxcbjEzIGRlIEFicmlsIGFsIDE4IGRlIEFicmlsLikiLA0KICAgICJ2ZW50YUV4ZW50YSIgOiAwLA0KICAgICJ2ZW50YUdyYXZhZGEiIDogMjE2MCwNCiAgICAibnVtZXJvRG9jdW1lbnRvIiA6ICI4RkNFNDYxNS00NDZFLTQ4RjQtOTEyOS1FNTdBRTk1MDA5NzgiDQogIH0sIHsNCiAgICAiY29kaWdvIiA6IG51bGwsDQogICAgIm51bUl0ZW0iIDogMiwNCiAgICAiY2FudGlkYWQiIDogNDMuNSwNCiAgICAidGlwb0l0ZW0iIDogMiwNCiAgICAidHJpYnV0b3MiIDogWyAiMjAiIF0sDQogICAgInByZWNpb1VuaSIgOiA1NCwNCiAgICAidW5pTWVkaWRhIiA6IDU5LA0KICAgICJjb2RUcmlidXRvIiA6IG51bGwsDQogICAgIm1vbnRvRGVzY3UiIDogMCwNCiAgICAidmVudGFOb1N1aiIgOiAwLA0KICAgICJkZXNjcmlwY2lvbiIgOiAiVGVsZWhhbmRlciBkZSA0IHRvbnMgLSBwb3IgaG9yYSAoMzggaG9yYXMgZXh0cmEuIDxiciAvPlxcclxcbjxiciAvPlxcclxcbjEzIGRlIEFicmlsIGFsIDE5IGRlIEFicmlsLikiLA0KICAgICJ2ZW50YUV4ZW50YSIgOiAwLA0KICAgICJ2ZW50YUdyYXZhZGEiIDogMjM0OSwNCiAgICAibnVtZXJvRG9jdW1lbnRvIiA6ICI4RkNFNDYxNS00NDZFLTQ4RjQtOTEyOS1FNTdBRTk1MDA5NzgiDQogIH0gXSwNCiAgImV4dGVuc2lvbiIgOiB7DQogICAgImRvY3VFbnRyZWdhIiA6IG51bGwsDQogICAgIm9ic2VydmFjaW9uZXMiIDogIiIsDQogICAgIm5vbWJSZWNpYmUiIDogbnVsbCwNCiAgICAibm9tYkVudHJlZ2EiIDogbnVsbCwNCiAgICAiZG9jdVJlY2liZSIgOiBudWxsDQogIH0sDQogICJ2ZW50YVRlcmNlcm8iIDogbnVsbCwNCiAgImFwZW5kaWNlIiA6IG51bGwNCn0.gwVzVxbjl5eaqV2wlRTI7ppIsx50H84vbLBC_MooR6WzVm0csKAOXvN9dlfCev8kw2pulUlJfD8AanJrAYWtwF-vHESQQ3j3Jh4H9S44WkokvcAgYjMfqRXilEdIC7Pfzzsqt4qQBzUG4ef5S3jMzrmnkrJcCweL0J9GOX2AiiIp4PWsgIJztPwX04Vgnbi5EnbZatZvYy2L0yUOF1n1m60uHvQqzQug3E5kKVLgtLhv04kdKNKQm34UMDfkxIGYv0VziQnP1LbBKCrEGGkDIkpIPHiD_zqciFLD_BwAvCzDXMEBY9xe5TQu5aVPkDLvGYs7oYW1FVbU9A2RSF7Wtw
+
+{
+  "version": 2,
+  "ambiente": "01",
+  "versionApp": 2,
+  "estado": "PROCESADO",
+  "codigoGeneracion": "48E54A4B-7673-432C-B987-BD9E5C442C57",
+  "selloRecibido": "20267B39980B07AF46A1AA69D7423518EDE7QLGJ",
+  "fhProcesamiento": "02/06/2026 14:49:30",
+  "clasificaMsg": "10",
+  "codigoMsg": "002",
+  "descripcionMsg": "RECIBIDO CON OBSERVACIONES",
+  "observaciones": [
+    "[identificacion.fecEmi] DIFIERE DE LA FECHA DE ENVIO"
+  ]
+}

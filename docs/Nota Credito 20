@@ -1,0 +1,130 @@
+Nota Credito 20
+
+{
+	"identificacion": {
+        "codigoGeneracion": "DDF5E380-1E1D-4C30-BB69-D8B8D6264843",
+        "tipoContingencia": null,
+        "numeroControl": "DTE-05-M001P001-000000000000020",
+        "tipoOperacion": 1,
+        "ambiente": "01",
+        "fecEmi": "2025-08-31",
+        "tipoModelo": 1,
+        "tipoDte": "05",
+        "version": 3,
+        "tipoMoneda": "USD",
+        "motivoContin": null,
+        "horEmi": "11:05:00"
+    },
+	"emisor": {
+        "descActividad": "Transporte de carga internacional",
+        "tipoEstablecimiento": "02",
+        "codActividad": "49233",
+        "correo": "info@grupomegaload.com",
+        "nit": "06141101161042",
+        "direccion": {
+            "complemento": "POLIG. E, CTON. FLOR AMARILLA, LOTE 626 C,",
+            "municipio": "25",
+            "departamento": "05"
+        },
+        "nombreComercial": "MEGALOAD, S.A. DE C.V.",
+        "telefono": "25305293",
+        "nombre": "MEGALOAD, S.A. DE C.V.",
+        "nrc": "2473109"
+    },
+    "receptor": {
+    	"nit": "06232908241088",
+    	"nrc": "3483865",
+    	"correo": "edwin.soriano@updp-sem.com",
+    	"nombre": "UNION PORTUARIA DEL PACIFICO, SOCIEDAD POR ACCIONES DE ECONOMIA MIXTA DE C.V.",
+    	"telefono": "73961432",
+    	"direccion": {
+            "complemento": "BLVD LOS HEROES, COL MIRAMONTE, TORRE ROBLE, DISTRITO DE SAN SALVADOR, MUNICIPIO DE SAN SALVADOR CENTRO, DEPARTAMENTO DE SAN SALVADOR.",
+            "municipio": "23",
+            "departamento": "06"
+        },        
+        "codActividad": "82990",
+        "descActividad": "Actividades de apoyo empresariales ncp",
+        "nombreComercial": "UNION PORTUARIA DEL PACIFICO, SOCIEDAD POR ACCIONES DE ECONOMIA MIXTA DE C.V."
+    },
+    "documentoRelacionado": [
+        {
+            "tipoDocumento": "03",
+            "fechaEmision": "2025-08-12",
+            "numeroDocumento": "960BBE37-61AA-462D-9707-909A15B957C3",
+            "tipoGeneracion": 1
+        }
+    ],    
+    "resumen": {
+        "totalNoSuj": 0,
+        "ivaPerci1": 0,
+        "descuNoSuj": 0,
+        "totalLetras": "SETECIENTOS VEINTIOCHO CON 00/100 U.S. DOLARES",
+        "ivaRete1": 6.5,
+        "subTotal": 650,
+        "reteRenta": 0,
+        "subTotalVentas": 650,
+        "tributos": [
+            {
+                "descripcion": "Impuesto al Valor Agregado 13%",
+                "codigo": "20",
+                "valor": 84.5
+            }
+        ],
+        "descuExenta": 0,
+        "totalDescu": 0,
+        "descuGravada": 0,
+        "totalGravada": 650,
+        "montoTotalOperacion": 734.5,
+        "totalExenta": 0,
+        "condicionOperacion": 1
+    },
+    "cuerpoDocumento": [
+    	{
+            "codigo": null,
+            "numItem": 1,
+            "cantidad": 1,
+            "tipoItem": 2,
+            "tributos": [
+                "20"
+            ],
+            "precioUni": 650,
+            "uniMedida": 59,
+            "codTributo": null,
+            "montoDescu": 0,
+            "ventaNoSuj": 0,
+            "descripcion": "Cabezal y lowboy dropdeck cama baja (Movimiento de contenedor flat rack.)",
+            "ventaExenta": 0,
+            "ventaGravada": 650,
+            "numeroDocumento": "960BBE37-61AA-462D-9707-909A15B957C3"
+        }     
+    ],
+    "extension": {
+        "docuEntrega": null,
+        "observaciones": null,
+        "nombRecibe": null,
+        "nombEntrega": null,
+        "docuRecibe": null
+    },
+    "ventaTercero": null,
+    "apendice": null
+}
+
+
+eyJhbGciOiJSUzUxMiJ9.ew0KICAiaWRlbnRpZmljYWNpb24iIDogew0KICAgICJjb2RpZ29HZW5lcmFjaW9uIiA6ICJEREY1RTM4MC0xRTFELTRDMzAtQkI2OS1EOEI4RDYyNjQ4NDMiLA0KICAgICJ0aXBvQ29udGluZ2VuY2lhIiA6IG51bGwsDQogICAgIm51bWVyb0NvbnRyb2wiIDogIkRURS0wNS1NMDAxUDAwMS0wMDAwMDAwMDAwMDAwMjAiLA0KICAgICJ0aXBvT3BlcmFjaW9uIiA6IDEsDQogICAgImFtYmllbnRlIiA6ICIwMSIsDQogICAgImZlY0VtaSIgOiAiMjAyNS0wOC0zMSIsDQogICAgInRpcG9Nb2RlbG8iIDogMSwNCiAgICAidGlwb0R0ZSIgOiAiMDUiLA0KICAgICJ2ZXJzaW9uIiA6IDMsDQogICAgInRpcG9Nb25lZGEiIDogIlVTRCIsDQogICAgIm1vdGl2b0NvbnRpbiIgOiBudWxsLA0KICAgICJob3JFbWkiIDogIjExOjA1OjAwIg0KICB9LA0KICAiZW1pc29yIiA6IHsNCiAgICAiZGVzY0FjdGl2aWRhZCIgOiAiVHJhbnNwb3J0ZSBkZSBjYXJnYSBpbnRlcm5hY2lvbmFsIiwNCiAgICAidGlwb0VzdGFibGVjaW1pZW50byIgOiAiMDIiLA0KICAgICJjb2RBY3RpdmlkYWQiIDogIjQ5MjMzIiwNCiAgICAiY29ycmVvIiA6ICJpbmZvQGdydXBvbWVnYWxvYWQuY29tIiwNCiAgICAibml0IiA6ICIwNjE0MTEwMTE2MTA0MiIsDQogICAgImRpcmVjY2lvbiIgOiB7DQogICAgICAiY29tcGxlbWVudG8iIDogIlBPTElHLiBFLCBDVE9OLiBGTE9SIEFNQVJJTExBLCBMT1RFIDYyNiBDLCIsDQogICAgICAibXVuaWNpcGlvIiA6ICIyNSIsDQogICAgICAiZGVwYXJ0YW1lbnRvIiA6ICIwNSINCiAgICB9LA0KICAgICJub21icmVDb21lcmNpYWwiIDogIk1FR0FMT0FELCBTLkEuIERFIEMuVi4iLA0KICAgICJ0ZWxlZm9ubyIgOiAiMjUzMDUyOTMiLA0KICAgICJub21icmUiIDogIk1FR0FMT0FELCBTLkEuIERFIEMuVi4iLA0KICAgICJucmMiIDogIjI0NzMxMDkiDQogIH0sDQogICJyZWNlcHRvciIgOiB7DQogICAgIm5pdCIgOiAiMDYyMzI5MDgyNDEwODgiLA0KICAgICJucmMiIDogIjM0ODM4NjUiLA0KICAgICJjb3JyZW8iIDogImVkd2luLnNvcmlhbm9AdXBkcC1zZW0uY29tIiwNCiAgICAibm9tYnJlIiA6ICJVTklPTiBQT1JUVUFSSUEgREVMIFBBQ0lGSUNPLCBTT0NJRURBRCBQT1IgQUNDSU9ORVMgREUgRUNPTk9NSUEgTUlYVEEgREUgQy5WLiIsDQogICAgInRlbGVmb25vIiA6ICI3Mzk2MTQzMiIsDQogICAgImRpcmVjY2lvbiIgOiB7DQogICAgICAiY29tcGxlbWVudG8iIDogIkJMVkQgTE9TIEhFUk9FUywgQ09MIE1JUkFNT05URSwgVE9SUkUgUk9CTEUsIERJU1RSSVRPIERFIFNBTiBTQUxWQURPUiwgTVVOSUNJUElPIERFIFNBTiBTQUxWQURPUiBDRU5UUk8sIERFUEFSVEFNRU5UTyBERSBTQU4gU0FMVkFET1IuIiwNCiAgICAgICJtdW5pY2lwaW8iIDogIjIzIiwNCiAgICAgICJkZXBhcnRhbWVudG8iIDogIjA2Ig0KICAgIH0sDQogICAgImNvZEFjdGl2aWRhZCIgOiAiODI5OTAiLA0KICAgICJkZXNjQWN0aXZpZGFkIiA6ICJBY3RpdmlkYWRlcyBkZSBhcG95byBlbXByZXNhcmlhbGVzIG5jcCIsDQogICAgIm5vbWJyZUNvbWVyY2lhbCIgOiAiVU5JT04gUE9SVFVBUklBIERFTCBQQUNJRklDTywgU09DSUVEQUQgUE9SIEFDQ0lPTkVTIERFIEVDT05PTUlBIE1JWFRBIERFIEMuVi4iDQogIH0sDQogICJkb2N1bWVudG9SZWxhY2lvbmFkbyIgOiBbIHsNCiAgICAidGlwb0RvY3VtZW50byIgOiAiMDMiLA0KICAgICJmZWNoYUVtaXNpb24iIDogIjIwMjUtMDgtMTIiLA0KICAgICJudW1lcm9Eb2N1bWVudG8iIDogIjk2MEJCRTM3LTYxQUEtNDYyRC05NzA3LTkwOUExNUI5NTdDMyIsDQogICAgInRpcG9HZW5lcmFjaW9uIiA6IDENCiAgfSBdLA0KICAicmVzdW1lbiIgOiB7DQogICAgInRvdGFsTm9TdWoiIDogMCwNCiAgICAiaXZhUGVyY2kxIiA6IDAsDQogICAgImRlc2N1Tm9TdWoiIDogMCwNCiAgICAidG90YWxMZXRyYXMiIDogIlNFVEVDSUVOVE9TIFZFSU5USU9DSE8gQ09OIDAwLzEwMCBVLlMuIERPTEFSRVMiLA0KICAgICJpdmFSZXRlMSIgOiA2LjUsDQogICAgInN1YlRvdGFsIiA6IDY1MCwNCiAgICAicmV0ZVJlbnRhIiA6IDAsDQogICAgInN1YlRvdGFsVmVudGFzIiA6IDY1MCwNCiAgICAidHJpYnV0b3MiIDogWyB7DQogICAgICAiZGVzY3JpcGNpb24iIDogIkltcHVlc3RvIGFsIFZhbG9yIEFncmVnYWRvIDEzJSIsDQogICAgICAiY29kaWdvIiA6ICIyMCIsDQogICAgICAidmFsb3IiIDogODQuNQ0KICAgIH0gXSwNCiAgICAiZGVzY3VFeGVudGEiIDogMCwNCiAgICAidG90YWxEZXNjdSIgOiAwLA0KICAgICJkZXNjdUdyYXZhZGEiIDogMCwNCiAgICAidG90YWxHcmF2YWRhIiA6IDY1MCwNCiAgICAibW9udG9Ub3RhbE9wZXJhY2lvbiIgOiA3MzQuNSwNCiAgICAidG90YWxFeGVudGEiIDogMCwNCiAgICAiY29uZGljaW9uT3BlcmFjaW9uIiA6IDENCiAgfSwNCiAgImN1ZXJwb0RvY3VtZW50byIgOiBbIHsNCiAgICAiY29kaWdvIiA6IG51bGwsDQogICAgIm51bUl0ZW0iIDogMSwNCiAgICAiY2FudGlkYWQiIDogMSwNCiAgICAidGlwb0l0ZW0iIDogMiwNCiAgICAidHJpYnV0b3MiIDogWyAiMjAiIF0sDQogICAgInByZWNpb1VuaSIgOiA2NTAsDQogICAgInVuaU1lZGlkYSIgOiA1OSwNCiAgICAiY29kVHJpYnV0byIgOiBudWxsLA0KICAgICJtb250b0Rlc2N1IiA6IDAsDQogICAgInZlbnRhTm9TdWoiIDogMCwNCiAgICAiZGVzY3JpcGNpb24iIDogIkNhYmV6YWwgeSBsb3dib3kgZHJvcGRlY2sgY2FtYSBiYWphIChNb3ZpbWllbnRvIGRlIGNvbnRlbmVkb3IgZmxhdCByYWNrLikiLA0KICAgICJ2ZW50YUV4ZW50YSIgOiAwLA0KICAgICJ2ZW50YUdyYXZhZGEiIDogNjUwLA0KICAgICJudW1lcm9Eb2N1bWVudG8iIDogIjk2MEJCRTM3LTYxQUEtNDYyRC05NzA3LTkwOUExNUI5NTdDMyINCiAgfSBdLA0KICAiZXh0ZW5zaW9uIiA6IHsNCiAgICAiZG9jdUVudHJlZ2EiIDogbnVsbCwNCiAgICAib2JzZXJ2YWNpb25lcyIgOiBudWxsLA0KICAgICJub21iUmVjaWJlIiA6IG51bGwsDQogICAgIm5vbWJFbnRyZWdhIiA6IG51bGwsDQogICAgImRvY3VSZWNpYmUiIDogbnVsbA0KICB9LA0KICAidmVudGFUZXJjZXJvIiA6IG51bGwsDQogICJhcGVuZGljZSIgOiBudWxsDQp9.FqZ3Uuzzise4V8orRCCAzCfsAgE-mtv47Bz0PCsAC1835qq08c1nAzndqAb2EvyApQsAn-8rdjxOFilVus5CBUYhYKIt35Khw0cYjSI0MaCqorTRSAWdwTCS-JZX4w9Yl_vEbG8CK7pUyKsqt3zSlM4dZ1Ous2TE-9NIlFDUxGyUFolSUui6ronLIL86CMd3oeuIZNOC_LccAvkdWS5V6XM9O4CbHFUKrmx83gMFUAynvnyI5aGMVq4mMlhGaafNKqNl7K4SZHc04su2dnm1mMnhyiE6kSGb954QPp8k_IgyOq0hxpJoUB7t71fV-HPUStqenEsSrItB8SytWGRn4A
+
+
+{
+	"version": 2,
+	"ambiente": "01",
+	"versionApp": 2,
+	"estado": "PROCESADO",
+	"codigoGeneracion": "DDF5E380-1E1D-4C30-BB69-D8B8D6264843",
+	"selloRecibido": "20255078A6E84CE44BC29FD633B31F2176BDXAXW",
+	"fhProcesamiento": "06/09/2025 04:02:49",
+	"clasificaMsg": "10",
+	"codigoMsg": "002",
+	"descripcionMsg": "RECIBIDO CON OBSERVACIONES",
+	"observaciones": [
+		"identificacion.fecEmi Difiere de la fecha de envío."
+	]
+}

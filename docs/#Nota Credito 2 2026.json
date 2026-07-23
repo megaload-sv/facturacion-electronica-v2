@@ -1,0 +1,125 @@
+
+{
+  "identificacion": {
+    "codigoGeneracion": "F71CD688-5A7F-41BC-87AB-6CFFD2DBE8C9",
+    "tipoContingencia": null,
+    "numeroControl": "DTE-05-M001P001-000000000000002",
+    "tipoOperacion": 1,
+    "ambiente": "01",
+    "fecEmi": "2026-01-26",
+    "tipoModelo": 1,
+    "tipoDte": "05",
+    "version": 3,
+    "tipoMoneda": "USD",
+    "motivoContin": null,
+    "horEmi": "09:00:00"
+  },
+  "emisor": {
+    "descActividad": "Transporte de carga internacional",
+    "tipoEstablecimiento": "02",
+    "codActividad": "49233",
+    "correo": "info@grupomegaload.com",
+    "nit": "06141101161042",
+    "direccion": {
+      "complemento": "POLIG. E, CTON. FLOR AMARILLA, LOTE 626 C,",
+      "municipio": "25",
+      "departamento": "05"
+    },
+    "nombreComercial": "MEGALOAD, S.A. DE C.V.",
+    "telefono": "25305293",
+    "nombre": "MEGALOAD, S.A. DE C.V.",
+    "nrc": "2473109"
+  },
+  "receptor": {
+    "nit": "06142711041010",
+    "nrc": "1629643",
+    "correo": "recepcion.dte@grupomonelca.com",
+    "nombre": "MONELCA RENT, S.A. DE C.V.",
+    "telefono": "22488770",
+    "direccion": {
+      "complemento": "CARR. DE SAN JUAN OPICO A SAN PABLO TACACHICO KM 43.8, CTON. BARRANCA ONDA, SAN JUAN OPICO, LA LIBER",
+      "municipio": "27",
+      "departamento": "05"
+    },
+    "codActividad": "77300",
+    "descActividad": "Alquiler de maquinaria y equipo",
+    "nombreComercial": "MONELCA RENT, S.A. DE C.V."
+  },
+  "documentoRelacionado": [
+    {
+      "tipoDocumento": "03",
+      "fechaEmision": "2025-12-03",
+      "numeroDocumento": "7A2A08F3-F72A-4347-AFB6-46CDC9B5E0CA",
+      "tipoGeneracion": 1
+    }
+  ],
+  "resumen": {
+    "totalNoSuj": 0,
+    "ivaPerci1": 0,
+    "descuNoSuj": 0,
+    "totalLetras": "SIETE MIL DOSCIENTOS TRECE CON 92/100 U.S. DOLARES",
+    "ivaRete1": 0,
+    "subTotal": 6384,
+    "reteRenta": 0,
+    "subTotalVentas": 6384,
+    "tributos": [
+      {
+        "descripcion": "Impuesto al Valor Agregado 13%",
+        "codigo": "20",
+        "valor": 829.92
+      }
+    ],
+    "descuExenta": 0,
+    "totalDescu": 0,
+    "descuGravada": 0,
+    "totalGravada": 6384,
+    "montoTotalOperacion": 7213.92,
+    "totalExenta": 0,
+    "condicionOperacion": 1
+  },
+  "cuerpoDocumento": [
+    {
+      "codigo": null,
+      "numItem": 1,
+      "cantidad": 19,
+      "tipoItem": 2,
+      "tributos": [
+        "20"
+      ],
+      "precioUni": 336,
+      "uniMedida": 59,
+      "codTributo": null,
+      "montoDescu": 0,
+      "ventaNoSuj": 0,
+      "descripcion": "Grua Telescoppica de 120 tons - por hora (19 horas en jornada Extraordinaria)",
+      "ventaExenta": 0,
+      "ventaGravada": 6384,
+      "numeroDocumento": "7A2A08F3-F72A-4347-AFB6-46CDC9B5E0CA"
+    }
+  ],
+  "extension": {
+    "docuEntrega": null,
+    "observaciones": null,
+    "nombRecibe": null,
+    "nombEntrega": null,
+    "docuRecibe": null
+  },
+  "ventaTercero": null,
+  "apendice": null
+}
+
+eyJhbGciOiJSUzUxMiJ9.ew0KICAiaWRlbnRpZmljYWNpb24iIDogew0KICAgICJjb2RpZ29HZW5lcmFjaW9uIiA6ICJGNzFDRDY4OC01QTdGLTQxQkMtODdBQi02Q0ZGRDJEQkU4QzkiLA0KICAgICJ0aXBvQ29udGluZ2VuY2lhIiA6IG51bGwsDQogICAgIm51bWVyb0NvbnRyb2wiIDogIkRURS0wNS1NMDAxUDAwMS0wMDAwMDAwMDAwMDAwMDIiLA0KICAgICJ0aXBvT3BlcmFjaW9uIiA6IDEsDQogICAgImFtYmllbnRlIiA6ICIwMSIsDQogICAgImZlY0VtaSIgOiAiMjAyNi0wMS0yNiIsDQogICAgInRpcG9Nb2RlbG8iIDogMSwNCiAgICAidGlwb0R0ZSIgOiAiMDUiLA0KICAgICJ2ZXJzaW9uIiA6IDMsDQogICAgInRpcG9Nb25lZGEiIDogIlVTRCIsDQogICAgIm1vdGl2b0NvbnRpbiIgOiBudWxsLA0KICAgICJob3JFbWkiIDogIjA5OjAwOjAwIg0KICB9LA0KICAiZW1pc29yIiA6IHsNCiAgICAiZGVzY0FjdGl2aWRhZCIgOiAiVHJhbnNwb3J0ZSBkZSBjYXJnYSBpbnRlcm5hY2lvbmFsIiwNCiAgICAidGlwb0VzdGFibGVjaW1pZW50byIgOiAiMDIiLA0KICAgICJjb2RBY3RpdmlkYWQiIDogIjQ5MjMzIiwNCiAgICAiY29ycmVvIiA6ICJpbmZvQGdydXBvbWVnYWxvYWQuY29tIiwNCiAgICAibml0IiA6ICIwNjE0MTEwMTE2MTA0MiIsDQogICAgImRpcmVjY2lvbiIgOiB7DQogICAgICAiY29tcGxlbWVudG8iIDogIlBPTElHLiBFLCBDVE9OLiBGTE9SIEFNQVJJTExBLCBMT1RFIDYyNiBDLCIsDQogICAgICAibXVuaWNpcGlvIiA6ICIyNSIsDQogICAgICAiZGVwYXJ0YW1lbnRvIiA6ICIwNSINCiAgICB9LA0KICAgICJub21icmVDb21lcmNpYWwiIDogIk1FR0FMT0FELCBTLkEuIERFIEMuVi4iLA0KICAgICJ0ZWxlZm9ubyIgOiAiMjUzMDUyOTMiLA0KICAgICJub21icmUiIDogIk1FR0FMT0FELCBTLkEuIERFIEMuVi4iLA0KICAgICJucmMiIDogIjI0NzMxMDkiDQogIH0sDQogICJyZWNlcHRvciIgOiB7DQogICAgIm5pdCIgOiAiMDYxNDI3MTEwNDEwMTAiLA0KICAgICJucmMiIDogIjE2Mjk2NDMiLA0KICAgICJjb3JyZW8iIDogInJlY2VwY2lvbi5kdGVAZ3J1cG9tb25lbGNhLmNvbSIsDQogICAgIm5vbWJyZSIgOiAiTU9ORUxDQSBSRU5ULCBTLkEuIERFIEMuVi4iLA0KICAgICJ0ZWxlZm9ubyIgOiAiMjI0ODg3NzAiLA0KICAgICJkaXJlY2Npb24iIDogew0KICAgICAgImNvbXBsZW1lbnRvIiA6ICJDQVJSLiBERSBTQU4gSlVBTiBPUElDTyBBIFNBTiBQQUJMTyBUQUNBQ0hJQ08gS00gNDMuOCwgQ1RPTi4gQkFSUkFOQ0EgT05EQSwgU0FOIEpVQU4gT1BJQ08sIExBIExJQkVSIiwNCiAgICAgICJtdW5pY2lwaW8iIDogIjI3IiwNCiAgICAgICJkZXBhcnRhbWVudG8iIDogIjA1Ig0KICAgIH0sDQogICAgImNvZEFjdGl2aWRhZCIgOiAiNzczMDAiLA0KICAgICJkZXNjQWN0aXZpZGFkIiA6ICJBbHF1aWxlciBkZSBtYXF1aW5hcmlhIHkgZXF1aXBvIiwNCiAgICAibm9tYnJlQ29tZXJjaWFsIiA6ICJNT05FTENBIFJFTlQsIFMuQS4gREUgQy5WLiINCiAgfSwNCiAgImRvY3VtZW50b1JlbGFjaW9uYWRvIiA6IFsgew0KICAgICJ0aXBvRG9jdW1lbnRvIiA6ICIwMyIsDQogICAgImZlY2hhRW1pc2lvbiIgOiAiMjAyNS0xMi0wMyIsDQogICAgIm51bWVyb0RvY3VtZW50byIgOiAiN0EyQTA4RjMtRjcyQS00MzQ3LUFGQjYtNDZDREM5QjVFMENBIiwNCiAgICAidGlwb0dlbmVyYWNpb24iIDogMQ0KICB9IF0sDQogICJyZXN1bWVuIiA6IHsNCiAgICAidG90YWxOb1N1aiIgOiAwLA0KICAgICJpdmFQZXJjaTEiIDogMCwNCiAgICAiZGVzY3VOb1N1aiIgOiAwLA0KICAgICJ0b3RhbExldHJhcyIgOiAiU0lFVEUgTUlMIERPU0NJRU5UT1MgVFJFQ0UgQ09OIDkyLzEwMCBVLlMuIERPTEFSRVMiLA0KICAgICJpdmFSZXRlMSIgOiAwLA0KICAgICJzdWJUb3RhbCIgOiA2Mzg0LA0KICAgICJyZXRlUmVudGEiIDogMCwNCiAgICAic3ViVG90YWxWZW50YXMiIDogNjM4NCwNCiAgICAidHJpYnV0b3MiIDogWyB7DQogICAgICAiZGVzY3JpcGNpb24iIDogIkltcHVlc3RvIGFsIFZhbG9yIEFncmVnYWRvIDEzJSIsDQogICAgICAiY29kaWdvIiA6ICIyMCIsDQogICAgICAidmFsb3IiIDogODI5LjkyDQogICAgfSBdLA0KICAgICJkZXNjdUV4ZW50YSIgOiAwLA0KICAgICJ0b3RhbERlc2N1IiA6IDAsDQogICAgImRlc2N1R3JhdmFkYSIgOiAwLA0KICAgICJ0b3RhbEdyYXZhZGEiIDogNjM4NCwNCiAgICAibW9udG9Ub3RhbE9wZXJhY2lvbiIgOiA3MjEzLjkyLA0KICAgICJ0b3RhbEV4ZW50YSIgOiAwLA0KICAgICJjb25kaWNpb25PcGVyYWNpb24iIDogMQ0KICB9LA0KICAiY3VlcnBvRG9jdW1lbnRvIiA6IFsgew0KICAgICJjb2RpZ28iIDogbnVsbCwNCiAgICAibnVtSXRlbSIgOiAxLA0KICAgICJjYW50aWRhZCIgOiAxOSwNCiAgICAidGlwb0l0ZW0iIDogMiwNCiAgICAidHJpYnV0b3MiIDogWyAiMjAiIF0sDQogICAgInByZWNpb1VuaSIgOiAzMzYsDQogICAgInVuaU1lZGlkYSIgOiA1OSwNCiAgICAiY29kVHJpYnV0byIgOiBudWxsLA0KICAgICJtb250b0Rlc2N1IiA6IDAsDQogICAgInZlbnRhTm9TdWoiIDogMCwNCiAgICAiZGVzY3JpcGNpb24iIDogIkdydWEgVGVsZXNjb3BwaWNhIGRlIDEyMCB0b25zIC0gcG9yIGhvcmEgKDE5IGhvcmFzIGVuIGpvcm5hZGEgRXh0cmFvcmRpbmFyaWEpIiwNCiAgICAidmVudGFFeGVudGEiIDogMCwNCiAgICAidmVudGFHcmF2YWRhIiA6IDYzODQsDQogICAgIm51bWVyb0RvY3VtZW50byIgOiAiN0EyQTA4RjMtRjcyQS00MzQ3LUFGQjYtNDZDREM5QjVFMENBIg0KICB9IF0sDQogICJleHRlbnNpb24iIDogew0KICAgICJkb2N1RW50cmVnYSIgOiBudWxsLA0KICAgICJvYnNlcnZhY2lvbmVzIiA6IG51bGwsDQogICAgIm5vbWJSZWNpYmUiIDogbnVsbCwNCiAgICAibm9tYkVudHJlZ2EiIDogbnVsbCwNCiAgICAiZG9jdVJlY2liZSIgOiBudWxsDQogIH0sDQogICJ2ZW50YVRlcmNlcm8iIDogbnVsbCwNCiAgImFwZW5kaWNlIiA6IG51bGwNCn0.cqzVgzt8jOMUY9-PRSXOZNM19P2PlWw49nZavg1eW21Q3cA-IjIuSVoJ2eE1NLcKkm5aM8JDMrhbYngTWmC3ehdmsAIHOTOncLrBvCSdbxNwvXMpqKjba1RlcpdbQak43fp3krhgsY2oEVN0gLsyIf2qMqmE46TIwx6DwU_poPM_TvkhrfUsublp9qwoRceG2508roZpyasLCP1Www5joisrXfPR2IT_DRHeai-qQkefv4KpLDyw-HdlsEbbujt507Gbquz57DzRhKqx6Lr05e8Nxgx6p2kZ0UhTMNpTpx2oAkLNuTWBAMYMfm2YQkdPPZ4g0sjx9STspEbLZ-2HKw
+
+{
+  "version": 2,
+  "ambiente": "01",
+  "versionApp": 2,
+  "estado": "PROCESADO",
+  "codigoGeneracion": "F71CD688-5A7F-41BC-87AB-6CFFD2DBE8C9",
+  "selloRecibido": "20267CB40BE8965542D184C515CD203C8C82ATBC",
+  "fhProcesamiento": "26/01/2026 23:56:43",
+  "clasificaMsg": "10",
+  "codigoMsg": "001",
+  "descripcionMsg": "RECIBIDO",
+  "observaciones": []
+}

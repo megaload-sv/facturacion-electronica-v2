@@ -1,0 +1,128 @@
+Nota Credito 27
+
+{
+	"identificacion": {
+        "codigoGeneracion": "D5835CB7-9E97-412B-9301-E37D07CCB86E",
+        "tipoContingencia": null,
+        "numeroControl": "DTE-05-M001P001-000000000000027",
+        "tipoOperacion": 1,
+        "ambiente": "01",
+        "fecEmi": "2025-09-23",
+        "tipoModelo": 1,
+        "tipoDte": "05",
+        "version": 3,
+        "tipoMoneda": "USD",
+        "motivoContin": null,
+        "horEmi": "08:00:00"
+    },
+	"emisor": {
+        "descActividad": "Transporte de carga internacional",
+        "tipoEstablecimiento": "02",
+        "codActividad": "49233",
+        "correo": "info@grupomegaload.com",
+        "nit": "06141101161042",
+        "direccion": {
+            "complemento": "POLIG. E, CTON. FLOR AMARILLA, LOTE 626 C,",
+            "municipio": "25",
+            "departamento": "05"
+        },
+        "nombreComercial": "MEGALOAD, S.A. DE C.V.",
+        "telefono": "25305293",
+        "nombre": "MEGALOAD, S.A. DE C.V.",
+        "nrc": "2473109"
+    },
+    "receptor": {
+    	"nit": "06140712231015",
+    	"nrc": "3369802",
+    	"correo": "opagro@cihesa.hn",
+    	"nombre": "CONSULTORIA E INVERISONES SALVADOREÑAS EN ENERGIA, S.A DE C.V",
+    	"telefono": "50432761504",
+    	"direccion": {
+            "complemento": "CALLE EL MIRADOR. LOCAL. 314. COL. ESCALON EDIF. WORD TRADE CENTER, TORRE 1 NIVEL 3.SAN SALVADOR, SAN SALVADOR",
+            "municipio": "23",
+            "departamento": "06"
+        },        
+        "codActividad": "70200",
+        "descActividad": "Actividades de consultoría en gestión empresarial",
+        "nombreComercial": "CONSULTORIA E INVERISONES SALVADOREÑAS EN ENERGIA, S.A DE C.V"
+    },
+    "documentoRelacionado": [
+        {
+            "tipoDocumento": "03",
+            "fechaEmision": "2025-09-23",
+            "numeroDocumento": "24A19C11-A92D-45C7-A336-2C03CEF8CE12",
+            "tipoGeneracion": 1
+        }
+    ],    
+    "resumen": {
+        "totalNoSuj": 0,
+        "ivaPerci1": 0,
+        "descuNoSuj": 0,
+        "totalLetras": "DOSCIENTOS OCHO CON 52/100 U.S. DOLARES",
+        "ivaRete1": 0,
+        "subTotal": 184.53,
+        "reteRenta": 0,
+        "subTotalVentas": 184.53,
+        "tributos": [
+            {
+                "descripcion": "Impuesto al Valor Agregado 13%",
+                "codigo": "20",
+                "valor": 23.99
+            }
+        ],
+        "descuExenta": 0,
+        "totalDescu": 0,
+        "descuGravada": 0,
+        "totalGravada": 184.53,
+        "montoTotalOperacion": 208.52,
+        "totalExenta": 0,
+        "condicionOperacion": 1
+    },
+    "cuerpoDocumento": [
+    	{
+            "codigo": null,
+            "numItem": 1,
+            "cantidad": 1,
+            "tipoItem": 2,
+            "tributos": [
+                "20"
+            ],
+            "precioUni": 184.53,
+            "uniMedida": 59,
+            "codTributo": null,
+            "montoDescu": 0,
+            "ventaNoSuj": 0,
+            "descripcion": "Telehander de 4 tons - por día (Pago de horas extra.)",
+            "ventaExenta": 0,
+            "ventaGravada": 184.53,
+            "numeroDocumento": "24A19C11-A92D-45C7-A336-2C03CEF8CE12"
+        }      
+    ],
+    "extension": {
+        "docuEntrega": null,
+        "observaciones": null,
+        "nombRecibe": null,
+        "nombEntrega": null,
+        "docuRecibe": null
+    },
+    "ventaTercero": null,
+    "apendice": null
+}
+
+eyJhbGciOiJSUzUxMiJ9.ew0KICAiaWRlbnRpZmljYWNpb24iIDogew0KICAgICJjb2RpZ29HZW5lcmFjaW9uIiA6ICJENTgzNUNCNy05RTk3LTQxMkItOTMwMS1FMzdEMDdDQ0I4NkUiLA0KICAgICJ0aXBvQ29udGluZ2VuY2lhIiA6IG51bGwsDQogICAgIm51bWVyb0NvbnRyb2wiIDogIkRURS0wNS1NMDAxUDAwMS0wMDAwMDAwMDAwMDAwMjciLA0KICAgICJ0aXBvT3BlcmFjaW9uIiA6IDEsDQogICAgImFtYmllbnRlIiA6ICIwMSIsDQogICAgImZlY0VtaSIgOiAiMjAyNS0wOS0yMyIsDQogICAgInRpcG9Nb2RlbG8iIDogMSwNCiAgICAidGlwb0R0ZSIgOiAiMDUiLA0KICAgICJ2ZXJzaW9uIiA6IDMsDQogICAgInRpcG9Nb25lZGEiIDogIlVTRCIsDQogICAgIm1vdGl2b0NvbnRpbiIgOiBudWxsLA0KICAgICJob3JFbWkiIDogIjA4OjAwOjAwIg0KICB9LA0KICAiZW1pc29yIiA6IHsNCiAgICAiZGVzY0FjdGl2aWRhZCIgOiAiVHJhbnNwb3J0ZSBkZSBjYXJnYSBpbnRlcm5hY2lvbmFsIiwNCiAgICAidGlwb0VzdGFibGVjaW1pZW50byIgOiAiMDIiLA0KICAgICJjb2RBY3RpdmlkYWQiIDogIjQ5MjMzIiwNCiAgICAiY29ycmVvIiA6ICJpbmZvQGdydXBvbWVnYWxvYWQuY29tIiwNCiAgICAibml0IiA6ICIwNjE0MTEwMTE2MTA0MiIsDQogICAgImRpcmVjY2lvbiIgOiB7DQogICAgICAiY29tcGxlbWVudG8iIDogIlBPTElHLiBFLCBDVE9OLiBGTE9SIEFNQVJJTExBLCBMT1RFIDYyNiBDLCIsDQogICAgICAibXVuaWNpcGlvIiA6ICIyNSIsDQogICAgICAiZGVwYXJ0YW1lbnRvIiA6ICIwNSINCiAgICB9LA0KICAgICJub21icmVDb21lcmNpYWwiIDogIk1FR0FMT0FELCBTLkEuIERFIEMuVi4iLA0KICAgICJ0ZWxlZm9ubyIgOiAiMjUzMDUyOTMiLA0KICAgICJub21icmUiIDogIk1FR0FMT0FELCBTLkEuIERFIEMuVi4iLA0KICAgICJucmMiIDogIjI0NzMxMDkiDQogIH0sDQogICJyZWNlcHRvciIgOiB7DQogICAgIm5pdCIgOiAiMDYxNDA3MTIyMzEwMTUiLA0KICAgICJucmMiIDogIjMzNjk4MDIiLA0KICAgICJjb3JyZW8iIDogIm9wYWdyb0BjaWhlc2EuaG4iLA0KICAgICJub21icmUiIDogIkNPTlNVTFRPUklBIEUgSU5WRVJJU09ORVMgU0FMVkFET1JFw5FBUyBFTiBFTkVSR0lBLCBTLkEgREUgQy5WIiwNCiAgICAidGVsZWZvbm8iIDogIjUwNDMyNzYxNTA0IiwNCiAgICAiZGlyZWNjaW9uIiA6IHsNCiAgICAgICJjb21wbGVtZW50byIgOiAiQ0FMTEUgRUwgTUlSQURPUi4gTE9DQUwuIDMxNC4gQ09MLiBFU0NBTE9OIEVESUYuIFdPUkQgVFJBREUgQ0VOVEVSLCBUT1JSRSAxIE5JVkVMIDMuU0FOIFNBTFZBRE9SLCBTQU4gU0FMVkFET1IiLA0KICAgICAgIm11bmljaXBpbyIgOiAiMjMiLA0KICAgICAgImRlcGFydGFtZW50byIgOiAiMDYiDQogICAgfSwNCiAgICAiY29kQWN0aXZpZGFkIiA6ICI3MDIwMCIsDQogICAgImRlc2NBY3RpdmlkYWQiIDogIkFjdGl2aWRhZGVzIGRlIGNvbnN1bHRvcsOtYSBlbiBnZXN0acOzbiBlbXByZXNhcmlhbCIsDQogICAgIm5vbWJyZUNvbWVyY2lhbCIgOiAiQ09OU1VMVE9SSUEgRSBJTlZFUklTT05FUyBTQUxWQURPUkXDkUFTIEVOIEVORVJHSUEsIFMuQSBERSBDLlYiDQogIH0sDQogICJkb2N1bWVudG9SZWxhY2lvbmFkbyIgOiBbIHsNCiAgICAidGlwb0RvY3VtZW50byIgOiAiMDMiLA0KICAgICJmZWNoYUVtaXNpb24iIDogIjIwMjUtMDktMjMiLA0KICAgICJudW1lcm9Eb2N1bWVudG8iIDogIjI0QTE5QzExLUE5MkQtNDVDNy1BMzM2LTJDMDNDRUY4Q0UxMiIsDQogICAgInRpcG9HZW5lcmFjaW9uIiA6IDENCiAgfSBdLA0KICAicmVzdW1lbiIgOiB7DQogICAgInRvdGFsTm9TdWoiIDogMCwNCiAgICAiaXZhUGVyY2kxIiA6IDAsDQogICAgImRlc2N1Tm9TdWoiIDogMCwNCiAgICAidG90YWxMZXRyYXMiIDogIkRPU0NJRU5UT1MgT0NITyBDT04gNTIvMTAwIFUuUy4gRE9MQVJFUyIsDQogICAgIml2YVJldGUxIiA6IDAsDQogICAgInN1YlRvdGFsIiA6IDE4NC41MywNCiAgICAicmV0ZVJlbnRhIiA6IDAsDQogICAgInN1YlRvdGFsVmVudGFzIiA6IDE4NC41MywNCiAgICAidHJpYnV0b3MiIDogWyB7DQogICAgICAiZGVzY3JpcGNpb24iIDogIkltcHVlc3RvIGFsIFZhbG9yIEFncmVnYWRvIDEzJSIsDQogICAgICAiY29kaWdvIiA6ICIyMCIsDQogICAgICAidmFsb3IiIDogMjMuOTkNCiAgICB9IF0sDQogICAgImRlc2N1RXhlbnRhIiA6IDAsDQogICAgInRvdGFsRGVzY3UiIDogMCwNCiAgICAiZGVzY3VHcmF2YWRhIiA6IDAsDQogICAgInRvdGFsR3JhdmFkYSIgOiAxODQuNTMsDQogICAgIm1vbnRvVG90YWxPcGVyYWNpb24iIDogMjA4LjUyLA0KICAgICJ0b3RhbEV4ZW50YSIgOiAwLA0KICAgICJjb25kaWNpb25PcGVyYWNpb24iIDogMQ0KICB9LA0KICAiY3VlcnBvRG9jdW1lbnRvIiA6IFsgew0KICAgICJjb2RpZ28iIDogbnVsbCwNCiAgICAibnVtSXRlbSIgOiAxLA0KICAgICJjYW50aWRhZCIgOiAxLA0KICAgICJ0aXBvSXRlbSIgOiAyLA0KICAgICJ0cmlidXRvcyIgOiBbICIyMCIgXSwNCiAgICAicHJlY2lvVW5pIiA6IDE4NC41MywNCiAgICAidW5pTWVkaWRhIiA6IDU5LA0KICAgICJjb2RUcmlidXRvIiA6IG51bGwsDQogICAgIm1vbnRvRGVzY3UiIDogMCwNCiAgICAidmVudGFOb1N1aiIgOiAwLA0KICAgICJkZXNjcmlwY2lvbiIgOiAiVGVsZWhhbmRlciBkZSA0IHRvbnMgLSBwb3IgZMOtYSAoUGFnbyBkZSBob3JhcyBleHRyYS4pIiwNCiAgICAidmVudGFFeGVudGEiIDogMCwNCiAgICAidmVudGFHcmF2YWRhIiA6IDE4NC41MywNCiAgICAibnVtZXJvRG9jdW1lbnRvIiA6ICIyNEExOUMxMS1BOTJELTQ1QzctQTMzNi0yQzAzQ0VGOENFMTIiDQogIH0gXSwNCiAgImV4dGVuc2lvbiIgOiB7DQogICAgImRvY3VFbnRyZWdhIiA6IG51bGwsDQogICAgIm9ic2VydmFjaW9uZXMiIDogbnVsbCwNCiAgICAibm9tYlJlY2liZSIgOiBudWxsLA0KICAgICJub21iRW50cmVnYSIgOiBudWxsLA0KICAgICJkb2N1UmVjaWJlIiA6IG51bGwNCiAgfSwNCiAgInZlbnRhVGVyY2VybyIgOiBudWxsLA0KICAiYXBlbmRpY2UiIDogbnVsbA0KfQ.Y1WLH7n6K0aknNoP1HuHDyi_BIe_3EKVe_zuw1G7AngShJ0HbdQCjdUHAgaQv7AprOlILlQwtJhfxg5kCeVU0Tn8zO0ZpDoP_svrlxSyFsgO_88b1ivpn0_VgdGdaRIjoMQKACbjDua9OXRya7U5ITgbp9l8KPEua-lkTmWJNA0hwDEyyk9zvEfxrHxhE882hkps8l2VkDJ0Yz7GX_ZYMtJJMLubC25lMkxGs5_unDap9wPcItxuO4ip1RWW02t5NSSus-kxdbxdPBnWQkVw__fbhxb6ovRLfO4Bq1TCLNmRCpyCqKVbp4qj8sO0mX_7aOkhvLvb8dC7ylQHoIp2pg
+
+{
+	"version": 2,
+	"ambiente": "01",
+	"versionApp": 2,
+	"estado": "PROCESADO",
+	"codigoGeneracion": "D5835CB7-9E97-412B-9301-E37D07CCB86E",
+	"selloRecibido": "20254137B91299CA40DEB593CCD3E10CAF746RCV",
+	"fhProcesamiento": "08/10/2025 04:57:04",
+	"clasificaMsg": "10",
+	"codigoMsg": "002",
+	"descripcionMsg": "RECIBIDO CON OBSERVACIONES",
+	"observaciones": [
+		"identificacion.fecEmi Difiere de la fecha de envío."
+	]
+}

@@ -1,0 +1,146 @@
+#nota de Credito 17
+
+{
+    "extension": {
+        "docuEntrega": null,
+        "observaciones": null,
+        "nombRecibe": null,
+        "nombEntrega": null,
+        "docuRecibe": null
+    },
+    "receptor": {
+        "descActividad": "Fabricación de productos de arcilla para la construcción",
+        "codActividad": "23920",
+        "correo": "compras.cb@celoblock.com.sv",
+        "nit": "06142712730035",
+        "direccion": {
+            "complemento": "K.M 12 DEL PUERTO DE LA LIBERTAD, # 1-TRES,",
+            "municipio": "27",
+            "departamento": "05"
+        },
+        "nombreComercial": "CELO-BLOCK, S. A. DE C.V.",
+        "telefono": "71311219",
+        "nombre": "CELO-BLOCK, S. A. DE C.V.",
+        "nrc": "12556"
+    },
+    "identificacion": {
+        "codigoGeneracion": "E108702A-F089-4CF1-9575-41A2869C64A6",
+        "tipoContingencia": null,
+        "numeroControl": "DTE-05-M001P001-000000000000017",
+        "tipoOperacion": 1,
+        "ambiente": "01",
+        "fecEmi": "2025-07-31",
+        "tipoModelo": 1,
+        "tipoDte": "05",
+        "version": 3,
+        "tipoMoneda": "USD",
+        "motivoContin": null,
+        "horEmi": "10:50:00"
+    },
+    "resumen": {
+        "totalNoSuj": 0,
+        "ivaPerci1": 0,
+        "descuNoSuj": 0,
+        "totalLetras": "MIL CINCUENTA CON 90/100 U.S. DOLARES",
+        "ivaRete1": 0,
+        "subTotal": 930,
+        "reteRenta": 0,
+        "subTotalVentas": 930,
+        "tributos": [
+            {
+                "descripcion": "Impuesto al Valor Agregado 13%",
+                "codigo": "20",
+                "valor": 120.9
+            }
+        ],
+        "descuExenta": 0,
+        "totalDescu": 0,
+        "descuGravada": 0,
+        "totalGravada": 930,
+        "montoTotalOperacion": 1050.9,
+        "totalExenta": 0,
+        "condicionOperacion": 1
+    },
+    "cuerpoDocumento": [
+        {
+            "montoDescu": 0,
+            "descripcion": "Montacargas de 7 tons - por día (8 horas ordinarias minimas, hora extraordinaria $72)",
+            "codigo": null,
+            "ventaGravada": 480,
+            "ventaNoSuj": 0,
+            "ventaExenta": 0,
+            "tributos": [
+                "20"
+            ],
+            "numItem": 1,
+            "tipoItem": 2,
+            "uniMedida": 59,
+            "codTributo": null,
+            "numeroDocumento": "71F69D53-3056-4AC7-AECE-86CAF83B5206",
+            "cantidad": 1,
+            "precioUni": 480
+        },
+        {
+            "montoDescu": 0,
+            "descripcion": "Montacargas 7 tons - Transporte ida y regreso (Traslado de equipo hacia guazapa)",
+            "codigo": null,
+            "ventaGravada": 450,
+            "ventaNoSuj": 0,
+            "ventaExenta": 0,
+            "tributos": [
+                "20"
+            ],
+            "numItem": 1,
+            "tipoItem": 2,
+            "uniMedida": 59,
+            "codTributo": null,
+            "numeroDocumento": "71F69D53-3056-4AC7-AECE-86CAF83B5206",
+            "cantidad": 1,
+            "precioUni": 450
+        }
+    ],
+    "ventaTercero": null,
+    "apendice": null,
+    "documentoRelacionado": [
+        {
+            "tipoDocumento": "03",
+            "fechaEmision": "2025-07-30",
+            "numeroDocumento": "71F69D53-3056-4AC7-AECE-86CAF83B5206",
+            "tipoGeneracion": 2
+        }
+    ],
+    "emisor": {
+        "descActividad": "Transporte de carga internacional",
+        "tipoEstablecimiento": "02",
+        "codActividad": "49233",
+        "correo": "info@grupomegaload.com",
+        "nit": "06141101161042",
+        "direccion": {
+            "complemento": "POLIG. E, CTON. FLOR AMARILLA, LOTE 626 C,",
+            "municipio": "25",
+            "departamento": "05"
+        },
+        "nombreComercial": "MEGALOAD, S.A. DE C.V.",
+        "telefono": "25305293",
+        "nombre": "MEGALOAD, S.A. DE C.V.",
+        "nrc": "2473109"
+    }
+}
+
+eyJhbGciOiJSUzUxMiJ9.ew0KICAiZXh0ZW5zaW9uIiA6IHsNCiAgICAiZG9jdUVudHJlZ2EiIDogbnVsbCwNCiAgICAib2JzZXJ2YWNpb25lcyIgOiBudWxsLA0KICAgICJub21iUmVjaWJlIiA6IG51bGwsDQogICAgIm5vbWJFbnRyZWdhIiA6IG51bGwsDQogICAgImRvY3VSZWNpYmUiIDogbnVsbA0KICB9LA0KICAicmVjZXB0b3IiIDogew0KICAgICJkZXNjQWN0aXZpZGFkIiA6ICJGYWJyaWNhY2nDs24gZGUgcHJvZHVjdG9zIGRlIGFyY2lsbGEgcGFyYSBsYSBjb25zdHJ1Y2Npw7NuIiwNCiAgICAiY29kQWN0aXZpZGFkIiA6ICIyMzkyMCIsDQogICAgImNvcnJlbyIgOiAiY29tcHJhcy5jYkBjZWxvYmxvY2suY29tLnN2IiwNCiAgICAibml0IiA6ICIwNjE0MjcxMjczMDAzNSIsDQogICAgImRpcmVjY2lvbiIgOiB7DQogICAgICAiY29tcGxlbWVudG8iIDogIksuTSAxMiBERUwgUFVFUlRPIERFIExBIExJQkVSVEFELCAjIDEtVFJFUywiLA0KICAgICAgIm11bmljaXBpbyIgOiAiMjciLA0KICAgICAgImRlcGFydGFtZW50byIgOiAiMDUiDQogICAgfSwNCiAgICAibm9tYnJlQ29tZXJjaWFsIiA6ICJDRUxPLUJMT0NLLCBTLiBBLiBERSBDLlYuIiwNCiAgICAidGVsZWZvbm8iIDogIjcxMzExMjE5IiwNCiAgICAibm9tYnJlIiA6ICJDRUxPLUJMT0NLLCBTLiBBLiBERSBDLlYuIiwNCiAgICAibnJjIiA6ICIxMjU1NiINCiAgfSwNCiAgImlkZW50aWZpY2FjaW9uIiA6IHsNCiAgICAiY29kaWdvR2VuZXJhY2lvbiIgOiAiRTEwODcwMkEtRjA4OS00Q0YxLTk1NzUtNDFBMjg2OUM2NEE2IiwNCiAgICAidGlwb0NvbnRpbmdlbmNpYSIgOiBudWxsLA0KICAgICJudW1lcm9Db250cm9sIiA6ICJEVEUtMDUtTTAwMVAwMDEtMDAwMDAwMDAwMDAwMDE3IiwNCiAgICAidGlwb09wZXJhY2lvbiIgOiAxLA0KICAgICJhbWJpZW50ZSIgOiAiMDEiLA0KICAgICJmZWNFbWkiIDogIjIwMjUtMDctMzEiLA0KICAgICJ0aXBvTW9kZWxvIiA6IDEsDQogICAgInRpcG9EdGUiIDogIjA1IiwNCiAgICAidmVyc2lvbiIgOiAzLA0KICAgICJ0aXBvTW9uZWRhIiA6ICJVU0QiLA0KICAgICJtb3Rpdm9Db250aW4iIDogbnVsbCwNCiAgICAiaG9yRW1pIiA6ICIxMDo1MDowMCINCiAgfSwNCiAgInJlc3VtZW4iIDogew0KICAgICJ0b3RhbE5vU3VqIiA6IDAsDQogICAgIml2YVBlcmNpMSIgOiAwLA0KICAgICJkZXNjdU5vU3VqIiA6IDAsDQogICAgInRvdGFsTGV0cmFzIiA6ICJNSUwgQ0lOQ1VFTlRBIENPTiA5MC8xMDAgVS5TLiBET0xBUkVTIiwNCiAgICAiaXZhUmV0ZTEiIDogMCwNCiAgICAic3ViVG90YWwiIDogOTMwLA0KICAgICJyZXRlUmVudGEiIDogMCwNCiAgICAic3ViVG90YWxWZW50YXMiIDogOTMwLA0KICAgICJ0cmlidXRvcyIgOiBbIHsNCiAgICAgICJkZXNjcmlwY2lvbiIgOiAiSW1wdWVzdG8gYWwgVmFsb3IgQWdyZWdhZG8gMTMlIiwNCiAgICAgICJjb2RpZ28iIDogIjIwIiwNCiAgICAgICJ2YWxvciIgOiAxMjAuOQ0KICAgIH0gXSwNCiAgICAiZGVzY3VFeGVudGEiIDogMCwNCiAgICAidG90YWxEZXNjdSIgOiAwLA0KICAgICJkZXNjdUdyYXZhZGEiIDogMCwNCiAgICAidG90YWxHcmF2YWRhIiA6IDkzMCwNCiAgICAibW9udG9Ub3RhbE9wZXJhY2lvbiIgOiAxMDUwLjksDQogICAgInRvdGFsRXhlbnRhIiA6IDAsDQogICAgImNvbmRpY2lvbk9wZXJhY2lvbiIgOiAxDQogIH0sDQogICJjdWVycG9Eb2N1bWVudG8iIDogWyB7DQogICAgIm1vbnRvRGVzY3UiIDogMCwNCiAgICAiZGVzY3JpcGNpb24iIDogIk1vbnRhY2FyZ2FzIGRlIDcgdG9ucyAtIHBvciBkw61hICg4IGhvcmFzIG9yZGluYXJpYXMgbWluaW1hcywgaG9yYSBleHRyYW9yZGluYXJpYSAkNzIpIiwNCiAgICAiY29kaWdvIiA6IG51bGwsDQogICAgInZlbnRhR3JhdmFkYSIgOiA0ODAsDQogICAgInZlbnRhTm9TdWoiIDogMCwNCiAgICAidmVudGFFeGVudGEiIDogMCwNCiAgICAidHJpYnV0b3MiIDogWyAiMjAiIF0sDQogICAgIm51bUl0ZW0iIDogMSwNCiAgICAidGlwb0l0ZW0iIDogMiwNCiAgICAidW5pTWVkaWRhIiA6IDU5LA0KICAgICJjb2RUcmlidXRvIiA6IG51bGwsDQogICAgIm51bWVyb0RvY3VtZW50byIgOiAiNzFGNjlENTMtMzA1Ni00QUM3LUFFQ0UtODZDQUY4M0I1MjA2IiwNCiAgICAiY2FudGlkYWQiIDogMSwNCiAgICAicHJlY2lvVW5pIiA6IDQ4MA0KICB9LCB7DQogICAgIm1vbnRvRGVzY3UiIDogMCwNCiAgICAiZGVzY3JpcGNpb24iIDogIk1vbnRhY2FyZ2FzIDcgdG9ucyAtIFRyYW5zcG9ydGUgaWRhIHkgcmVncmVzbyAoVHJhc2xhZG8gZGUgZXF1aXBvIGhhY2lhIGd1YXphcGEpIiwNCiAgICAiY29kaWdvIiA6IG51bGwsDQogICAgInZlbnRhR3JhdmFkYSIgOiA0NTAsDQogICAgInZlbnRhTm9TdWoiIDogMCwNCiAgICAidmVudGFFeGVudGEiIDogMCwNCiAgICAidHJpYnV0b3MiIDogWyAiMjAiIF0sDQogICAgIm51bUl0ZW0iIDogMiwNCiAgICAidGlwb0l0ZW0iIDogMiwNCiAgICAidW5pTWVkaWRhIiA6IDU5LA0KICAgICJjb2RUcmlidXRvIiA6IG51bGwsDQogICAgIm51bWVyb0RvY3VtZW50byIgOiAiNzFGNjlENTMtMzA1Ni00QUM3LUFFQ0UtODZDQUY4M0I1MjA2IiwNCiAgICAiY2FudGlkYWQiIDogMSwNCiAgICAicHJlY2lvVW5pIiA6IDQ1MA0KICB9IF0sDQogICJ2ZW50YVRlcmNlcm8iIDogbnVsbCwNCiAgImFwZW5kaWNlIiA6IG51bGwsDQogICJkb2N1bWVudG9SZWxhY2lvbmFkbyIgOiBbIHsNCiAgICAidGlwb0RvY3VtZW50byIgOiAiMDMiLA0KICAgICJmZWNoYUVtaXNpb24iIDogIjIwMjUtMDctMzAiLA0KICAgICJudW1lcm9Eb2N1bWVudG8iIDogIjcxRjY5RDUzLTMwNTYtNEFDNy1BRUNFLTg2Q0FGODNCNTIwNiIsDQogICAgInRpcG9HZW5lcmFjaW9uIiA6IDINCiAgfSBdLA0KICAiZW1pc29yIiA6IHsNCiAgICAiZGVzY0FjdGl2aWRhZCIgOiAiVHJhbnNwb3J0ZSBkZSBjYXJnYSBpbnRlcm5hY2lvbmFsIiwNCiAgICAidGlwb0VzdGFibGVjaW1pZW50byIgOiAiMDIiLA0KICAgICJjb2RBY3RpdmlkYWQiIDogIjQ5MjMzIiwNCiAgICAiY29ycmVvIiA6ICJpbmZvQGdydXBvbWVnYWxvYWQuY29tIiwNCiAgICAibml0IiA6ICIwNjE0MTEwMTE2MTA0MiIsDQogICAgImRpcmVjY2lvbiIgOiB7DQogICAgICAiY29tcGxlbWVudG8iIDogIlBPTElHLiBFLCBDVE9OLiBGTE9SIEFNQVJJTExBLCBMT1RFIDYyNiBDLCIsDQogICAgICAibXVuaWNpcGlvIiA6ICIyNSIsDQogICAgICAiZGVwYXJ0YW1lbnRvIiA6ICIwNSINCiAgICB9LA0KICAgICJub21icmVDb21lcmNpYWwiIDogIk1FR0FMT0FELCBTLkEuIERFIEMuVi4iLA0KICAgICJ0ZWxlZm9ubyIgOiAiMjUzMDUyOTMiLA0KICAgICJub21icmUiIDogIk1FR0FMT0FELCBTLkEuIERFIEMuVi4iLA0KICAgICJucmMiIDogIjI0NzMxMDkiDQogIH0NCn0.p4djmX9IOAaxZDftuEf-6KYKyVwBIStc_Opft0fiNOSJJPVzJZOf-fcmFg-1iscTV7C6G1l75FiRU-qSD6DlyzsGeHwV30lFi6Sg7g1PWeV3CBbUMWZsz318Kbmey57kV1ravML1MGQaGc_FgvScHaXKU3rs1emeUlzx2ndvGWQx9X57RRaW6DH87-X8LgE3iwWncOmLwbQ-egnyn48cONCHw99Pj8BSmE3lEKTpcxPPRE8kPAWvxsHPZEXF8fQX8rOLAwSi1UFWksV43cZLo6X6hGQ9_vcFzafuErKh4myV8PfF3aLY5Kj3L6aSD-AdME5zvNoq2AkeOcIEx9HY2Q
+
+{
+    "version": 2,
+    "ambiente": "01",
+    "versionApp": 2,
+    "estado": "PROCESADO",
+    "codigoGeneracion": "E108702A-F089-4CF1-9575-41A2869C64A6",
+    "selloRecibido": "202563093FA1191E424EBDC58C99BAEFA158ZCWB",
+    "fhProcesamiento": "13/08/2025 15:33:00",
+    "clasificaMsg": "10",
+    "codigoMsg": "002",
+    "descripcionMsg": "RECIBIDO CON OBSERVACIONES",
+    "observaciones": [
+        "identificacion.fecEmi Difiere de la fecha de envío."
+    ]
+}

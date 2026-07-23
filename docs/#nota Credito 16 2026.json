@@ -1,0 +1,132 @@
+
+{
+  "identificacion": {
+    "codigoGeneracion": "5BC81789-F4A1-44D4-B5C8-95450663F128",
+    "tipoContingencia": null,
+    "numeroControl": "DTE-05-M001P001-000000000000016",
+    "tipoOperacion": 1,
+    "ambiente": "01",
+    "fecEmi": "2026-03-01",
+    "tipoModelo": 1,
+    "tipoDte": "05",
+    "version": 3,
+    "tipoMoneda": "USD",
+    "motivoContin": null,
+    "horEmi": "08:00:00"
+  },
+  "emisor": {
+    "descActividad": "Transporte de carga internacional",
+    "tipoEstablecimiento": "02",
+    "codActividad": "49233",
+    "correo": "info@grupomegaload.com",
+    "nit": "06141101161042",
+    "direccion": {
+      "complemento": "POLIG. E, CTON. FLOR AMARILLA, LOTE 626 C,",
+      "municipio": "25",
+      "departamento": "05"
+    },
+    "nombreComercial": "MEGALOAD, S.A. DE C.V.",
+    "telefono": "25305293",
+    "nombre": "MEGALOAD, S.A. DE C.V.",
+    "nrc": "2473109"
+  },
+  "receptor": {
+    "nit": "017186176",
+    "nrc": "927287",
+    "correo": "donfelipem@yahoo.com.mx",
+    "nombre": "MENDOZA MATEO, FELIPE ANTONIO",
+    "telefono": "77977239",
+    "direccion": {
+      "complemento": "BLOCK A, COL. CUZCACHAPA, #8, FRENTE AL BENEFICIO CUZCACHAPA, DISTRITO DE CHALCHUAPA, MUNICIPIO DE SANTA ANA OESTE, DEPARTAMENTO DE SANTA ANA.",
+      "municipio": "16",
+      "departamento": "02"
+    },
+    "codActividad": "33120",
+    "descActividad": "Reparación y mantenimiento de maquinaria",
+    "nombreComercial": "MENDOZA MATEO, FELIPE ANTONIO"
+  },
+  "documentoRelacionado": [
+    {
+      "tipoDocumento": "03",
+      "fechaEmision": "2026-04-17",
+      "numeroDocumento": "A82A3997-A7F7-4523-87F4-F97C2971E99B",
+      "tipoGeneracion": 1
+    }
+  ],
+  "resumen": {
+    "totalNoSuj": 0,
+    "ivaPerci1": 0,
+    "descuNoSuj": 0,
+    "totalLetras": "SIETE MIL OCHOCIENTOS DIEZ CON 56/100 U.S. DOLARES",
+    "ivaRete1": 0,
+    "subTotal": 6912,
+    "reteRenta": 0,
+    "subTotalVentas": 6912,
+    "tributos": [
+      {
+        "descripcion": "Impuesto al Valor Agregado 13%",
+        "codigo": "20",
+        "valor": 898.56
+      }
+    ],
+    "descuExenta": 0,
+    "totalDescu": 0,
+    "descuGravada": 0,
+    "totalGravada": 6912,
+    "montoTotalOperacion": 7810.56,
+    "totalExenta": 0,
+    "condicionOperacion": 1
+  },
+  "cuerpoDocumento": [
+    {
+      "codigo": null,
+      "numItem": 1,
+      "cantidad": 1,
+      "tipoItem": 2,
+      "tributos": [
+        "20"
+      ],
+      "precioUni": 6912,
+      "uniMedida": 59,
+      "codTributo": null,
+      "montoDescu": 0,
+      "ventaNoSuj": 0,
+      "descripcion": "Telehander de 4 tons - por mes (192 horas ordinarias por mes o 30 días lo que ocurra primero, valor de hora extraordinaria $43.2)",
+      "ventaExenta": 0,
+      "ventaGravada": 6912,
+      "numeroDocumento": "A82A3997-A7F7-4523-87F4-F97C2971E99B"
+    }
+  ],
+  "extension": {
+    "docuEntrega": null,
+    "observaciones": "",
+    "nombRecibe": null,
+    "nombEntrega": null,
+    "docuRecibe": null
+  },
+  "ventaTercero": null,
+  "apendice": null
+}
+
+eyJhbGciOiJSUzUxMiJ9.ew0KICAiaWRlbnRpZmljYWNpb24iIDogew0KICAgICJjb2RpZ29HZW5lcmFjaW9uIiA6ICI1QkM4MTc4OS1GNEExLTQ0RDQtQjVDOC05NTQ1MDY2M0YxMjgiLA0KICAgICJ0aXBvQ29udGluZ2VuY2lhIiA6IG51bGwsDQogICAgIm51bWVyb0NvbnRyb2wiIDogIkRURS0wNS1NMDAxUDAwMS0wMDAwMDAwMDAwMDAwMTYiLA0KICAgICJ0aXBvT3BlcmFjaW9uIiA6IDEsDQogICAgImFtYmllbnRlIiA6ICIwMSIsDQogICAgImZlY0VtaSIgOiAiMjAyNi0wMy0wMSIsDQogICAgInRpcG9Nb2RlbG8iIDogMSwNCiAgICAidGlwb0R0ZSIgOiAiMDUiLA0KICAgICJ2ZXJzaW9uIiA6IDMsDQogICAgInRpcG9Nb25lZGEiIDogIlVTRCIsDQogICAgIm1vdGl2b0NvbnRpbiIgOiBudWxsLA0KICAgICJob3JFbWkiIDogIjA4OjAwOjAwIg0KICB9LA0KICAiZW1pc29yIiA6IHsNCiAgICAiZGVzY0FjdGl2aWRhZCIgOiAiVHJhbnNwb3J0ZSBkZSBjYXJnYSBpbnRlcm5hY2lvbmFsIiwNCiAgICAidGlwb0VzdGFibGVjaW1pZW50byIgOiAiMDIiLA0KICAgICJjb2RBY3RpdmlkYWQiIDogIjQ5MjMzIiwNCiAgICAiY29ycmVvIiA6ICJpbmZvQGdydXBvbWVnYWxvYWQuY29tIiwNCiAgICAibml0IiA6ICIwNjE0MTEwMTE2MTA0MiIsDQogICAgImRpcmVjY2lvbiIgOiB7DQogICAgICAiY29tcGxlbWVudG8iIDogIlBPTElHLiBFLCBDVE9OLiBGTE9SIEFNQVJJTExBLCBMT1RFIDYyNiBDLCIsDQogICAgICAibXVuaWNpcGlvIiA6ICIyNSIsDQogICAgICAiZGVwYXJ0YW1lbnRvIiA6ICIwNSINCiAgICB9LA0KICAgICJub21icmVDb21lcmNpYWwiIDogIk1FR0FMT0FELCBTLkEuIERFIEMuVi4iLA0KICAgICJ0ZWxlZm9ubyIgOiAiMjUzMDUyOTMiLA0KICAgICJub21icmUiIDogIk1FR0FMT0FELCBTLkEuIERFIEMuVi4iLA0KICAgICJucmMiIDogIjI0NzMxMDkiDQogIH0sDQogICJyZWNlcHRvciIgOiB7DQogICAgIm5pdCIgOiAiMDE3MTg2MTc2IiwNCiAgICAibnJjIiA6ICI5MjcyODciLA0KICAgICJjb3JyZW8iIDogImRvbmZlbGlwZW1AeWFob28uY29tLm14IiwNCiAgICAibm9tYnJlIiA6ICJNRU5ET1pBIE1BVEVPLCBGRUxJUEUgQU5UT05JTyIsDQogICAgInRlbGVmb25vIiA6ICI3Nzk3NzIzOSIsDQogICAgImRpcmVjY2lvbiIgOiB7DQogICAgICAiY29tcGxlbWVudG8iIDogIkJMT0NLIEEsIENPTC4gQ1VaQ0FDSEFQQSwgIzgsIEZSRU5URSBBTCBCRU5FRklDSU8gQ1VaQ0FDSEFQQSwgRElTVFJJVE8gREUgQ0hBTENIVUFQQSwgTVVOSUNJUElPIERFIFNBTlRBIEFOQSBPRVNURSwgREVQQVJUQU1FTlRPIERFIFNBTlRBIEFOQS4iLA0KICAgICAgIm11bmljaXBpbyIgOiAiMTYiLA0KICAgICAgImRlcGFydGFtZW50byIgOiAiMDIiDQogICAgfSwNCiAgICAiY29kQWN0aXZpZGFkIiA6ICIzMzEyMCIsDQogICAgImRlc2NBY3RpdmlkYWQiIDogIlJlcGFyYWNpw7NuIHkgbWFudGVuaW1pZW50byBkZSBtYXF1aW5hcmlhIiwNCiAgICAibm9tYnJlQ29tZXJjaWFsIiA6ICJNRU5ET1pBIE1BVEVPLCBGRUxJUEUgQU5UT05JTyINCiAgfSwNCiAgImRvY3VtZW50b1JlbGFjaW9uYWRvIiA6IFsgew0KICAgICJ0aXBvRG9jdW1lbnRvIiA6ICIwMyIsDQogICAgImZlY2hhRW1pc2lvbiIgOiAiMjAyNi0wNC0xNyIsDQogICAgIm51bWVyb0RvY3VtZW50byIgOiAiQTgyQTM5OTctQTdGNy00NTIzLTg3RjQtRjk3QzI5NzFFOTlCIiwNCiAgICAidGlwb0dlbmVyYWNpb24iIDogMQ0KICB9IF0sDQogICJyZXN1bWVuIiA6IHsNCiAgICAidG90YWxOb1N1aiIgOiAwLA0KICAgICJpdmFQZXJjaTEiIDogMCwNCiAgICAiZGVzY3VOb1N1aiIgOiAwLA0KICAgICJ0b3RhbExldHJhcyIgOiAiU0lFVEUgTUlMIE9DSE9DSUVOVE9TIERJRVogQ09OIDU2LzEwMCBVLlMuIERPTEFSRVMiLA0KICAgICJpdmFSZXRlMSIgOiAwLA0KICAgICJzdWJUb3RhbCIgOiA2OTEyLA0KICAgICJyZXRlUmVudGEiIDogMCwNCiAgICAic3ViVG90YWxWZW50YXMiIDogNjkxMiwNCiAgICAidHJpYnV0b3MiIDogWyB7DQogICAgICAiZGVzY3JpcGNpb24iIDogIkltcHVlc3RvIGFsIFZhbG9yIEFncmVnYWRvIDEzJSIsDQogICAgICAiY29kaWdvIiA6ICIyMCIsDQogICAgICAidmFsb3IiIDogODk4LjU2DQogICAgfSBdLA0KICAgICJkZXNjdUV4ZW50YSIgOiAwLA0KICAgICJ0b3RhbERlc2N1IiA6IDAsDQogICAgImRlc2N1R3JhdmFkYSIgOiAwLA0KICAgICJ0b3RhbEdyYXZhZGEiIDogNjkxMiwNCiAgICAibW9udG9Ub3RhbE9wZXJhY2lvbiIgOiA3ODEwLjU2LA0KICAgICJ0b3RhbEV4ZW50YSIgOiAwLA0KICAgICJjb25kaWNpb25PcGVyYWNpb24iIDogMQ0KICB9LA0KICAiY3VlcnBvRG9jdW1lbnRvIiA6IFsgew0KICAgICJjb2RpZ28iIDogbnVsbCwNCiAgICAibnVtSXRlbSIgOiAxLA0KICAgICJjYW50aWRhZCIgOiAxLA0KICAgICJ0aXBvSXRlbSIgOiAyLA0KICAgICJ0cmlidXRvcyIgOiBbICIyMCIgXSwNCiAgICAicHJlY2lvVW5pIiA6IDY5MTIsDQogICAgInVuaU1lZGlkYSIgOiA1OSwNCiAgICAiY29kVHJpYnV0byIgOiBudWxsLA0KICAgICJtb250b0Rlc2N1IiA6IDAsDQogICAgInZlbnRhTm9TdWoiIDogMCwNCiAgICAiZGVzY3JpcGNpb24iIDogIlRlbGVoYW5kZXIgZGUgNCB0b25zIC0gcG9yIG1lcyAoMTkyIGhvcmFzIG9yZGluYXJpYXMgcG9yIG1lcyBvIDMwIGTDrWFzIGxvIHF1ZSBvY3VycmEgcHJpbWVybywgdmFsb3IgZGUgaG9yYSBleHRyYW9yZGluYXJpYSAkNDMuMikiLA0KICAgICJ2ZW50YUV4ZW50YSIgOiAwLA0KICAgICJ2ZW50YUdyYXZhZGEiIDogNjkxMiwNCiAgICAibnVtZXJvRG9jdW1lbnRvIiA6ICJBODJBMzk5Ny1BN0Y3LTQ1MjMtODdGNC1GOTdDMjk3MUU5OUIiDQogIH0gXSwNCiAgImV4dGVuc2lvbiIgOiB7DQogICAgImRvY3VFbnRyZWdhIiA6IG51bGwsDQogICAgIm9ic2VydmFjaW9uZXMiIDogIiIsDQogICAgIm5vbWJSZWNpYmUiIDogbnVsbCwNCiAgICAibm9tYkVudHJlZ2EiIDogbnVsbCwNCiAgICAiZG9jdVJlY2liZSIgOiBudWxsDQogIH0sDQogICJ2ZW50YVRlcmNlcm8iIDogbnVsbCwNCiAgImFwZW5kaWNlIiA6IG51bGwNCn0.tUORM1tA1IXmVbV5IuttEVlZGMip-A3s-VpqisSxPOHG8SHZ6B1ERIgiKIUQU8_-hKkPP-9T8F5d_VyTw-13ZU_79S0XFz4n1EJ4_0TSHNGLbchWGFk0v_DXMCrnmze0y4krvlW5FLJS3xZmsn9YcFI3OHTKuQDy6rSAiNm8Y5XTzmsfAqZn-eNHq6RabRQPv7Qtnvh5cKkaE-wPuSFR2xGxLjCbdZ_TXkIwF0JMMAynnvGJNbTqaoO5szXnLI7cKuxqZ9wTpPebM9x1DbyjWv_uf5AW2Nlm9xkQ7w_JvvcuN-uoSOJJuck5XU_e9kn2xorUlCcCqvY77wdIf0J0DQ
+
+{
+  "version": 2,
+  "ambiente": "01",
+  "versionApp": 2,
+  "estado": "PROCESADO",
+  "codigoGeneracion": "5BC81789-F4A1-44D4-B5C8-95450663F128",
+  "selloRecibido": "20260A7C5BCAC4934208822450F10913651A8BHV",
+  "fhProcesamiento": "06/05/2026 03:54:02",
+  "clasificaMsg": "10",
+  "codigoMsg": "002",
+  "descripcionMsg": "RECIBIDO CON OBSERVACIONES",
+  "observaciones": [
+    "identificacion.fecEmi Difiere de la fecha de envío.",
+    "[documentoRelacionado.fechaEmision] FECHA FUERA DE PLAZO PERMITIDO"
+  ]
+}
+
+
+
+

@@ -1,0 +1,147 @@
+Nota de credito 33
+
+
+{
+	"identificacion": {
+        "codigoGeneracion": "38070FE7-C80B-4930-A214-9A4C699A65E8",
+        "tipoContingencia": null,
+        "numeroControl": "DTE-05-M001P001-000000000000033",
+        "tipoOperacion": 1,
+        "ambiente": "01",
+        "fecEmi": "2025-11-18",
+        "tipoModelo": 1,
+        "tipoDte": "05",
+        "version": 3,
+        "tipoMoneda": "USD",
+        "motivoContin": null,
+        "horEmi": "18:10:00"
+    },
+	"emisor": {
+        "descActividad": "Transporte de carga internacional",
+        "tipoEstablecimiento": "02",
+        "codActividad": "49233",
+        "correo": "info@grupomegaload.com",
+        "nit": "06141101161042",
+        "direccion": {
+            "complemento": "POLIG. E, CTON. FLOR AMARILLA, LOTE 626 C,",
+            "municipio": "25",
+            "departamento": "05"
+        },
+        "nombreComercial": "MEGALOAD, S.A. DE C.V.",
+        "telefono": "25305293",
+        "nombre": "MEGALOAD, S.A. DE C.V.",
+        "nrc": "2473109"
+    },
+    "receptor": {
+    	"nit": "06143107981044",
+    	"nrc": "1075071",
+    	"correo": "cenergicaenergyfacturas@asterpower.com.sv",
+    	"nombre": "CENERGICA ENERGY EL SALVADOR, SOCIEDAD EN COMANDITA POR ACCIONES DE CAPITAL VARIABLE",
+    	"telefono": "25007600",
+    	"direccion": {
+            "complemento": "BLVD SANTA ELENA Y CALLE CERRO VERDE, URB SANTA ELENA, EDIFICO FUSADES, 2DO NIVEL, ANTIGUO CUSCATLAN, LA LIBERTAD.",
+            "municipio": "27",
+            "departamento": "05"
+        },        
+        "codActividad": "35101",
+        "descActividad": "Generación de energía eléctrica",
+        "nombreComercial": "CENERGICA ENERGY EL SALVADOR, SOCIEDAD EN COMANDITA POR ACCIONES DE CAPITAL VARIABLE"
+    },
+    "documentoRelacionado": [
+        {
+            "tipoDocumento": "03",
+            "fechaEmision": "2025-11-11",
+            "numeroDocumento": "593F3D0D-8F28-49D2-BFF6-D74DD6E5F8BA",
+            "tipoGeneracion": 1
+        }
+    ],    
+    "resumen": {
+        "totalNoSuj": 0,
+        "ivaPerci1": 0,
+        "descuNoSuj": 0,
+        "totalLetras": "DOS MIL NOVECIENTOS CINCUENTA Y SEIS CON 80/100 U.S. DOLARES",
+        "ivaRete1": 26.4,
+        "subTotal": 2640,
+        "reteRenta": 0,
+        "subTotalVentas": 2640,
+        "tributos": [
+            {
+                "descripcion": "Impuesto al Valor Agregado 13%",
+                "codigo": "20",
+                "valor": 343.2
+            }
+        ],
+        "descuExenta": 0,
+        "totalDescu": 0,
+        "descuGravada": 0,
+        "totalGravada": 2640,
+        "montoTotalOperacion": 2956.8,
+        "totalExenta": 0,
+        "condicionOperacion": 1
+    },
+    "cuerpoDocumento": [
+    	{
+            "codigo": null,
+            "numItem": 1,
+            "cantidad": 2,
+            "tipoItem": 2,
+            "tributos": [
+                "20"
+            ],
+            "precioUni": 600,
+            "uniMedida": 59,
+            "codTributo": null,
+            "montoDescu": 0,
+            "ventaNoSuj": 0,
+            "descripcion": "Grúa telescópica de 50 tons - transporte ida y regreso (Traslado de grúa desde plantel Megaload hacia Central Térmica de Acajutla. <br />\r\n<br />\r\nPrimer flete: 12 de Noviembre 2025<br />\r\n<br />\r\nSegundo flete: 12 de enero de 2026)",
+            "ventaExenta": 0,
+            "ventaGravada": 1200,
+            "numeroDocumento": "593F3D0D-8F28-49D2-BFF6-D74DD6E5F8BA"
+        },
+        {
+            "codigo": null,
+            "numItem": 2,
+            "cantidad": 2,
+            "tipoItem": 2,
+            "tributos": [
+                "20"
+            ],
+            "precioUni": 720,
+            "uniMedida": 59,
+            "codTributo": null,
+            "montoDescu": 0,
+            "ventaNoSuj": 0,
+            "descripcion": "Grúa telescópica de 50 tons - por día (Servicio de grúa, 8 horas mínimas. $108.00 por horas extra. <br />\r\n<br />\r\nDescarga: 12 de Noviembre de 2025 <br />\r\n<br />\r\nCarga: 12 de enero 2026)",
+            "ventaExenta": 0,
+            "ventaGravada": 1440,
+            "numeroDocumento": "593F3D0D-8F28-49D2-BFF6-D74DD6E5F8BA"
+        }      
+    ],
+    "extension": {
+        "docuEntrega": null,
+        "observaciones": null,
+        "nombRecibe": null,
+        "nombEntrega": null,
+        "docuRecibe": null
+    },
+    "ventaTercero": null,
+    "apendice": null
+}
+
+eyJhbGciOiJSUzUxMiJ9.ew0KICAiaWRlbnRpZmljYWNpb24iIDogew0KICAgICJjb2RpZ29HZW5lcmFjaW9uIiA6ICIzODA3MEZFNy1DODBCLTQ5MzAtQTIxNC05QTRDNjk5QTY1RTgiLA0KICAgICJ0aXBvQ29udGluZ2VuY2lhIiA6IG51bGwsDQogICAgIm51bWVyb0NvbnRyb2wiIDogIkRURS0wNS1NMDAxUDAwMS0wMDAwMDAwMDAwMDAwMzMiLA0KICAgICJ0aXBvT3BlcmFjaW9uIiA6IDEsDQogICAgImFtYmllbnRlIiA6ICIwMSIsDQogICAgImZlY0VtaSIgOiAiMjAyNS0xMS0xOCIsDQogICAgInRpcG9Nb2RlbG8iIDogMSwNCiAgICAidGlwb0R0ZSIgOiAiMDUiLA0KICAgICJ2ZXJzaW9uIiA6IDMsDQogICAgInRpcG9Nb25lZGEiIDogIlVTRCIsDQogICAgIm1vdGl2b0NvbnRpbiIgOiBudWxsLA0KICAgICJob3JFbWkiIDogIjE4OjEwOjAwIg0KICB9LA0KICAiZW1pc29yIiA6IHsNCiAgICAiZGVzY0FjdGl2aWRhZCIgOiAiVHJhbnNwb3J0ZSBkZSBjYXJnYSBpbnRlcm5hY2lvbmFsIiwNCiAgICAidGlwb0VzdGFibGVjaW1pZW50byIgOiAiMDIiLA0KICAgICJjb2RBY3RpdmlkYWQiIDogIjQ5MjMzIiwNCiAgICAiY29ycmVvIiA6ICJpbmZvQGdydXBvbWVnYWxvYWQuY29tIiwNCiAgICAibml0IiA6ICIwNjE0MTEwMTE2MTA0MiIsDQogICAgImRpcmVjY2lvbiIgOiB7DQogICAgICAiY29tcGxlbWVudG8iIDogIlBPTElHLiBFLCBDVE9OLiBGTE9SIEFNQVJJTExBLCBMT1RFIDYyNiBDLCIsDQogICAgICAibXVuaWNpcGlvIiA6ICIyNSIsDQogICAgICAiZGVwYXJ0YW1lbnRvIiA6ICIwNSINCiAgICB9LA0KICAgICJub21icmVDb21lcmNpYWwiIDogIk1FR0FMT0FELCBTLkEuIERFIEMuVi4iLA0KICAgICJ0ZWxlZm9ubyIgOiAiMjUzMDUyOTMiLA0KICAgICJub21icmUiIDogIk1FR0FMT0FELCBTLkEuIERFIEMuVi4iLA0KICAgICJucmMiIDogIjI0NzMxMDkiDQogIH0sDQogICJyZWNlcHRvciIgOiB7DQogICAgIm5pdCIgOiAiMDYxNDMxMDc5ODEwNDQiLA0KICAgICJucmMiIDogIjEwNzUwNzEiLA0KICAgICJjb3JyZW8iIDogImNlbmVyZ2ljYWVuZXJneWZhY3R1cmFzQGFzdGVycG93ZXIuY29tLnN2IiwNCiAgICAibm9tYnJlIiA6ICJDRU5FUkdJQ0EgRU5FUkdZIEVMIFNBTFZBRE9SLCBTT0NJRURBRCBFTiBDT01BTkRJVEEgUE9SIEFDQ0lPTkVTIERFIENBUElUQUwgVkFSSUFCTEUiLA0KICAgICJ0ZWxlZm9ubyIgOiAiMjUwMDc2MDAiLA0KICAgICJkaXJlY2Npb24iIDogew0KICAgICAgImNvbXBsZW1lbnRvIiA6ICJCTFZEIFNBTlRBIEVMRU5BIFkgQ0FMTEUgQ0VSUk8gVkVSREUsIFVSQiBTQU5UQSBFTEVOQSwgRURJRklDTyBGVVNBREVTLCAyRE8gTklWRUwsIEFOVElHVU8gQ1VTQ0FUTEFOLCBMQSBMSUJFUlRBRC4iLA0KICAgICAgIm11bmljaXBpbyIgOiAiMjciLA0KICAgICAgImRlcGFydGFtZW50byIgOiAiMDUiDQogICAgfSwNCiAgICAiY29kQWN0aXZpZGFkIiA6ICIzNTEwMSIsDQogICAgImRlc2NBY3RpdmlkYWQiIDogIkdlbmVyYWNpw7NuIGRlIGVuZXJnw61hIGVsw6ljdHJpY2EiLA0KICAgICJub21icmVDb21lcmNpYWwiIDogIkNFTkVSR0lDQSBFTkVSR1kgRUwgU0FMVkFET1IsIFNPQ0lFREFEIEVOIENPTUFORElUQSBQT1IgQUNDSU9ORVMgREUgQ0FQSVRBTCBWQVJJQUJMRSINCiAgfSwNCiAgImRvY3VtZW50b1JlbGFjaW9uYWRvIiA6IFsgew0KICAgICJ0aXBvRG9jdW1lbnRvIiA6ICIwMyIsDQogICAgImZlY2hhRW1pc2lvbiIgOiAiMjAyNS0xMS0xMSIsDQogICAgIm51bWVyb0RvY3VtZW50byIgOiAiNTkzRjNEMEQtOEYyOC00OUQyLUJGRjYtRDc0REQ2RTVGOEJBIiwNCiAgICAidGlwb0dlbmVyYWNpb24iIDogMQ0KICB9IF0sDQogICJyZXN1bWVuIiA6IHsNCiAgICAidG90YWxOb1N1aiIgOiAwLA0KICAgICJpdmFQZXJjaTEiIDogMCwNCiAgICAiZGVzY3VOb1N1aiIgOiAwLA0KICAgICJ0b3RhbExldHJhcyIgOiAiRE9TIE1JTCBOT1ZFQ0lFTlRPUyBDSU5DVUVOVEEgWSBTRUlTIENPTiA4MC8xMDAgVS5TLiBET0xBUkVTIiwNCiAgICAiaXZhUmV0ZTEiIDogMjYuNCwNCiAgICAic3ViVG90YWwiIDogMjY0MCwNCiAgICAicmV0ZVJlbnRhIiA6IDAsDQogICAgInN1YlRvdGFsVmVudGFzIiA6IDI2NDAsDQogICAgInRyaWJ1dG9zIiA6IFsgew0KICAgICAgImRlc2NyaXBjaW9uIiA6ICJJbXB1ZXN0byBhbCBWYWxvciBBZ3JlZ2FkbyAxMyUiLA0KICAgICAgImNvZGlnbyIgOiAiMjAiLA0KICAgICAgInZhbG9yIiA6IDM0My4yDQogICAgfSBdLA0KICAgICJkZXNjdUV4ZW50YSIgOiAwLA0KICAgICJ0b3RhbERlc2N1IiA6IDAsDQogICAgImRlc2N1R3JhdmFkYSIgOiAwLA0KICAgICJ0b3RhbEdyYXZhZGEiIDogMjY0MCwNCiAgICAibW9udG9Ub3RhbE9wZXJhY2lvbiIgOiAyOTU2LjgsDQogICAgInRvdGFsRXhlbnRhIiA6IDAsDQogICAgImNvbmRpY2lvbk9wZXJhY2lvbiIgOiAxDQogIH0sDQogICJjdWVycG9Eb2N1bWVudG8iIDogWyB7DQogICAgImNvZGlnbyIgOiBudWxsLA0KICAgICJudW1JdGVtIiA6IDEsDQogICAgImNhbnRpZGFkIiA6IDIsDQogICAgInRpcG9JdGVtIiA6IDIsDQogICAgInRyaWJ1dG9zIiA6IFsgIjIwIiBdLA0KICAgICJwcmVjaW9VbmkiIDogNjAwLA0KICAgICJ1bmlNZWRpZGEiIDogNTksDQogICAgImNvZFRyaWJ1dG8iIDogbnVsbCwNCiAgICAibW9udG9EZXNjdSIgOiAwLA0KICAgICJ2ZW50YU5vU3VqIiA6IDAsDQogICAgImRlc2NyaXBjaW9uIiA6ICJHcsO6YSB0ZWxlc2PDs3BpY2EgZGUgNTAgdG9ucyAtIHRyYW5zcG9ydGUgaWRhIHkgcmVncmVzbyAoVHJhc2xhZG8gZGUgZ3LDumEgZGVzZGUgcGxhbnRlbCBNZWdhbG9hZCBoYWNpYSBDZW50cmFsIFTDqXJtaWNhIGRlIEFjYWp1dGxhLiA8YnIgLz5cclxuPGJyIC8-XHJcblByaW1lciBmbGV0ZTogMTIgZGUgTm92aWVtYnJlIDIwMjU8YnIgLz5cclxuPGJyIC8-XHJcblNlZ3VuZG8gZmxldGU6IDEyIGRlIGVuZXJvIGRlIDIwMjYpIiwNCiAgICAidmVudGFFeGVudGEiIDogMCwNCiAgICAidmVudGFHcmF2YWRhIiA6IDEyMDAsDQogICAgIm51bWVyb0RvY3VtZW50byIgOiAiNTkzRjNEMEQtOEYyOC00OUQyLUJGRjYtRDc0REQ2RTVGOEJBIg0KICB9LCB7DQogICAgImNvZGlnbyIgOiBudWxsLA0KICAgICJudW1JdGVtIiA6IDIsDQogICAgImNhbnRpZGFkIiA6IDIsDQogICAgInRpcG9JdGVtIiA6IDIsDQogICAgInRyaWJ1dG9zIiA6IFsgIjIwIiBdLA0KICAgICJwcmVjaW9VbmkiIDogNzIwLA0KICAgICJ1bmlNZWRpZGEiIDogNTksDQogICAgImNvZFRyaWJ1dG8iIDogbnVsbCwNCiAgICAibW9udG9EZXNjdSIgOiAwLA0KICAgICJ2ZW50YU5vU3VqIiA6IDAsDQogICAgImRlc2NyaXBjaW9uIiA6ICJHcsO6YSB0ZWxlc2PDs3BpY2EgZGUgNTAgdG9ucyAtIHBvciBkw61hIChTZXJ2aWNpbyBkZSBncsO6YSwgOCBob3JhcyBtw61uaW1hcy4gJDEwOC4wMCBwb3IgaG9yYXMgZXh0cmEuIDxiciAvPlxyXG48YnIgLz5cclxuRGVzY2FyZ2E6IDEyIGRlIE5vdmllbWJyZSBkZSAyMDI1IDxiciAvPlxyXG48YnIgLz5cclxuQ2FyZ2E6IDEyIGRlIGVuZXJvIDIwMjYpIiwNCiAgICAidmVudGFFeGVudGEiIDogMCwNCiAgICAidmVudGFHcmF2YWRhIiA6IDE0NDAsDQogICAgIm51bWVyb0RvY3VtZW50byIgOiAiNTkzRjNEMEQtOEYyOC00OUQyLUJGRjYtRDc0REQ2RTVGOEJBIg0KICB9IF0sDQogICJleHRlbnNpb24iIDogew0KICAgICJkb2N1RW50cmVnYSIgOiBudWxsLA0KICAgICJvYnNlcnZhY2lvbmVzIiA6IG51bGwsDQogICAgIm5vbWJSZWNpYmUiIDogbnVsbCwNCiAgICAibm9tYkVudHJlZ2EiIDogbnVsbCwNCiAgICAiZG9jdVJlY2liZSIgOiBudWxsDQogIH0sDQogICJ2ZW50YVRlcmNlcm8iIDogbnVsbCwNCiAgImFwZW5kaWNlIiA6IG51bGwNCn0.Q5uAlARM71IHkc0wdKjkPCvVd4iDP8-oIVOGKypHDq96MG8jhvHumko17cDIIKG5Npq4C-no8u1AWyB0QuW687FciOLOXQONtptu5kipU0dE4bl_f8BrM46SGSo_gKuPpGzCDGDSZ2Iwzzg5cIiFAbsPBjLoksZdNIRPap1ufo_PgSgDK1nI5mLtS18CkkZqYz1jav4pdcDYroB5kkMEQ0YDrJ7PbhrS7HHL6w1O72xMIf02FOsM8IcH3JjURSfSqBOG2S5uG0OJGtkngJVDACIDqjYjkbUKDw0bF9cf9Cx_C04nb5ocGk43MIGCFqLeRqNM_qD9-bFb6C7zIhee1Q
+
+{
+	"version": 2,
+	"ambiente": "01",
+	"versionApp": 2,
+	"estado": "PROCESADO",
+	"codigoGeneracion": "38070FE7-C80B-4930-A214-9A4C699A65E8",
+	"selloRecibido": "2025D36A62C0903E46A8B50DBCC0DF3A263FZOKE",
+	"fhProcesamiento": "18/11/2025 19:25:35",
+	"clasificaMsg": "10",
+	"codigoMsg": "001",
+	"descripcionMsg": "RECIBIDO",
+	"observaciones": []
+}
+
+

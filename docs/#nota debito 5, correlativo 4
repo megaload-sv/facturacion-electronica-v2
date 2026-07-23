@@ -1,0 +1,150 @@
+#nota debito 5, correlativo 4
+
+
+
+
+{
+  "identificacion": {
+    "version": 3,
+    "ambiente": "01",
+    "tipoDte": "06",
+    "numeroControl": "DTE-06-M001P001-000000000000004",
+    "codigoGeneracion": "9CD1CDDA-04EC-430E-8E64-3DC1BED3F5CB",
+    "tipoModelo": 1,
+    "tipoOperacion": 1,
+    "tipoContingencia": null,
+    "motivoContin": null,
+    "fecEmi": "2025-06-13",
+	"horEmi": "08:25:00",
+    "tipoMoneda": "USD"
+  },
+  "documentoRelacionado": [
+    {
+      "tipoDocumento": "03",
+      "tipoGeneracion": 2,
+      "numeroDocumento": "C98A9C7D-B1E3-4306-9B37-F13D75D6DC87",
+      "fechaEmision": "2025-04-16"
+    }
+  ],
+  "emisor": {
+    "nit": "06141101161042",
+    "nrc": "2473109",
+    "nombre": "MEGALOAD, S.A. DE C.V.",
+    "codActividad": "49233",
+    "descActividad": "Transporte de carga internacional",
+    "nombreComercial": "MEGALOAD, S.A. DE C.V.",
+    "tipoEstablecimiento": "02",
+    "direccion": {
+      "departamento": "05",
+      "municipio": "25",
+      "complemento": "POLIG. E, CTON. FLOR AMARILLA, LOTE 626 C,"
+    },
+    "telefono": "25305293",
+    "correo": "info@grupomegaload.com"
+  },
+  "receptor": {
+    "nit": "06143009971014",
+    "nrc": "1015621",
+    "nombre": "CONSTRUCCIONES NABLA, S.A DE C.V.",
+    "codActividad": "71101",
+    "descActividad": "Servicios de arquitectura y planificación urbana y servicios conexos",
+    "nombreComercial": "CONSTRUCCIONES NABLA, S.A DE C.V.",
+    "direccion": {
+      "departamento": "06",
+      "municipio": "23",
+      "complemento": "BLV. DEL HIPODROMO, COL SAN BENITO, #674"
+    },
+    "telefono": "22645559",
+    "correo": "imejia@gruponabla.com"
+  },
+  "ventaTercero": null,
+  "cuerpoDocumento": [
+    {
+      "numItem": 1,
+      "tipoItem": 2,
+      "numeroDocumento": "C98A9C7D-B1E3-4306-9B37-F13D75D6DC87",
+      "codigo": null,
+      "codTributo": null,
+      "descripcion": "Grúa telescópica de 35 tons - por semana",
+      "cantidad": 2,
+      "uniMedida": 59,
+      "precioUni": 2544,
+      "montoDescu": 0,
+      "ventaNoSuj": 0,
+      "ventaExenta": 0,
+      "ventaGravada": 5088,
+      "tributos": [
+        "20"
+      ]
+    },
+    {
+      "numItem": 2,
+      "tipoItem": 2,
+      "numeroDocumento": "C98A9C7D-B1E3-4306-9B37-F13D75D6DC87",
+      "codigo": null,
+      "codTributo": null,
+      "descripcion": "Grúa telescópica de 35 tons - por día",
+      "cantidad": 29,
+      "uniMedida": 59,
+      "precioUni": 63.6,
+      "montoDescu": 0,
+      "ventaNoSuj": 0,
+      "ventaExenta": 0,
+      "ventaGravada": 1844.4,
+      "tributos": [
+        "20"
+      ]
+    }
+  ],
+  "resumen": {
+    "totalNoSuj": 0,
+    "totalExenta": 0,
+    "totalGravada": 6932.4,
+    "subTotalVentas": 6932.4,
+    "descuNoSuj": 0,
+    "descuExenta": 0,
+    "descuGravada": 0,
+    "totalDescu": 0,
+    "tributos": [
+      {
+        "codigo": "20",
+        "descripcion": "Impuesto al Valor Agregado 13%",
+        "valor": 901.21
+      }
+    ],
+    "subTotal": 6932.4,
+    "ivaPerci1": 0,
+    "ivaRete1": 69.32,
+    "reteRenta": 0,
+    "montoTotalOperacion": 7833.61,
+    "totalLetras": "SIETE MIL SETECIENTOS SESENTA Y CUATRO CON 29/100 U.S. DOLARES",
+    "condicionOperacion": 1,    
+    "numPagoElectronico": null
+  },
+  "extension": {
+    "nombEntrega": null,
+    "docuEntrega": null,
+    "nombRecibe": null,
+    "docuRecibe": null,
+    "observaciones": null
+  },
+  "apendice": null
+}
+
+eyJhbGciOiJSUzUxMiJ9.ew0KICAiaWRlbnRpZmljYWNpb24iIDogew0KICAgICJ2ZXJzaW9uIiA6IDMsDQogICAgImFtYmllbnRlIiA6ICIwMSIsDQogICAgInRpcG9EdGUiIDogIjA2IiwNCiAgICAibnVtZXJvQ29udHJvbCIgOiAiRFRFLTA2LU0wMDFQMDAxLTAwMDAwMDAwMDAwMDAwNCIsDQogICAgImNvZGlnb0dlbmVyYWNpb24iIDogIjlDRDFDRERBLTA0RUMtNDMwRS04RTY0LTNEQzFCRUQzRjVDQiIsDQogICAgInRpcG9Nb2RlbG8iIDogMSwNCiAgICAidGlwb09wZXJhY2lvbiIgOiAxLA0KICAgICJ0aXBvQ29udGluZ2VuY2lhIiA6IG51bGwsDQogICAgIm1vdGl2b0NvbnRpbiIgOiBudWxsLA0KICAgICJmZWNFbWkiIDogIjIwMjUtMDYtMTMiLA0KICAgICJob3JFbWkiIDogIjA4OjI1OjAwIiwNCiAgICAidGlwb01vbmVkYSIgOiAiVVNEIg0KICB9LA0KICAiZG9jdW1lbnRvUmVsYWNpb25hZG8iIDogWyB7DQogICAgInRpcG9Eb2N1bWVudG8iIDogIjAzIiwNCiAgICAidGlwb0dlbmVyYWNpb24iIDogMiwNCiAgICAibnVtZXJvRG9jdW1lbnRvIiA6ICJDOThBOUM3RC1CMUUzLTQzMDYtOUIzNy1GMTNENzVENkRDODciLA0KICAgICJmZWNoYUVtaXNpb24iIDogIjIwMjUtMDQtMTYiDQogIH0gXSwNCiAgImVtaXNvciIgOiB7DQogICAgIm5pdCIgOiAiMDYxNDExMDExNjEwNDIiLA0KICAgICJucmMiIDogIjI0NzMxMDkiLA0KICAgICJub21icmUiIDogIk1FR0FMT0FELCBTLkEuIERFIEMuVi4iLA0KICAgICJjb2RBY3RpdmlkYWQiIDogIjQ5MjMzIiwNCiAgICAiZGVzY0FjdGl2aWRhZCIgOiAiVHJhbnNwb3J0ZSBkZSBjYXJnYSBpbnRlcm5hY2lvbmFsIiwNCiAgICAibm9tYnJlQ29tZXJjaWFsIiA6ICJNRUdBTE9BRCwgUy5BLiBERSBDLlYuIiwNCiAgICAidGlwb0VzdGFibGVjaW1pZW50byIgOiAiMDIiLA0KICAgICJkaXJlY2Npb24iIDogew0KICAgICAgImRlcGFydGFtZW50byIgOiAiMDUiLA0KICAgICAgIm11bmljaXBpbyIgOiAiMjUiLA0KICAgICAgImNvbXBsZW1lbnRvIiA6ICJQT0xJRy4gRSwgQ1RPTi4gRkxPUiBBTUFSSUxMQSwgTE9URSA2MjYgQywiDQogICAgfSwNCiAgICAidGVsZWZvbm8iIDogIjI1MzA1MjkzIiwNCiAgICAiY29ycmVvIiA6ICJpbmZvQGdydXBvbWVnYWxvYWQuY29tIg0KICB9LA0KICAicmVjZXB0b3IiIDogew0KICAgICJuaXQiIDogIjA2MTQzMDA5OTcxMDE0IiwNCiAgICAibnJjIiA6ICIxMDE1NjIxIiwNCiAgICAibm9tYnJlIiA6ICJDT05TVFJVQ0NJT05FUyBOQUJMQSwgUy5BIERFIEMuVi4iLA0KICAgICJjb2RBY3RpdmlkYWQiIDogIjcxMTAxIiwNCiAgICAiZGVzY0FjdGl2aWRhZCIgOiAiU2VydmljaW9zIGRlIGFycXVpdGVjdHVyYSB5IHBsYW5pZmljYWNpw7NuIHVyYmFuYSB5IHNlcnZpY2lvcyBjb25leG9zIiwNCiAgICAibm9tYnJlQ29tZXJjaWFsIiA6ICJDT05TVFJVQ0NJT05FUyBOQUJMQSwgUy5BIERFIEMuVi4iLA0KICAgICJkaXJlY2Npb24iIDogew0KICAgICAgImRlcGFydGFtZW50byIgOiAiMDYiLA0KICAgICAgIm11bmljaXBpbyIgOiAiMjMiLA0KICAgICAgImNvbXBsZW1lbnRvIiA6ICJCTFYuIERFTCBISVBPRFJPTU8sIENPTCBTQU4gQkVOSVRPLCAjNjc0Ig0KICAgIH0sDQogICAgInRlbGVmb25vIiA6ICIyMjY0NTU1OSIsDQogICAgImNvcnJlbyIgOiAiaW1lamlhQGdydXBvbmFibGEuY29tIg0KICB9LA0KICAidmVudGFUZXJjZXJvIiA6IG51bGwsDQogICJjdWVycG9Eb2N1bWVudG8iIDogWyB7DQogICAgIm51bUl0ZW0iIDogMSwNCiAgICAidGlwb0l0ZW0iIDogMiwNCiAgICAibnVtZXJvRG9jdW1lbnRvIiA6ICJDOThBOUM3RC1CMUUzLTQzMDYtOUIzNy1GMTNENzVENkRDODciLA0KICAgICJjb2RpZ28iIDogbnVsbCwNCiAgICAiY29kVHJpYnV0byIgOiBudWxsLA0KICAgICJkZXNjcmlwY2lvbiIgOiAiR3LDumEgdGVsZXNjw7NwaWNhIGRlIDM1IHRvbnMgLSBwb3Igc2VtYW5hIiwNCiAgICAiY2FudGlkYWQiIDogMiwNCiAgICAidW5pTWVkaWRhIiA6IDU5LA0KICAgICJwcmVjaW9VbmkiIDogMjU0NCwNCiAgICAibW9udG9EZXNjdSIgOiAwLA0KICAgICJ2ZW50YU5vU3VqIiA6IDAsDQogICAgInZlbnRhRXhlbnRhIiA6IDAsDQogICAgInZlbnRhR3JhdmFkYSIgOiA1MDg4LA0KICAgICJ0cmlidXRvcyIgOiBbICIyMCIgXQ0KICB9LCB7DQogICAgIm51bUl0ZW0iIDogMiwNCiAgICAidGlwb0l0ZW0iIDogMiwNCiAgICAibnVtZXJvRG9jdW1lbnRvIiA6ICJDOThBOUM3RC1CMUUzLTQzMDYtOUIzNy1GMTNENzVENkRDODciLA0KICAgICJjb2RpZ28iIDogbnVsbCwNCiAgICAiY29kVHJpYnV0byIgOiBudWxsLA0KICAgICJkZXNjcmlwY2lvbiIgOiAiR3LDumEgdGVsZXNjw7NwaWNhIGRlIDM1IHRvbnMgLSBwb3IgZMOtYSIsDQogICAgImNhbnRpZGFkIiA6IDI5LA0KICAgICJ1bmlNZWRpZGEiIDogNTksDQogICAgInByZWNpb1VuaSIgOiA2My42LA0KICAgICJtb250b0Rlc2N1IiA6IDAsDQogICAgInZlbnRhTm9TdWoiIDogMCwNCiAgICAidmVudGFFeGVudGEiIDogMCwNCiAgICAidmVudGFHcmF2YWRhIiA6IDE4NDQuNCwNCiAgICAidHJpYnV0b3MiIDogWyAiMjAiIF0NCiAgfSBdLA0KICAicmVzdW1lbiIgOiB7DQogICAgInRvdGFsTm9TdWoiIDogMCwNCiAgICAidG90YWxFeGVudGEiIDogMCwNCiAgICAidG90YWxHcmF2YWRhIiA6IDY5MzIuNCwNCiAgICAic3ViVG90YWxWZW50YXMiIDogNjkzMi40LA0KICAgICJkZXNjdU5vU3VqIiA6IDAsDQogICAgImRlc2N1RXhlbnRhIiA6IDAsDQogICAgImRlc2N1R3JhdmFkYSIgOiAwLA0KICAgICJ0b3RhbERlc2N1IiA6IDAsDQogICAgInRyaWJ1dG9zIiA6IFsgew0KICAgICAgImNvZGlnbyIgOiAiMjAiLA0KICAgICAgImRlc2NyaXBjaW9uIiA6ICJJbXB1ZXN0byBhbCBWYWxvciBBZ3JlZ2FkbyAxMyUiLA0KICAgICAgInZhbG9yIiA6IDkwMS4yMQ0KICAgIH0gXSwNCiAgICAic3ViVG90YWwiIDogNjkzMi40LA0KICAgICJpdmFQZXJjaTEiIDogMCwNCiAgICAiaXZhUmV0ZTEiIDogNjkuMzIsDQogICAgInJldGVSZW50YSIgOiAwLA0KICAgICJtb250b1RvdGFsT3BlcmFjaW9uIiA6IDc4MzMuNjEsDQogICAgInRvdGFsTGV0cmFzIiA6ICJTSUVURSBNSUwgU0VURUNJRU5UT1MgU0VTRU5UQSBZIENVQVRSTyBDT04gMjkvMTAwIFUuUy4gRE9MQVJFUyIsDQogICAgImNvbmRpY2lvbk9wZXJhY2lvbiIgOiAxLA0KICAgICJudW1QYWdvRWxlY3Ryb25pY28iIDogbnVsbA0KICB9LA0KICAiZXh0ZW5zaW9uIiA6IHsNCiAgICAibm9tYkVudHJlZ2EiIDogbnVsbCwNCiAgICAiZG9jdUVudHJlZ2EiIDogbnVsbCwNCiAgICAibm9tYlJlY2liZSIgOiBudWxsLA0KICAgICJkb2N1UmVjaWJlIiA6IG51bGwsDQogICAgIm9ic2VydmFjaW9uZXMiIDogbnVsbA0KICB9LA0KICAiYXBlbmRpY2UiIDogbnVsbA0KfQ.FCRnJRsU0c5oHkqq3kQLKUcl9EYRIdmLYNe7YgRakDIdJgHMlwlOsKqk8njFOD64GDx4dYeA1BQhPLYEcwb_GWvxREvkyAOWGvUVlakNpgsttElBLXWXXr5m4FlXvi0Ihmef4OOHEqlqIOIN1aa56VkgmRaA_U34XDd7DmoUhsFu2obVnPbHVVQ6lmXyRcvFeLlCBzldrWTi9lJ6TGkeO9TW_FjcI0f9H1BGzRpmwdYl4HGbgwqdB0KIAuXiX_HHfezhhD_SJOqHJ9Z3YbuDGd5SYdvSYygW6Lx6FKrcgOYKUf6En81Y7qGTQpk5jvez9AXiD8w-lzAIZtidoz1TAQ
+
+
+{
+  "version": 2,
+  "ambiente": "01",
+  "versionApp": 2,
+  "estado": "PROCESADO",
+  "codigoGeneracion": "9CD1CDDA-04EC-430E-8E64-3DC1BED3F5CB",
+  "selloRecibido": "2025F86B082651A64278B17B6E3BA251D2EDVLDN",
+  "fhProcesamiento": "13/06/2025 14:30:36",
+  "clasificaMsg": "10",
+  "codigoMsg": "001",
+  "descripcionMsg": "RECIBIDO",
+  "observaciones": []
+}
+

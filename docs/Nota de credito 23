@@ -1,0 +1,128 @@
+Nota de credito 23
+
+{
+	"identificacion": {
+        "codigoGeneracion": "F052537C-8EE5-48FE-9BAA-31B33C6A517A",
+        "tipoContingencia": null,
+        "numeroControl": "DTE-05-M001P001-000000000000023",
+        "tipoOperacion": 1,
+        "ambiente": "01",
+        "fecEmi": "2025-08-27",
+        "tipoModelo": 1,
+        "tipoDte": "05",
+        "version": 3,
+        "tipoMoneda": "USD",
+        "motivoContin": null,
+        "horEmi": "08:15:00"
+    },
+	"emisor": {
+        "descActividad": "Transporte de carga internacional",
+        "tipoEstablecimiento": "02",
+        "codActividad": "49233",
+        "correo": "info@grupomegaload.com",
+        "nit": "06141101161042",
+        "direccion": {
+            "complemento": "POLIG. E, CTON. FLOR AMARILLA, LOTE 626 C,",
+            "municipio": "25",
+            "departamento": "05"
+        },
+        "nombreComercial": "MEGALOAD, S.A. DE C.V.",
+        "telefono": "25305293",
+        "nombre": "MEGALOAD, S.A. DE C.V.",
+        "nrc": "2473109"
+    },
+    "receptor": {
+    	"nit": "06142709891031",
+    	"nrc": "4880",
+    	"correo": "recepcion.dte@grupomonelca.com",
+    	"nombre": "MONELCA, S.A. DE C.V.",
+    	"telefono": "22488760",
+    	"direccion": {
+            "complemento": "Blvd. La Sultana, Psj. MONELCA, Urb. La Sultana III, #5-B",
+            "municipio": "27",
+            "departamento": "05"
+        },        
+        "codActividad": "25111",
+        "descActividad": "Fabricación de productos metálicos para uso estructural",
+        "nombreComercial": "MONELCA, S.A. DE C.V."
+    },
+    "documentoRelacionado": [
+        {
+            "tipoDocumento": "03",
+            "fechaEmision": "2025-05-29",
+            "numeroDocumento": "2842D03B-87A9-41A1-AA92-A8CB7E31C201",
+            "tipoGeneracion": 1
+        }
+    ],    
+    "resumen": {
+        "totalNoSuj": 0,
+        "ivaPerci1": 0,
+        "descuNoSuj": 0,
+        "totalLetras": "DOSCIENTOS CINCUENTA Y DOS CON 00/100 U.S. DOLARES",
+        "ivaRete1": 2.25,
+        "subTotal": 225,
+        "reteRenta": 0,
+        "subTotalVentas": 225,
+        "tributos": [
+            {
+                "descripcion": "Impuesto al Valor Agregado 13%",
+                "codigo": "20",
+                "valor": 29.25
+            }
+        ],
+        "descuExenta": 0,
+        "totalDescu": 0,
+        "descuGravada": 0,
+        "totalGravada": 225,
+        "montoTotalOperacion": 254.25,
+        "totalExenta": 0,
+        "condicionOperacion": 1
+    },
+    "cuerpoDocumento": [
+    	{
+            "codigo": null,
+            "numItem": 1,
+            "cantidad": 1,
+            "tipoItem": 2,
+            "tributos": [
+                "20"
+            ],
+            "precioUni": 225,
+            "uniMedida": 59,
+            "codTributo": null,
+            "montoDescu": 0,
+            "ventaNoSuj": 0,
+            "descripcion": "Lowboy desenganchable - Por viaje (1 dia de Alquiler de equipo)",
+            "ventaExenta": 0,
+            "ventaGravada": 225,
+            "numeroDocumento": "2842D03B-87A9-41A1-AA92-A8CB7E31C201"
+        }     
+    ],
+    "extension": {
+        "docuEntrega": null,
+        "observaciones": null,
+        "nombRecibe": null,
+        "nombEntrega": null,
+        "docuRecibe": null
+    },
+    "ventaTercero": null,
+    "apendice": null
+}
+
+eyJhbGciOiJSUzUxMiJ9.ew0KICAiaWRlbnRpZmljYWNpb24iIDogew0KICAgICJjb2RpZ29HZW5lcmFjaW9uIiA6ICJGMDUyNTM3Qy04RUU1LTQ4RkUtOUJBQS0zMUIzM0M2QTUxN0EiLA0KICAgICJ0aXBvQ29udGluZ2VuY2lhIiA6IG51bGwsDQogICAgIm51bWVyb0NvbnRyb2wiIDogIkRURS0wNS1NMDAxUDAwMS0wMDAwMDAwMDAwMDAwMjMiLA0KICAgICJ0aXBvT3BlcmFjaW9uIiA6IDEsDQogICAgImFtYmllbnRlIiA6ICIwMSIsDQogICAgImZlY0VtaSIgOiAiMjAyNS0wOC0yNyIsDQogICAgInRpcG9Nb2RlbG8iIDogMSwNCiAgICAidGlwb0R0ZSIgOiAiMDUiLA0KICAgICJ2ZXJzaW9uIiA6IDMsDQogICAgInRpcG9Nb25lZGEiIDogIlVTRCIsDQogICAgIm1vdGl2b0NvbnRpbiIgOiBudWxsLA0KICAgICJob3JFbWkiIDogIjA4OjE1OjAwIg0KICB9LA0KICAiZW1pc29yIiA6IHsNCiAgICAiZGVzY0FjdGl2aWRhZCIgOiAiVHJhbnNwb3J0ZSBkZSBjYXJnYSBpbnRlcm5hY2lvbmFsIiwNCiAgICAidGlwb0VzdGFibGVjaW1pZW50byIgOiAiMDIiLA0KICAgICJjb2RBY3RpdmlkYWQiIDogIjQ5MjMzIiwNCiAgICAiY29ycmVvIiA6ICJpbmZvQGdydXBvbWVnYWxvYWQuY29tIiwNCiAgICAibml0IiA6ICIwNjE0MTEwMTE2MTA0MiIsDQogICAgImRpcmVjY2lvbiIgOiB7DQogICAgICAiY29tcGxlbWVudG8iIDogIlBPTElHLiBFLCBDVE9OLiBGTE9SIEFNQVJJTExBLCBMT1RFIDYyNiBDLCIsDQogICAgICAibXVuaWNpcGlvIiA6ICIyNSIsDQogICAgICAiZGVwYXJ0YW1lbnRvIiA6ICIwNSINCiAgICB9LA0KICAgICJub21icmVDb21lcmNpYWwiIDogIk1FR0FMT0FELCBTLkEuIERFIEMuVi4iLA0KICAgICJ0ZWxlZm9ubyIgOiAiMjUzMDUyOTMiLA0KICAgICJub21icmUiIDogIk1FR0FMT0FELCBTLkEuIERFIEMuVi4iLA0KICAgICJucmMiIDogIjI0NzMxMDkiDQogIH0sDQogICJyZWNlcHRvciIgOiB7DQogICAgIm5pdCIgOiAiMDYxNDI3MDk4OTEwMzEiLA0KICAgICJucmMiIDogIjQ4ODAiLA0KICAgICJjb3JyZW8iIDogInJlY2VwY2lvbi5kdGVAZ3J1cG9tb25lbGNhLmNvbSIsDQogICAgIm5vbWJyZSIgOiAiTU9ORUxDQSwgUy5BLiBERSBDLlYuIiwNCiAgICAidGVsZWZvbm8iIDogIjIyNDg4NzYwIiwNCiAgICAiZGlyZWNjaW9uIiA6IHsNCiAgICAgICJjb21wbGVtZW50byIgOiAiQmx2ZC4gTGEgU3VsdGFuYSwgUHNqLiBNT05FTENBLCBVcmIuIExhIFN1bHRhbmEgSUlJLCAjNS1CIiwNCiAgICAgICJtdW5pY2lwaW8iIDogIjI3IiwNCiAgICAgICJkZXBhcnRhbWVudG8iIDogIjA1Ig0KICAgIH0sDQogICAgImNvZEFjdGl2aWRhZCIgOiAiMjUxMTEiLA0KICAgICJkZXNjQWN0aXZpZGFkIiA6ICJGYWJyaWNhY2nDs24gZGUgcHJvZHVjdG9zIG1ldMOhbGljb3MgcGFyYSB1c28gZXN0cnVjdHVyYWwiLA0KICAgICJub21icmVDb21lcmNpYWwiIDogIk1PTkVMQ0EsIFMuQS4gREUgQy5WLiINCiAgfSwNCiAgImRvY3VtZW50b1JlbGFjaW9uYWRvIiA6IFsgew0KICAgICJ0aXBvRG9jdW1lbnRvIiA6ICIwMyIsDQogICAgImZlY2hhRW1pc2lvbiIgOiAiMjAyNS0wNS0yOSIsDQogICAgIm51bWVyb0RvY3VtZW50byIgOiAiMjg0MkQwM0ItODdBOS00MUExLUFBOTItQThDQjdFMzFDMjAxIiwNCiAgICAidGlwb0dlbmVyYWNpb24iIDogMQ0KICB9IF0sDQogICJyZXN1bWVuIiA6IHsNCiAgICAidG90YWxOb1N1aiIgOiAwLA0KICAgICJpdmFQZXJjaTEiIDogMCwNCiAgICAiZGVzY3VOb1N1aiIgOiAwLA0KICAgICJ0b3RhbExldHJhcyIgOiAiRE9TQ0lFTlRPUyBDSU5DVUVOVEEgWSBET1MgQ09OIDAwLzEwMCBVLlMuIERPTEFSRVMiLA0KICAgICJpdmFSZXRlMSIgOiAyLjI1LA0KICAgICJzdWJUb3RhbCIgOiAyMjUsDQogICAgInJldGVSZW50YSIgOiAwLA0KICAgICJzdWJUb3RhbFZlbnRhcyIgOiAyMjUsDQogICAgInRyaWJ1dG9zIiA6IFsgew0KICAgICAgImRlc2NyaXBjaW9uIiA6ICJJbXB1ZXN0byBhbCBWYWxvciBBZ3JlZ2FkbyAxMyUiLA0KICAgICAgImNvZGlnbyIgOiAiMjAiLA0KICAgICAgInZhbG9yIiA6IDI5LjI1DQogICAgfSBdLA0KICAgICJkZXNjdUV4ZW50YSIgOiAwLA0KICAgICJ0b3RhbERlc2N1IiA6IDAsDQogICAgImRlc2N1R3JhdmFkYSIgOiAwLA0KICAgICJ0b3RhbEdyYXZhZGEiIDogMjI1LA0KICAgICJtb250b1RvdGFsT3BlcmFjaW9uIiA6IDI1NC4yNSwNCiAgICAidG90YWxFeGVudGEiIDogMCwNCiAgICAiY29uZGljaW9uT3BlcmFjaW9uIiA6IDENCiAgfSwNCiAgImN1ZXJwb0RvY3VtZW50byIgOiBbIHsNCiAgICAiY29kaWdvIiA6IG51bGwsDQogICAgIm51bUl0ZW0iIDogMSwNCiAgICAiY2FudGlkYWQiIDogMSwNCiAgICAidGlwb0l0ZW0iIDogMiwNCiAgICAidHJpYnV0b3MiIDogWyAiMjAiIF0sDQogICAgInByZWNpb1VuaSIgOiAyMjUsDQogICAgInVuaU1lZGlkYSIgOiA1OSwNCiAgICAiY29kVHJpYnV0byIgOiBudWxsLA0KICAgICJtb250b0Rlc2N1IiA6IDAsDQogICAgInZlbnRhTm9TdWoiIDogMCwNCiAgICAiZGVzY3JpcGNpb24iIDogIkxvd2JveSBkZXNlbmdhbmNoYWJsZSAtIFBvciB2aWFqZSAoMSBkaWEgZGUgQWxxdWlsZXIgZGUgZXF1aXBvKSIsDQogICAgInZlbnRhRXhlbnRhIiA6IDAsDQogICAgInZlbnRhR3JhdmFkYSIgOiAyMjUsDQogICAgIm51bWVyb0RvY3VtZW50byIgOiAiMjg0MkQwM0ItODdBOS00MUExLUFBOTItQThDQjdFMzFDMjAxIg0KICB9IF0sDQogICJleHRlbnNpb24iIDogew0KICAgICJkb2N1RW50cmVnYSIgOiBudWxsLA0KICAgICJvYnNlcnZhY2lvbmVzIiA6IG51bGwsDQogICAgIm5vbWJSZWNpYmUiIDogbnVsbCwNCiAgICAibm9tYkVudHJlZ2EiIDogbnVsbCwNCiAgICAiZG9jdVJlY2liZSIgOiBudWxsDQogIH0sDQogICJ2ZW50YVRlcmNlcm8iIDogbnVsbCwNCiAgImFwZW5kaWNlIiA6IG51bGwNCn0.mfMyamy9iIZpdK6D1Ql9kkGncHhezyjDvBERnwpwfZy6-n8q9Rf8a1d7kwt3h6ThtkWYf_9g2Iwmg9VQdUpsDQ3CWGmUFz7-KRDs7oRs6KLvLrAH2eAqwIZh0Xg4SLzc4HW86kS2sXzm2GhnHpasKeR7UJ-636albLt33NEMTCTbs9F-eIhbzvz_0GsZ1hLjEdNDyA10jSAzPgo14WKKepVgxA1dHay4nHqFILcZpYN9B9x5h9WOars4HLMgBzPmWznyy4W-9odeBu14nmTcECl5-cmKkf7neq0E8GTT3p4nk-71UIMGqmGtVqtSrb8vfJVOvjl3noTEXU2MxGSs0A
+
+{
+	"version": 2,
+	"ambiente": "01",
+	"versionApp": 2,
+	"estado": "PROCESADO",
+	"codigoGeneracion": "F052537C-8EE5-48FE-9BAA-31B33C6A517A",
+	"selloRecibido": "20254082D675A7E948BE9D8F22ADD7B9284EEBK7",
+	"fhProcesamiento": "06/09/2025 04:56:29",
+	"clasificaMsg": "10",
+	"codigoMsg": "002",
+	"descripcionMsg": "RECIBIDO CON OBSERVACIONES",
+	"observaciones": [
+		"identificacion.fecEmi Difiere de la fecha de envío."
+	]
+}

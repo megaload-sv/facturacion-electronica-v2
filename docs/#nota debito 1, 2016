@@ -1,0 +1,130 @@
+
+{
+	"identificacion": {
+		"version": 3,
+	    "ambiente": "01",
+	    "tipoDte": "06",
+	    "numeroControl": "DTE-06-M001P001-000000000000001",
+	    "codigoGeneracion": "DAFC1154-8D74-45CC-A3F5-59FDB4417AE4",
+	    "tipoModelo": 1,
+	    "tipoOperacion": 1,
+	    "tipoContingencia": null,
+	    "motivoContin": null,
+	    "fecEmi": "2025-05-06",
+	    "horEmi": "08:15:00",
+	    "tipoMoneda": "USD"
+	},
+	"documentoRelacionado": [
+	    {
+	      "tipoDocumento": "03",
+	      "tipoGeneracion": 2,
+	      "numeroDocumento": "A82A3997-A7F7-4523-87F4-F97C2971E99B",
+	      "fechaEmision": "2026-04-17"
+	    }
+	],
+	"emisor": {
+		"nit": "06141101161042",
+		"nrc": "2473109",
+		"nombre": "MEGALOAD, S.A. DE C.V.",
+		"codActividad": "49233",
+		"descActividad": "Transporte de carga internacional",
+		"nombreComercial": "MEGALOAD, S.A. DE C.V.",
+		"tipoEstablecimiento": "02",
+		"direccion": {
+			"departamento": "05",
+			"municipio": "25",
+			"complemento": "POLIG. E, CTON. FLOR AMARILLA, LOTE 626 C,"
+		},
+		"telefono": "25305293",
+		"correo": "info@grupomegaload.com"
+	},
+	"receptor": {
+    "nit": "017186176",
+    "nrc": "927287",
+    "nombre": "MENDOZA MATEO, FELIPE ANTONIO",
+    "codActividad": "33120",
+    "descActividad": "Reparación y mantenimiento de maquinaria",
+    "nombreComercial": "MENDOZA MATEO, FELIPE ANTONIO",
+    "direccion": {
+      "departamento": "02",
+      "municipio": "16",
+      "complemento": "BLOCK A, COL. CUZCACHAPA, #8, FRENTE AL BENEFICIO CUZCACHAPA, DISTRITO DE CHALCHUAPA, MUNICIPIO DE SANTA ANA OESTE, DEPARTAMENTO DE SANTA ANA."
+    },
+    "telefono": "77977239",
+    "correo": "donfelipem@yahoo.com.mx"
+  },
+  "ventaTercero": null,
+  "cuerpoDocumento": [
+    {
+      "numItem": 1,
+      "tipoItem": 2,
+      "numeroDocumento": "A82A3997-A7F7-4523-87F4-F97C2971E99B",
+      "codigo": null,
+      "codTributo": null,
+      "descripcion": "Telehander de 4 tons - por mes (192 horas ordinarias por mes o 30 días lo que ocurra primero, valor de hora extraordinaria $43.2)",
+      "cantidad": 1,
+      "uniMedida": 59,
+      "precioUni": 6912,
+      "montoDescu": 0,
+      "ventaNoSuj": 0,
+      "ventaExenta": 0,
+      "ventaGravada": 6912,
+      "tributos": [
+        "20"
+      ]
+    }
+  ],
+  "resumen": {
+    "totalNoSuj": 0,
+    "totalExenta": 0,
+    "totalGravada": 6912,
+    "subTotalVentas": 6912,
+    "descuNoSuj": 0,
+    "descuExenta": 0,
+    "descuGravada": 0,
+    "totalDescu": 0,
+    "tributos": [
+      {
+        "codigo": "20",
+        "descripcion": "Impuesto al Valor Agregado 13%",
+        "valor": 898.56
+      }
+    ],
+    "subTotal": 6912,
+    "ivaPerci1": 0,
+    "ivaRete1": 0,
+    "reteRenta": 0,
+    "montoTotalOperacion": 7810.56,
+    "totalLetras": "SIETE MIL OCHOCIENTOS DIEZ CON 56/100 U.S. DOLARES",
+    "condicionOperacion": 1,
+    "numPagoElectronico": null
+  },
+  "extension": {
+    "nombEntrega": null,
+    "docuEntrega": null,
+    "nombRecibe": null,
+    "docuRecibe": null,
+    "observaciones": null
+  },
+  "apendice": null
+}
+
+eyJhbGciOiJSUzUxMiJ9.ew0KICAiaWRlbnRpZmljYWNpb24iIDogew0KICAgICJ2ZXJzaW9uIiA6IDMsDQogICAgImFtYmllbnRlIiA6ICIwMSIsDQogICAgInRpcG9EdGUiIDogIjA2IiwNCiAgICAibnVtZXJvQ29udHJvbCIgOiAiRFRFLTA2LU0wMDFQMDAxLTAwMDAwMDAwMDAwMDAwMSIsDQogICAgImNvZGlnb0dlbmVyYWNpb24iIDogIkRBRkMxMTU0LThENzQtNDVDQy1BM0Y1LTU5RkRCNDQxN0FFNCIsDQogICAgInRpcG9Nb2RlbG8iIDogMSwNCiAgICAidGlwb09wZXJhY2lvbiIgOiAxLA0KICAgICJ0aXBvQ29udGluZ2VuY2lhIiA6IG51bGwsDQogICAgIm1vdGl2b0NvbnRpbiIgOiBudWxsLA0KICAgICJmZWNFbWkiIDogIjIwMjUtMDUtMDYiLA0KICAgICJob3JFbWkiIDogIjA4OjE1OjAwIiwNCiAgICAidGlwb01vbmVkYSIgOiAiVVNEIg0KICB9LA0KICAiZG9jdW1lbnRvUmVsYWNpb25hZG8iIDogWyB7DQogICAgInRpcG9Eb2N1bWVudG8iIDogIjAzIiwNCiAgICAidGlwb0dlbmVyYWNpb24iIDogMiwNCiAgICAibnVtZXJvRG9jdW1lbnRvIiA6ICJBODJBMzk5Ny1BN0Y3LTQ1MjMtODdGNC1GOTdDMjk3MUU5OUIiLA0KICAgICJmZWNoYUVtaXNpb24iIDogIjIwMjYtMDQtMTciDQogIH0gXSwNCiAgImVtaXNvciIgOiB7DQogICAgIm5pdCIgOiAiMDYxNDExMDExNjEwNDIiLA0KICAgICJucmMiIDogIjI0NzMxMDkiLA0KICAgICJub21icmUiIDogIk1FR0FMT0FELCBTLkEuIERFIEMuVi4iLA0KICAgICJjb2RBY3RpdmlkYWQiIDogIjQ5MjMzIiwNCiAgICAiZGVzY0FjdGl2aWRhZCIgOiAiVHJhbnNwb3J0ZSBkZSBjYXJnYSBpbnRlcm5hY2lvbmFsIiwNCiAgICAibm9tYnJlQ29tZXJjaWFsIiA6ICJNRUdBTE9BRCwgUy5BLiBERSBDLlYuIiwNCiAgICAidGlwb0VzdGFibGVjaW1pZW50byIgOiAiMDIiLA0KICAgICJkaXJlY2Npb24iIDogew0KICAgICAgImRlcGFydGFtZW50byIgOiAiMDUiLA0KICAgICAgIm11bmljaXBpbyIgOiAiMjUiLA0KICAgICAgImNvbXBsZW1lbnRvIiA6ICJQT0xJRy4gRSwgQ1RPTi4gRkxPUiBBTUFSSUxMQSwgTE9URSA2MjYgQywiDQogICAgfSwNCiAgICAidGVsZWZvbm8iIDogIjI1MzA1MjkzIiwNCiAgICAiY29ycmVvIiA6ICJpbmZvQGdydXBvbWVnYWxvYWQuY29tIg0KICB9LA0KICAicmVjZXB0b3IiIDogew0KICAgICJuaXQiIDogIjAxNzE4NjE3NiIsDQogICAgIm5yYyIgOiAiOTI3Mjg3IiwNCiAgICAibm9tYnJlIiA6ICJNRU5ET1pBIE1BVEVPLCBGRUxJUEUgQU5UT05JTyIsDQogICAgImNvZEFjdGl2aWRhZCIgOiAiMzMxMjAiLA0KICAgICJkZXNjQWN0aXZpZGFkIiA6ICJSZXBhcmFjacOzbiB5IG1hbnRlbmltaWVudG8gZGUgbWFxdWluYXJpYSIsDQogICAgIm5vbWJyZUNvbWVyY2lhbCIgOiAiTUVORE9aQSBNQVRFTywgRkVMSVBFIEFOVE9OSU8iLA0KICAgICJkaXJlY2Npb24iIDogew0KICAgICAgImRlcGFydGFtZW50byIgOiAiMDIiLA0KICAgICAgIm11bmljaXBpbyIgOiAiMTYiLA0KICAgICAgImNvbXBsZW1lbnRvIiA6ICJCTE9DSyBBLCBDT0wuIENVWkNBQ0hBUEEsICM4LCBGUkVOVEUgQUwgQkVORUZJQ0lPIENVWkNBQ0hBUEEsIERJU1RSSVRPIERFIENIQUxDSFVBUEEsIE1VTklDSVBJTyBERSBTQU5UQSBBTkEgT0VTVEUsIERFUEFSVEFNRU5UTyBERSBTQU5UQSBBTkEuIg0KICAgIH0sDQogICAgInRlbGVmb25vIiA6ICI3Nzk3NzIzOSIsDQogICAgImNvcnJlbyIgOiAiZG9uZmVsaXBlbUB5YWhvby5jb20ubXgiDQogIH0sDQogICJ2ZW50YVRlcmNlcm8iIDogbnVsbCwNCiAgImN1ZXJwb0RvY3VtZW50byIgOiBbIHsNCiAgICAibnVtSXRlbSIgOiAxLA0KICAgICJ0aXBvSXRlbSIgOiAyLA0KICAgICJudW1lcm9Eb2N1bWVudG8iIDogIkE4MkEzOTk3LUE3RjctNDUyMy04N0Y0LUY5N0MyOTcxRTk5QiIsDQogICAgImNvZGlnbyIgOiBudWxsLA0KICAgICJjb2RUcmlidXRvIiA6IG51bGwsDQogICAgImRlc2NyaXBjaW9uIiA6ICJUZWxlaGFuZGVyIGRlIDQgdG9ucyAtIHBvciBtZXMgKDE5MiBob3JhcyBvcmRpbmFyaWFzIHBvciBtZXMgbyAzMCBkw61hcyBsbyBxdWUgb2N1cnJhIHByaW1lcm8sIHZhbG9yIGRlIGhvcmEgZXh0cmFvcmRpbmFyaWEgJDQzLjIpIiwNCiAgICAiY2FudGlkYWQiIDogMSwNCiAgICAidW5pTWVkaWRhIiA6IDU5LA0KICAgICJwcmVjaW9VbmkiIDogNjkxMiwNCiAgICAibW9udG9EZXNjdSIgOiAwLA0KICAgICJ2ZW50YU5vU3VqIiA6IDAsDQogICAgInZlbnRhRXhlbnRhIiA6IDAsDQogICAgInZlbnRhR3JhdmFkYSIgOiA2OTEyLA0KICAgICJ0cmlidXRvcyIgOiBbICIyMCIgXQ0KICB9IF0sDQogICJyZXN1bWVuIiA6IHsNCiAgICAidG90YWxOb1N1aiIgOiAwLA0KICAgICJ0b3RhbEV4ZW50YSIgOiAwLA0KICAgICJ0b3RhbEdyYXZhZGEiIDogNjkxMiwNCiAgICAic3ViVG90YWxWZW50YXMiIDogNjkxMiwNCiAgICAiZGVzY3VOb1N1aiIgOiAwLA0KICAgICJkZXNjdUV4ZW50YSIgOiAwLA0KICAgICJkZXNjdUdyYXZhZGEiIDogMCwNCiAgICAidG90YWxEZXNjdSIgOiAwLA0KICAgICJ0cmlidXRvcyIgOiBbIHsNCiAgICAgICJjb2RpZ28iIDogIjIwIiwNCiAgICAgICJkZXNjcmlwY2lvbiIgOiAiSW1wdWVzdG8gYWwgVmFsb3IgQWdyZWdhZG8gMTMlIiwNCiAgICAgICJ2YWxvciIgOiA4OTguNTYNCiAgICB9IF0sDQogICAgInN1YlRvdGFsIiA6IDY5MTIsDQogICAgIml2YVBlcmNpMSIgOiAwLA0KICAgICJpdmFSZXRlMSIgOiAwLA0KICAgICJyZXRlUmVudGEiIDogMCwNCiAgICAibW9udG9Ub3RhbE9wZXJhY2lvbiIgOiA3ODEwLjU2LA0KICAgICJ0b3RhbExldHJhcyIgOiAiU0lFVEUgTUlMIE9DSE9DSUVOVE9TIERJRVogQ09OIDU2LzEwMCBVLlMuIERPTEFSRVMiLA0KICAgICJjb25kaWNpb25PcGVyYWNpb24iIDogMSwNCiAgICAibnVtUGFnb0VsZWN0cm9uaWNvIiA6IG51bGwNCiAgfSwNCiAgImV4dGVuc2lvbiIgOiB7DQogICAgIm5vbWJFbnRyZWdhIiA6IG51bGwsDQogICAgImRvY3VFbnRyZWdhIiA6IG51bGwsDQogICAgIm5vbWJSZWNpYmUiIDogbnVsbCwNCiAgICAiZG9jdVJlY2liZSIgOiBudWxsLA0KICAgICJvYnNlcnZhY2lvbmVzIiA6IG51bGwNCiAgfSwNCiAgImFwZW5kaWNlIiA6IG51bGwNCn0.YHJ-qnuNBwfsQE6Dt52k5G3C5Zfm8vH-pZzEG84a2YpVI04R_a-D7N-VK0xKtczbYSVEK4D4UfnFRypGLBENUJuUnH1MBnZXmJlUHvVpvbK3qKkGYLY48fy9r-_o7204fWAqZfdcp7J65fXnAm6FJVsKQ5gM62airQtd_yduyguPUVFGGqqOo8m_ihxj7Bs2L_mCP__nuyEGrEe8STDWH_9Cv6I0CgqVSdSznSBM7zAcEOhjoBrsvkTRobNDHMOqxSCrkmE3Y6AIDY8c1Bo6nibE4XPEpCXz2lgJB51VLzbRKtLy_gpx64aGOhvcxBccJhgrnNFkvpqReew70lixZQ
+
+{
+  "version": 2,
+  "ambiente": "01",
+  "versionApp": 2,
+  "estado": "PROCESADO",
+  "codigoGeneracion": "DAFC1154-8D74-45CC-A3F5-59FDB4417AE4",
+  "selloRecibido": "20267FD3094896E94D3295B027FC428D52D4XV1Y",
+  "fhProcesamiento": "06/05/2026 12:21:13",
+  "clasificaMsg": "10",
+  "codigoMsg": "002",
+  "descripcionMsg": "RECIBIDO CON OBSERVACIONES",
+  "observaciones": [
+    "[identificacion.fecEmi]: 365 dias de generacion del documento.",
+    "identificacion.fecEmi Difiere de la fecha de envío.",
+    "[documentoRelacionado.fechaEmision] FECHA FUERA DE PLAZO PERMITIDO"
+  ]
+}

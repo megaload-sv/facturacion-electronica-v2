@@ -1,0 +1,167 @@
+Nota de credito 18
+
+
+
+{
+    "extension": {
+        "docuEntrega": null,
+        "observaciones": null,
+        "nombRecibe": null,
+        "nombEntrega": null,
+        "docuRecibe": null
+    },
+    "receptor": {
+        "descActividad": "Fabricación de productos minerales no metálicos ncp",
+        "codActividad": "23990",
+        "correo": "recepcionfe-sv@holcim.com",
+        "nit": "06140704081039",
+        "direccion": {
+            "complemento": "CARRETERA A SANTA ANA KM 25",
+            "municipio": "27",
+            "departamento": "05"
+        },
+        "nombreComercial": "HOLCIM CONCRETOS, S.A. DE C.V.",
+        "telefono": "25050000",
+        "nombre": "HOLCIM CONCRETOS, S.A. DE C.V.",
+        "nrc": "1865930"
+    },
+    "identificacion": {
+        "codigoGeneracion": "7E50DB65-8EB0-4A44-AC2D-599D3B6C9F62",
+        "tipoContingencia": null,
+        "numeroControl": "DTE-05-M001P001-000000000000018",
+        "tipoOperacion": 1,
+        "ambiente": "01",
+        "fecEmi": "2025-08-19",
+        "tipoModelo": 1,
+        "tipoDte": "05",
+        "version": 3,
+        "tipoMoneda": "USD",
+        "motivoContin": null,
+        "horEmi": "11:10:00"
+    },
+    "resumen": {
+        "totalNoSuj": 0,
+        "ivaPerci1": 0,
+        "descuNoSuj": 0,
+        "totalLetras": "DOS MIL DOSCIENTOS NOVENTA Y SEIS CON 00/100 U.S. DOLARES",
+        "ivaRete1": 20.5,
+        "subTotal": 2050,
+        "reteRenta": 0,
+        "subTotalVentas": 2050,
+        "tributos": [
+            {
+                "descripcion": "Impuesto al Valor Agregado 13%",
+                "codigo": "20",
+                "valor": 266.5
+            }
+        ],
+        "descuExenta": 0,
+        "totalDescu": 0,
+        "descuGravada": 0,
+        "totalGravada": 2050,
+        "montoTotalOperacion": 2316.5,
+        "totalExenta": 0,
+        "condicionOperacion": 1
+    },
+    "cuerpoDocumento": [
+        {
+            "montoDescu": 0,
+            "descripcion": "Grúa telescópica de 50 tons - transporte ida y regreso (Hacia Tepeagua)",
+            "codigo": null,
+            "ventaGravada": 700,
+            "ventaNoSuj": 0,
+            "ventaExenta": 0,
+            "tributos": [
+                "20"
+            ],
+            "numItem": 1,
+            "tipoItem": 2,
+            "uniMedida": 59,
+            "codTributo": null,
+            "numeroDocumento": "64D1E12A-EEDC-42CD-8D13-B701CAF69ADD",
+            "cantidad": 1,
+            "precioUni": 700
+        },
+        {
+            "montoDescu": 0,
+            "descripcion": "Grúa telescópica de 50 tons - por día (8 horas minimas ordinarias)",
+            "codigo": null,
+            "ventaGravada": 864,
+            "ventaNoSuj": 0,
+            "ventaExenta": 0,
+            "tributos": [
+                "20"
+            ],
+            "numItem": 2,
+            "tipoItem": 2,
+            "uniMedida": 59,
+            "codTributo": null,
+            "numeroDocumento": "64D1E12A-EEDC-42CD-8D13-B701CAF69ADD",
+            "cantidad": 1,
+            "precioUni": 864
+        },
+        {
+            "montoDescu": 0,
+            "descripcion": "Grúa telescópica de 50 tons - por hora (4.5 horas extra)",
+            "codigo": null,
+            "ventaGravada": 486,
+            "ventaNoSuj": 0,
+            "ventaExenta": 0,
+            "tributos": [
+                "20"
+            ],
+            "numItem": 3,
+            "tipoItem": 2,
+            "uniMedida": 59,
+            "codTributo": null,
+            "numeroDocumento": "64D1E12A-EEDC-42CD-8D13-B701CAF69ADD",
+            "cantidad": 4.5,
+            "precioUni": 108
+        }
+    ],
+    "ventaTercero": null,
+    "apendice": null,
+    "documentoRelacionado": [
+        {
+            "tipoDocumento": "03",
+            "fechaEmision": "2025-08-11",
+            "numeroDocumento": "64D1E12A-EEDC-42CD-8D13-B701CAF69ADD",
+            "tipoGeneracion": 1
+        }
+    ],
+    "emisor": {
+        "descActividad": "Transporte de carga internacional",
+        "tipoEstablecimiento": "02",
+        "codActividad": "49233",
+        "correo": "info@grupomegaload.com",
+        "nit": "06141101161042",
+        "direccion": {
+            "complemento": "POLIG. E, CTON. FLOR AMARILLA, LOTE 626 C,",
+            "municipio": "25",
+            "departamento": "05"
+        },
+        "nombreComercial": "MEGALOAD, S.A. DE C.V.",
+        "telefono": "25305293",
+        "nombre": "MEGALOAD, S.A. DE C.V.",
+        "nrc": "2473109"
+    }
+}
+
+eyJhbGciOiJSUzUxMiJ9.ew0KICAiZXh0ZW5zaW9uIiA6IHsNCiAgICAiZG9jdUVudHJlZ2EiIDogbnVsbCwNCiAgICAib2JzZXJ2YWNpb25lcyIgOiBudWxsLA0KICAgICJub21iUmVjaWJlIiA6IG51bGwsDQogICAgIm5vbWJFbnRyZWdhIiA6IG51bGwsDQogICAgImRvY3VSZWNpYmUiIDogbnVsbA0KICB9LA0KICAicmVjZXB0b3IiIDogew0KICAgICJkZXNjQWN0aXZpZGFkIiA6ICJGYWJyaWNhY2nDs24gZGUgcHJvZHVjdG9zIG1pbmVyYWxlcyBubyBtZXTDoWxpY29zIG5jcCIsDQogICAgImNvZEFjdGl2aWRhZCIgOiAiMjM5OTAiLA0KICAgICJjb3JyZW8iIDogInJlY2VwY2lvbmZlLXN2QGhvbGNpbS5jb20iLA0KICAgICJuaXQiIDogIjA2MTQwNzA0MDgxMDM5IiwNCiAgICAiZGlyZWNjaW9uIiA6IHsNCiAgICAgICJjb21wbGVtZW50byIgOiAiQ0FSUkVURVJBIEEgU0FOVEEgQU5BIEtNIDI1IiwNCiAgICAgICJtdW5pY2lwaW8iIDogIjI3IiwNCiAgICAgICJkZXBhcnRhbWVudG8iIDogIjA1Ig0KICAgIH0sDQogICAgIm5vbWJyZUNvbWVyY2lhbCIgOiAiSE9MQ0lNIENPTkNSRVRPUywgUy5BLiBERSBDLlYuIiwNCiAgICAidGVsZWZvbm8iIDogIjI1MDUwMDAwIiwNCiAgICAibm9tYnJlIiA6ICJIT0xDSU0gQ09OQ1JFVE9TLCBTLkEuIERFIEMuVi4iLA0KICAgICJucmMiIDogIjE4NjU5MzAiDQogIH0sDQogICJpZGVudGlmaWNhY2lvbiIgOiB7DQogICAgImNvZGlnb0dlbmVyYWNpb24iIDogIjdFNTBEQjY1LThFQjAtNEE0NC1BQzJELTU5OUQzQjZDOUY2MiIsDQogICAgInRpcG9Db250aW5nZW5jaWEiIDogbnVsbCwNCiAgICAibnVtZXJvQ29udHJvbCIgOiAiRFRFLTA1LU0wMDFQMDAxLTAwMDAwMDAwMDAwMDAxOCIsDQogICAgInRpcG9PcGVyYWNpb24iIDogMSwNCiAgICAiYW1iaWVudGUiIDogIjAxIiwNCiAgICAiZmVjRW1pIiA6ICIyMDI1LTA4LTE5IiwNCiAgICAidGlwb01vZGVsbyIgOiAxLA0KICAgICJ0aXBvRHRlIiA6ICIwNSIsDQogICAgInZlcnNpb24iIDogMywNCiAgICAidGlwb01vbmVkYSIgOiAiVVNEIiwNCiAgICAibW90aXZvQ29udGluIiA6IG51bGwsDQogICAgImhvckVtaSIgOiAiMTE6MTA6MDAiDQogIH0sDQogICJyZXN1bWVuIiA6IHsNCiAgICAidG90YWxOb1N1aiIgOiAwLA0KICAgICJpdmFQZXJjaTEiIDogMCwNCiAgICAiZGVzY3VOb1N1aiIgOiAwLA0KICAgICJ0b3RhbExldHJhcyIgOiAiRE9TIE1JTCBET1NDSUVOVE9TIE5PVkVOVEEgWSBTRUlTIENPTiAwMC8xMDAgVS5TLiBET0xBUkVTIiwNCiAgICAiaXZhUmV0ZTEiIDogMjAuNSwNCiAgICAic3ViVG90YWwiIDogMjA1MCwNCiAgICAicmV0ZVJlbnRhIiA6IDAsDQogICAgInN1YlRvdGFsVmVudGFzIiA6IDIwNTAsDQogICAgInRyaWJ1dG9zIiA6IFsgew0KICAgICAgImRlc2NyaXBjaW9uIiA6ICJJbXB1ZXN0byBhbCBWYWxvciBBZ3JlZ2FkbyAxMyUiLA0KICAgICAgImNvZGlnbyIgOiAiMjAiLA0KICAgICAgInZhbG9yIiA6IDI2Ni41DQogICAgfSBdLA0KICAgICJkZXNjdUV4ZW50YSIgOiAwLA0KICAgICJ0b3RhbERlc2N1IiA6IDAsDQogICAgImRlc2N1R3JhdmFkYSIgOiAwLA0KICAgICJ0b3RhbEdyYXZhZGEiIDogMjA1MCwNCiAgICAibW9udG9Ub3RhbE9wZXJhY2lvbiIgOiAyMzE2LjUsDQogICAgInRvdGFsRXhlbnRhIiA6IDAsDQogICAgImNvbmRpY2lvbk9wZXJhY2lvbiIgOiAxDQogIH0sDQogICJjdWVycG9Eb2N1bWVudG8iIDogWyB7DQogICAgIm1vbnRvRGVzY3UiIDogMCwNCiAgICAiZGVzY3JpcGNpb24iIDogIkdyw7phIHRlbGVzY8OzcGljYSBkZSA1MCB0b25zIC0gdHJhbnNwb3J0ZSBpZGEgeSByZWdyZXNvIChIYWNpYSBUZXBlYWd1YSkiLA0KICAgICJjb2RpZ28iIDogbnVsbCwNCiAgICAidmVudGFHcmF2YWRhIiA6IDcwMCwNCiAgICAidmVudGFOb1N1aiIgOiAwLA0KICAgICJ2ZW50YUV4ZW50YSIgOiAwLA0KICAgICJ0cmlidXRvcyIgOiBbICIyMCIgXSwNCiAgICAibnVtSXRlbSIgOiAxLA0KICAgICJ0aXBvSXRlbSIgOiAyLA0KICAgICJ1bmlNZWRpZGEiIDogNTksDQogICAgImNvZFRyaWJ1dG8iIDogbnVsbCwNCiAgICAibnVtZXJvRG9jdW1lbnRvIiA6ICI2NEQxRTEyQS1FRURDLTQyQ0QtOEQxMy1CNzAxQ0FGNjlBREQiLA0KICAgICJjYW50aWRhZCIgOiAxLA0KICAgICJwcmVjaW9VbmkiIDogNzAwDQogIH0sIHsNCiAgICAibW9udG9EZXNjdSIgOiAwLA0KICAgICJkZXNjcmlwY2lvbiIgOiAiR3LDumEgdGVsZXNjw7NwaWNhIGRlIDUwIHRvbnMgLSBwb3IgZMOtYSAoOCBob3JhcyBtaW5pbWFzIG9yZGluYXJpYXMpIiwNCiAgICAiY29kaWdvIiA6IG51bGwsDQogICAgInZlbnRhR3JhdmFkYSIgOiA4NjQsDQogICAgInZlbnRhTm9TdWoiIDogMCwNCiAgICAidmVudGFFeGVudGEiIDogMCwNCiAgICAidHJpYnV0b3MiIDogWyAiMjAiIF0sDQogICAgIm51bUl0ZW0iIDogMiwNCiAgICAidGlwb0l0ZW0iIDogMiwNCiAgICAidW5pTWVkaWRhIiA6IDU5LA0KICAgICJjb2RUcmlidXRvIiA6IG51bGwsDQogICAgIm51bWVyb0RvY3VtZW50byIgOiAiNjREMUUxMkEtRUVEQy00MkNELThEMTMtQjcwMUNBRjY5QUREIiwNCiAgICAiY2FudGlkYWQiIDogMSwNCiAgICAicHJlY2lvVW5pIiA6IDg2NA0KICB9LCB7DQogICAgIm1vbnRvRGVzY3UiIDogMCwNCiAgICAiZGVzY3JpcGNpb24iIDogIkdyw7phIHRlbGVzY8OzcGljYSBkZSA1MCB0b25zIC0gcG9yIGhvcmEgKDQuNSBob3JhcyBleHRyYSkiLA0KICAgICJjb2RpZ28iIDogbnVsbCwNCiAgICAidmVudGFHcmF2YWRhIiA6IDQ4NiwNCiAgICAidmVudGFOb1N1aiIgOiAwLA0KICAgICJ2ZW50YUV4ZW50YSIgOiAwLA0KICAgICJ0cmlidXRvcyIgOiBbICIyMCIgXSwNCiAgICAibnVtSXRlbSIgOiAzLA0KICAgICJ0aXBvSXRlbSIgOiAyLA0KICAgICJ1bmlNZWRpZGEiIDogNTksDQogICAgImNvZFRyaWJ1dG8iIDogbnVsbCwNCiAgICAibnVtZXJvRG9jdW1lbnRvIiA6ICI2NEQxRTEyQS1FRURDLTQyQ0QtOEQxMy1CNzAxQ0FGNjlBREQiLA0KICAgICJjYW50aWRhZCIgOiA0LjUsDQogICAgInByZWNpb1VuaSIgOiAxMDgNCiAgfSBdLA0KICAidmVudGFUZXJjZXJvIiA6IG51bGwsDQogICJhcGVuZGljZSIgOiBudWxsLA0KICAiZG9jdW1lbnRvUmVsYWNpb25hZG8iIDogWyB7DQogICAgInRpcG9Eb2N1bWVudG8iIDogIjAzIiwNCiAgICAiZmVjaGFFbWlzaW9uIiA6ICIyMDI1LTA4LTExIiwNCiAgICAibnVtZXJvRG9jdW1lbnRvIiA6ICI2NEQxRTEyQS1FRURDLTQyQ0QtOEQxMy1CNzAxQ0FGNjlBREQiLA0KICAgICJ0aXBvR2VuZXJhY2lvbiIgOiAxDQogIH0gXSwNCiAgImVtaXNvciIgOiB7DQogICAgImRlc2NBY3RpdmlkYWQiIDogIlRyYW5zcG9ydGUgZGUgY2FyZ2EgaW50ZXJuYWNpb25hbCIsDQogICAgInRpcG9Fc3RhYmxlY2ltaWVudG8iIDogIjAyIiwNCiAgICAiY29kQWN0aXZpZGFkIiA6ICI0OTIzMyIsDQogICAgImNvcnJlbyIgOiAiaW5mb0BncnVwb21lZ2Fsb2FkLmNvbSIsDQogICAgIm5pdCIgOiAiMDYxNDExMDExNjEwNDIiLA0KICAgICJkaXJlY2Npb24iIDogew0KICAgICAgImNvbXBsZW1lbnRvIiA6ICJQT0xJRy4gRSwgQ1RPTi4gRkxPUiBBTUFSSUxMQSwgTE9URSA2MjYgQywiLA0KICAgICAgIm11bmljaXBpbyIgOiAiMjUiLA0KICAgICAgImRlcGFydGFtZW50byIgOiAiMDUiDQogICAgfSwNCiAgICAibm9tYnJlQ29tZXJjaWFsIiA6ICJNRUdBTE9BRCwgUy5BLiBERSBDLlYuIiwNCiAgICAidGVsZWZvbm8iIDogIjI1MzA1MjkzIiwNCiAgICAibm9tYnJlIiA6ICJNRUdBTE9BRCwgUy5BLiBERSBDLlYuIiwNCiAgICAibnJjIiA6ICIyNDczMTA5Ig0KICB9DQp9.Pki8hZwEQl6tCyHkelJyIBXb5CqCiSbA-3T5ygxjl24-BpbB4OloBWT2VTIQpvw_6ASoLU2sLDBP_zbKoRBlcQevMZ8K1l-mk6ZUTvIoB0smO-ni-jhZ9jcbqG4OUFUSANlyOArKkNAceSG8mTv6U0_4GufH5Gvk7IX5t__VXo9JNtxgfPpPTgVFq5674JEK68lc37c2M17nfJSpL7ZSC9CUl-3Vu4hPlZjQeLGpqGebn5Q7YkIZa33-kNWqnQNCgOTTrCJUo-W3ivLCgcbG8XhdGjTkGZMuBVwLdyg6tD5JsD0S7mAaBRFvY8rYKQwlBFS3qvgM1rfkmVd7lJFU0A
+
+
+{
+	"version": 2,
+	"ambiente": "01",
+	"versionApp": 2,
+	"estado": "PROCESADO",
+	"codigoGeneracion": "7E50DB65-8EB0-4A44-AC2D-599D3B6C9F62",
+	"selloRecibido": "2025242EDB9D54B346EFBF3C8F14E92FA46DYOJO",
+	"fhProcesamiento": "23/08/2025 01:40:08",
+	"clasificaMsg": "10",
+	"codigoMsg": "002",
+	"descripcionMsg": "RECIBIDO CON OBSERVACIONES",
+	"observaciones": [
+		"identificacion.fecEmi Difiere de la fecha de envío."
+	]
+}

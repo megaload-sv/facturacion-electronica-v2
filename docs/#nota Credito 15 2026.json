@@ -1,0 +1,147 @@
+
+{
+  "identificacion": {
+    "codigoGeneracion": "5A7B3945-D1FE-466F-B5A4-EA9F17D2F625",
+    "tipoContingencia": null,
+    "numeroControl": "DTE-05-M001P001-000000000000015",
+    "tipoOperacion": 1,
+    "ambiente": "01",
+    "fecEmi": "2026-03-01",
+    "tipoModelo": 1,
+    "tipoDte": "05",
+    "version": 3,
+    "tipoMoneda": "USD",
+    "motivoContin": null,
+    "horEmi": "08:00:00"
+  },
+  "emisor": {
+    "descActividad": "Transporte de carga internacional",
+    "tipoEstablecimiento": "02",
+    "codActividad": "49233",
+    "correo": "info@grupomegaload.com",
+    "nit": "06141101161042",
+    "direccion": {
+      "complemento": "POLIG. E, CTON. FLOR AMARILLA, LOTE 626 C,",
+      "municipio": "25",
+      "departamento": "05"
+    },
+    "nombreComercial": "MEGALOAD, S.A. DE C.V.",
+    "telefono": "25305293",
+    "nombre": "MEGALOAD, S.A. DE C.V.",
+    "nrc": "2473109"
+  },
+  "receptor": {
+    "nit": "05011309131010",
+    "nrc": "2276700",
+    "correo": "jhlopez@qualicons.com",
+    "nombre": "QUALICONS, SOCIEDAD ANÓNIMA DE CAPITAL VARIABLE",
+    "telefono": "76494619",
+    "direccion": {
+      "complemento": "BLVD SERGIO VIERA DE MELLO, LOCAL. 7-B, COL. SAN BENITO EDIF. CENTURY TOWER, #243",
+      "municipio": "23",
+      "departamento": "06"
+    },
+    "codActividad": "42900",
+    "descActividad": "Construcción de obras de ingeniería civil n.c.p.",
+    "nombreComercial": "QUALICONS, SOCIEDAD ANÓNIMA DE CAPITAL VARIABLE"
+  },
+  "documentoRelacionado": [
+    {
+      "tipoDocumento": "03",
+      "fechaEmision": "2025-12-11",
+      "numeroDocumento": "1F0F36AD-93FB-42F3-8DD8-8747646FE2A9",
+      "tipoGeneracion": 1
+    }
+  ],
+  "resumen": {
+    "totalNoSuj": 0,
+    "ivaPerci1": 0,
+    "descuNoSuj": 0,
+    "totalLetras": "Telehander de 4 tons - por día (4 horas minimas; $66 por hora extra)",
+    "ivaRete1": 0,
+    "subTotal": 620,
+    "reteRenta": 0,
+    "subTotalVentas": 620,
+    "tributos": [
+      {
+        "descripcion": "Impuesto al Valor Agregado 13%",
+        "codigo": "20",
+        "valor": 80.6
+      }
+    ],
+    "descuExenta": 0,
+    "totalDescu": 0,
+    "descuGravada": 0,
+    "totalGravada": 620,
+    "montoTotalOperacion": 700.6,
+    "totalExenta": 0,
+    "condicionOperacion": 1
+  },
+  "cuerpoDocumento": [
+    {
+      "codigo": null,
+      "numItem": 1,
+      "cantidad": 1,
+      "tipoItem": 2,
+      "tributos": [
+        "20"
+      ],
+      "precioUni": 400,
+      "uniMedida": 59,
+      "codTributo": null,
+      "montoDescu": 0,
+      "ventaNoSuj": 0,
+      "descripcion": "Telehander 4 tons - Transporte ida y regreso (Traslado de equipo desde plantel Megaload hacia Plantel de Qualicons en Bulevar Bazzini.)",
+      "ventaExenta": 0,
+      "ventaGravada": 400,
+      "numeroDocumento": "1F0F36AD-93FB-42F3-8DD8-8747646FE2A9"
+    },
+    {
+      "codigo": null,
+      "numItem": 2,
+      "cantidad": 4,
+      "tipoItem": 2,
+      "tributos": [
+        "20"
+      ],
+      "precioUni": 55,
+      "uniMedida": 59,
+      "codTributo": null,
+      "montoDescu": 0,
+      "ventaNoSuj": 0,
+      "descripcion": "Telehander de 4 tons - por día (4 horas minimas; $66 por hora extra)",
+      "ventaExenta": 0,
+      "ventaGravada": 220,
+      "numeroDocumento": "1F0F36AD-93FB-42F3-8DD8-8747646FE2A9"
+    }
+  ],
+  "extension": {
+    "docuEntrega": null,
+    "observaciones": "",
+    "nombRecibe": null,
+    "nombEntrega": null,
+    "docuRecibe": null
+  },
+  "ventaTercero": null,
+  "apendice": null
+}
+
+
+{
+  "version": 2,
+  "ambiente": "01",
+  "versionApp": 2,
+  "estado": "PROCESADO",
+  "codigoGeneracion": "5A7B3945-D1FE-466F-B5A4-EA9F17D2F625",
+  "selloRecibido": "2026E448F2CA1DFC426BBE3EDC32E7677EE1PZIW",
+  "fhProcesamiento": "30/04/2026 10:42:17",
+  "clasificaMsg": "10",
+  "codigoMsg": "002",
+  "descripcionMsg": "RECIBIDO CON OBSERVACIONES",
+  "observaciones": [
+    "identificacion.fecEmi Difiere de la fecha de envío."
+  ]
+}
+
+
+eyJhbGciOiJSUzUxMiJ9.ew0KICAiaWRlbnRpZmljYWNpb24iIDogew0KICAgICJjb2RpZ29HZW5lcmFjaW9uIiA6ICI1QTdCMzk0NS1EMUZFLTQ2NkYtQjVBNC1FQTlGMTdEMkY2MjUiLA0KICAgICJ0aXBvQ29udGluZ2VuY2lhIiA6IG51bGwsDQogICAgIm51bWVyb0NvbnRyb2wiIDogIkRURS0wNS1NMDAxUDAwMS0wMDAwMDAwMDAwMDAwMTUiLA0KICAgICJ0aXBvT3BlcmFjaW9uIiA6IDEsDQogICAgImFtYmllbnRlIiA6ICIwMSIsDQogICAgImZlY0VtaSIgOiAiMjAyNi0wMy0wMSIsDQogICAgInRpcG9Nb2RlbG8iIDogMSwNCiAgICAidGlwb0R0ZSIgOiAiMDUiLA0KICAgICJ2ZXJzaW9uIiA6IDMsDQogICAgInRpcG9Nb25lZGEiIDogIlVTRCIsDQogICAgIm1vdGl2b0NvbnRpbiIgOiBudWxsLA0KICAgICJob3JFbWkiIDogIjA4OjAwOjAwIg0KICB9LA0KICAiZW1pc29yIiA6IHsNCiAgICAiZGVzY0FjdGl2aWRhZCIgOiAiVHJhbnNwb3J0ZSBkZSBjYXJnYSBpbnRlcm5hY2lvbmFsIiwNCiAgICAidGlwb0VzdGFibGVjaW1pZW50byIgOiAiMDIiLA0KICAgICJjb2RBY3RpdmlkYWQiIDogIjQ5MjMzIiwNCiAgICAiY29ycmVvIiA6ICJpbmZvQGdydXBvbWVnYWxvYWQuY29tIiwNCiAgICAibml0IiA6ICIwNjE0MTEwMTE2MTA0MiIsDQogICAgImRpcmVjY2lvbiIgOiB7DQogICAgICAiY29tcGxlbWVudG8iIDogIlBPTElHLiBFLCBDVE9OLiBGTE9SIEFNQVJJTExBLCBMT1RFIDYyNiBDLCIsDQogICAgICAibXVuaWNpcGlvIiA6ICIyNSIsDQogICAgICAiZGVwYXJ0YW1lbnRvIiA6ICIwNSINCiAgICB9LA0KICAgICJub21icmVDb21lcmNpYWwiIDogIk1FR0FMT0FELCBTLkEuIERFIEMuVi4iLA0KICAgICJ0ZWxlZm9ubyIgOiAiMjUzMDUyOTMiLA0KICAgICJub21icmUiIDogIk1FR0FMT0FELCBTLkEuIERFIEMuVi4iLA0KICAgICJucmMiIDogIjI0NzMxMDkiDQogIH0sDQogICJyZWNlcHRvciIgOiB7DQogICAgIm5pdCIgOiAiMDUwMTEzMDkxMzEwMTAiLA0KICAgICJucmMiIDogIjIyNzY3MDAiLA0KICAgICJjb3JyZW8iIDogImpobG9wZXpAcXVhbGljb25zLmNvbSIsDQogICAgIm5vbWJyZSIgOiAiUVVBTElDT05TLCBTT0NJRURBRCBBTsOTTklNQSBERSBDQVBJVEFMIFZBUklBQkxFIiwNCiAgICAidGVsZWZvbm8iIDogIjc2NDk0NjE5IiwNCiAgICAiZGlyZWNjaW9uIiA6IHsNCiAgICAgICJjb21wbGVtZW50byIgOiAiQkxWRCBTRVJHSU8gVklFUkEgREUgTUVMTE8sIExPQ0FMLiA3LUIsIENPTC4gU0FOIEJFTklUTyBFRElGLiBDRU5UVVJZIFRPV0VSLCAjMjQzIiwNCiAgICAgICJtdW5pY2lwaW8iIDogIjIzIiwNCiAgICAgICJkZXBhcnRhbWVudG8iIDogIjA2Ig0KICAgIH0sDQogICAgImNvZEFjdGl2aWRhZCIgOiAiNDI5MDAiLA0KICAgICJkZXNjQWN0aXZpZGFkIiA6ICJDb25zdHJ1Y2Npw7NuIGRlIG9icmFzIGRlIGluZ2VuaWVyw61hIGNpdmlsIG4uYy5wLiIsDQogICAgIm5vbWJyZUNvbWVyY2lhbCIgOiAiUVVBTElDT05TLCBTT0NJRURBRCBBTsOTTklNQSBERSBDQVBJVEFMIFZBUklBQkxFIg0KICB9LA0KICAiZG9jdW1lbnRvUmVsYWNpb25hZG8iIDogWyB7DQogICAgInRpcG9Eb2N1bWVudG8iIDogIjAzIiwNCiAgICAiZmVjaGFFbWlzaW9uIiA6ICIyMDI1LTEyLTExIiwNCiAgICAibnVtZXJvRG9jdW1lbnRvIiA6ICIxRjBGMzZBRC05M0ZCLTQyRjMtOEREOC04NzQ3NjQ2RkUyQTkiLA0KICAgICJ0aXBvR2VuZXJhY2lvbiIgOiAxDQogIH0gXSwNCiAgInJlc3VtZW4iIDogew0KICAgICJ0b3RhbE5vU3VqIiA6IDAsDQogICAgIml2YVBlcmNpMSIgOiAwLA0KICAgICJkZXNjdU5vU3VqIiA6IDAsDQogICAgInRvdGFsTGV0cmFzIiA6ICJUZWxlaGFuZGVyIGRlIDQgdG9ucyAtIHBvciBkw61hICg0IGhvcmFzIG1pbmltYXM7ICQ2NiBwb3IgaG9yYSBleHRyYSkiLA0KICAgICJpdmFSZXRlMSIgOiAwLA0KICAgICJzdWJUb3RhbCIgOiA2MjAsDQogICAgInJldGVSZW50YSIgOiAwLA0KICAgICJzdWJUb3RhbFZlbnRhcyIgOiA2MjAsDQogICAgInRyaWJ1dG9zIiA6IFsgew0KICAgICAgImRlc2NyaXBjaW9uIiA6ICJJbXB1ZXN0byBhbCBWYWxvciBBZ3JlZ2FkbyAxMyUiLA0KICAgICAgImNvZGlnbyIgOiAiMjAiLA0KICAgICAgInZhbG9yIiA6IDgwLjYNCiAgICB9IF0sDQogICAgImRlc2N1RXhlbnRhIiA6IDAsDQogICAgInRvdGFsRGVzY3UiIDogMCwNCiAgICAiZGVzY3VHcmF2YWRhIiA6IDAsDQogICAgInRvdGFsR3JhdmFkYSIgOiA2MjAsDQogICAgIm1vbnRvVG90YWxPcGVyYWNpb24iIDogNzAwLjYsDQogICAgInRvdGFsRXhlbnRhIiA6IDAsDQogICAgImNvbmRpY2lvbk9wZXJhY2lvbiIgOiAxDQogIH0sDQogICJjdWVycG9Eb2N1bWVudG8iIDogWyB7DQogICAgImNvZGlnbyIgOiBudWxsLA0KICAgICJudW1JdGVtIiA6IDEsDQogICAgImNhbnRpZGFkIiA6IDEsDQogICAgInRpcG9JdGVtIiA6IDIsDQogICAgInRyaWJ1dG9zIiA6IFsgIjIwIiBdLA0KICAgICJwcmVjaW9VbmkiIDogNDAwLA0KICAgICJ1bmlNZWRpZGEiIDogNTksDQogICAgImNvZFRyaWJ1dG8iIDogbnVsbCwNCiAgICAibW9udG9EZXNjdSIgOiAwLA0KICAgICJ2ZW50YU5vU3VqIiA6IDAsDQogICAgImRlc2NyaXBjaW9uIiA6ICJUZWxlaGFuZGVyIDQgdG9ucyAtIFRyYW5zcG9ydGUgaWRhIHkgcmVncmVzbyAoVHJhc2xhZG8gZGUgZXF1aXBvIGRlc2RlIHBsYW50ZWwgTWVnYWxvYWQgaGFjaWEgUGxhbnRlbCBkZSBRdWFsaWNvbnMgZW4gQnVsZXZhciBCYXp6aW5pLikiLA0KICAgICJ2ZW50YUV4ZW50YSIgOiAwLA0KICAgICJ2ZW50YUdyYXZhZGEiIDogNDAwLA0KICAgICJudW1lcm9Eb2N1bWVudG8iIDogIjFGMEYzNkFELTkzRkItNDJGMy04REQ4LTg3NDc2NDZGRTJBOSINCiAgfSwgew0KICAgICJjb2RpZ28iIDogbnVsbCwNCiAgICAibnVtSXRlbSIgOiAyLA0KICAgICJjYW50aWRhZCIgOiA0LA0KICAgICJ0aXBvSXRlbSIgOiAyLA0KICAgICJ0cmlidXRvcyIgOiBbICIyMCIgXSwNCiAgICAicHJlY2lvVW5pIiA6IDU1LA0KICAgICJ1bmlNZWRpZGEiIDogNTksDQogICAgImNvZFRyaWJ1dG8iIDogbnVsbCwNCiAgICAibW9udG9EZXNjdSIgOiAwLA0KICAgICJ2ZW50YU5vU3VqIiA6IDAsDQogICAgImRlc2NyaXBjaW9uIiA6ICJUZWxlaGFuZGVyIGRlIDQgdG9ucyAtIHBvciBkw61hICg0IGhvcmFzIG1pbmltYXM7ICQ2NiBwb3IgaG9yYSBleHRyYSkiLA0KICAgICJ2ZW50YUV4ZW50YSIgOiAwLA0KICAgICJ2ZW50YUdyYXZhZGEiIDogMjIwLA0KICAgICJudW1lcm9Eb2N1bWVudG8iIDogIjFGMEYzNkFELTkzRkItNDJGMy04REQ4LTg3NDc2NDZGRTJBOSINCiAgfSBdLA0KICAiZXh0ZW5zaW9uIiA6IHsNCiAgICAiZG9jdUVudHJlZ2EiIDogbnVsbCwNCiAgICAib2JzZXJ2YWNpb25lcyIgOiAiIiwNCiAgICAibm9tYlJlY2liZSIgOiBudWxsLA0KICAgICJub21iRW50cmVnYSIgOiBudWxsLA0KICAgICJkb2N1UmVjaWJlIiA6IG51bGwNCiAgfSwNCiAgInZlbnRhVGVyY2VybyIgOiBudWxsLA0KICAiYXBlbmRpY2UiIDogbnVsbA0KfQ.V9RGBVX7yPGYN0-PnbfLDyTuGgzjwftjFGA645aCq_21BoeanPGUrjBMEwNiLwV8c2DKRIF-roOpt6fybS5kYLyzqtIjb5XRFLOpz2WjUxK9P8FeZYIywSH79gPd8tRYCz6OPIG0-mYSEnFAlxNGTCW0R_9CovlrYL6lHybGMUEqlimLUIaf-tYNcHEn_4sO431rDjx83UNC1ly7Qmgtqx-ekIhs69iSTa63F_4Zs0hQXnNSThNteXhEknyZZ7r-gGJBPEAn54Bzs8fuJH2xYKUUx6g5IysdqNid8vNUWkB9DX5VCORpzDgGfQwqzdP2IBzy8NDqTU_dJG5MiahEFg
