@@ -2763,14 +2763,22 @@ class FacturasController extends BaseController
             $errores[] = 'Falta el nodo data.receptor.';
         } else {
 
+            $camposReceptor= [];
 
-
-            $camposReceptor = [
-                'nombre',
-                'descActividad',
-                'telefono',
-                'correo'
-            ];
+            if($newData->datainfo->codPais != "SV"){
+                $camposReceptor = [
+                    'nombre',
+                    'telefono',
+                    'correo'
+                ];
+            }else{
+                $camposReceptor = [
+                    'nombre',
+                    'descActividad',
+                    'telefono',
+                    'correo'
+                ];
+            }
 
             // Reglas dinámicas
             if ($tipoDte !== 1) { // No es consumidor final
@@ -2789,7 +2797,7 @@ class FacturasController extends BaseController
                 $errores
             );
 
-            if($newData->datainfo->codigoTipoDTE != 11){
+            if($newData->datainfo->codigoTipoDTE != 11 && $newData->datainfo->codPais == "SV") { // No es exportación y es El Salvador
                 if (!isset($newData->data->receptor->direccion) || !is_object($newData->data->receptor->direccion)) {
                     $errores[] = 'Falta el nodo data.receptor.direccion.';
                 }
