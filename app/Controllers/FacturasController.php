@@ -102,7 +102,7 @@ class FacturasController extends BaseController
                 $factDatosGenerales = $this->modelFactura->get_informacion_general($this->codigoPuntoVenta);
 
                 //Cargando distrito de Emisor y receptor
-                if ($newData->data->identificacion->tipoDte != "11") {
+                if ($newData->data->identificacion->tipoDte != "11" && $newData->datainfo->codPais == "SV") {
                     $distritoReceptor = $this->modelFactura->getDistritoByCodeMunicipioCodeDepartamento($newData->data->receptor->direccion->municipio, $newData->data->receptor->direccion->departamento);
                 }
 
@@ -142,7 +142,7 @@ class FacturasController extends BaseController
                 $newData->data->emisor->codPuntoVenta = $factDatosGenerales->codigoPuntoVenta;
 
                 //cambiando datos de distrito en el receptor
-                if ($newData->data->identificacion->tipoDte != "11") {
+                if ($newData->data->identificacion->tipoDte != "11" && $newData->datainfo->codPais == "SV") {
                     $newData->data->receptor->direccion->municipio = $distritoReceptor->codigo;
                 }
 
