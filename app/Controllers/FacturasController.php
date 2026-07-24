@@ -2785,7 +2785,7 @@ class FacturasController extends BaseController
                 $camposReceptor[] = 'nombreComercial';
             }
 
-            if ($tipoDte !== 11) { // No es exportación
+            if ($tipoDte !== 11 && $newData->datainfo->codPais == "SV") { // No es exportación y es El Salvador
                 $camposReceptor[] = 'codActividad';
             }
 
