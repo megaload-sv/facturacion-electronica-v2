@@ -693,7 +693,7 @@ class FacturasController extends BaseController
 
         // ------------------- Segunda Tabla (Derecha) -------------------
         $campos2 = [
-            "Nombre o razón social:",
+            "Nombre o razón social",
             "Tipo de doc. de Identificación:",
             "No de doc de Identificación",
             "Correo Electrónico",
@@ -701,11 +701,11 @@ class FacturasController extends BaseController
         ];
 
         $valores2 = [
-            $jsonDTE->receptor->nombre,
-            "NIT",
-            $jsonDTE->receptor->numDocumento,
-            $jsonDTE->receptor->correo,
-            $jsonDTE->receptor->nombre
+            $jsonDTE->receptor->nombre ?? '-',
+            (isset($jsonDTE->receptor->tipoDocumento) && $jsonDTE->receptor->tipoDocumento !== null) ? $jsonDTE->receptor->tipoDocumento : 'NIT',
+            (isset($jsonDTE->receptor->numDocumento) && $jsonDTE->receptor->numDocumento !== null) ? $jsonDTE->receptor->numDocumento : '-',
+            $jsonDTE->receptor->correo ?? '-',
+            $jsonDTE->receptor->nombre ?? '-'
         ];
 
         // Generar la tabla derecha de forma similar
@@ -1259,7 +1259,7 @@ class FacturasController extends BaseController
 
         // ------------------- Segunda Tabla (Derecha) -------------------
         $campos2 = [
-            "Nombre o razón social:",
+            "Nombre o razón social",
             "No de doc de Identificación:",
             "Actividad Económica:",
             "País destino",
@@ -1268,12 +1268,12 @@ class FacturasController extends BaseController
         ];
 
         $valores2 = [
-            $jsonDTE->receptor->nombre,
-            $jsonDTE->receptor->numDocumento,
-            $jsonDTE->receptor->descActividad,
-            $jsonDTE->receptor->nombrePais,
-            $jsonDTE->receptor->complemento,
-            $jsonDTE->receptor->nombreComercial
+            $jsonDTE->receptor->nombre ?? '-',
+            (isset($jsonDTE->receptor->numDocumento) && $jsonDTE->receptor->numDocumento !== null) ? $jsonDTE->receptor->numDocumento : '-',
+            $jsonDTE->receptor->descActividad ?? '-',
+            $jsonDTE->receptor->nombrePais ?? '-',
+            $jsonDTE->receptor->complemento ?? '-',
+            $jsonDTE->receptor->nombreComercial ?? '-'
         ];
 
         // Generar la segunda tabla
@@ -1813,13 +1813,13 @@ class FacturasController extends BaseController
         ];
 
         $valores2 = [
-            $jsonDTE->receptor->nombre,
-            $jsonDTE->receptor->nit,
-            $jsonDTE->receptor->nrc,
-            $jsonDTE->receptor->descActividad,
-            $jsonDTE->receptor->direccion->complemento,
-            $jsonDTE->receptor->correo,
-            $jsonDTE->receptor->nombreComercial
+            $jsonDTE->receptor->nombre ?? '-',
+            (isset($jsonDTE->receptor->nit) && $jsonDTE->receptor->nit !== null) ? $jsonDTE->receptor->nit : '-',
+            (isset($jsonDTE->receptor->nrc) && $jsonDTE->receptor->nrc !== null) ? $jsonDTE->receptor->nrc : '-',
+            $jsonDTE->receptor->descActividad ?? '-',
+            (isset($jsonDTE->receptor->direccion->complemento) && $jsonDTE->receptor->direccion->complemento !== null) ? $jsonDTE->receptor->direccion->complemento : '-',
+            $jsonDTE->receptor->correo ?? '-',
+            $jsonDTE->receptor->nombreComercial ?? '-'
         ];
 
         // Generar la segunda tabla
