@@ -702,7 +702,7 @@ class FacturasController extends BaseController
 
         $valores2 = [
             $jsonDTE->receptor->nombre ?? '-',
-            (isset($jsonDTE->receptor->tipoDocumento) && $jsonDTE->receptor->tipoDocumento !== null) ? $jsonDTE->receptor->tipoDocumento : 'NIT',
+            (isset($jsonDTE->receptor->tipoDocumento) && $jsonDTE->receptor->tipoDocumento !== null) ? $jsonDTE->receptor->tipoDocumento : '-',
             (isset($jsonDTE->receptor->numDocumento) && $jsonDTE->receptor->numDocumento !== null) ? $jsonDTE->receptor->numDocumento : '-',
             $jsonDTE->receptor->correo ?? '-',
             $jsonDTE->receptor->nombre ?? '-'
