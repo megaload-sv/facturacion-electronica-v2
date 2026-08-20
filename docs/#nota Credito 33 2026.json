@@ -1,0 +1,143 @@
+
+{
+  "identificacion": {
+    "codigoGeneracion": "B5746015-67BB-4ED8-B38C-C5B43121A8F7",
+    "tipoContingencia": null,
+    "numeroControl": "DTE-05-M001P001-000000000000033",
+    "tipoOperacion": 1,
+    "ambiente": "01",
+    "fecEmi": "2026-08-18",
+    "tipoModelo": 1,
+    "tipoDte": "05",
+    "version": 3,
+    "tipoMoneda": "USD",
+    "motivoContin": null,
+    "horEmi": "08:15:00"
+  },
+  "emisor": {
+    "descActividad": "Transporte de carga internacional",
+    "tipoEstablecimiento": "02",
+    "codActividad": "49233",
+    "correo": "info@grupomegaload.com",
+    "nit": "06141101161042",
+    "direccion": {
+      "complemento": "POLIG. E, CTON. FLOR AMARILLA, LOTE 626 C,",
+      "municipio": "25",
+      "departamento": "05"
+    },
+    "nombreComercial": "MEGALOAD, S.A. DE C.V.",
+    "telefono": "25305293",
+    "nombre": "MEGALOAD, S.A. DE C.V.",
+    "nrc": "2473109"
+  },
+  "receptor": {
+    "nit": "06143009971014",
+    "nrc": "1015621",
+    "correo": "recepcionfactura@construccionesnabla.com.sv",
+    "nombre": "CONSTRUCCIONES NABLA, S.A DE C.V.",
+    "telefono": "22645559",
+    "direccion": {
+      "municipio": "23",
+      "complemento": "BLV. DEL HIPODROMO, COL SAN BENITO, #674",
+      "departamento": "06"
+    },
+    "codActividad": "71101",
+    "descActividad": "Servicios de arquitectura y planificación urbana y servicios conexos",
+    "nombreComercial": "CONSTRUCCIONES NABLA, S.A DE C.V."
+  },
+  "documentoRelacionado": [
+    {
+      "tipoDocumento": "03",
+      "fechaEmision": "2026-07-30",
+      "numeroDocumento": "8A159D17-4F08-4048-950D-EEAF6A3CAB67",
+      "tipoGeneracion": 1
+    }
+  ],
+  "resumen": {
+    "totalNoSuj": 0,
+    "ivaPerci1": 0,
+    "descuNoSuj": 0,
+    "totalLetras": "DOS MIL NOVECIENTOS CINCUENTA Y UNO CON 43/100 U.S. DOLARES",
+    "ivaRete1": 26.35,
+    "subTotal": 2635.2,
+    "reteRenta": 0,
+    "subTotalVentas": 2635.2,
+    "tributos": [
+      {
+        "descripcion": "Impuesto al Valor Agregado 13%",
+        "codigo": "20",
+        "valor": 342.58
+      }
+    ],
+    "descuExenta": 0,
+    "totalDescu": 0,
+    "descuGravada": 0,
+    "totalGravada": 2635.2,
+    "montoTotalOperacion": 2951.43,
+    "totalExenta": 0,
+    "condicionOperacion": 2
+  },
+  "cuerpoDocumento": [
+    {
+      "codigo": null,
+      "numItem": 1,
+      "cantidad": 1,
+      "tipoItem": 2,
+      "tributos": [
+        "20"
+      ],
+      "precioUni": 2376,
+      "uniMedida": 59,
+      "codTributo": null,
+      "montoDescu": 0,
+      "ventaNoSuj": 0,
+      "descripcion": "Man Lift 26 metros de altura - por semana (Servicio de Manlift 8 horas., mínima por: de Lunes a Viernes de 8:00 a 17:00. Sábado de 8:00 a 12:00. $64.80 por hora extraordinaria de Lunes a Viernes de las 17:00 en adelante, Sábado de las 12:00 en adelante y Domingo todo el día.)",
+      "ventaExenta": 0,
+      "ventaGravada": 2376,
+      "numeroDocumento": "8A159D17-4F08-4048-950D-EEAF6A3CAB67"
+    },
+    {
+      "codigo": null,
+      "numItem": 2,
+      "cantidad": 4,
+      "tipoItem": 2,
+      "tributos": [
+        "20"
+      ],
+      "precioUni": 64.8,
+      "uniMedida": 59,
+      "codTributo": null,
+      "montoDescu": 0,
+      "ventaNoSuj": 0,
+      "descripcion": "Man Lift 26 metros de altura - por horas (4 horas extras, correspondientes a las fechas: Del 23/07/26 al 29/7/26)",
+      "ventaExenta": 0,
+      "ventaGravada": 259.2,
+      "numeroDocumento": "8A159D17-4F08-4048-950D-EEAF6A3CAB67"
+    }
+  ],
+  "extension": {
+    "docuEntrega": null,
+    "observaciones": "",
+    "nombRecibe": null,
+    "nombEntrega": null,
+    "docuRecibe": null
+  },
+  "ventaTercero": null,
+  "apendice": null
+}
+
+eyJhbGciOiJSUzUxMiJ9.ew0KICAiaWRlbnRpZmljYWNpb24iIDogew0KICAgICJjb2RpZ29HZW5lcmFjaW9uIiA6ICJCNTc0NjAxNS02N0JCLTRFRDgtQjM4Qy1DNUI0MzEyMUE4RjciLA0KICAgICJ0aXBvQ29udGluZ2VuY2lhIiA6IG51bGwsDQogICAgIm51bWVyb0NvbnRyb2wiIDogIkRURS0wNS1NMDAxUDAwMS0wMDAwMDAwMDAwMDAwMzMiLA0KICAgICJ0aXBvT3BlcmFjaW9uIiA6IDEsDQogICAgImFtYmllbnRlIiA6ICIwMSIsDQogICAgImZlY0VtaSIgOiAiMjAyNi0wOC0xOCIsDQogICAgInRpcG9Nb2RlbG8iIDogMSwNCiAgICAidGlwb0R0ZSIgOiAiMDUiLA0KICAgICJ2ZXJzaW9uIiA6IDMsDQogICAgInRpcG9Nb25lZGEiIDogIlVTRCIsDQogICAgIm1vdGl2b0NvbnRpbiIgOiBudWxsLA0KICAgICJob3JFbWkiIDogIjA4OjE1OjAwIg0KICB9LA0KICAiZW1pc29yIiA6IHsNCiAgICAiZGVzY0FjdGl2aWRhZCIgOiAiVHJhbnNwb3J0ZSBkZSBjYXJnYSBpbnRlcm5hY2lvbmFsIiwNCiAgICAidGlwb0VzdGFibGVjaW1pZW50byIgOiAiMDIiLA0KICAgICJjb2RBY3RpdmlkYWQiIDogIjQ5MjMzIiwNCiAgICAiY29ycmVvIiA6ICJpbmZvQGdydXBvbWVnYWxvYWQuY29tIiwNCiAgICAibml0IiA6ICIwNjE0MTEwMTE2MTA0MiIsDQogICAgImRpcmVjY2lvbiIgOiB7DQogICAgICAiY29tcGxlbWVudG8iIDogIlBPTElHLiBFLCBDVE9OLiBGTE9SIEFNQVJJTExBLCBMT1RFIDYyNiBDLCIsDQogICAgICAibXVuaWNpcGlvIiA6ICIyNSIsDQogICAgICAiZGVwYXJ0YW1lbnRvIiA6ICIwNSINCiAgICB9LA0KICAgICJub21icmVDb21lcmNpYWwiIDogIk1FR0FMT0FELCBTLkEuIERFIEMuVi4iLA0KICAgICJ0ZWxlZm9ubyIgOiAiMjUzMDUyOTMiLA0KICAgICJub21icmUiIDogIk1FR0FMT0FELCBTLkEuIERFIEMuVi4iLA0KICAgICJucmMiIDogIjI0NzMxMDkiDQogIH0sDQogICJyZWNlcHRvciIgOiB7DQogICAgIm5pdCIgOiAiMDYxNDMwMDk5NzEwMTQiLA0KICAgICJucmMiIDogIjEwMTU2MjEiLA0KICAgICJjb3JyZW8iIDogInJlY2VwY2lvbmZhY3R1cmFAY29uc3RydWNjaW9uZXNuYWJsYS5jb20uc3YiLA0KICAgICJub21icmUiIDogIkNPTlNUUlVDQ0lPTkVTIE5BQkxBLCBTLkEgREUgQy5WLiIsDQogICAgInRlbGVmb25vIiA6ICIyMjY0NTU1OSIsDQogICAgImRpcmVjY2lvbiIgOiB7DQogICAgICAibXVuaWNpcGlvIiA6ICIyMyIsDQogICAgICAiY29tcGxlbWVudG8iIDogIkJMVi4gREVMIEhJUE9EUk9NTywgQ09MIFNBTiBCRU5JVE8sICM2NzQiLA0KICAgICAgImRlcGFydGFtZW50byIgOiAiMDYiDQogICAgfSwNCiAgICAiY29kQWN0aXZpZGFkIiA6ICI3MTEwMSIsDQogICAgImRlc2NBY3RpdmlkYWQiIDogIlNlcnZpY2lvcyBkZSBhcnF1aXRlY3R1cmEgeSBwbGFuaWZpY2FjacOzbiB1cmJhbmEgeSBzZXJ2aWNpb3MgY29uZXhvcyIsDQogICAgIm5vbWJyZUNvbWVyY2lhbCIgOiAiQ09OU1RSVUNDSU9ORVMgTkFCTEEsIFMuQSBERSBDLlYuIg0KICB9LA0KICAiZG9jdW1lbnRvUmVsYWNpb25hZG8iIDogWyB7DQogICAgInRpcG9Eb2N1bWVudG8iIDogIjAzIiwNCiAgICAiZmVjaGFFbWlzaW9uIiA6ICIyMDI2LTA3LTMwIiwNCiAgICAibnVtZXJvRG9jdW1lbnRvIiA6ICI4QTE1OUQxNy00RjA4LTQwNDgtOTUwRC1FRUFGNkEzQ0FCNjciLA0KICAgICJ0aXBvR2VuZXJhY2lvbiIgOiAxDQogIH0gXSwNCiAgInJlc3VtZW4iIDogew0KICAgICJ0b3RhbE5vU3VqIiA6IDAsDQogICAgIml2YVBlcmNpMSIgOiAwLA0KICAgICJkZXNjdU5vU3VqIiA6IDAsDQogICAgInRvdGFsTGV0cmFzIiA6ICJET1MgTUlMIE5PVkVDSUVOVE9TIENJTkNVRU5UQSBZIFVOTyBDT04gNDMvMTAwIFUuUy4gRE9MQVJFUyIsDQogICAgIml2YVJldGUxIiA6IDI2LjM1LA0KICAgICJzdWJUb3RhbCIgOiAyNjM1LjIsDQogICAgInJldGVSZW50YSIgOiAwLA0KICAgICJzdWJUb3RhbFZlbnRhcyIgOiAyNjM1LjIsDQogICAgInRyaWJ1dG9zIiA6IFsgew0KICAgICAgImRlc2NyaXBjaW9uIiA6ICJJbXB1ZXN0byBhbCBWYWxvciBBZ3JlZ2FkbyAxMyUiLA0KICAgICAgImNvZGlnbyIgOiAiMjAiLA0KICAgICAgInZhbG9yIiA6IDM0Mi41OA0KICAgIH0gXSwNCiAgICAiZGVzY3VFeGVudGEiIDogMCwNCiAgICAidG90YWxEZXNjdSIgOiAwLA0KICAgICJkZXNjdUdyYXZhZGEiIDogMCwNCiAgICAidG90YWxHcmF2YWRhIiA6IDI2MzUuMiwNCiAgICAibW9udG9Ub3RhbE9wZXJhY2lvbiIgOiAyOTUxLjQzLA0KICAgICJ0b3RhbEV4ZW50YSIgOiAwLA0KICAgICJjb25kaWNpb25PcGVyYWNpb24iIDogMg0KICB9LA0KICAiY3VlcnBvRG9jdW1lbnRvIiA6IFsgew0KICAgICJjb2RpZ28iIDogbnVsbCwNCiAgICAibnVtSXRlbSIgOiAxLA0KICAgICJjYW50aWRhZCIgOiAxLA0KICAgICJ0aXBvSXRlbSIgOiAyLA0KICAgICJ0cmlidXRvcyIgOiBbICIyMCIgXSwNCiAgICAicHJlY2lvVW5pIiA6IDIzNzYsDQogICAgInVuaU1lZGlkYSIgOiA1OSwNCiAgICAiY29kVHJpYnV0byIgOiBudWxsLA0KICAgICJtb250b0Rlc2N1IiA6IDAsDQogICAgInZlbnRhTm9TdWoiIDogMCwNCiAgICAiZGVzY3JpcGNpb24iIDogIk1hbiBMaWZ0IDI2IG1ldHJvcyBkZSBhbHR1cmEgLSBwb3Igc2VtYW5hIChTZXJ2aWNpbyBkZSBNYW5saWZ0IDggaG9yYXMuLCBtw61uaW1hIHBvcjogZGUgTHVuZXMgYSBWaWVybmVzIGRlIDg6MDAgYSAxNzowMC4gU8OhYmFkbyBkZSA4OjAwIGEgMTI6MDAuICQ2NC44MCBwb3IgaG9yYSBleHRyYW9yZGluYXJpYSBkZSBMdW5lcyBhIFZpZXJuZXMgZGUgbGFzIDE3OjAwIGVuIGFkZWxhbnRlLCBTw6FiYWRvIGRlIGxhcyAxMjowMCBlbiBhZGVsYW50ZSB5IERvbWluZ28gdG9kbyBlbCBkw61hLikiLA0KICAgICJ2ZW50YUV4ZW50YSIgOiAwLA0KICAgICJ2ZW50YUdyYXZhZGEiIDogMjM3NiwNCiAgICAibnVtZXJvRG9jdW1lbnRvIiA6ICI4QTE1OUQxNy00RjA4LTQwNDgtOTUwRC1FRUFGNkEzQ0FCNjciDQogIH0sIHsNCiAgICAiY29kaWdvIiA6IG51bGwsDQogICAgIm51bUl0ZW0iIDogMiwNCiAgICAiY2FudGlkYWQiIDogNCwNCiAgICAidGlwb0l0ZW0iIDogMiwNCiAgICAidHJpYnV0b3MiIDogWyAiMjAiIF0sDQogICAgInByZWNpb1VuaSIgOiA2NC44LA0KICAgICJ1bmlNZWRpZGEiIDogNTksDQogICAgImNvZFRyaWJ1dG8iIDogbnVsbCwNCiAgICAibW9udG9EZXNjdSIgOiAwLA0KICAgICJ2ZW50YU5vU3VqIiA6IDAsDQogICAgImRlc2NyaXBjaW9uIiA6ICJNYW4gTGlmdCAyNiBtZXRyb3MgZGUgYWx0dXJhIC0gcG9yIGhvcmFzICg0IGhvcmFzIGV4dHJhcywgY29ycmVzcG9uZGllbnRlcyBhIGxhcyBmZWNoYXM6IERlbCAyMy8wNy8yNiBhbCAyOS83LzI2KSIsDQogICAgInZlbnRhRXhlbnRhIiA6IDAsDQogICAgInZlbnRhR3JhdmFkYSIgOiAyNTkuMiwNCiAgICAibnVtZXJvRG9jdW1lbnRvIiA6ICI4QTE1OUQxNy00RjA4LTQwNDgtOTUwRC1FRUFGNkEzQ0FCNjciDQogIH0gXSwNCiAgImV4dGVuc2lvbiIgOiB7DQogICAgImRvY3VFbnRyZWdhIiA6IG51bGwsDQogICAgIm9ic2VydmFjaW9uZXMiIDogIiIsDQogICAgIm5vbWJSZWNpYmUiIDogbnVsbCwNCiAgICAibm9tYkVudHJlZ2EiIDogbnVsbCwNCiAgICAiZG9jdVJlY2liZSIgOiBudWxsDQogIH0sDQogICJ2ZW50YVRlcmNlcm8iIDogbnVsbCwNCiAgImFwZW5kaWNlIiA6IG51bGwNCn0.tOEzteLLJFmFrF4PMcF8vCuLdVrOSAsvvhW9jymQhY1HgqpyBTzuI1p4eJbvisuV07Mjr7o0zYN2WyQaRxuVri9bkbIuGhoknWHP9Nz8fHbNpTVHbnvZFw6woiUoTmeRD6jB51vmSYNOSqZ_F6Qz80T8Jzb8ckhytdmk6F_Pp3dsU96cVx-ZyjmUt2IIzjuwt0EC3TkY-rXFF8ymO4cVQC8hMu6ViD_X55vMuAIUA3kEzE8MJeL1Z4CsWRsd5nsM0_8S1ZT_EkqB5segmN0xLyY-85Yzx_EvNpYlZbgEDmAr35Wm2F45OA47DTW8qg80ZCTr9XJ-iDqYgf3roiJ1wQ
+
+{
+  "version": 2,
+  "ambiente": "01",
+  "versionApp": 2,
+  "estado": "PROCESADO",
+  "codigoGeneracion": "B5746015-67BB-4ED8-B38C-C5B43121A8F7",
+  "selloRecibido": "2026B5B626704096435089FDE7FFFB1D0A5CTHPR",
+  "fhProcesamiento": "18/08/2026 23:32:51",
+  "clasificaMsg": "10",
+  "codigoMsg": "001",
+  "descripcionMsg": "RECIBIDO",
+  "observaciones": []
+}
