@@ -48,6 +48,8 @@ $(document).ready(function () {
 
         $.each(sellosData, function (index, sello) {
 
+            const nombreReceptor = sello.company || sello.Empresa || 'Sin nombre de receptor';
+
             let btnMensaje = `
             <button type="button" 
                     class="btn btn-success btn-sm mensajeMH" 
@@ -106,7 +108,7 @@ $(document).ready(function () {
                     ${sello.codigoGeneracion}
                 </td>
                 <td>${sello.numeroControlMH}</td>
-                <td>${sello.company}</td>
+                <td>${nombreReceptor}</td>
                 <td>${sello.fechaFactura}</td>
                 <td>${sello.estadoNombre}</td>
                 <td>${btnMensaje}</td>
