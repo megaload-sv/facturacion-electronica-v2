@@ -82,7 +82,7 @@ class SellosdteModel extends Model
         return $query->getRowArray();
     }
 
-    public function getDTEArchivo()
+    public function getDTEArchivo(): array
     {
 
         $db = \Config\Database::connect();
@@ -94,6 +94,10 @@ class SellosdteModel extends Model
                        concat(year(fechaFactura), "/", correlativoFactCRM) as numeroCRM,
                        dte.codigoGeneracion,
                        concat(emp.nombreComercial, " | ", suc.nombre, " | ", pv.nombre) as Empresa,
+                       coalesce(
+                           nullif(json_unquote(json_extract(dte.jsonDTE, "$.receptor.nombre")), ""),
+                           "Sin nombre de receptor"
+                       ) as company,
                        numeroControlMH,
                        fechaFactura,
                        dte.idEstadoDTE,
@@ -106,8 +110,7 @@ class SellosdteModel extends Model
             ->join('puntosdeventa pv', 'dte.codigoPuntoVenta = pv.codigoPuntoVenta')
             ->join('sucursales suc', 'suc.idSucursal = pv.idSucursal')
             ->join('dteempresas emp', 'suc.codigoEmpresa = emp.codigoEmpresa')
-            ->where('dte.idEstadoDTE = 1')
-            ->orWhere('dte.idEstadoDTE = 4');
+            ->whereIn('dte.idEstadoDTE', [1, 4]);
 
         $rsData = $builder->get()->getResultArray();
 
@@ -143,28 +146,11 @@ class SellosdteModel extends Model
 
     }
 
-    public function totalDTEArchivo()
+    public function totalDTEArchivo(): int
     {
-
-
-        $builder = $this->db->table('sellosdte dte')
-            ->select('tdoc.valores as TipoDTE,
-                       dte.identicadorNumInterno,
-                       dte.codigoGeneracion,
-                       concat(emp.nombreComercial, " | ", suc.nombre, " | ", pv.nombre) as Empresa,
-                       numeroControlMH,
-                       fechaFactura,
-                       dte.idEstadoDTE')
-            ->join('cattipodocumento tdoc', 'dte.codigoTipoDTE = tdoc.codigo')
-            ->join('puntosdeventa pv', 'dte.codigoPuntoVenta = pv.codigoPuntoVenta')
-            ->join('sucursales suc', 'suc.idSucursal = pv.idSucursal')
-            ->join('dteempresas emp', 'suc.codigoEmpresa = emp.codigoEmpresa')
-            ->where('dte.idEstadoDTE = 1');
-
-        $rsData = $builder->get()->getResultArray();
-
-        return count($rsData);
-
+        return $this->db->table('sellosdte')
+            ->whereIn('idEstadoDTE', [1, 4])
+            ->countAllResults();
     }
 
     public function getByCodigoGeneracion($codigoGeneracion)
