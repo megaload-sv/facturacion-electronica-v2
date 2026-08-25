@@ -106,7 +106,7 @@ $(document).ready(function () {
                     ${sello.codigoGeneracion}
                 </td>
                 <td>${sello.numeroControlMH}</td>
-                <td>${sello.Empresa}</td>
+                <td>${sello.company}</td>
                 <td>${sello.fechaFactura}</td>
                 <td>${sello.estadoNombre}</td>
                 <td>${btnMensaje}</td>
