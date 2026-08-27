@@ -14,6 +14,9 @@ $(document).ready(function () {
         tableBody.empty();
 
         $.each(data, function (index, sello) {
+            const nombreReceptor = sello.company || sello.Empresa || 'Sin nombre de receptor';
+            const nombreReceptorHtml = $('<div>').text(nombreReceptor).html();
+
             var btnMensaje = (sello.idsellosDTE == 2 || sello.idsellosDTE == null) ?
                 '<button type="button" class="btn btn-danger mensajeMH" data-target="#modalMensaje" data-codigo-generacion="' + sello.codigoGeneracion + '">Ver Mensaje</button>'
                 : '';
@@ -23,7 +26,7 @@ $(document).ready(function () {
                 '<td>' + sello.TipoDTE + '</td>' +
                 '<td><span style="font-weight: bold">ERP:</span> ' + sello.identicadorNumInterno + '<br><span style="font-weight: bold">Codigo de Generacion:</span> ' + sello.codigoGeneracion + '</td>' +
                 '<td>' + sello.numeroControlMH + '</td>' +
-                '<td>' + sello.Empresa + '</td>' +
+                '<td>' + nombreReceptorHtml + '</td>' +
                 '<td>' + sello.fechaFactura + '</td>' +
                 '<td>' + btnMensaje + '</td>' +
                 '<td>' +
