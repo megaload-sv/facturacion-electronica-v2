@@ -48,6 +48,10 @@ class SellosdteModel extends Model
                        dte.identicadorNumInterno,
                        dte.codigoGeneracion,
                        concat(emp.nombreComercial, " | ", suc.nombre, " | ", pv.nombre) as Empresa,
+                       coalesce(
+                           nullif(nullif(json_unquote(json_extract(dte.jsonDTE, "$.receptor.nombre")), "null"), ""),
+                           "Sin nombre de receptor"
+                       ) as company,
                        numeroControlMH,
                        fechaFactura,
                        dte.idEstadoDTE')
