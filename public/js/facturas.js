@@ -38,12 +38,23 @@ $(document).ready(function(){
             },
             success: function (json) {
 
+                numPages = Math.max(0, parseInt(json.num_pages, 10) || 0);
+                currentPage = Math.max(1, parseInt(json.currentPage, 10) || page);
+
+                var tableBody = $('#facturasToMH tbody');
+                tableBody.empty();
+
+                // Al enviar la última factura de una página, volver a una página válida.
+                if (json.data.length === 0 && currentPage > 1) {
+                    llenarFacturas(Math.max(1, Math.min(currentPage - 1, numPages)));
+                    return;
+                }
+
+                $('#pagination').text(numPages > 0 ? `Página ${currentPage} de ${numPages}` : 'Sin facturas pendientes');
+                $('#prevPage').prop('disabled', currentPage <= 1);
+                $('#nextPage').prop('disabled', currentPage >= numPages);
+
                 if (json.data.length > 0) {
-
-                    numPages = json.num_pages;
-
-                    var tableBody = $('#facturasToMH');
-                    tableBody.empty();
 
                     var trTable = '';
 
@@ -80,7 +91,7 @@ $(document).ready(function(){
                         trTable += '</td>';
 
                         trTable += '<td>';
-                        trTable += '<a href="#" class="btn btn-sm btn-outline-primary enviarToMH" data-codemh="' + values.code_to_mh + '"> Enviar </a>';
+                        trTable += '<a href="#" class="btn btn-sm btn-outline-primary enviarToMH" data-codemh="' + values.code_to_mh + '" data-tipo-doc="' + values.prefix + '"> Enviar </a>';
                         trTable += '</td>';
                         /*
                                             var btnString = '';
@@ -101,14 +112,8 @@ $(document).ready(function(){
 
                     tableBody.append(trTable);
 
-                    // Actualizar estado de paginación
-                    $('#pagination').html(`Página ${json.currentPage} de ${json.num_pages}`);
-                    currentPage = parseInt(json.currentPage);
-                    $('#prevPage').prop('disabled', currentPage <= 1);
-
-                    $('#nextPage').prop('disabled', ((currentPage > json.num_pages)));
-
-
+                } else {
+                    tableBody.append('<tr><td colspan="7" class="text-center">No hay facturas pendientes de enviar.</td></tr>');
                 }
 
             },
@@ -130,12 +135,13 @@ $(document).ready(function(){
         });
         $('#nextPage').off('click').click(function(e) {
             e.preventDefault();
-            llenarFacturas(currentPage + 1);
+            if (currentPage < numPages) llenarFacturas(currentPage + 1);
         });
 
     }
 
-    $(document).on('click', '.enviarToMH', function () {
+    $(document).on('click', '.enviarToMH', function (event) {
+        event.preventDefault();
 
         let codemh = $(this).data('codemh');
         let button = $(this);
@@ -164,7 +170,7 @@ $(document).ready(function(){
                 });
 
                 $.ajax({
-                    url: url_base + 'facturas/procesarDTE/' + codemh,
+                    url: url_base + 'facturas/procesarDTE/' + codemh + '/' + button.data('tipo-doc'),
                     type: 'GET',
                     dataType: 'json',
 
@@ -180,7 +186,7 @@ $(document).ready(function(){
                                 showConfirmButton: false
                             });
 
-                            llenarFacturas();
+                            llenarFacturas(currentPage);
 
                         } else {
 
@@ -195,24 +201,24 @@ $(document).ready(function(){
 
                     error: function (json) {
 
-                        debugger
-
                         let errorList = '';
                         let message = 'Ha ocurrido un error inesperado en el sistema.';
+                        const response = json && json.responseJSON;
+                        const escapeHtml = (value) => $('<div>').text(String(value)).html();
 
                         // Validar si viene mensaje
-                        if (json && json.message) {
-                            message = json.message;
+                        if (response && response.message) {
+                            message = response.message;
                         }
 
                         // Validar si existe detalle y es un arreglo
-                        if (json && json.responseJSON && json.responseJSON.detalle.length > 0) {
+                        if (response && Array.isArray(response.detalle) && response.detalle.length > 0) {
 
                             errorList = '<div style="max-height:200px;overflow:auto;margin-top:10px;">';
                             errorList += '<ul style="text-align:left;padding-left:20px;">';
 
-                            json.responseJSON.detalle.forEach(function (err) {
-                                errorList += `<li style="margin-bottom:5px;">${err}</li>`;
+                            response.detalle.forEach(function (err) {
+                                errorList += `<li style="margin-bottom:5px;">${escapeHtml(err)}</li>`;
                             });
 
                             errorList += '</ul></div>';
@@ -234,7 +240,7 @@ $(document).ready(function(){
                             html: `
             <div style="font-size:14px">
                 <div style="margin-bottom:10px">
-                    <b>${message}</b>
+                    <b>${escapeHtml(message)}</b>
                 </div>
                 ${errorList}
             </div>
