@@ -1,0 +1,146 @@
+
+{
+  "identificacion": {
+    "codigoGeneracion": "697C5A65-2D48-47FA-ACC3-1A2C2233EE00",
+    "tipoContingencia": null,
+    "numeroControl": "DTE-05-M001P001-000000000000034",
+    "tipoOperacion": 1,
+    "ambiente": "01",
+    "fecEmi": "2026-09-04",
+    "tipoModelo": 1,
+    "tipoDte": "05",
+    "version": 3,
+    "tipoMoneda": "USD",
+    "motivoContin": null,
+    "horEmi": "08:00:00"
+  },
+  "emisor": {
+    "descActividad": "Transporte de carga internacional",
+    "tipoEstablecimiento": "02",
+    "codActividad": "49233",
+    "correo": "info@grupomegaload.com",
+    "nit": "06141101161042",
+    "direccion": {
+      "complemento": "POLIG. E, CTON. FLOR AMARILLA, LOTE 626 C,",
+      "municipio": "25",
+      "departamento": "05"
+    },
+    "nombreComercial": "MEGALOAD, S.A. DE C.V.",
+    "telefono": "25305293",
+    "nombre": "MEGALOAD, S.A. DE C.V.",
+    "nrc": "2473109"
+  },
+  "receptor": {
+    "nit": "06062901081015",
+    "nrc": "1856318",
+    "correo": "factura.electronica@imfica.com",
+    "nombre": "IMFICA, S.A. DE C.V.",
+    "telefono": "22746721",
+    "direccion": {
+      "municipio": "23",
+      "complemento": "CALLE SAN ANTONIO ABAD PSJ. ZARAGOZA RES. MONTEFRESCO #77",
+      "departamento": "06"
+    },
+    "codActividad": "25999",
+    "descActividad": "Fabricación de productos elaborados de metal ncp",
+    "nombreComercial": "IMFICA, S.A. DE C.V."
+  },
+  "documentoRelacionado": [
+    {
+      "tipoDocumento": "03",
+      "fechaEmision": "2026-09-03",
+      "numeroDocumento": "C579D65F-20FF-443E-8736-7CC58BDCFDE5",
+      "tipoGeneracion": 1
+    }
+  ],
+  "resumen": {
+    "totalNoSuj": 0,
+    "ivaPerci1": 0,
+    "descuNoSuj": 0,
+    "totalLetras": "TRES MIL QUINIENTOS CINCUENTA Y DOS CON 72/100 U.S. DOLARES",
+    "ivaRete1": 0,
+    "subTotal": 3144,
+    "reteRenta": 0,
+    "subTotalVentas": 3144,
+    "tributos": [
+      {
+        "descripcion": "Impuesto al Valor Agregado 13%",
+        "codigo": "20",
+        "valor": 408.72
+      }
+    ],
+    "descuExenta": 0,
+    "totalDescu": 0,
+    "descuGravada": 0,
+    "totalGravada": 3144,
+    "montoTotalOperacion": 3552.72,
+    "totalExenta": 0,
+    "condicionOperacion": 1
+  },
+  "cuerpoDocumento": [
+    {
+      "codigo": null,
+      "numItem": 1,
+      "cantidad": 1,
+      "tipoItem": 2,
+      "tributos": [
+        "20"
+      ],
+      "precioUni": 400,
+      "uniMedida": 59,
+      "codTributo": null,
+      "montoDescu": 0,
+      "ventaNoSuj": 0,
+      "descripcion": "Cabezal y lowboy convencional desenganchable (Traslado ida y regreso hacia Planta IMFICA Apopa)",
+      "ventaExenta": 0,
+      "ventaGravada": 400,
+      "numeroDocumento": "C579D65F-20FF-443E-8736-7CC58BDCFDE5"
+    },
+    {
+      "codigo": null,
+      "numItem": 2,
+      "cantidad": 7,
+      "tipoItem": 2,
+      "tributos": [
+        "20"
+      ],
+      "precioUni": 392,
+      "uniMedida": 59,
+      "codTributo": null,
+      "montoDescu": 0,
+      "ventaNoSuj": 0,
+      "descripcion": "Telehander de 4 tons - por día (8 horas minimas por dia; 58.80 por hora extraordinaria)",
+      "ventaExenta": 0,
+      "ventaGravada": 2744,
+      "numeroDocumento": "C579D65F-20FF-443E-8736-7CC58BDCFDE5"
+    }
+  ],
+  "extension": {
+    "docuEntrega": null,
+    "observaciones": "",
+    "nombRecibe": null,
+    "nombEntrega": null,
+    "docuRecibe": null
+  },
+  "ventaTercero": null,
+  "apendice": null
+}
+
+eyJhbGciOiJSUzUxMiJ9.ew0KICAiaWRlbnRpZmljYWNpb24iIDogew0KICAgICJjb2RpZ29HZW5lcmFjaW9uIiA6ICI2OTdDNUE2NS0yRDQ4LTQ3RkEtQUNDMy0xQTJDMjIzM0VFMDAiLA0KICAgICJ0aXBvQ29udGluZ2VuY2lhIiA6IG51bGwsDQogICAgIm51bWVyb0NvbnRyb2wiIDogIkRURS0wNS1NMDAxUDAwMS0wMDAwMDAwMDAwMDAwMzQiLA0KICAgICJ0aXBvT3BlcmFjaW9uIiA6IDEsDQogICAgImFtYmllbnRlIiA6ICIwMSIsDQogICAgImZlY0VtaSIgOiAiMjAyNi0wOS0wNCIsDQogICAgInRpcG9Nb2RlbG8iIDogMSwNCiAgICAidGlwb0R0ZSIgOiAiMDUiLA0KICAgICJ2ZXJzaW9uIiA6IDMsDQogICAgInRpcG9Nb25lZGEiIDogIlVTRCIsDQogICAgIm1vdGl2b0NvbnRpbiIgOiBudWxsLA0KICAgICJob3JFbWkiIDogIjA4OjAwOjAwIg0KICB9LA0KICAiZW1pc29yIiA6IHsNCiAgICAiZGVzY0FjdGl2aWRhZCIgOiAiVHJhbnNwb3J0ZSBkZSBjYXJnYSBpbnRlcm5hY2lvbmFsIiwNCiAgICAidGlwb0VzdGFibGVjaW1pZW50byIgOiAiMDIiLA0KICAgICJjb2RBY3RpdmlkYWQiIDogIjQ5MjMzIiwNCiAgICAiY29ycmVvIiA6ICJpbmZvQGdydXBvbWVnYWxvYWQuY29tIiwNCiAgICAibml0IiA6ICIwNjE0MTEwMTE2MTA0MiIsDQogICAgImRpcmVjY2lvbiIgOiB7DQogICAgICAiY29tcGxlbWVudG8iIDogIlBPTElHLiBFLCBDVE9OLiBGTE9SIEFNQVJJTExBLCBMT1RFIDYyNiBDLCIsDQogICAgICAibXVuaWNpcGlvIiA6ICIyNSIsDQogICAgICAiZGVwYXJ0YW1lbnRvIiA6ICIwNSINCiAgICB9LA0KICAgICJub21icmVDb21lcmNpYWwiIDogIk1FR0FMT0FELCBTLkEuIERFIEMuVi4iLA0KICAgICJ0ZWxlZm9ubyIgOiAiMjUzMDUyOTMiLA0KICAgICJub21icmUiIDogIk1FR0FMT0FELCBTLkEuIERFIEMuVi4iLA0KICAgICJucmMiIDogIjI0NzMxMDkiDQogIH0sDQogICJyZWNlcHRvciIgOiB7DQogICAgIm5pdCIgOiAiMDYwNjI5MDEwODEwMTUiLA0KICAgICJucmMiIDogIjE4NTYzMTgiLA0KICAgICJjb3JyZW8iIDogImZhY3R1cmEuZWxlY3Ryb25pY2FAaW1maWNhLmNvbSIsDQogICAgIm5vbWJyZSIgOiAiSU1GSUNBLCBTLkEuIERFIEMuVi4iLA0KICAgICJ0ZWxlZm9ubyIgOiAiMjI3NDY3MjEiLA0KICAgICJkaXJlY2Npb24iIDogew0KICAgICAgIm11bmljaXBpbyIgOiAiMjMiLA0KICAgICAgImNvbXBsZW1lbnRvIiA6ICJDQUxMRSBTQU4gQU5UT05JTyBBQkFEIFBTSi4gWkFSQUdPWkEgUkVTLiBNT05URUZSRVNDTyAjNzciLA0KICAgICAgImRlcGFydGFtZW50byIgOiAiMDYiDQogICAgfSwNCiAgICAiY29kQWN0aXZpZGFkIiA6ICIyNTk5OSIsDQogICAgImRlc2NBY3RpdmlkYWQiIDogIkZhYnJpY2FjacOzbiBkZSBwcm9kdWN0b3MgZWxhYm9yYWRvcyBkZSBtZXRhbCBuY3AiLA0KICAgICJub21icmVDb21lcmNpYWwiIDogIklNRklDQSwgUy5BLiBERSBDLlYuIg0KICB9LA0KICAiZG9jdW1lbnRvUmVsYWNpb25hZG8iIDogWyB7DQogICAgInRpcG9Eb2N1bWVudG8iIDogIjAzIiwNCiAgICAiZmVjaGFFbWlzaW9uIiA6ICIyMDI2LTA5LTAzIiwNCiAgICAibnVtZXJvRG9jdW1lbnRvIiA6ICJDNTc5RDY1Ri0yMEZGLTQ0M0UtODczNi03Q0M1OEJEQ0ZERTUiLA0KICAgICJ0aXBvR2VuZXJhY2lvbiIgOiAxDQogIH0gXSwNCiAgInJlc3VtZW4iIDogew0KICAgICJ0b3RhbE5vU3VqIiA6IDAsDQogICAgIml2YVBlcmNpMSIgOiAwLA0KICAgICJkZXNjdU5vU3VqIiA6IDAsDQogICAgInRvdGFsTGV0cmFzIiA6ICJUUkVTIE1JTCBRVUlOSUVOVE9TIENJTkNVRU5UQSBZIERPUyBDT04gNzIvMTAwIFUuUy4gRE9MQVJFUyIsDQogICAgIml2YVJldGUxIiA6IDAsDQogICAgInN1YlRvdGFsIiA6IDMxNDQsDQogICAgInJldGVSZW50YSIgOiAwLA0KICAgICJzdWJUb3RhbFZlbnRhcyIgOiAzMTQ0LA0KICAgICJ0cmlidXRvcyIgOiBbIHsNCiAgICAgICJkZXNjcmlwY2lvbiIgOiAiSW1wdWVzdG8gYWwgVmFsb3IgQWdyZWdhZG8gMTMlIiwNCiAgICAgICJjb2RpZ28iIDogIjIwIiwNCiAgICAgICJ2YWxvciIgOiA0MDguNzINCiAgICB9IF0sDQogICAgImRlc2N1RXhlbnRhIiA6IDAsDQogICAgInRvdGFsRGVzY3UiIDogMCwNCiAgICAiZGVzY3VHcmF2YWRhIiA6IDAsDQogICAgInRvdGFsR3JhdmFkYSIgOiAzMTQ0LA0KICAgICJtb250b1RvdGFsT3BlcmFjaW9uIiA6IDM1NTIuNzIsDQogICAgInRvdGFsRXhlbnRhIiA6IDAsDQogICAgImNvbmRpY2lvbk9wZXJhY2lvbiIgOiAxDQogIH0sDQogICJjdWVycG9Eb2N1bWVudG8iIDogWyB7DQogICAgImNvZGlnbyIgOiBudWxsLA0KICAgICJudW1JdGVtIiA6IDEsDQogICAgImNhbnRpZGFkIiA6IDEsDQogICAgInRpcG9JdGVtIiA6IDIsDQogICAgInRyaWJ1dG9zIiA6IFsgIjIwIiBdLA0KICAgICJwcmVjaW9VbmkiIDogNDAwLA0KICAgICJ1bmlNZWRpZGEiIDogNTksDQogICAgImNvZFRyaWJ1dG8iIDogbnVsbCwNCiAgICAibW9udG9EZXNjdSIgOiAwLA0KICAgICJ2ZW50YU5vU3VqIiA6IDAsDQogICAgImRlc2NyaXBjaW9uIiA6ICJDYWJlemFsIHkgbG93Ym95IGNvbnZlbmNpb25hbCBkZXNlbmdhbmNoYWJsZSAoVHJhc2xhZG8gaWRhIHkgcmVncmVzbyBoYWNpYSBQbGFudGEgSU1GSUNBIEFwb3BhKSIsDQogICAgInZlbnRhRXhlbnRhIiA6IDAsDQogICAgInZlbnRhR3JhdmFkYSIgOiA0MDAsDQogICAgIm51bWVyb0RvY3VtZW50byIgOiAiQzU3OUQ2NUYtMjBGRi00NDNFLTg3MzYtN0NDNThCRENGREU1Ig0KICB9LCB7DQogICAgImNvZGlnbyIgOiBudWxsLA0KICAgICJudW1JdGVtIiA6IDIsDQogICAgImNhbnRpZGFkIiA6IDcsDQogICAgInRpcG9JdGVtIiA6IDIsDQogICAgInRyaWJ1dG9zIiA6IFsgIjIwIiBdLA0KICAgICJwcmVjaW9VbmkiIDogMzkyLA0KICAgICJ1bmlNZWRpZGEiIDogNTksDQogICAgImNvZFRyaWJ1dG8iIDogbnVsbCwNCiAgICAibW9udG9EZXNjdSIgOiAwLA0KICAgICJ2ZW50YU5vU3VqIiA6IDAsDQogICAgImRlc2NyaXBjaW9uIiA6ICJUZWxlaGFuZGVyIGRlIDQgdG9ucyAtIHBvciBkw61hICg4IGhvcmFzIG1pbmltYXMgcG9yIGRpYTsgNTguODAgcG9yIGhvcmEgZXh0cmFvcmRpbmFyaWEpIiwNCiAgICAidmVudGFFeGVudGEiIDogMCwNCiAgICAidmVudGFHcmF2YWRhIiA6IDI3NDQsDQogICAgIm51bWVyb0RvY3VtZW50byIgOiAiQzU3OUQ2NUYtMjBGRi00NDNFLTg3MzYtN0NDNThCRENGREU1Ig0KICB9IF0sDQogICJleHRlbnNpb24iIDogew0KICAgICJkb2N1RW50cmVnYSIgOiBudWxsLA0KICAgICJvYnNlcnZhY2lvbmVzIiA6ICIiLA0KICAgICJub21iUmVjaWJlIiA6IG51bGwsDQogICAgIm5vbWJFbnRyZWdhIiA6IG51bGwsDQogICAgImRvY3VSZWNpYmUiIDogbnVsbA0KICB9LA0KICAidmVudGFUZXJjZXJvIiA6IG51bGwsDQogICJhcGVuZGljZSIgOiBudWxsDQp9.R2ROX6FMdbE4QuHOPa1Znoy9cu7LsiirQrvwK966FIh79lzmI83FZOR45zH4XCgJfk0H0e8U2brdSYb8q5b6C4BgLbvWHFj1kOT2D6smNhywIWVJ2WalORWF-h-afUEJLuorG1IvVAHgD49-jtVBVyLdO-mtlHqcwzTwc-P1eyBUTJ0lvt4XvZ-y_ADc6fwn6eqNIIKxsfgu9bpEmjRpcZudB0LeTML3aicuwX1vokhL3Oy1OcZN9RWFokD7SAgayRhj9D1Q4ArwW4rzP_-w4E-V0P-L01UELYGmhOBMLpjnfXk538WGU4l7Ugl8E0I8vd0GDf9kHmnS_NZJjN8HSA
+
+
+{
+  "version": 2,
+  "ambiente": "01",
+  "versionApp": 2,
+  "estado": "PROCESADO",
+  "codigoGeneracion": "697C5A65-2D48-47FA-ACC3-1A2C2233EE00",
+  "selloRecibido": "2026D90F93574C7445999BA69CC3D8A0C77CPYUM",
+  "fhProcesamiento": "05/09/2026 01:16:08",
+  "clasificaMsg": "10",
+  "codigoMsg": "002",
+  "descripcionMsg": "RECIBIDO CON OBSERVACIONES",
+  "observaciones": [
+    "[identificacion.fecEmi] DIFIERE DE LA FECHA DE ENVIO"
+  ]
+}
