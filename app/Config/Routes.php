@@ -14,6 +14,7 @@ $routes->group('', ['filter' => 'auth'], function ($routes) {
     $routes->get('facturas/', 'FacturasController::index');
     $routes->get('facturas/facturasToMH', 'FacturasController::getfacturas');
     $routes->get('facturas/procesarDTE/(:segment)','FacturasController::procesarDTE/$1');
+    $routes->get('facturas/procesarDTE/(:segment)/(:segment)', 'FacturasController::procesarDTE/$1/$2');
     $routes->get('facturas-procesadas', 'FacturasController::facturas_procesadas');
     $routes->get('facturas/sellos', 'FacturasController::facturas_procesadas_data');
     $routes->get('facturas/mostrarErrorMH/(:any)', 'FacturasController::mostrarErrorMH/$1');
@@ -22,6 +23,7 @@ $routes->group('', ['filter' => 'auth'], function ($routes) {
     $routes->get('facturas/reenviar-dte/(:segment)','FacturasController::reenviardte/$1');
     $routes->get('facturas/descargar-json/(:segment)', 'FacturasController::descargarJSON/$1');
     $routes->get('facturas/generar-pdf/(:segment)', 'FacturasController::generarPDF/$1');
+    $routes->get('facturas/generar-pdf-invalidacion/(:segment)', 'FacturasController::generarPDFInvalidacion/$1');
     $routes->get('facturas/total-sellos-archivo', 'FacturasController::facturas_archivadas_total');
     $routes->get('facturas/dte-correo-data/(:segment)', 'FacturasController::factura_correo_receptor/$1');
     $routes->post('facturas/dte-correo-data-process/(:segment)', 'FacturasController::factura_reenviar_correo/$1');
