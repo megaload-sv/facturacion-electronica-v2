@@ -80,6 +80,9 @@ $(document).ready(function () {
             let rowClass = parseInt(sello.idEstadoDTE) === 4 ? 'fila-inactiva' : '';
 
             let btnInvalidar = '';
+            const btnPDFInvalidacion = parseInt(sello.idEstadoDTE) === 4
+                ? `<a target="_blank" rel="noopener" href="facturas/generar-pdf-invalidacion/${encodeURIComponent(sello.codigoGeneracion)}" class="btn btn-sm btn-outline-primary">PDF de invalidación</a><br>`
+                : '';
 
             if (parseInt(sello.idEstadoDTE) !== 4) {
                 btnInvalidar = `
@@ -118,6 +121,7 @@ $(document).ready(function () {
                     <a target="_blank" href="facturas/descargar-json/${sello.codigoGeneracion}" class="btn btn-sm btn-outline-primary">Descargar JSON</a><br>
                     <a href="facturas/enviar-correo/${sello.codigoGeneracion}" class="btn btn-sm btn-outline-primary enviarCorreo" data-codigo-generacion="${sello.codigoGeneracion}">Enviar Correo</a><br>
                     ${btnInvalidar}
+                    ${btnPDFInvalidacion}
                 </td>
             </tr>
         `;
