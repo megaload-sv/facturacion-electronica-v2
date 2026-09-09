@@ -62,7 +62,7 @@ class FacturasController extends BaseController
         $this->codigoPuntoVenta = $codigoPuntoVenta;
     }
 
-    public function procesarDTE(string $factura)
+    public function procesarDTE(string $factura, string $tipoDoc = null)
     {
 
         $db = \Config\Database::connect();
@@ -82,28 +82,57 @@ class FacturasController extends BaseController
                 $dataSeguridad = $this->modelSeguridad->getConfigByEnvironment();
 
                 //Obteniendo el dteJson
-                $responseFactura = $client->request('GET', $dataSeguridad['urlGetJson'] . $factura, ['verify' => false, 'http_errors' => false]);
+                $responseFactura = $client->request('GET', $dataSeguridad['urlGetJson'] . $factura . '/' . $tipoDoc, ['verify' => false, 'http_errors' => false]);
 
                 $newData = json_decode($responseFactura->getBody());
 
                 if (json_last_error() !== JSON_ERROR_NONE) {
-                    throw new \RuntimeException('El JSON recibido desde ERP no es válido: ' . json_last_error_msg());
+                    $db->transRollback();
+                    return $this->response->setStatusCode(400)->setJSON([
+                        'error' => true,
+                        'message' => 'La respuesta del ERP no contiene un JSON válido.',
+                        'detalle' => [json_last_error_msg()],
+                    ]);
                 }
 
-                $validacion = $this->validarJsonBaseDTE($newData);
+                $validator = new JsonValidator();
+                $validacion = $validator->validateErpResponse($newData);
 
                 if ($validacion['error']) {
+                    $db->transRollback();
                     return $this->response->setStatusCode(400)->setJSON($validacion);
                 }
 
                 $this->setCodigoPuntoVenta($newData->datainfo->codigoPuntoVenta);
+                $tipoDte = $newData->data->identificacion->tipoDte;
+                $newData->datainfo->codigoTipoDTE = $tipoDte;
+                $nodoReceptor = $validator->getRecipientNode($tipoDte);
+                $receptor = $newData->data->$nodoReceptor ?? null;
 
                 //Obteniendo informacion general para incorporar al json
                 $factDatosGenerales = $this->modelFactura->get_informacion_general($this->codigoPuntoVenta);
+                if (!$factDatosGenerales) {
+                    throw new \RuntimeException('No existe configuración del emisor para el punto de venta.');
+                }
 
-                //Cargando distrito de Emisor y receptor
-                if ($newData->data->identificacion->tipoDte != "11" && $newData->datainfo->codPais == "SV") {
-                    $distritoReceptor = $this->modelFactura->getDistritoByCodeMunicipioCodeDepartamento($newData->data->receptor->direccion->municipio, $newData->data->receptor->direccion->departamento);
+                // Solo transformar direcciones presentes. Los campos ausentes,
+                // tipos incorrectos y nodos null los decide el esquema del DTE.
+                $direccionReceptor = $receptor instanceof \stdClass ? ($receptor->direccion ?? null) : null;
+                if ($tipoDte !== '11' && $newData->datainfo->codPais === 'SV'
+                    && $direccionReceptor instanceof \stdClass
+                    && is_string($direccionReceptor->municipio ?? null)
+                    && is_string($direccionReceptor->departamento ?? null)
+                    && $direccionReceptor->municipio !== '' && $direccionReceptor->departamento !== '') {
+                    $distritoReceptor = $this->modelFactura->getDistritoByCodeMunicipioCodeDepartamento($direccionReceptor->municipio, $direccionReceptor->departamento);
+                    if (!$distritoReceptor || !isset($distritoReceptor->codigo)) {
+                        $db->transRollback();
+                        return $this->response->setStatusCode(400)->setJSON([
+                            'error' => true,
+                            'message' => 'Revisa la dirección del destinatario.',
+                            'detalle' => ["[data.{$nodoReceptor}.direccion] No se encontró el distrito para el municipio y departamento indicados."],
+                        ]);
+                    }
+                    $direccionReceptor->municipio = $distritoReceptor->codigo;
                 }
 
                 $anioActual = (int)date('Y');
@@ -112,7 +141,7 @@ class FacturasController extends BaseController
                 $factCorrelativo = $this->modelFactura->get_correlativo_por_tipo_documento($newData->datainfo->codigoTipoDTE, $anioActual);
 
                 if (empty($factCorrelativo) === true) {
-                    $this->correlativoFacturas->setNextCorrelativo($newData->datainfo->codigoTipoDTE, $newData->data->emisor->codPuntoVenta, $anioActual);
+                    $this->correlativoFacturas->setNextCorrelativo($tipoDte, $factDatosGenerales->codigoPuntoVenta, $anioActual);
                     $factCorrelativo = $this->modelFactura->get_correlativo_por_tipo_documento($newData->datainfo->codigoTipoDTE, $anioActual);
                 }
 
@@ -124,42 +153,34 @@ class FacturasController extends BaseController
                 //seteando valores generales en el json, terminando de construir
                 $newData->data->identificacion->ambiente = $dataSeguridad['ambiente'];
                 $newData->data->identificacion->numeroControl = $factCorrelativo->corre;
-                $newData->data->emisor->nit = str_replace("-", "", $factDatosGenerales->nit);
-                $newData->data->emisor->nrc = $factDatosGenerales->nrc;
-                $newData->data->emisor->nombre = $factDatosGenerales->nombreRazonSocial;
-                $newData->data->emisor->codActividad = $factDatosGenerales->codigoActividad;
-                $newData->data->emisor->descActividad = $factDatosGenerales->descripcionActividad;
-                $newData->data->emisor->nombreComercial = $factDatosGenerales->nombreComercial;
-                $newData->data->emisor->tipoEstablecimiento = $factDatosGenerales->codigoTipoEstablecimiento;
+                $newData->data->emisor ??= new \stdClass();
+                $newData->data->emisor->direccion ??= new \stdClass();
                 $newData->data->emisor->direccion->departamento = $factDatosGenerales->codigoDepartamento;
                 $newData->data->emisor->direccion->municipio = $factDatosGenerales->codigoDistrito;
                 $newData->data->emisor->direccion->complemento = $factDatosGenerales->direccion;
-                $newData->data->emisor->telefono = $factDatosGenerales->telefono;
-                $newData->data->emisor->correo = $factDatosGenerales->correo;
-                $newData->data->emisor->codEstableMH = $factDatosGenerales->codigoMH;
-                $newData->data->emisor->codEstable = $factDatosGenerales->idSucursal;
-                $newData->data->emisor->codPuntoVentaMH = $factDatosGenerales->codigoPuntoVentaMH;
-                $newData->data->emisor->codPuntoVenta = $factDatosGenerales->codigoPuntoVenta;
+                $validator->completeEmisor($tipoDte, $newData->data->emisor, [
+                    'nit' => str_replace('-', '', $factDatosGenerales->nit),
+                    'nrc' => $factDatosGenerales->nrc,
+                    'nombre' => $factDatosGenerales->nombreRazonSocial,
+                    'codActividad' => $factDatosGenerales->codigoActividad,
+                    'descActividad' => $factDatosGenerales->descripcionActividad,
+                    'nombreComercial' => $factDatosGenerales->nombreComercial,
+                    'tipoEstablecimiento' => $factDatosGenerales->codigoTipoEstablecimiento,
+                    'telefono' => $factDatosGenerales->telefono,
+                    'correo' => $factDatosGenerales->correo,
+                    'codEstableMH' => $factDatosGenerales->codigoMH,
+                    'codEstable' => $factDatosGenerales->idSucursal,
+                    'codPuntoVentaMH' => $factDatosGenerales->codigoPuntoVentaMH,
+                    'codPuntoVenta' => $factDatosGenerales->codigoPuntoVenta,
+                ]);
 
-                //cambiando datos de distrito en el receptor
-                if ($newData->data->identificacion->tipoDte != "11" && $newData->datainfo->codPais == "SV") {
-                    $newData->data->receptor->direccion->municipio = $distritoReceptor->codigo;
+                // Validar el DTE definitivo, antes de agregar firma y sello.
+                $result = $validator->validateJson($tipoDte, $newData->data);
+
+                if (!$result['valid']) {
+                    $db->transRollback();
+                    return $this->response->setStatusCode(400)->setJSON($result);
                 }
-
-
-                $validator = new JsonValidator();
-
-                // Llamar a la función de validación
-                //$result = $validator->validateJson("01", $newData->data);
-
-                //if ($result['valid']) {
-                //echo "El JSON es válido.";
-                // } else {
-                //echo "El JSON no es válido:\n";
-                //echo implode("\n", $result['errors']);
-                //throw new \Exception('El JSON no es válido.');
-                //}
-                ;
                 unset($client);
 
                 //header('Content-Type: application/json; charset=utf-8');            
@@ -240,7 +261,7 @@ class FacturasController extends BaseController
                 $idSelloInterno = $modelSellos->insert($dataSello);
 
 
-                $this->correlativoFacturas->setNextCorrelativo($newData->datainfo->codigoTipoDTE, $newData->data->emisor->codPuntoVenta, $anioActual);
+                $this->correlativoFacturas->setNextCorrelativo($tipoDte, $factDatosGenerales->codigoPuntoVenta, $anioActual);
 
                 $db->transCommit();
                 $jsonDTE = json_encode($newData->data);
@@ -250,8 +271,8 @@ class FacturasController extends BaseController
                 $datos->dte = new \stdClass();
 
                 // Receptor
-                $datos->receptor->nombre = $newData->data->receptor->nombre ?? '';
-                $datos->receptor->correo = $newData->data->receptor->correo ?? '';
+                $datos->receptor->nombre = $receptor->nombre ?? '';
+                $datos->receptor->correo = $receptor->correo ?? '';
 
                 // DTE
                 $datos->dte->fecEmi = $newData->data->identificacion->fecEmi ?? '';
@@ -285,7 +306,8 @@ class FacturasController extends BaseController
                             'estadoMH'        => $responseSelloData->estado ?? '',
                             'selloRecibido'   => $responseSelloData->selloRecibido ?? '',
                             'fhProcesamiento' => $fechaFormateada ?? '',
-                            'jsonDTE'         => $newData->data
+                            'jsonDTE'         => $newData->data,
+                            'tipoDTE'         => $newData->datainfo->prefix ?? '',
                         ];
 
                         $facturaProcesada = $clientProcesarDocERP->request(
@@ -315,8 +337,10 @@ class FacturasController extends BaseController
 
                 // 2. Luego intentar enviar correo, pero sin afectar ERP
                 $correo = trim((string)($datos->receptor->correo ?? ''));
+                $esProduccion = ENVIRONMENT === 'production';
 
                 if (
+                    $esProduccion &&
                     ($responseSelloData->estado ?? '') !== 'RECHAZADO' &&
                     !empty($correo) &&
                     filter_var($correo, FILTER_VALIDATE_EMAIL)
@@ -345,11 +369,13 @@ class FacturasController extends BaseController
                     }
                 } else {
 
-                    // Correo omitido: rechazado, vacío o inválido
+                    // Solo enviar correos en producción y registrar el motivo de la omisión.
                     $modelSellos->update($idSelloInterno, [
                         'correoEnviado'      => 0,
                         'fechaCorreoEnviado' => null,
-                        'errorCorreo'        => 'Correo omitido: DTE rechazado, correo vacío o correo inválido.',
+                        'errorCorreo'        => !$esProduccion
+                            ? 'Correo omitido: el sistema no está en modo producción.'
+                            : 'Correo omitido: DTE rechazado, correo vacío o correo inválido.',
                     ]);
 
                     $dataSelloProcesado['correoEnviado'] = false;
@@ -362,6 +388,7 @@ class FacturasController extends BaseController
 
                 $dataSelloProcesado['error'] = true;
                 $dataSelloProcesado['message'] = "La Factura ya ha sido procesada anteriormente.";
+                $db->transRollback();
                 header('Content-Type: application/json; charset=utf-8');
                 return $this->response->setJSON($dataSelloProcesado);
             }
@@ -497,6 +524,12 @@ class FacturasController extends BaseController
                 break;
             case "03":
                 $ruta = $this->generarCreditoFiscal($jsonDTE, $jsonSello, $guardarEnDisco, $termsData, $jsonInvalidate, $estimateNumber);
+                break;
+            case "05":
+                $ruta = $this->generarNotaCredito($jsonDTE, $jsonSello, $guardarEnDisco, $termsData, $jsonInvalidate, $estimateNumber);
+                break;
+            case "06":
+                $ruta = $this->generarNotaDebito($jsonDTE, $jsonSello, $guardarEnDisco, $termsData, $jsonInvalidate, $estimateNumber);
                 break;
             default:
                 return $this->response->setStatusCode(400, 'Tipo de documento no soportado');
@@ -2206,6 +2239,54 @@ class FacturasController extends BaseController
         }
     }
 
+    public function generarPDFInvalidacion($codigoGeneracion)
+    {
+        $registro = (new SellosdteModel())->getJsonDTEByCodigoGeneracion($codigoGeneracion);
+        if (!$registro) {
+            return $this->response->setStatusCode(404)->setBody('DTE no encontrado.');
+        }
+        $generador = new \App\Libraries\InvalidacionPdf();
+        try {
+            $evento = $generador->obtenerEvento($registro);
+        } catch (\DomainException | \UnexpectedValueException $exception) {
+            return $this->response->setStatusCode(409)->setBody($exception->getMessage());
+        }
+        $pdf = $generador->generar($evento, json_decode($registro['jsonAnulacion']));
+        return $this->response->setHeader('Content-Type', 'application/pdf')
+            ->setHeader('Content-Disposition', 'inline; filename="Invalidacion_' . $codigoGeneracion . '.pdf"')
+            ->setBody($pdf->Output('', 'S'));
+    }
+
+    private function generarNotaCredito($jsonDTE, $jsonSello, $guardarEnDisco = true, $condiciones = '', $invalidado = '', $estimateNumber = '')
+    {
+        return $this->generarNota($jsonDTE, $jsonSello, $guardarEnDisco, $condiciones, $invalidado, $estimateNumber);
+    }
+
+    private function generarNotaDebito($jsonDTE, $jsonSello, $guardarEnDisco = true, $condiciones = '', $invalidado = '', $estimateNumber = '')
+    {
+        return $this->generarNota($jsonDTE, $jsonSello, $guardarEnDisco, $condiciones, $invalidado, $estimateNumber);
+    }
+
+    private function generarNota($jsonDTE, $jsonSello, $guardarEnDisco, $condiciones, $invalidado, $estimateNumber)
+    {
+        $pdf = (new \App\Libraries\NotaPdf())->generar(
+            $jsonDTE, $jsonSello, (string) $condiciones, (string) $invalidado, (string) $estimateNumber,
+            function ($codigo) {
+                $unidad = $this->modelMantenimientos->obtenerUnidad($codigo);
+                return $unidad[0]['Unidad'] ?? (string) $codigo;
+            }
+        );
+        $codigoGeneracion = $jsonDTE->identificacion->codigoGeneracion;
+        if ($guardarEnDisco) {
+            $ruta = WRITEPATH . 'uploads/' . $codigoGeneracion . '.pdf';
+            $pdf->Output($ruta, 'F');
+            return $ruta;
+        }
+        return $this->response->setHeader('Content-Type', 'application/pdf')
+            ->setHeader('Content-Disposition', 'inline; filename="DTE_' . $codigoGeneracion . '.pdf"')
+            ->setBody($pdf->Output('', 'S'));
+    }
+
     function generarCodigoQR($data)
     {
 
@@ -2644,8 +2725,6 @@ class FacturasController extends BaseController
         ];
 
 
-        // dd($datos->receptor->correo);
-
         try {
             $this->procesarCorreoConArchivosAdjuntos($codigoGeneracion, $row['jsonDTE'], $datos, "");
 
@@ -2690,197 +2769,4 @@ class FacturasController extends BaseController
         }
     }
 
-    private function validarJsonBaseDTE($newData): array
-    {
-        $errores = [];
-
-        if (!$newData || !is_object($newData)) {
-            $errores[] = 'La respuesta no contiene un objeto JSON válido.';
-        }
-
-        if (!isset($newData->error)) {
-            $errores[] = 'Falta la propiedad principal: error.';
-        }
-
-        if (!isset($newData->datainfo) || !is_object($newData->datainfo)) {
-            $errores[] = 'Falta el nodo datainfo, Favor revisar los datos de la factura en el ERP.';
-        }
-
-        if (!isset($newData->data) || !is_object($newData->data)) {
-            $errores[] = 'Falta el nodo data. Favor revisar los datos de la factura en el ERP.';
-        }
-
-        if (!empty($errores)) {
-            return [
-                'error'   => true,
-                'message' => 'La estructura base del JSON recibido no es válida.',
-                'detalle' => $errores
-            ];
-        }
-
-        $tipoDte = isset($newData->datainfo->codigoTipoDTE)
-            ? (int)$newData->datainfo->codigoTipoDTE
-            : 0;
-
-        // Validar datainfo
-        $this->validarCamposRequeridos($newData->datainfo, [
-            'identicadorNumInterno',
-            'correlativoFactCRM',
-            'codigoGeneracion',
-            'codigoTipoDTE',
-            'version',
-            'fechaFactura',
-            'codigoPuntoVenta'
-        ], 'datainfo', $errores);
-
-        // Validar data.identificacion
-        if (!isset($newData->data->identificacion) || !is_object($newData->data->identificacion)) {
-            $errores[] = 'Falta el nodo data.identificacion.';
-        } else {
-            $this->validarCamposRequeridos($newData->data->identificacion, [
-                'version',
-                'tipoDte',
-                'codigoGeneracion',
-                'tipoModelo',
-                'tipoOperacion',
-                'fecEmi',
-                'horEmi',
-                'tipoMoneda'
-            ], 'data.identificacion', $errores);
-        }
-
-        // Validar emisor
-        if (!isset($newData->data->emisor) || !is_object($newData->data->emisor)) {
-            $errores[] = 'Falta el nodo data.emisor.';
-        } else {
-            if (!isset($newData->data->emisor->direccion) || !is_object($newData->data->emisor->direccion)) {
-                $errores[] = 'Falta el nodo data.emisor.direccion.';
-            }
-        }
-
-        // Validar receptor
-        if (!isset($newData->data->receptor) || !is_object($newData->data->receptor)) {
-            $errores[] = 'Falta el nodo data.receptor.';
-        } else {
-
-            $camposReceptor= [];
-
-            if($newData->datainfo->codPais != "SV"){
-                $camposReceptor = [
-                    'nombre',
-                    'telefono',
-                    'correo'
-                ];
-            }else{
-                $camposReceptor = [
-                    'nombre',
-                    'descActividad',
-                    'telefono',
-                    'correo'
-                ];
-            }
-
-            // Reglas dinámicas
-            if ($tipoDte !== 1) { // No es consumidor final
-                $camposReceptor[] = 'nombreComercial';
-            }
-
-            if ($tipoDte !== 11 && $newData->datainfo->codPais == "SV") { // No es exportación y es El Salvador
-                $camposReceptor[] = 'codActividad';
-            }
-
-            // Validación final
-            $this->validarCamposRequeridos(
-                $newData->data->receptor,
-                $camposReceptor,
-                'data.receptor',
-                $errores
-            );
-
-            if($newData->datainfo->codigoTipoDTE != 11 && $newData->datainfo->codPais == "SV") { // No es exportación y es El Salvador
-                if (!isset($newData->data->receptor->direccion) || !is_object($newData->data->receptor->direccion)) {
-                    $errores[] = 'Falta el nodo data.receptor.direccion.';
-                }
-
-                $this->validarCamposRequeridos($newData->data->receptor->direccion, [
-                    'departamento',
-                    'municipio',
-                    'complemento'
-                ], 'data.receptor.direccion', $errores);
-            }
-
-        }
-
-        // Validar cuerpoDocumento
-        if (!isset($newData->data->cuerpoDocumento) || !is_array($newData->data->cuerpoDocumento) || count($newData->data->cuerpoDocumento) === 0) {
-            $errores[] = 'El nodo data.cuerpoDocumento no existe o está vacío.';
-        } else {
-            foreach ($newData->data->cuerpoDocumento as $index => $item) {
-
-                $camposCuerpoDocumento = [
-                    'numItem'
-                ];
-
-                if ($tipoDte !== 11) {
-                    $camposCuerpoDocumento[] = 'tipoItem';
-                }
-
-                $camposCuerpoDocumento = array_merge($camposCuerpoDocumento, [
-                    'cantidad',
-                    'uniMedida',
-                    'descripcion',
-                    'precioUni'
-                ]);
-
-                $this->validarCamposRequeridos(
-                    $item,
-                    $camposCuerpoDocumento,
-                    'data.cuerpoDocumento[' . $index . ']',
-                    $errores
-                );
-            }
-        }
-
-        // Validar resumen
-        if (!isset($newData->data->resumen) || !is_object($newData->data->resumen)) {
-            $errores[] = 'Falta el nodo data.resumen.';
-        } else {
-
-            $camposResumen = [
-                'montoTotalOperacion',
-                'totalPagar',
-                'totalLetras',
-                'condicionOperacion'
-            ];
-
-            // subTotal no es requerido para exportación
-            if ($tipoDte !== 11) {
-                $camposResumen[] = 'subTotal';
-            }
-
-            $this->validarCamposRequeridos(
-                $newData->data->resumen,
-                $camposResumen,
-                'data.resumen',
-                $errores
-            );
-        }
-
-        return [
-            'error'   => !empty($errores),
-            'message' => empty($errores)
-                ? 'Validación del JSON exitosa.'
-                : 'El JSON recibido no cumple con los datos mínimos requeridos.',
-            'detalle' => $errores
-        ];
-    }
-
-    private function validarCamposRequeridos($objeto, array $campos, string $ruta, array &$errores): void
-    {
-        foreach ($campos as $campo) {
-            if (!isset($objeto->$campo) || $objeto->$campo === null || $objeto->$campo === '') {
-                $errores[] = "El campo {$ruta}.{$campo} es requerido.";
-            }
-        }
-    }
 }
