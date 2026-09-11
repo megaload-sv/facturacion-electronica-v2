@@ -1,3 +1,6 @@
+function securityEscape(value) {
+    return String(value == null ? '' : value).replace(/[&<>"']/g, c => ({'&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'}[c]));
+}
 $(document).ready(function(){
 
     let currentPage = 1;
@@ -71,35 +74,35 @@ $(document).ready(function(){
                         trTable += '</td>';
 
                         trTable += '<td>';
-                        trTable += values.tipoDoc;
+                        trTable += securityEscape(values.tipoDoc);
                         trTable += '</td>';
 
                         trTable += '<td>';
-                        trTable += values.internal_number;
+                        trTable += securityEscape(values.internal_number);
                         trTable += '</td>';
 
                         trTable += '<td>';
-                        trTable += values.company;
+                        trTable += securityEscape(values.company);
                         trTable += '</td>';
 
                         trTable += '<td>';
-                        trTable += values.code_to_mh;
+                        trTable += securityEscape(values.code_to_mh);
                         trTable += '</td>';
 
                         trTable += '<td>';
-                        trTable += values.date;
+                        trTable += securityEscape(values.date);
                         trTable += '</td>';
 
                         trTable += '<td>';
-                        trTable += '<a href="#" class="btn btn-sm btn-outline-primary enviarToMH" data-codemh="' + values.code_to_mh + '" data-tipo-doc="' + values.prefix + '"> Enviar </a>';
+                        trTable += '<a href="#" class="btn btn-sm btn-outline-primary enviarToMH" data-codemh="' + securityEscape(values.code_to_mh) + '" data-tipo-doc="' + securityEscape(values.prefix) + '"> Enviar </a>';
                         trTable += '</td>';
                         /*
                                             var btnString = '';
 
                                             if(values.status_envio_mh == "1"){
-                                                btnString ='<a href="#" class="btn btn-sm btn-outline-success CosultarFactToMH" data-codemh="' + values.code_to_mh + '"> Consultar factura </a>';
+                                                btnString ='<a href="#" class="btn btn-sm btn-outline-success CosultarFactToMH" data-codemh="' + securityEscape(values.code_to_mh) + '"> Consultar factura </a>';
                                             }else if (values.status_envio_mh == "2"){
-                                                btnString = '<a href="#" class="btn btn-sm btn-outline-danger ReenviarToMH" data-codemh="' + values.code_to_mh + '"> Reenviar Factura </a>'
+                                                btnString = '<a href="#" class="btn btn-sm btn-outline-danger ReenviarToMH" data-codemh="' + securityEscape(values.code_to_mh) + '"> Reenviar Factura </a>'
                                             }
 
                                             trTable += '<td>';
@@ -171,7 +174,7 @@ $(document).ready(function(){
 
                 $.ajax({
                     url: url_base + 'facturas/procesarDTE/' + codemh + '/' + button.data('tipo-doc'),
-                    type: 'GET',
+                    type: 'POST',
                     dataType: 'json',
 
                     success: function (json) {

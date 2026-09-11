@@ -7,9 +7,9 @@
     </tr>
     <?php foreach ($menu_items as $menu_item): ?>
         <tr>
-            <td><?= $menu_item['name']; ?></td>
+            <td><?= esc($menu_item['name']) ?></td>
             <td>
-                <a href="/permission_menu/edit/<?= $menu_item['id']; ?>">Gestionar Permisos</a>
+                <a href="/permission_menu/edit/<?= esc($menu_item['id']) ?>">Gestionar Permisos</a>
             </td>
         </tr>
     <?php endforeach; ?>

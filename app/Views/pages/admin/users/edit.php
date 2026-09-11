@@ -10,6 +10,7 @@ Actualizar Usuario
     <div class="row justify-content-center">
         <div class="col-md-6">
             <form action="<?= base_url('users/update/' . $user['id']) ?>" method="post">
+<?= csrf_field() ?>
                 <div class="card card-primary">
                     <div class="card-header">
                         <h3 class="card-title">Actualizar Usuario</h3>
@@ -18,13 +19,13 @@ Actualizar Usuario
                         <!-- Nombre -->
                         <div class="form-group">
                             <label for="user_name">Nombre</label>
-                            <input type="text" name="user_name" id="user_name" class="form-control" value="<?= $user['username'] ?>" required>
+                            <input type="text" name="user_name" id="user_name" class="form-control" value="<?= esc($user['username']) ?>" required>
                         </div>
 
                         <!-- Email -->
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" name="email" id="email" class="form-control" value="<?= $user['email'] ?>" required>
+                            <input type="email" name="email" id="email" class="form-control" value="<?= esc($user['email']) ?>" required>
                         </div>
                     </div>
 

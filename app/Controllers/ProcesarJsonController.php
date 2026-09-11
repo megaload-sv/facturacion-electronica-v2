@@ -33,11 +33,26 @@ class ProcesarJsonController extends BaseController
             return redirect()->back()->with('error', 'Debe cargar al menos un archivo JSON.');
         }
 
+        if (count($uploadedFiles) > 100 || strlen($groupName) > 100) {
+            return redirect()->back()->with('error', 'Máximo 100 archivos y 100 caracteres para el grupo.');
+        }
+        $totalBytes = 0;
+        foreach ($uploadedFiles as $uploadedFile) {
+            $totalBytes += $uploadedFile->getSize();
+            if (!$uploadedFile->isValid() || strtolower($uploadedFile->getClientExtension()) !== 'json'
+                || $uploadedFile->getSize() > 2 * 1024 * 1024 || $totalBytes > 20 * 1024 * 1024) {
+                return redirect()->back()->with('error', 'Solo JSON: máximo 2 MB por archivo y 20 MB por carga.');
+            }
+        }
+
         $safeGroupName = strtolower($groupName);
         $safeGroupName = preg_replace('/\s+/', '_', $safeGroupName);
         $safeGroupName = preg_replace('/[^a-z0-9_\-]/', '_', $safeGroupName);
         $safeGroupName = preg_replace('/_+/', '_', $safeGroupName);
         $safeGroupName = trim($safeGroupName, '_');
+        if ($safeGroupName === '') {
+            return redirect()->back()->with('error', 'El nombre del grupo debe contener letras o números.');
+        }
         $targetFolder = WRITEPATH . 'uploads/json_process/' . $safeGroupName;
 
         if (is_dir($targetFolder)) {
@@ -65,9 +80,10 @@ class ProcesarJsonController extends BaseController
                 continue;
             }
 
-            $originalName = $file->getClientName();
-            $file->move($targetFolder, $originalName);
-            $newPath = $targetFolder . '/' . $originalName;
+            $originalName = basename(str_replace('\\', '/', $file->getClientName()));
+            $storedName = bin2hex(random_bytes(16)) . '.json';
+            $file->move($targetFolder, $storedName);
+            $newPath = $targetFolder . '/' . $storedName;
 
             $jsonContent = (string)file_get_contents($newPath);
             // Eliminar BOM UTF-8 si existe
@@ -134,6 +150,12 @@ class ProcesarJsonController extends BaseController
         ]);
 
         foreach ($rowsForExcel as $index => $row) {
+            foreach ($row as &$value) {
+                if (is_string($value) && preg_match('/^[\s]*[=+@-]/u', $value)) {
+                    $value = "'" . $value;
+                }
+            }
+            unset($value);
             fputcsv($fp, [
                 $index + 1,
                 $row['file_name'],
@@ -395,9 +417,9 @@ class ProcesarJsonController extends BaseController
 
             $sheet->setCellValue('A' . $rowNumber, $index + 1);
             $sheet->setCellValue('B' . $rowNumber, $issueDate);
-            $sheet->setCellValue('C' . $rowNumber, $file['register'] ?? '');
-            $sheet->setCellValue('D' . $rowNumber, $file['nit'] ?? '');
-            $sheet->setCellValue('E' . $rowNumber, $file['issuer_name'] ?? '');
+            $sheet->setCellValueExplicit('C' . $rowNumber, $file['register'] ?? '', \PhpOffice\PhpSpreadsheet\Cell\DataType::TYPE_STRING);
+            $sheet->setCellValueExplicit('D' . $rowNumber, $file['nit'] ?? '', \PhpOffice\PhpSpreadsheet\Cell\DataType::TYPE_STRING);
+            $sheet->setCellValueExplicit('E' . $rowNumber, $file['issuer_name'] ?? '', \PhpOffice\PhpSpreadsheet\Cell\DataType::TYPE_STRING);
 
             $sheet->setCellValueExplicit(
                 'F' . $rowNumber,

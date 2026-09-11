@@ -137,3 +137,13 @@ dist/
 debug.log
 
 /tests
+
+# Keep the security regression suite reproducible.
+!/tests/
+/tests/*
+!/tests/unit/
+/tests/unit/*
+!/tests/unit/SecurityHardeningTest.php
+# New production backups must not enter source control (tracked history needs separate cleanup).
+/data/*.sql
+/tmp/

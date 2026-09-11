@@ -25,9 +25,18 @@ class AuthFilter implements FilterInterface
      */
     public function before(RequestInterface $request, $arguments = null)
     {
-        if (!session()->get('logged_in')) {
+        $session = session();
+        if (!$session->get('logged_in') || !$session->get('user_id')) {
             return redirect()->to('/login');
         }
+        $user = (new \App\Models\UserModel())->find($session->get('user_id'));
+        if (!$user || time() - (int) $session->get('last_activity') > 1800
+            || time() - (int) $session->get('authenticated_at') > 28800
+            || !hash_equals((string) $session->get('credential_version'), hash('sha256', $user['password']))) {
+            $session->destroy();
+            return redirect()->to('/login');
+        }
+        $session->set('last_activity', time());
     }
 
     /**

@@ -42,9 +42,9 @@ Gestión de Menú por Roles
         <tbody>
             <?php foreach ($roles as $role): ?>
                 <tr>
-                    <td><?= $role['role_name']; ?></td>
+                    <td><?= esc($role['role_name']) ?></td>
                     <td class="text-nowrap">
-                        <a href="/role_menu/edit/<?= $role['id']; ?>" class="btn btn-sm btn-primary d-inline-block">
+                        <a href="/role_menu/edit/<?= esc($role['id']) ?>" class="btn btn-sm btn-primary d-inline-block">
                             <i class="fas fa-edit"></i> Gestionar Menú
                         </a>
                     </td>

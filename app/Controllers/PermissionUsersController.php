@@ -40,6 +40,12 @@ class PermissionUsersController extends BaseController
 
     public function store()
     {
+        if (!$this->validate([
+            'user_id' => 'required|is_natural_no_zero|is_not_unique[users.id]',
+            'permission_id' => 'required|is_natural_no_zero|is_not_unique[permissions.id]',
+        ])) {
+            return $this->response->setStatusCode(422)->setBody('Usuario o permiso inválido.');
+        }
         $model = new PermissionUserModel();
         $model->save([
             'user_id' => $this->request->getPost('user_id'),
@@ -48,10 +54,26 @@ class PermissionUsersController extends BaseController
         return redirect()->to('/permission_users');
     }
 
-    public function delete($id)
+    public function delete($userId, $permissionId)
     {
         $model = new PermissionUserModel();
-        $model->delete($id);
+        $model->where('user_id', $userId)->where('permission_id', $permissionId)->delete();
+        return redirect()->to('/permission_users');
+    }
+
+    public function update($userId, $permissionId)
+    {
+        if (!$this->validate([
+            'user_id' => 'required|is_natural_no_zero|is_not_unique[users.id]',
+            'permission_id' => 'required|is_natural_no_zero|is_not_unique[permissions.id]',
+        ])) {
+            return $this->response->setStatusCode(422)->setBody('Usuario o permiso inválido.');
+        }
+        $model = new PermissionUserModel();
+        $model->where('user_id', $userId)->where('permission_id', $permissionId)->set([
+            'user_id' => $this->request->getPost('user_id'),
+            'permission_id' => $this->request->getPost('permission_id'),
+        ])->update();
         return redirect()->to('/permission_users');
     }
 

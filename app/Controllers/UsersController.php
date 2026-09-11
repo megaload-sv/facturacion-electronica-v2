@@ -24,6 +24,13 @@ class UsersController extends BaseController
 
     public function store()
     {
+        if (!$this->validate([
+            'user_name' => 'required|alpha_numeric_punct|min_length[3]|max_length[100]|is_unique[users.username]',
+            'email' => 'required|valid_email|max_length[254]',
+            'password' => 'required|min_length[15]|max_length[72]',
+        ])) {
+            return $this->response->setStatusCode(422)->setBody('Datos inválidos. Use un usuario único, correo válido y contraseña de 15 a 72 caracteres.');
+        }
         $model = new UserModel();
 
         // Guardar los datos enviados desde el formulario
@@ -47,7 +54,16 @@ class UsersController extends BaseController
 
     public function update($id)
     {
+        if (!$this->validate([
+            'user_name' => 'required|alpha_numeric_punct|min_length[3]|max_length[100]',
+            'email' => 'required|valid_email|max_length[254]',
+        ])) {
+            return $this->response->setStatusCode(422)->setBody('Usuario o correo inválido.');
+        }
         $model = new UserModel();
+        if ($model->where('username', $this->request->getPost('user_name'))->where('id !=', $id)->first()) {
+            return $this->response->setStatusCode(422)->setBody('El usuario ya existe.');
+        }
 
         // Actualizar los datos del usuario
         $model->update($id, [

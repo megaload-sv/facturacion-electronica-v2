@@ -6,10 +6,10 @@
              with font-awesome or any other icon font library -->
         <?php foreach ($menu as $menuItem): ?>
             <li class="nav-item">
-                <a href="<?= $menuItem['url'] ?>" class="nav-link">
-                    <i class="nav-icon <?= $menuItem['icon'] ?>"></i>
+                <a href="<?= esc($menuItem['url']) ?>" class="nav-link">
+                    <i class="nav-icon <?= esc($menuItem['icon']) ?>"></i>
                     <p>
-                        <?= $menuItem['name'] ?>
+                        <?= esc($menuItem['name']) ?>
                         <?php if (!empty($menuItem['children'])): ?>
                             <i class="right fas fa-angle-left"></i>
                         <?php endif; ?>
@@ -19,9 +19,9 @@
                     <ul class="nav nav-treeview">
                         <?php foreach ($menuItem['children'] as $childItem): ?>
                             <li class="nav-item">
-                                <a href="<?= $childItem['url'] ?>" class="nav-link">
+                                <a href="<?= esc($childItem['url']) ?>" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p><?= $childItem['name'] ?></p>
+                                    <p><?= esc($childItem['name']) ?></p>
                                 </a>
                             </li>
                         <?php endforeach; ?>
@@ -71,12 +71,12 @@
             </a>
         </li>
         <li class="nav-item">
-            <a href="<?= base_url() ?>logout" class="nav-link">
+            <form method="post" action="<?= base_url() ?>logout" style="display:inline;"><?= csrf_field() ?><button type="submit" class="nav-link">
                 <i class="nav-icon fas fa-table"></i>
                 <p>
                     Salir
                 </p>
-            </a>
+            </button></form>
         </li>
     </ul>-->
 </nav>

@@ -886,7 +886,7 @@ class DTEController extends ResourceController
             );
 
             //Actualizando el token
-            $responseLogin = $clientLogin->request('POST', $dataSeguridad['urlBearerToken'], ['form_params' => $dataLogin, 'verify' => false, 'http_errors' => false]);
+            $responseLogin = $clientLogin->request('POST', $dataSeguridad['urlBearerToken'], ['form_params' => $dataLogin, 'verify' => true, 'http_errors' => false]);
 
             $responseLoginData = json_decode($responseLogin->getBody());
 
@@ -946,7 +946,7 @@ class DTEController extends ResourceController
                 'User-Agent' => 'MegaloadTest/01'
             ],
             'body' => json_encode($payload),
-            'verify' => false,
+            'verify' => true,
             'http_errors' => false,
             'timeout' => 10 // Tiempo máximo de espera de 10 segundos
         ]);
@@ -982,7 +982,7 @@ class DTEController extends ResourceController
                 'User-Agent' => 'MegaloadTest/01'
             ],
             'body' => json_encode($payload),
-            'verify' => false,
+            'verify' => true,
             'http_errors' => false
         ]);
 

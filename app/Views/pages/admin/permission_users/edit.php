@@ -9,7 +9,8 @@ Editar Permisos a Usuarios
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <form action="/permission_users/update/<?= $user_id ?>/<?= $permission_id ?>" method="post">
+            <form action="/permission_users/update/<?= esc($user_id) ?>/<?= esc($permission_id) ?>" method="post">
+<?= csrf_field() ?>
                 <div class="card card-primary">
                     <div class="card-header">
                         <h3 class="card-title">Actualizar Asignación</h3>
@@ -19,8 +20,8 @@ Editar Permisos a Usuarios
                             <label for="user_id">Usuario</label>
                             <select class="form-control" name="user_id" id="user_id">
                                <?php foreach ($users as $user): ?>
-                                    <option value="<?= $user['id'] ?>" <?= ($user['id'] == $user_id) ? 'selected' : '' ?>>
-                                        <?= $user['username'] ?>
+                                    <option value="<?= esc($user['id']) ?>" <?= ($user['id'] == $user_id) ? 'selected' : '' ?>>
+                                        <?= esc($user['username']) ?>
                                     </option>
                                 <?php endforeach; ?>
                             </select>
@@ -30,8 +31,8 @@ Editar Permisos a Usuarios
                             <label for="permission_id">Permiso</label>
                             <select class="form-control" name="permission_id" id="permission_id">
                                 <?php foreach ($permissions as $permission): ?>
-                                    <option value="<?= $permission['id'] ?>" <?= ($permission['id'] == $permission_id) ? 'selected' : '' ?>>
-                                        <?= $permission['permission_name'] ?>
+                                    <option value="<?= esc($permission['id']) ?>" <?= ($permission['id'] == $permission_id) ? 'selected' : '' ?>>
+                                        <?= esc($permission['permission_name']) ?>
                                     </option>
                                 <?php endforeach; ?>
                             </select>

@@ -62,6 +62,12 @@ class RolesUsersController extends BaseController
     // Método para asignar un rol a un usuario
     public function assignRole()
     {
+        if (!$this->validate([
+            'user_id' => 'required|is_natural_no_zero|is_not_unique[users.id]',
+            'role_id' => 'required|is_natural_no_zero|is_not_unique[roles.id]',
+        ])) {
+            return $this->response->setStatusCode(422)->setBody('Usuario o rol inválido.');
+        }
         $roleUserModel = new RoleUserModel();
 
         // Obtener los datos del formulario
@@ -74,7 +80,7 @@ class RolesUsersController extends BaseController
         $roleUserModel->save($data);
 
         // Redireccionar a la gestión de roles del usuario
-        return $this->render('/users/roles/manage/' . $data['user_id']);
+       return redirect()->to('/users/roles/manage/' . $data['user_id']);
     }
 
     // Método para eliminar un rol asignado a un usuario

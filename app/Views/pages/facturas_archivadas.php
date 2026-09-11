@@ -129,6 +129,7 @@ Facturas Archivadas
                 </div>
                 <div class="modal-body">
                     <form action="" id="formInvalidDTE">
+<?= csrf_field() ?>
                         <input type="hidden" id="dteUUID" name="dteUUID" value="">
                         <input type="hidden" id="mhCode" name="mhc_document_type_id" value="">
                         <input type="hidden" id="transmission_datetime" value="">
@@ -247,6 +248,7 @@ Facturas Archivadas
                 </div>
                 <div class="modal-body">
                     <form action="" id="reenvioCorreo">
+<?= csrf_field() ?>
                         <input type="hidden" id="dteUUID" name="dteUUID" value="">
                         <div class="row">
                             <div class="col-md-12">

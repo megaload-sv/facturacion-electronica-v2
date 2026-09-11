@@ -8,6 +8,6 @@ class InfoController extends BaseController
 {
     public function index()
     {
-       phpinfo();
+       throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
     }
 }

@@ -22,6 +22,7 @@ Sistema de Facturacion Electronica | Gestion Menu
     <div class="row justify-content-center">
         <div class="col-md-6">
             <form method="post" action="/menu/update/<?= esc($menuEdit['id']); ?>">
+<?= csrf_field() ?>
                 <div class="card card-primary">
                     <div class="card-header">
                         <h3 class="card-title">Editar Ítem de Menú</h3>
@@ -63,7 +64,7 @@ Sistema de Facturacion Electronica | Gestion Menu
                                 <label for="roles" class="form-label">Asignar Roles</label>
                                 <select class="custom-select2 form-multi-select form-control" id="roles" name="roles[]" multiple>
                                     <?php foreach ($roles as $role): ?>
-                                        <option value="<?= $role['id']; ?>" <?= $role['id'] == $menuEdit['role_id'] ? 'selected' : ''; ?>><?= $role['role_name']; ?></option>
+                                        <option value="<?= esc($role['id']) ?>" <?= $role['id'] == $menuEdit['role_id'] ? 'selected' : ''; ?>><?= esc($role['role_name']) ?></option>
                                     <?php endforeach; ?>
                                 </select>
                         </div>

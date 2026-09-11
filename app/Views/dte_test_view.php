@@ -14,6 +14,7 @@
 <h3 class="mb-4">🔄 Generar DTEs - Pruebas Masivas</h3>
 
 <form id="formTest" class="row g-3">
+<?= csrf_field() ?>
     <div class="col-md-3">
         <label for="inicio" class="form-label">Correlativo Inicial</label>
         <input type="number" class="form-control" id="inicio" name="inicio" value="1" required>

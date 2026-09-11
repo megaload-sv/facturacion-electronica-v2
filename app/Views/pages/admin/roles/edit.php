@@ -9,6 +9,7 @@ Editar Roles
     <div class="row justify-content-center">
         <div class="col-md-6">
             <form action="<?= base_url('roles/update/' . $role['id']) ?>" method="post">
+<?= csrf_field() ?>
                 <div class="card card-primary">
                     <div class="card-header">
                         <h3 class="card-title">Actualizar Rol</h3>
@@ -17,13 +18,13 @@ Editar Roles
                         <!-- Nombre del Rol -->
                         <div class="form-group">
                             <label for="role_name">Nombre del Rol</label>
-                            <input type="text" name="role_name" id="role_name" class="form-control" value="<?= $role['role_name'] ?>" required>
+                            <input type="text" name="role_name" id="role_name" class="form-control" value="<?= esc($role['role_name']) ?>" required>
                         </div>
 
                         <!-- Descripción del Rol -->
                         <div class="form-group">
                             <label for="description">Descripción</label>
-                            <textarea name="description" id="description" class="form-control" rows="4" required><?= $role['description'] ?></textarea>
+                            <textarea name="description" id="description" class="form-control" rows="4" required><?= esc($role['description']) ?></textarea>
                         </div>
                     </div>
 

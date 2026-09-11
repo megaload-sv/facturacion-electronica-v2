@@ -30,7 +30,7 @@ class DashboardController extends BaseController
         //obtener el detalle por un cliente
         $client = \Config\Services::curlrequest();
 
-        $responseFactura = $client->request('GET', $dataSeguridad['urlCountFacturas'],['verify' => false, 'http_errors' => false]);
+        $responseFactura = $client->request('GET', $dataSeguridad['urlCountFacturas'],['verify' => true, 'http_errors' => false]);
 
         //header('Content-Type: application/json');
         $facturas = json_decode($responseFactura->getBody());

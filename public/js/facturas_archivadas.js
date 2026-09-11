@@ -1,3 +1,6 @@
+function securityEscape(value) {
+    return String(value == null ? '' : value).replace(/[&<>"']/g, c => ({'&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'}[c]));
+}
 $(document).ready(function () {
 
     $(document).ajaxStop($.unblockUI);
@@ -51,10 +54,10 @@ $(document).ready(function () {
             const nombreReceptor = sello.company || sello.Empresa || 'Sin nombre de receptor';
 
             let btnMensaje = `
-            <button type="button" 
-                    class="btn btn-success btn-sm mensajeMH" 
-                    data-target="#modalMensaje" 
-                    data-codigo-generacion="${sello.codigoGeneracion}">
+            <button type="button"
+                    class="btn btn-success btn-sm mensajeMH"
+                    data-target="#modalMensaje"
+                    data-codigo-generacion="${securityEscape(sello.codigoGeneracion)}">
                 Ver Mensaje
             </button>
         `;
@@ -71,7 +74,7 @@ $(document).ready(function () {
                 let mensajeErrorCorreo = sello.errorCorreo ? sello.errorCorreo : 'Correo no enviado';
 
                 estadoCorreo = `
-                <span class="badge badge-danger" title="${mensajeErrorCorreo}">
+                <span class="badge badge-danger" title="${securityEscape(mensajeErrorCorreo)}">
                     <i class="fas fa-times-circle"></i> No enviado
                 </span>
             `;
@@ -86,40 +89,40 @@ $(document).ready(function () {
 
             if (parseInt(sello.idEstadoDTE) !== 4) {
                 btnInvalidar = `
-                <a href="facturas/invalidar-json/${sello.codigoGeneracion}" 
-                   class="btn btn-sm btn-outline-primary invalidarDTE" 
-                   data-codigo-generacion="${sello.codigoGeneracion}">
+                <a href="facturas/invalidar-json/${securityEscape(sello.codigoGeneracion)}"
+                   class="btn btn-sm btn-outline-primary invalidarDTE"
+                   data-codigo-generacion="${securityEscape(sello.codigoGeneracion)}">
                     Invalidar DTE
                 </a>
             `;
             }
 
             let row = `
-            <tr class="${rowClass}" 
-                data-tipo-dte="${sello.TipoDTE}" 
-                data-estado-dte="${sello.estadoNombre}" 
-                data-fecha-factura="${sello.fechaFactura}">
-                
+            <tr class="${rowClass}"
+                data-tipo-dte="${securityEscape(sello.TipoDTE)}"
+                data-estado-dte="${securityEscape(sello.estadoNombre)}"
+                data-fecha-factura="${securityEscape(sello.fechaFactura)}">
+
                 <td>${index + 1}</td>
-                <td>${sello.TipoDTE}</td>
+                <td>${securityEscape(sello.TipoDTE)}</td>
                 <td>
-                    <span style="font-weight: bold">ERP:</span> 
-                    <em>CRM id</em> ${sello.identicadorNumInterno}, 
-                    <em>CRM #</em> ${sello.numeroCRM}
+                    <span style="font-weight: bold">ERP:</span>
+                    <em>CRM id</em> ${securityEscape(sello.identicadorNumInterno)},
+                    <em>CRM #</em> ${securityEscape(sello.numeroCRM)}
                     <br>
-                    <span style="font-weight: bold">Código de Generación:</span> 
-                    ${sello.codigoGeneracion}
+                    <span style="font-weight: bold">Código de Generación:</span>
+                    ${securityEscape(sello.codigoGeneracion)}
                 </td>
-                <td>${sello.numeroControlMH}</td>
-                <td>${nombreReceptor}</td>
-                <td>${sello.fechaFactura}</td>
-                <td>${sello.estadoNombre}</td>
+                <td>${securityEscape(sello.numeroControlMH)}</td>
+                <td>${securityEscape(nombreReceptor)}</td>
+                <td>${securityEscape(sello.fechaFactura)}</td>
+                <td>${securityEscape(sello.estadoNombre)}</td>
                 <td>${btnMensaje}</td>
                 <td>${estadoCorreo}</td>
                 <td>
-                    <a target="_blank" href="facturas/generar-pdf/${sello.codigoGeneracion}" class="btn btn-sm btn-outline-primary">Generar PDF</a><br>
-                    <a target="_blank" href="facturas/descargar-json/${sello.codigoGeneracion}" class="btn btn-sm btn-outline-primary">Descargar JSON</a><br>
-                    <a href="facturas/enviar-correo/${sello.codigoGeneracion}" class="btn btn-sm btn-outline-primary enviarCorreo" data-codigo-generacion="${sello.codigoGeneracion}">Enviar Correo</a><br>
+                    <a target="_blank" href="facturas/generar-pdf/${securityEscape(sello.codigoGeneracion)}" class="btn btn-sm btn-outline-primary">Generar PDF</a><br>
+                    <a target="_blank" href="facturas/descargar-json/${securityEscape(sello.codigoGeneracion)}" class="btn btn-sm btn-outline-primary">Descargar JSON</a><br>
+                    <a href="facturas/enviar-correo/${securityEscape(sello.codigoGeneracion)}" class="btn btn-sm btn-outline-primary enviarCorreo" data-codigo-generacion="${securityEscape(sello.codigoGeneracion)}">Enviar Correo</a><br>
                     ${btnInvalidar}
                     ${btnPDFInvalidacion}
                 </td>
@@ -157,11 +160,11 @@ $(document).ready(function () {
         filtroEstado.empty().append('<option value="">Todos</option>');
 
         tipos.sort().forEach(function (tipo) {
-            filtroTipo.append(`<option value="${tipo}">${tipo}</option>`);
+            filtroTipo.append(`<option value="${securityEscape(tipo)}">${securityEscape(tipo)}</option>`);
         });
 
         estados.sort().forEach(function (estado) {
-            filtroEstado.append(`<option value="${estado}">${estado}</option>`);
+            filtroEstado.append(`<option value="${securityEscape(estado)}">${securityEscape(estado)}</option>`);
         });
     }
 
@@ -262,12 +265,12 @@ $(document).ready(function () {
             type: 'GET',
             success: function (response) {
 
-                $('#estadoMensaje').html(response.estado);
-                $('#observacionMensaje').html(response.observaciones);
-                $('#descripcionMensaje').html(response.descripcionMsg);
+                $('#estadoMensaje').text(response.estado);
+                $('#observacionMensaje').text(response.observaciones);
+                $('#descripcionMensaje').text(response.descripcionMsg);
 
                 var jsonFormatted = JSON.stringify(response, null, 4);
-                $('#mensajeReal').html(jsonFormatted);
+                $('#mensajeReal').text(jsonFormatted);
 
             }
         });
@@ -480,7 +483,7 @@ $(document).ready(function () {
                             detalleHtml += '<ul style="text-align:left;padding-left:20px;">';
 
                             response.detalle.forEach(function (item) {
-                                detalleHtml += `<li style="margin-bottom:5px;">${item}</li>`;
+                                detalleHtml += `<li style="margin-bottom:5px;">${securityEscape(item)}</li>`;
                             });
 
                             detalleHtml += '</ul></div>';
@@ -492,7 +495,7 @@ $(document).ready(function () {
                             html: `
                                     <div style="font-size:14px;text-align:left;">
                                         <div style="margin-bottom:10px;">
-                                            <b>${response && response.message ? response.message : 'Ha ocurrido un problema inesperado en el proceso.'}</b>
+                                            <b>${securityEscape(response && response.message ? response.message : 'Ha ocurrido un problema inesperado en el proceso.')}</b>
                                         </div>
                                         ${detalleHtml || '<div>No se recibieron detalles adicionales del error.</div>'}
                                     </div>
@@ -519,7 +522,7 @@ $(document).ready(function () {
                             detalleHtml += '<ul style="text-align:left;padding-left:20px;">';
 
                             xhr.responseJSON.detalle.forEach(function (item) {
-                                detalleHtml += `<li style="margin-bottom:5px;">${item}</li>`;
+                                detalleHtml += `<li style="margin-bottom:5px;">${securityEscape(item)}</li>`;
                             });
 
                             detalleHtml += '</ul></div>';
@@ -532,7 +535,7 @@ $(document).ready(function () {
                         html: `
                         <div style="font-size:14px;text-align:left;">
                             <div style="margin-bottom:10px;">
-                                <b>${message}</b>
+                                <b>${securityEscape(message)}</b>
                             </div>
                             ${detalleHtml || '<div>No se pudo obtener mayor detalle del error.</div>'}
                         </div>

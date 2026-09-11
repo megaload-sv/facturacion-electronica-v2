@@ -26,7 +26,7 @@ class PermissionsController extends BaseController
             'permission_name' => $this->request->getPost('permission_name'),
             'description' => $this->request->getPost('description'),
         ]);
-        return redirect()->to('pages/admin/permissions');
+        return redirect()->to('/permissions');
     }
 
     public function edit($id)
@@ -43,7 +43,7 @@ class PermissionsController extends BaseController
             'permission_name' => $this->request->getPost('permission_name'),
             'description' => $this->request->getPost('description'),
         ]);
-        return redirect()->to('pages/admin/permissions');
+        return redirect()->to('/permissions');
     }
 
     public function delete($id)

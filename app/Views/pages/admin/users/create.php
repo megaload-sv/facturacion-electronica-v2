@@ -9,6 +9,7 @@ Agregar Nuevo Usuario
     <div class="row justify-content-center">
         <div class="col-md-6">
             <form action="<?= base_url('users/store') ?>" method="post">
+<?= csrf_field() ?>
                 <div class="card card-primary">
                     <div class="card-header">
                         <h3 class="card-title">Agregar Usuario</h3>

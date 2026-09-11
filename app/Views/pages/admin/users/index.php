@@ -51,9 +51,9 @@
         <tbody>
         <?php foreach ($users as $user): ?>
             <tr>
-                <td><?= $user['id'] ?></td>
-                <td><?= $user['username'] ?></td>
-                <td><?= $user['email'] ?></td>
+                <td><?= esc($user['id']) ?></td>
+                <td><?= esc($user['username']) ?></td>
+                <td><?= esc($user['email']) ?></td>
                 <td>
                     <!-- Botón para editar -->
                     <a href="<?= base_url('users/edit/' . $user['id']) ?>" class="btn btn-sm btn-warning">
@@ -61,9 +61,9 @@
                     </a>
 
                     <!-- Botón para eliminar (con confirmación) -->
-                    <a href="<?= base_url('users/delete/' . $user['id']) ?>" class="btn btn-sm btn-danger" onclick="return confirm('¿Estás seguro de eliminar este usuario?')">
+                    <form method="post" action="<?= base_url('users/delete/' . $user['id']) ?>" style="display:inline;" onsubmit="return confirm('¿Estás seguro de eliminar este usuario?')"><?= csrf_field() ?><button type="submit" class="btn btn-sm btn-danger">
                         <i class="fas fa-trash-alt"></i> Eliminar
-                    </a>
+                    </button></form>
 
                     <!-- Enlace para ver permisos -->
                     <a href="<?= base_url('users/permissions/' . $user['id']) ?>" class="btn btn-sm btn-info">

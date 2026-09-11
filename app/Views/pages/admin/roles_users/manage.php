@@ -6,10 +6,11 @@ Gestion de Roles
 
 <?= $this->section('content')?>
 
-<h2 class="mb-4">Gestionar Roles del Usuario: <?= $user['username'] ?></h2>
+<h2 class="mb-4">Gestionar Roles del Usuario: <?= esc($user['username']) ?></h2>
 
 <form action="<?= base_url('users/roles/assign') ?>" method="post">
-    <input type="hidden" name="user_id" value="<?= $user['id'] ?>">
+<?= csrf_field() ?>
+    <input type="hidden" name="user_id" value="<?= esc($user['id']) ?>">
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-6">
@@ -17,7 +18,7 @@ Gestion de Roles
                     <label for="role_id">Asignar Nuevo Rol</label>
                     <select name="role_id" id="role_id" class="form-control">
                         <?php foreach ($roles as $role): ?>
-                            <option value="<?= $role['id'] ?>"><?= $role['role_name'] ?></option>
+                            <option value="<?= esc($role['id']) ?>"><?= esc($role['role_name']) ?></option>
                         <?php endforeach; ?>
                     </select>
                 </div>
@@ -44,15 +45,13 @@ Gestion de Roles
         <?php if (!empty($assignedRoles)): ?>
             <?php foreach ($assignedRoles as $role): ?>
                 <tr>
-                    <td><?= $role['id'] ?></td>
-                    <td><?= $role['role_name'] ?></td>
-                    <td><?= $role['description'] ?></td>
+                    <td><?= esc($role['id']) ?></td>
+                    <td><?= esc($role['role_name']) ?></td>
+                    <td><?= esc($role['description']) ?></td>
                     <td>
-                        <a href="<?= base_url('users/roles/remove/' . $user['id'] . '/' . $role['id']) ?>" 
-                           class="btn btn-sm btn-danger"
-                           onclick="return confirm('¿Estás seguro de eliminar este rol del usuario?')">
+                        <form method="post" action="<?= base_url('users/roles/remove/' . $user['id'] . '/' . $role['id']) ?>" style="display:inline;" onsubmit="return confirm('¿Estás seguro de eliminar este rol del usuario?')"><?= csrf_field() ?><button type="submit" class="btn btn-sm btn-danger">
                            <i class="fas fa-trash-alt"></i> Quitar Rol
-                        </a>
+                        </button></form>
                     </td>
                 </tr>
             <?php endforeach; ?>

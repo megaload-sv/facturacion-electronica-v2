@@ -20,7 +20,7 @@ Procesar JSON
         <?php if (session()->getFlashdata('error')): ?><div class="alert alert-danger"><?= session()->getFlashdata('error') ?></div><?php endif; ?>
 
         <form action="<?= base_url('procesar-json/procesar') ?>" method="post" enctype="multipart/form-data">
-            <?= csrf_field() ?>
+<?= csrf_field() ?>
             <div class="form-group">
                 <label for="group_name">Nombre del grupo</label>
                 <input type="text" class="form-control" name="group_name" id="group_name" required>
@@ -60,7 +60,7 @@ Procesar JSON
                             Descargar Excel
                         </a>
                         <form action="<?= base_url('procesar-json/eliminar/' . $group['id']) ?>" method="post" style="display:inline-block;" onsubmit="return confirm('¿Seguro que deseas eliminar este grupo y su carpeta?');">
-                            <?= csrf_field() ?>
+<?= csrf_field() ?>
                             <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
                         </form>
                     </td>

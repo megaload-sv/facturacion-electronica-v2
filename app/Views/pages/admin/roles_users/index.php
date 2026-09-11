@@ -2,7 +2,7 @@
 
 
 <?= $this->section('content')?>
-<h2 class="mb-4">Roles Asignados al Usuario: <?= $user['username'] ?></h2>
+<h2 class="mb-4">Roles Asignados al Usuario: <?= esc($user['username']) ?></h2>
 
 <div class="table-responsive">
     <table class="table table-bordered table-striped">
@@ -17,9 +17,9 @@
         <?php if (!empty($assignedRoles)): ?>
             <?php foreach ($assignedRoles as $role): ?>
                 <tr>
-                    <td><?= $role['id'] ?></td>
-                    <td><?= $role['role_name'] ?></td>
-                    <td><?= $role['description'] ?></td>
+                    <td><?= esc($role['id']) ?></td>
+                    <td><?= esc($role['role_name']) ?></td>
+                    <td><?= esc($role['description']) ?></td>
                 </tr>
             <?php endforeach; ?>
         <?php else: ?>

@@ -25,16 +25,14 @@ Lista de Permisos por rol
         <?php if (!empty($permissionRoles)): ?>
             <?php foreach ($permissionRoles as $permissionRole): ?>
                 <tr>
-                    <td><?= $permissionRole['role_id'] ?></td>
-                    <td><?= $permissionRole['role_name'] ?></td>
-                    <td><?= $permissionRole['permission_id'] ?></td>
-                    <td><?= $permissionRole['permission_name'] ?></td>
+                    <td><?= esc($permissionRole['role_id']) ?></td>
+                    <td><?= esc($permissionRole['role_name']) ?></td>
+                    <td><?= esc($permissionRole['permission_id']) ?></td>
+                    <td><?= esc($permissionRole['permission_name']) ?></td>
                     <td>
-                        <a href="<?= base_url('permission_roles/delete/' . $permissionRole['role_id'] . '/' . $permissionRole['permission_id']) ?>" 
-                           class="btn btn-sm btn-danger" 
-                           onclick="return confirm('¿Estás seguro de eliminar este permiso del rol?')">
+                        <form method="post" action="<?= base_url('permission_roles/delete/' . $permissionRole['role_id'] . '/' . $permissionRole['permission_id']) ?>" style="display:inline;" onsubmit="return confirm('¿Estás seguro de eliminar este permiso del rol?')"><?= csrf_field() ?><button type="submit" class="btn btn-sm btn-danger">
                             <i class="fas fa-trash-alt"></i> Quitar Permiso
-                        </a>
+                        </button></form>
                     </td>
                 </tr>
             <?php endforeach; ?>

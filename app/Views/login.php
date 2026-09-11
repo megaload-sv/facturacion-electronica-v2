@@ -29,9 +29,10 @@
     <div class="card-body login-card-body">
       <p class="login-box-msg">Inicie sesión</p>
         <?php if(session()->getFlashdata('error')): ?>
-            <p style="color:red; text-align: center;"><?= session()->getFlashdata('error') ?></p>
+            <p style="color:red; text-align: center;"><?= esc(session()->getFlashdata('error')) ?></p>
         <?php endif; ?>
       <form action="/login/authenticate" method="post">
+<?= csrf_field() ?>
         <div class="input-group mb-3">
           <input type="username" class="form-control" placeholder="User name" name="username"/>
           <div class="input-group-append">

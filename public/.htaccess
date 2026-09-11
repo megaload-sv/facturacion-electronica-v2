@@ -45,5 +45,13 @@ Options -Indexes
 </IfModule>
 
 # Disable server signature start
+Require all granted
 ServerSignature Off
+# Only the front controller may execute PHP in the public directory.
+<FilesMatch "(?i)^(?!index\.php$).*\.(php[0-9]?|phtml|phar)$">
+    Require all denied
+</FilesMatch>
+<FilesMatch "(?i)(^\.|\.(sql|bak|log|ini|env|pem|key)$)">
+    Require all denied
+</FilesMatch>
 # Disable server signature end

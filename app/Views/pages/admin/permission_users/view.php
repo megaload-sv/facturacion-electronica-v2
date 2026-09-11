@@ -6,7 +6,7 @@ Permisos a Usuarios
 
 <?= $this->section('content')?>
 
-<h2 class="mb-4">Permisos Asignados al Usuario: <?= $user['username'] ?></h2>
+<h2 class="mb-4">Permisos Asignados al Usuario: <?= esc($user['username']) ?></h2>
 
 <a href="<?= base_url('permission_users/create?user_id=' . $user['id']) ?>" class="btn btn-primary mb-3">
     <i class="fas fa-plus"></i> Asignar Nuevos Permisos
@@ -26,15 +26,13 @@ Permisos a Usuarios
         <?php if (!empty($assignedPermissions)): ?>
             <?php foreach ($assignedPermissions as $permission): ?>
                 <tr>
-                    <td><?= $permission['id'] ?></td>
-                    <td><?= $permission['permission_name'] ?></td>
-                    <td><?= $permission['description'] ?></td>
+                    <td><?= esc($permission['id']) ?></td>
+                    <td><?= esc($permission['permission_name']) ?></td>
+                    <td><?= esc($permission['description']) ?></td>
                     <td>
-                        <a href="<?= base_url('permission_users/delete/' . $user['id'] . '/' . $permission['id']) ?>" 
-                           class="btn btn-sm btn-danger"
-                           onclick="return confirm('¿Estás seguro de quitar este permiso?')">
+                        <form method="post" action="<?= base_url('permission_users/delete/' . $user['id'] . '/' . $permission['id']) ?>" style="display:inline;" onsubmit="return confirm('¿Estás seguro de quitar este permiso?')"><?= csrf_field() ?><button type="submit" class="btn btn-sm btn-danger">
                            <i class="fas fa-trash-alt"></i> Quitar Permiso
-                        </a>
+                        </button></form>
                     </td>
                 </tr>
             <?php endforeach; ?>

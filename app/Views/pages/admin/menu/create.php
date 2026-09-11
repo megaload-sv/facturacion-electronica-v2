@@ -23,6 +23,7 @@ Sistema de Facturacion Electronica | Gestion Menu
     <div class="row justify-content-center">
         <div class="col-md-6">
             <form method="post" action="/menu/store">
+<?= csrf_field() ?>
                 <div class="card card-primary">
                     <div class="card-header">
                         <h3 class="card-title">Agregar Menu</h3>
@@ -43,7 +44,7 @@ Sistema de Facturacion Electronica | Gestion Menu
                             <select class="form-control" id="parent_id" name="parent_id">
                                 <option value="">Sin padre</option>
                                 <?php foreach ($menus as $menu): ?>
-                                    <option value="<?= $menu['id']; ?>"><?= $menu['name']; ?></option>
+                                    <option value="<?= esc($menu['id']) ?>"><?= esc($menu['name']) ?></option>
                                 <?php endforeach; ?>
                             </select>
                         </div>
@@ -62,7 +63,7 @@ Sistema de Facturacion Electronica | Gestion Menu
                             <label for="roles" class="form-label">Asignar Roles</label>
                             <select class="custom-select2 form-multi-select form-control" id="roles" name="roles[]" multiple>
                                 <?php foreach ($roles as $role): ?>
-                                    <option value="<?= $role['id']; ?>"><?= $role['role_name']; ?></option>
+                                    <option value="<?= esc($role['id']) ?>"><?= esc($role['role_name']) ?></option>
                                 <?php endforeach; ?>
                             </select>
                      </div>

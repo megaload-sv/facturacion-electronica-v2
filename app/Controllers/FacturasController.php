@@ -51,7 +51,28 @@ class FacturasController extends BaseController
 
         $dataSeguridad = $this->modelSeguridad->getConfigByEnvironment();
 
-        return $this->render('pages/facturas', ['url_api' => $dataSeguridad['urlApiFacturas']]);
+        return $this->render('pages/facturas', ['url_api' => base_url('facturas/pendientes')]);
+    }
+
+    public function pendientes(int $page = 1, int $limit = 10)
+    {
+        $page = max(1, min($page, 100000));
+        $limit = max(1, min($limit, 100));
+        $config = $this->modelSeguridad->getConfigByEnvironment();
+        $url = rtrim($config['urlApiFacturas'] ?? '', '/');
+        if (parse_url($url, PHP_URL_SCHEME) !== 'https') {
+            return $this->response->setStatusCode(503)->setJSON(['error' => 'Configure HTTPS en la API de facturas.']);
+        }
+        try {
+            $upstream = service('curlrequest')->get($url . '/' . $page . '/' . $limit, [
+                'verify' => true, 'timeout' => 20, 'connect_timeout' => 5, 'allow_redirects' => false,
+            ]);
+            $data = json_decode($upstream->getBody(), true, 512, JSON_THROW_ON_ERROR);
+            return $this->response->setJSON($data);
+        } catch (\Throwable $e) {
+            log_message('error', 'No se pudo consultar la API de facturas.');
+            return $this->response->setStatusCode(502)->setJSON(['error' => 'No se pudo consultar el ERP.']);
+        }
     }
 
     /**
@@ -82,7 +103,7 @@ class FacturasController extends BaseController
                 $dataSeguridad = $this->modelSeguridad->getConfigByEnvironment();
 
                 //Obteniendo el dteJson
-                $responseFactura = $client->request('GET', $dataSeguridad['urlGetJson'] . $factura . '/' . $tipoDoc, ['verify' => false, 'http_errors' => false]);
+                $responseFactura = $client->request('GET', $dataSeguridad['urlGetJson'] . $factura . '/' . $tipoDoc, ['verify' => true, 'http_errors' => false]);
 
                 $newData = json_decode($responseFactura->getBody());
 
@@ -314,7 +335,7 @@ class FacturasController extends BaseController
                             'PUT',
                             $dataSeguridad['urlSetJson'] . '/' . $newData->datainfo->codigoGeneracion,
                             [
-                                'verify'      => false,
+                                'verify'      => true,
                                 'http_errors' => false,
                                 'headers'     => [
                                     'Content-Type' => 'application/json'
@@ -337,7 +358,7 @@ class FacturasController extends BaseController
 
                 // 2. Luego intentar enviar correo, pero sin afectar ERP
                 $correo = trim((string)($datos->receptor->correo ?? ''));
-                $esProduccion = ENVIRONMENT === 'production';
+                $esProduccion = config(\Config\Dte::class)->selectedEnvironment() === 'production';
 
                 if (
                     $esProduccion &&
@@ -478,7 +499,7 @@ class FacturasController extends BaseController
 
         if (empty($condiciones)) {
             $client = \Config\Services::curlrequest();
-            $terms = $client->request('GET', "http://erp.grupomegaload.com/api/facturas/termsfactura/" . $codigoGeneracion, ['verify' => false, 'http_errors' => false]);
+            $terms = $client->request('GET', "https://erp.grupomegaload.com/api/facturas/termsfactura/" . $codigoGeneracion, ['verify' => true, 'http_errors' => false]);
             if ($terms->getBody() != "") {
                 $termsData = json_decode($terms->getBody())->adminnote;
             }
@@ -488,7 +509,7 @@ class FacturasController extends BaseController
 
         $estimateNumber = "";
         $client = \Config\Services::curlrequest();
-        $estimateNumberData = $client->request('GET', "http://erp.grupomegaload.com/api/facturas/estimate_number/" . $codigoGeneracion, ['verify' => false, 'http_errors' => false]);
+        $estimateNumberData = $client->request('GET', "https://erp.grupomegaload.com/api/facturas/estimate_number/" . $codigoGeneracion, ['verify' => true, 'http_errors' => false]);
 
 
         if ($estimateNumberData->getBody() != "") {
@@ -2533,7 +2554,7 @@ class FacturasController extends BaseController
             );
 
             //Actualizando el token
-            $responseLogin = $clientLogin->request('POST', $dataSeguridad['urlBearerToken'], ['form_params' => $dataLogin, 'verify' => false, 'http_errors' => false]);
+            $responseLogin = $clientLogin->request('POST', $dataSeguridad['urlBearerToken'], ['form_params' => $dataLogin, 'verify' => true, 'http_errors' => false]);
 
             $responseLoginData = json_decode($responseLogin->getBody());
 
@@ -2586,7 +2607,7 @@ class FacturasController extends BaseController
             "codigoGeneracion" => $codigoGeneracion
         );
 
-        $responseSelladoDoc = $clientSelladoDoc->request('POST', $dataSeguridad['urlRecepcionDTE'], ['body' => json_encode($dataSelloParams), 'verify' => false, 'http_errors' => false]);
+        $responseSelladoDoc = $clientSelladoDoc->request('POST', $dataSeguridad['urlRecepcionDTE'], ['body' => json_encode($dataSelloParams), 'verify' => true, 'http_errors' => false]);
 
         $responseSelladoDocData = json_decode($responseSelladoDoc->getBody());
 

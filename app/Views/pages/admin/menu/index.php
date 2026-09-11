@@ -34,14 +34,14 @@ Sistema de Facturacion Electronica | Gestion Menu
                             <?php if ($menu['parent_id'] == 0): ?>
                                 <div class="card mb-2">
                                     <div class="card-header bg-white d-flex justify-content-between align-items-center">
-                                        <strong><span><?= $menu['name']; ?></span></strong>
+                                        <strong><span><?= esc($menu['name']) ?></span></strong>
                                         <div class="ml-auto">
-                                            <a href="/menu/edit/<?= $menu['id']; ?>" class="btn btn-sm btn-warning mr-1">
+                                            <a href="/menu/edit/<?= esc($menu['id']) ?>" class="btn btn-sm btn-warning mr-1">
                                                 <i class="fas fa-edit"></i> Editar
                                             </a>
-                                            <a href="/menu/delete/<?= $menu['id']; ?>" class="btn btn-sm btn-danger" onclick="return confirm('¿Está seguro?')">
+                                            <form method="post" action="/menu/delete/<?= esc($menu['id']) ?>" style="display:inline;" onsubmit="return confirm('¿Está seguro?')"><?= csrf_field() ?><button type="submit" class="btn btn-sm btn-danger">
                                                 <i class="fas fa-trash"></i> Eliminar
-                                            </a>
+                                            </button></form>
                                         </div>
                                     </div>
 
@@ -63,14 +63,14 @@ Sistema de Facturacion Electronica | Gestion Menu
                                                     <!-- Menú Hijo -->
                                                     <li class="list-group-item" style="background-color: #f4eded; padding-left: 30px;">
                                                         <div class="d-flex justify-content-between align-items-center">
-                                                            <span><?= $submenu['name']; ?></span>
+                                                            <span><?= esc($submenu['name']) ?></span>
                                                             <div class="ml-auto">
-                                                                <a href="/menu/edit/<?= $submenu['id']; ?>" class="btn btn-sm btn-warning mr-1">
+                                                                <a href="/menu/edit/<?= esc($submenu['id']) ?>" class="btn btn-sm btn-warning mr-1">
                                                                     <i class="fas fa-edit"></i> Editar
                                                                 </a>
-                                                                <a href="/menu/delete/<?= $submenu['id']; ?>" class="btn btn-sm btn-danger" onclick="return confirm('¿Está seguro?')">
+                                                                <form method="post" action="/menu/delete/<?= esc($submenu['id']) ?>" style="display:inline;" onsubmit="return confirm('¿Está seguro?')"><?= csrf_field() ?><button type="submit" class="btn btn-sm btn-danger">
                                                                     <i class="fas fa-trash"></i> Eliminar
-                                                                </a>
+                                                                </button></form>
                                                             </div>
                                                         </div>
                                                     </li>

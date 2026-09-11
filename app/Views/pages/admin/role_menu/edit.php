@@ -31,10 +31,11 @@ Gestión de Menú por Roles
 
 <?= $this->section('content')?>
 <div class="container mt-5">
-    <h2 class="mb-4">Editar Menú para el Rol: <?= $role['role_name']; ?></h2>
+    <h2 class="mb-4">Editar Menú para el Rol: <?= esc($role['role_name']) ?></h2>
 
     <form method="post" action="/role_menu/store">
-        <input type="hidden" name="role_id" value="<?= $role['id']; ?>">
+<?= csrf_field() ?>
+        <input type="hidden" name="role_id" value="<?= esc($role['id']) ?>">
 
         <div class="card card-primary">
             <div class="card-header">
@@ -43,12 +44,12 @@ Gestión de Menú por Roles
             <div class="card-body">
                 <?php foreach ($menu_items as $menu_item): ?>
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" name="menu_items[]" value="<?= $menu_item['id']; ?>"
+                        <input type="checkbox" class="form-check-input" name="menu_items[]" value="<?= esc($menu_item['id']) ?>"
                             <?php if (in_array($menu_item['id'], array_column($assigned_menu_items, 'menu_item_id'))): ?>
                                 checked
                             <?php endif; ?>
                         >
-                        <label class="form-check-label"><?= $menu_item['name']; ?></label>
+                        <label class="form-check-label"><?= esc($menu_item['name']) ?></label>
                     </div>
                 <?php endforeach; ?>
             </div>

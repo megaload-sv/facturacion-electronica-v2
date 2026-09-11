@@ -27,18 +27,17 @@ Asignar permiso a usuario
         <?php if (!empty($permissionUsers)): ?>
             <?php foreach ($permissionUsers as $permissionUser): ?>
                 <tr>
-                    <td><?= $permissionUser['user_id'] ?></td>
-                    <td><?= $permissionUser['username'] ?></td>
-                    <td><?= $permissionUser['permission_id'] ?></td>
-                    <td><?= $permissionUser['permission_name'] ?></td>
+                    <td><?= esc($permissionUser['user_id']) ?></td>
+                    <td><?= esc($permissionUser['username']) ?></td>
+                    <td><?= esc($permissionUser['permission_id']) ?></td>
+                    <td><?= esc($permissionUser['permission_name']) ?></td>
                     <td>
                         <a href="<?= base_url('permission_users/edit/' . $permissionUser['user_id'] . '/' . $permissionUser['permission_id']) ?>" class="btn btn-sm btn-warning">
                             <i class="fas fa-edit"></i> Editar
                         </a>
-                        <a href="<?= base_url('permission_users/delete/' . $permissionUser['user_id'] . '/' . $permissionUser['permission_id']) ?>" class="btn btn-sm btn-danger"
-                           onclick="return confirm('¿Estás seguro de eliminar este permiso del usuario?')">
+                        <form method="post" action="<?= base_url('permission_users/delete/' . $permissionUser['user_id'] . '/' . $permissionUser['permission_id']) ?>" style="display:inline;" onsubmit="return confirm('¿Estás seguro de eliminar este permiso del usuario?')"><?= csrf_field() ?><button type="submit" class="btn btn-sm btn-danger">
                             <i class="fas fa-trash-alt"></i> Quitar Permiso
-                        </a>
+                        </button></form>
                     </td>
                 </tr>
             <?php endforeach; ?>

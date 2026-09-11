@@ -25,16 +25,16 @@ Lista de Roles
         <tbody>
         <?php foreach ($roles as $role): ?>
             <tr>
-                <td><?= $role['id'] ?></td>
-                <td><?= $role['role_name'] ?></td>
-                <td><?= $role['description'] ?></td>
+                <td><?= esc($role['id']) ?></td>
+                <td><?= esc($role['role_name']) ?></td>
+                <td><?= esc($role['description']) ?></td>
                 <td>
                     <a href="<?= base_url('roles/edit/' . $role['id']) ?>" class="btn btn-sm btn-warning">
                         <i class="fas fa-edit"></i> Editar
                     </a>
-                    <a href="<?= base_url('roles/delete/' . $role['id']) ?>" class="btn btn-sm btn-danger" onclick="return confirm('¿Estás seguro?')">
+                    <form method="post" action="<?= base_url('roles/delete/' . $role['id']) ?>" style="display:inline;" onsubmit="return confirm('¿Estás seguro?')"><?= csrf_field() ?><button type="submit" class="btn btn-sm btn-danger">
                         <i class="fas fa-trash-alt"></i> Eliminar
-                    </a>
+                    </button></form>
                     <!-- Opción para asignar permisos al rol -->
                     <a href="<?= base_url('permission_roles/create?role_id=' . $role['id']) ?>" class="btn btn-sm btn-info">
                         <i class="fas fa-user-tag"></i> Asignar Permisos

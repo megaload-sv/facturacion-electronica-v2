@@ -10,6 +10,7 @@ Crear permiso
     <div class="row justify-content-center">
         <div class="col-md-6">
         <form action="<?= base_url('permission_users/store') ?>" method="post">
+<?= csrf_field() ?>
             <div class="card card-primary">
                 <div class="card-header">
                     <h3 class="card-title">Asignar Permiso</h3>
@@ -20,7 +21,7 @@ Crear permiso
                         <label for="user_id">Usuario</label>
                         <select name="user_id" id="user_id" class="form-control">
                             <?php foreach ($users as $user): ?>
-                                <option value="<?= $user['id'] ?>"><?= $user['username'] ?></option>
+                                <option value="<?= esc($user['id']) ?>"><?= esc($user['username']) ?></option>
                             <?php endforeach; ?>
                         </select>
                     </div>
@@ -30,7 +31,7 @@ Crear permiso
                         <label for="permission_id">Permiso</label>
                         <select name="permission_id" id="permission_id" class="form-control">
                             <?php foreach ($permissions as $permission): ?>
-                                <option value="<?= $permission['id'] ?>"><?= $permission['permission_name'] ?></option>
+                                <option value="<?= esc($permission['id']) ?>"><?= esc($permission['permission_name']) ?></option>
                             <?php endforeach; ?>
                         </select>
                     </div>

@@ -146,6 +146,15 @@
 
 <!-- jQuery -->
 <script src="<?= base_url('plugins/jquery/jquery.min.js') ?>"></script>
+<script>
+    // Send the session CSRF token only to this application's origin.
+    $.ajaxPrefilter(function (options, originalOptions, xhr) {
+        const target = new URL(options.url, window.location.href);
+        if (target.origin === window.location.origin && !/^(GET|HEAD|OPTIONS)$/i.test(options.type)) {
+            xhr.setRequestHeader(<?= json_encode(csrf_header()) ?>, <?= json_encode(csrf_hash()) ?>);
+        }
+    });
+</script>
 <!-- jQuery UI 1.11.4 -->
 <script src="<?= base_url('plugins/jquery-ui/jquery-ui.min.js') ?>"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->

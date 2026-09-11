@@ -22,6 +22,7 @@ Sistema de Facturacion Electronica | Gestion Permisos
     <div class="row justify-content-center">
         <div class="col-md-6">
             <form action="/permissions/store" method="post">
+<?= csrf_field() ?>
                 <div class="card card-primary">
                     <div class="card-header">
                         <h3 class="card-title">Agregar Permiso</h3>

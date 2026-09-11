@@ -10,6 +10,7 @@ Asignar permiso a Rol
     <div class="row justify-content-center">
         <div class="col-md-6">
             <form action="<?= base_url('permission_roles/store') ?>" method="post">
+<?= csrf_field() ?>
                 <div class="card card-primary">
                     <div class="card-header">
                         <h3 class="card-title">Asignar Permiso</h3>
@@ -20,7 +21,7 @@ Asignar permiso a Rol
                             <label for="role_id">Rol</label>
                             <select name="role_id" id="role_id" class="form-control">
                                 <?php foreach ($roles as $role): ?>
-                                    <option value="<?= $role['id'] ?>"><?= $role['role_name'] ?></option>
+                                    <option value="<?= esc($role['id']) ?>"><?= esc($role['role_name']) ?></option>
                                 <?php endforeach; ?>
                             </select>
                         </div>
@@ -30,7 +31,7 @@ Asignar permiso a Rol
                             <label for="permission_id">Permiso</label>
                             <select name="permission_id" id="permission_id" class="form-control">
                                 <?php foreach ($permissions as $permission): ?>
-                                    <option value="<?= $permission['id'] ?>"><?= $permission['permission_name'] ?></option>
+                                    <option value="<?= esc($permission['id']) ?>"><?= esc($permission['permission_name']) ?></option>
                                 <?php endforeach; ?>
                             </select>
                         </div>
