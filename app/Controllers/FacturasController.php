@@ -99,6 +99,9 @@ class FacturasController extends BaseController
             $DTE = $modelSellos->getDTEByCodigoGeneracion($factura);
             $countRegisters = ($DTE == null ? 0 : count($DTE));
 
+            var_dump($DTE);
+            exit;
+
             if ($DTE == null || $countRegisters == 0) {
                 $dataSeguridad = $this->modelSeguridad->getConfigByEnvironment();
 
