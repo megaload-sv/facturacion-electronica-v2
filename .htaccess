@@ -1,7 +1,3 @@
-# The subdomain DocumentRoot must point to public/, never the project root.
-# Fail closed if a hosting configuration accidentally exposes this directory.
-Require all denied
-
  RewriteEngine On
  RewriteRule ^(.*)$ /public/$1 [L]
 
