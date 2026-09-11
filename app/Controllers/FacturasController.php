@@ -2491,6 +2491,9 @@ class FacturasController extends BaseController
         $clientFirmaDoc->setHeader("Content-Type", "application/json");
         $clientFirmaDoc->setHeader("User-Agent", "MegaloadTest/01");
 
+        var_dump($dataFirma);
+        exit;
+
         //firmando el documento
         $responseFirmaDoc = $clientFirmaDoc->request('POST', $dataSeguridad['urlFirmador'], ['body' => json_encode($dataFirma)]);
 
