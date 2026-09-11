@@ -11,7 +11,7 @@
         <!-- Derecha -->
         <div class="float-right d-none d-md-inline-block text-center">
             <span class="badge badge-<?= ENVIRONMENT === 'production' ? 'success' : 'warning' ?>">
-                <?= strtoupper(ENVIRONMENT) ?>
+                APP: <?= esc(strtoupper(ENVIRONMENT)) ?> / DTE: <?= esc(strtoupper(config(\Config\Dte::class)->selectedEnvironment())) ?>
             </span>
             <span class="ml-2">
                 <b>Versión</b> <?= env('APP_VERSION', '1.0.0') ?>

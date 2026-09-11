@@ -15,13 +15,8 @@ class SeguridadModel extends Model
 
     public final function getConfigByEnvironment(): array
     {
-        // Map ENVIRONMENT to target and ambiente according to the requested rules:
-        // development -> target = 1, ambiente = '00'
-        // testing     -> target = 2, ambiente = '00'
-        // production  -> target = 0, ambiente = '01'
-        // If ENVIRONMENT is an unexpected value, fall back to development mapping.
-
-        switch (ENVIRONMENT) {
+        // Fiscal environment is independent of application debug mode.
+        switch (config(\Config\Dte::class)->selectedEnvironment()) {
             case 'testing':
                 $target = 2;
                 $ambiente = '00';

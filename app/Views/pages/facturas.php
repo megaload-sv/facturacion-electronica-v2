@@ -55,8 +55,8 @@ Facturas
 
 <?= $this->section('js-page') ?>
 <script >
- var url_api = '<?= $url_api ?>';
- var url_base = '<?= base_url()  ?>';
+ var url_api = <?= json_encode($url_api, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT) ?>;
+ var url_base = <?= json_encode(base_url(), JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT) ?>;
 </script>
 <script src="js/facturas.js"></script>
 <?= $this->endSection() ?>
