@@ -210,6 +210,9 @@ class FacturasController extends BaseController
 
                 $documentoFirmado = $this->firmarDTE($newData->data, $dataSeguridad);
 
+                var_dump($documentoFirmado);
+                exit;
+
                 // Preparando para guardar el sello de forma local, y envio a MH
                 $dataSello = [
                     'identicadorNumInterno' => $newData->datainfo->identicadorNumInterno,
