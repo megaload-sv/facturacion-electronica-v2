@@ -1,5 +1,28 @@
 # Revisión de seguridad y publicación en HostGator/cPanel
 
+## Actualización — 11 de septiembre de 2026, 05:07 El Salvador
+
+Después de corregir el .env del servidor, se verificó directamente:
+
+- GET HTTP /login devuelve 307 con Location hacia el mismo login por HTTPS.
+- GET HTTPS /login devuelve 200 y la cookie ci_session incluye Secure, HttpOnly y SameSite=Lax.
+- Se conservan las cabeceras no-store, DENY, nosniff y la CSP previamente añadida.
+
+Los dos pendientes de HTTP y cookie Secure de la revisión de las 04:53 quedan resueltos para el login comprobado. No se realizó autenticación ni ninguna operación fiscal. HSTS se observó en la redirección HTTP, pero no en la respuesta HTTPS: falta entregarlo sobre HTTPS para que el navegador lo aplique. Los demás pendientes de la revisión integral siguen abiertos.
+
+## Revalidación pública — 11 de septiembre de 2026, 04:53–04:56 El Salvador
+
+Se repitieron comprobaciones sin sesión después de los cambios de cPanel. Esta sección actualiza el estado histórico descrito abajo; no confirma un despliegue íntegro ni sustituye las pruebas autenticadas.
+
+- **Confirmado:** GET HTTPS /login responde 200, incluye campo CSRF y no muestra debugbar/Kint ni comentarios DEBUG-VIEW. Emite X-Frame-Options DENY, nosniff, no-store, Referrer-Policy no-referrer y CSP limitada a enmarcado, objetos, base y formularios.
+- **Urgente pendiente:** GET HTTP /login también responde 200, sin redirección. La cookie ci_session carece todavía de Secure; sí tiene HttpOnly y SameSite=Lax. Activar Force HTTPS Redirect y revisar entorno/configuración efectiva antes de considerar protegido el transporte de credenciales y sesiones.
+- **Confirmado sin autenticación:** /users y /facturas/sellos redirigen al login por HTTPS; /info, /.env, /.git/HEAD y /writable/ responden 404. Esto valida esas rutas concretas, no demuestra ausencia de otras vías de acceso.
+- **Configuración por revisar:** /data redirige a /data/, luego a /public/data, que devuelve 404. No se obtuvo un respaldo ni un listado, pero la redirección sugiere reglas antiguas o una raíz documental distinta de la prevista; comprobar el valor efectivo en cPanel y los .htaccess activos.
+- **Código local actual:** commit 4a8d62c, suite completa con 38 pruebas y 310 aserciones aprobadas. Composer audit --locked devolvió cero avisos y cero paquetes abandonados. No confirma versiones de vendor en HostGator.
+- No se intentó iniciar sesión, probar contraseñas, enviar formularios ni ejecutar acciones fiscales en producción. Siguen pendientes MFA, pruebas con cuentas de diferentes permisos, configuración privada del servidor y las integraciones ERP/firmador.
+
+La cookie sin Secure y el HTTP abierto son evidencia directa. Un CI_ENVIRONMENT distinto de production, configuración desactualizada o configuración de sesión diferente son hipótesis hasta comprobar los valores efectivos del servidor. No cambiar el ambiente fiscal al corregir el entorno de la aplicación.
+
 Fecha: 10 de septiembre de 2026 (El Salvador).
 
 **Estado: endurecimiento local, NO desplegado. No constituye una certificación de seguridad ni una auditoría completa de infraestructura.** No se modificaron usuarios, permisos, facturas, secretos ni archivos del servidor. No se hicieron intentos de acceso con contraseñas ni envíos a Hacienda.
