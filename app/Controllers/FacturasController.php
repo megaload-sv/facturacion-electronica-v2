@@ -210,9 +210,6 @@ class FacturasController extends BaseController
 
                 $documentoFirmado = $this->firmarDTE($newData->data, $dataSeguridad);
 
-                var_dump($documentoFirmado);
-                exit;
-
                 // Preparando para guardar el sello de forma local, y envio a MH
                 $dataSello = [
                     'identicadorNumInterno' => $newData->datainfo->identicadorNumInterno,
@@ -230,12 +227,9 @@ class FacturasController extends BaseController
 
                 //$idSelloInterno = $modelSellos->insert($dataSello);
 
-
                 $token = $this->validarToken($dataSeguridad);
 
-
                 $responseSelloData = $this->sellarDTE($dataSeguridad, $token, $idEnvio, strval($newData->datainfo->codigoTipoDTE), $newData->datainfo->version, $newData->datainfo->codigoGeneracion, $documentoFirmado);
-
 
                 if ($responseSelloData->estado == "RECHAZADO") {
 
@@ -283,7 +277,6 @@ class FacturasController extends BaseController
                 }
 
                 $idSelloInterno = $modelSellos->insert($dataSello);
-
 
                 $this->correlativoFacturas->setNextCorrelativo($tipoDte, $factDatosGenerales->codigoPuntoVenta, $anioActual);
 
