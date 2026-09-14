@@ -21,10 +21,11 @@ Facturas Archivadas
 <?= $this->section('content') ?>
 <div class="card">
     <div class="card-header">
-        <h3 class="card-title">Listado de Facturas</h3>
+        <h3 class="card-title">Facturas aceptadas por Hacienda</h3>
     </div>
     <!-- /.card-header -->
     <div class="card-body p-0">
+        <p class="px-3 pt-3 text-muted">Documentos procesados sin error y recibidos por el Ministerio de Hacienda. Incluye los anulados posteriormente, identificados por su estado.</p>
 
         <div class="card mb-3">
             <div class="card-header bg-light">

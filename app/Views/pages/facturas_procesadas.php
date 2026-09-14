@@ -1,18 +1,18 @@
 <?= $this->extend('layouts/main') ?>
 
 <?= $this->section('title') ?>
-Facturas Procesadas
+Facturas con error
 <?= $this->endSection() ?>
 
 <?= $this->section('content-header') ?>
 <div class="row mb-2">
     <div class="col-sm-6">
-        <h1 class="m-0">Facturas Procesadas</h1>
+        <h1 class="m-0">Facturas con error</h1>
     </div><!-- /.col -->
     <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-            <li class="breadcrumb-item active">Facturas Procesadas</li>
+            <li class="breadcrumb-item active">Facturas con error</li>
         </ol>
     </div><!-- /.col -->
 </div><!-- /.row -->
@@ -21,10 +21,11 @@ Facturas Procesadas
 <?= $this->section('content') ?>
 <div class="card">
     <div class="card-header">
-        <h3 class="card-title">Listado de Facturas</h3>
+        <h3 class="card-title">Facturas procesadas con error</h3>
     </div>
     <!-- /.card-header -->
     <div class="card-body p-0">
+        <p class="px-3 pt-3 text-muted">Documentos con error de procesamiento o rechazo de Hacienda. Revisa la respuesta y corrige el documento para volver a enviarlo.</p>
         <table class="table table-striped" id="tablaSellos">
             <thead>
             <tr>

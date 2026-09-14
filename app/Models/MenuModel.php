@@ -35,6 +35,13 @@ class MenuModel extends Model
         $menu = [];
         foreach ($menuItems as $menuItem) {
             if ($menuItem['parent_id'] == $parentId) {
+                // Alinear los nombres visibles con los estados del dashboard.
+                $route = basename(rtrim(parse_url($menuItem['url'], PHP_URL_PATH) ?? '', '/'));
+                $menuItem['name'] = match ($route) {
+                    'facturas-procesadas' => 'Con error',
+                    'procesadas-archivadas' => 'Archivadas',
+                    default => $menuItem['name'],
+                };
                 $children = $this->buildMenuHierarchy($menuItems, $menuItem['id']);
                 if ($children) {
                     $menuItem['children'] = $children;

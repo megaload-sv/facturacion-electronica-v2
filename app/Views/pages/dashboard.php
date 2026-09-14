@@ -10,7 +10,7 @@ $errors = max(0, (int) $facturasProcesadasError);
 $pending = max(0, (int) $facturasProcesadasPendientes);
 $needsAttention = $errors + $pending;
 $metrics = [
-    ['value' => $processed, 'label' => 'Facturas procesadas', 'description' => 'Consulta el archivo de documentos.', 'icon' => 'fa-check', 'tone' => 'success', 'url' => 'procesadas-archivadas', 'action' => 'Ver archivo'],
+    ['value' => $processed, 'label' => 'Facturas archivadas', 'description' => 'Documentos recibidos por Hacienda sin error.', 'icon' => 'fa-check', 'tone' => 'success', 'url' => 'procesadas-archivadas', 'action' => 'Ver archivo'],
     ['value' => $pending, 'label' => 'Pendientes de enviar', 'description' => 'Documentos por procesar y enviar.', 'icon' => 'fa-clock', 'tone' => 'pending', 'url' => 'facturas', 'action' => 'Revisar pendientes'],
     ['value' => $errors, 'label' => 'Facturas con error', 'description' => 'Revisa la respuesta de cada documento.', 'icon' => 'fa-exclamation-triangle', 'tone' => 'error', 'url' => 'facturas-procesadas', 'action' => 'Revisar documentos'],
 ];
@@ -28,7 +28,7 @@ $metrics = [
         <a class="ml-task-row" href="<?= base_url('facturas-procesadas') ?>"><span><i class="far fa-file-alt" aria-hidden="true"></i> Documentos con error</span><span class="ml-task-count"><?= number_format($errors) ?></span><i class="fas fa-chevron-right" aria-hidden="true"></i></a>
     </section>
     <section class="ml-panel ml-shortcuts"><div class="ml-panel-heading"><div><span class="ml-eyebrow">A UN CLIC</span><h2>Accesos rápidos</h2></div></div>
-        <a href="<?= base_url('procesadas-archivadas') ?>"><span class="ml-shortcut-icon"><i class="fas fa-archive" aria-hidden="true"></i></span><span><strong>Archivo de facturas</strong><small>Consulta tus documentos procesados</small></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+        <a href="<?= base_url('procesadas-archivadas') ?>"><span class="ml-shortcut-icon"><i class="fas fa-archive" aria-hidden="true"></i></span><span><strong>Archivo de facturas</strong><small>Consulta tus documentos aceptados por Hacienda</small></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
         <a href="<?= base_url('reportes/declaraciones') ?>"><span class="ml-shortcut-icon"><i class="fas fa-chart-bar" aria-hidden="true"></i></span><span><strong>Reportes y declaraciones</strong><small>Accede a la información para tus reportes</small></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
         <div class="ml-shortcut-note"><i class="far fa-lightbulb" aria-hidden="true"></i><p>Consulta el detalle de cada factura para conocer su estado y las acciones disponibles.</p></div>
     </section>
