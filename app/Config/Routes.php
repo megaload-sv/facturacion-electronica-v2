@@ -121,8 +121,3 @@ $routes->get('/login', 'LoginController::index');
 $routes->post('/login/authenticate', 'LoginController::authenticate');
 $routes->post('/logout', 'LoginController::logout');
 
-$routes->get(
-    'facturas/probar-firmador',
-    'FacturasController::probarFirmador',
-    ['filter' => 'permission:invoices.process']
-);
