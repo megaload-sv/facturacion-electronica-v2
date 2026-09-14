@@ -1,4 +1,6 @@
 /* Megaload: shared visual layer over AdminLTE. */
+.ml-header-logout-form{margin:0 0 0 10px;flex-shrink:0}.ml-header-logout{display:inline-flex;align-items:center;gap:8px;white-space:nowrap;padding:9px 12px;border:1px solid var(--ml-border);border-radius:7px;background:#fff;color:var(--ml-blue);font-size:12px;font-weight:600}.ml-header-logout:hover{background:var(--ml-bg);border-color:var(--ml-blue)}
+@media(max-width:575px){.megaload-app .ml-top-title{display:none}.ml-header-logout-form{margin-left:4px}}
 :root{--ml-navy:#11194a;--ml-blue:#232f79;--ml-yellow:#f4ed38;--ml-ink:#202943;--ml-muted:#68748a;--ml-border:#e5e9f1;--ml-bg:#f5f7fb}
 .megaload-app{font-family:Inter,"Segoe UI",Arial,sans-serif;color:var(--ml-ink);font-size:14px;background:var(--ml-bg)}
 .megaload-app a{color:var(--ml-blue)}.megaload-app :focus-visible{outline:3px solid #7786de;outline-offset:3px}.skip-link{position:fixed;top:-70px;left:20px;z-index:10000;padding:12px 20px;background:#fff;border-radius:8px}.skip-link:focus{top:12px}

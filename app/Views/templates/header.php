@@ -10,7 +10,12 @@ $icons = ['dashboard' => 'fas fa-th-large', 'facturas' => 'far fa-file-alt', 'se
 <nav class="main-header navbar navbar-expand navbar-white navbar-light" aria-label="Barra superior">
     <button class="nav-link ml-menu-toggle" data-widget="pushmenu" type="button" aria-label="Mostrar u ocultar menú"><i class="fas fa-bars" aria-hidden="true"></i></button>
     <span class="ml-top-title">Facturación electrónica <span class="ml-top-divider">/</span> <span class="text-muted">Megaload</span></span>
-    <div class="ml-auto d-flex align-items-center"><span class="ml-user-name"><?= esc($username) ?></span><span class="ml-avatar" aria-hidden="true"><?= esc(mb_strtoupper(mb_substr($username, 0, 1))) ?></span><button class="nav-link ml-menu-toggle" data-widget="fullscreen" type="button" aria-label="Alternar pantalla completa"><i class="fas fa-expand" aria-hidden="true"></i></button></div>
+    <div class="ml-auto d-flex align-items-center"><span class="ml-user-name"><?= esc($username) ?></span><span class="ml-avatar" aria-hidden="true"><?= esc(mb_strtoupper(mb_substr($username, 0, 1))) ?></span><button class="nav-link ml-menu-toggle" data-widget="fullscreen" type="button" aria-label="Alternar pantalla completa"><i class="fas fa-expand" aria-hidden="true"></i></button>
+        <form method="post" action="<?= base_url('logout') ?>" class="ml-header-logout-form">
+            <?= csrf_field() ?>
+            <button type="submit" class="ml-header-logout"><i class="fas fa-sign-out-alt" aria-hidden="true"></i><span>Cerrar sesión</span></button>
+        </form>
+    </div>
 </nav>
 <aside class="main-sidebar sidebar-dark-primary">
     <a href="<?= base_url('dashboard') ?>" class="brand-link" aria-label="Megaload, inicio"><img src="<?= base_url('images/logo_megaload_only_img.png') ?>" alt="" class="brand-image ml-brand-icon"><span class="brand-text">MEGALOAD<small>FACTURACIÓN ELECTRÓNICA</small></span></a>

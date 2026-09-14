@@ -103,7 +103,7 @@
             margin-right: 4px;
         }
     </style>
-    <link rel="stylesheet" href="<?= base_url('css/megaload.css') ?>?v=20260914">
+    <link rel="stylesheet" href="<?= base_url('css/megaload.css') ?>?v=20260914-2">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed megaload-app">
 <a class="skip-link" href="#main-content">Saltar al contenido</a>
