@@ -10,7 +10,6 @@ $routes->group('', [], function ($routes) {
     // esto es para las rutas del dashboard
     $routes->get('/dashboard', 'DashboardController::index', ['filter' => 'permission:invoices.view']);
 
-
     //para las facturas
     $routes->get('facturas/', 'FacturasController::index', ['filter' => 'permission:invoices.view']);
     $routes->get('facturas/pendientes/(:num)/(:num)', 'FacturasController::pendientes/$1/$2', ['filter' => 'permission:invoices.view']);
@@ -121,3 +120,9 @@ $routes->get('/', 'LoginController::index');
 $routes->get('/login', 'LoginController::index');
 $routes->post('/login/authenticate', 'LoginController::authenticate');
 $routes->post('/logout', 'LoginController::logout');
+
+$routes->get(
+    'facturas/probar-firmador',
+    'FacturasController::probarFirmador',
+    ['filter' => 'permission:invoices.process']
+);

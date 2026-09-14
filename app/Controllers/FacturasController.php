@@ -2494,8 +2494,6 @@ class FacturasController extends BaseController
         $clientFirmaDoc->setHeader("Content-Type", "application/json");
         $clientFirmaDoc->setHeader("User-Agent", "MegaloadTest/01");
 
-        var_dump($dataFirma);
-        exit;
 
         //firmando el documento
         $responseFirmaDoc = $clientFirmaDoc->request('POST', $dataSeguridad['urlFirmador'], ['body' => json_encode($dataFirma)]);
@@ -2796,6 +2794,45 @@ class FacturasController extends BaseController
                 'correoEnviado'    => false,
                 'codigoGeneracion' => $codigoGeneracion
             ]);
+        }
+    }
+
+    public function probarFirmador()
+    {
+        try {
+
+            $dataSeguridad = $this->modelSeguridad->getConfigByEnvironment();
+
+            $dtePrueba = [
+                'data' => '1'
+            ];
+
+            $resultado = $this->firmarDTE(
+                $dtePrueba,
+                $dataSeguridad
+            );
+
+            return $this->response->setJSON([
+                'success' => true,
+                'message' => 'Firmador funcionando correctamente.',
+                'urlFirmador' => $dataSeguridad['urlFirmador'] ?? null,
+                'firma' => $resultado
+            ]);
+
+        } catch (\Throwable $e) {
+
+            log_message(
+                'error',
+                'Error prueba firmador: ' . $e->getMessage()
+            );
+
+            return $this->response
+                ->setStatusCode(500)
+                ->setJSON([
+                    'success' => false,
+                    'message' => 'No fue posible comunicarse con el firmador.',
+                    'error' => $e->getMessage()
+                ]);
         }
     }
 
