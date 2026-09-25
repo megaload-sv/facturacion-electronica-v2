@@ -97,8 +97,10 @@ $routes->group('', [], function ($routes) {
     $routes->post('/role_menu/delete/(:num)/(:num)', 'RoleMenuController::delete/$1/$2', ['filter' => 'permission:security.manage']);
 
 
-    $routes->get('/dte-invalidar/(:segment)', 'DTEController::getInvalidarDTEInfo/$1', ['filter' => 'permission:invoices.invalidate']);
-    $routes->post('/dte-invalidar/', 'DTEController::procesarInvalidarDTE', ['filter' => 'permission:invoices.invalidate']);
+    $routes->get('/dte-invalidar/(:segment)', 'DTEController::getInvalidarDTEInfo/$1');
+    $routes->post('/dte-invalidar/', 'DTEController::procesarInvalidarDTE');
+    //$routes->get('/dte-invalidar/(:segment)', 'DTEController::getInvalidarDTEInfo/$1', ['filter' => 'permission:invoices.invalidate']);
+    //$routes->post('/dte-invalidar/', 'DTEController::procesarInvalidarDTE', ['filter' => 'permission:invoices.invalidate']);
 
 // rutas para las pruebas
 
