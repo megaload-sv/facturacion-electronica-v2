@@ -103,6 +103,7 @@ $routes->group('', [], function ($routes) {
     $routes->post('/dte-invalidar/', 'DTEController::procesarInvalidarDTE', ['filter' => 'permission:invoices.invalidate']);
 
 // rutas para las pruebas
+    $routes->get('email/enviar-correo', 'EmailController::enviarCorreo', ['filter' => 'permission:invoices.resend']);
 
 
     $routes->get('procesar-json', 'ProcesarJsonController::index', ['filter' => 'permission:imports.manage']);
