@@ -3011,6 +3011,12 @@ class FacturasController extends BaseController
 
         date_default_timezone_set('America/El_Salvador');
 
+        // Manual Funcional V2.0, pp. 11-12: salvo FE, FEXE y FSEE, la
+        // fecha del evento debe coincidir con la generación del DTE original.
+        $fechaEvento = in_array((string) $dteInfo['tipoDte'], ['01', '11', '14'], true)
+            ? date('Y-m-d')
+            : $dteInfo['fechaEmision'];
+
         // Los DTE nuevos omiten estos campos del emisor, pero sus códigos MH
         // permanecen en el número de control del documento original.
         $codEstableMH = $dteInfo['codEstableMHEmisor'] ?? null;
@@ -3029,7 +3035,7 @@ class FacturasController extends BaseController
                 "version" => 3,
                 "ambiente" => $seguridad['ambiente'],
                 "codigoGeneracion" => strtoupper($this->generarUUID()),
-                "fecEmi" => date('Y-m-d'),
+                "fecEmi" => $fechaEvento,
                 "horEmi" => date('H:i:s'),
                 "fusion" => null
             ],
