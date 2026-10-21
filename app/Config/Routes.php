@@ -26,6 +26,7 @@ $routes->group('', [], function ($routes) {
     $routes->get('facturas/generar-pdf-invalidacion/(:segment)', 'FacturasController::generarPDFInvalidacion/$1', ['filter' => 'permission:invoices.view']);
     $routes->get('facturas/total-sellos-archivo', 'FacturasController::facturas_archivadas_total', ['filter' => 'permission:invoices.view']);
     $routes->get('facturas/dte-correo-data/(:segment)', 'FacturasController::factura_correo_receptor/$1', ['filter' => 'permission:invoices.view']);
+    $routes->post('facturas/invalidacion-correo/(:segment)', 'FacturasController::invalidacion_reenviar_correo/$1', ['filter' => 'permission:invoices.resend']);
     $routes->post('facturas/dte-correo-data-process/(:segment)', 'FacturasController::factura_reenviar_correo/$1', ['filter' => 'permission:invoices.resend']);
 
 //para los cruds
