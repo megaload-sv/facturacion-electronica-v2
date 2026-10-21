@@ -13,6 +13,7 @@ use App\Models\CatTipoIdentificacionReceptorModel;
 use CodeIgniter\HTTP\CURLRequest;
 use CodeIgniter\I18n\Time;
 use App\Libraries\JsonValidator;
+use App\Libraries\InvalidacionDiagnostico;
 use App\Services\EmailService;
 use PHPUnit\Exception;
 use stdClass;
@@ -2899,6 +2900,12 @@ class FacturasController extends BaseController
             }
 
             // 3. Obtener token
+            $diagnosticoInvalidacion = InvalidacionDiagnostico::comparar($invalidacionDte, (string) $firma['body']);
+            $diagnosticoInvalidacion['origen'] = [
+                'codigoSolicitado' => $codigoGeneracion,
+                'fechaEmisionGuardada' => $dteInfo['fechaEmision'] ?? null,
+            ];
+
             $token = $this->validarToken($dataSeguridad);
 
             if (empty($token) || !is_string($token)) {
@@ -2946,12 +2953,18 @@ class FacturasController extends BaseController
                     $detalle = array_merge($detalle, $sello['observaciones']);
                 }
 
+                log_message('error', 'Diagnóstico de invalidación rechazada: ' . json_encode([
+                    'codigoMsg' => $sello['codigoMsg'] ?? null,
+                    'diagnostico' => $diagnosticoInvalidacion,
+                ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
+
                 return $this->response->setJSON([
                     'success' => false,
                     'error'   => true,
                     'message' => 'Hacienda rechazó la invalidación del DTE.',
                     'detalle' => !empty($detalle) ? $detalle : ['El MH devolvió estado RECHAZADO sin observaciones adicionales.'],
-                    'data'    => $sello
+                    'data'    => $sello,
+                    'diagnostico' => $diagnosticoInvalidacion,
                 ])->setStatusCode(422);
             }
 
