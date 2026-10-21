@@ -1023,7 +1023,7 @@ class FacturasController extends BaseController
         $pdf->SetFont('helvetica', 'B', 7);
         $pdf->Cell(82, $cellHeight, 'IVA Retenido:', 1, 0, 'R');
         $pdf->SetFont('helvetica', '', 7);
-        $pdf->Cell(16, $cellHeight, number_format((isset($jsonDTE->resumen->ivaRete1) ? $jsonDTE->resumen->ivaRete1 : $jsonDTE->resumen->totalIva), 2, '.', ','), 1, 1, 'R');
+        $pdf->Cell(16, $cellHeight, number_format($jsonDTE->resumen->ivaRete ?? $jsonDTE->resumen->ivaRete1 ?? 0, 2, '.', ','), 1, 1, 'R');
 
         $yPos = $pdf->GetY();
         $pdf->SetXY($xPos + 102, $yPos);
@@ -2137,14 +2137,14 @@ class FacturasController extends BaseController
         $pdf->SetFont('helvetica', 'B', 7);
         $pdf->Cell(82, $cellHeight, 'IVA Percibido:', 1, 0, 'R');
         $pdf->SetFont('helvetica', '', 7);
-        $pdf->Cell(16, $cellHeight, 0.00, 1, 1, 'R');
+        $pdf->Cell(16, $cellHeight, number_format($jsonDTE->resumen->ivaPerci ?? $jsonDTE->resumen->ivaPerci1 ?? 0, 2, '.', ','), 1, 1, 'R');
 
         $yPos = $pdf->GetY();
         $pdf->SetXY($xPos + 102, $yPos);
         $pdf->SetFont('helvetica', 'B', 7);
         $pdf->Cell(82, $cellHeight, 'IVA Retenido:', 1, 0, 'R');
         $pdf->SetFont('helvetica', '', 7);
-        $pdf->Cell(16, $cellHeight, $jsonDTE->resumen->ivaRete1, 1, 1, 'R');
+        $pdf->Cell(16, $cellHeight, number_format($jsonDTE->resumen->ivaRete ?? $jsonDTE->resumen->ivaRete1 ?? 0, 2, '.', ','), 1, 1, 'R');
 
         $yPos = $pdf->GetY();
         $pdf->SetXY($xPos + 102, $yPos);
