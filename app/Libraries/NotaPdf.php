@@ -119,10 +119,17 @@ class NotaPdf
         $html .= '<tr nobr="true"><td colspan="6" align="right"><b>SUMA DE VENTAS</b></td><td align="right">' . $money($r->totalNoSuj)
             . '</td><td align="right">' . $money($r->totalExenta) . '</td><td align="right">' . $money($r->totalGravada) . '</td></tr></table>';
         $pdf->writeHTML($html);
-        $totals = ['Suma total de operaciones' => $r->subTotalVentas,
-            'Monto global Desc., Rebajas y otros a ventas no sujetas' => $r->descuNoSuj,
-            'Monto global Desc., Rebajas y otros a ventas exentas' => $r->descuExenta,
-            'Monto global Desc., Rebajas y otros a ventas gravadas' => $r->descuGravada];
+        $totals = ['Suma total de operaciones' => $r->subTotalVentas];
+        foreach (['descuNoSuj' => 'Monto global Desc., Rebajas y otros a ventas no sujetas',
+            'descuExenta' => 'Monto global Desc., Rebajas y otros a ventas exentas',
+            'descuGravada' => 'Monto global Desc., Rebajas y otros a ventas gravadas'] as $field => $label) {
+            if (isset($r->$field)) {
+                $totals[$label] = $r->$field;
+            }
+        }
+        if (isset($r->totalDescu)) {
+            $totals['Total de descuentos'] = $r->totalDescu;
+        }
         $html = '<table border="1" cellpadding="2" cellspacing="0" width="100%">';
         $totalRow = static fn ($label, $value): string => '<tr nobr="true"><td width="80%" align="right"><b>' . $e($label) . '</b>'
             . '</td><td width="20%" align="right">' . $money($value) . '</td></tr>';
@@ -132,8 +139,11 @@ class NotaPdf
         foreach ($r->tributos ?? [] as $tax) {
             $html .= $totalRow($tax->descripcion, $tax->valor);
         }
-        foreach (['Sub-Total' => $r->subTotal, 'IVA Percibido' => $r->ivaPerci1 ?? 0,
-            'IVA Retenido' => $r->ivaRete1 ?? 0, 'Monto total de la operación' => $r->montoTotalOperacion] as $label => $value) {
+        if (isset($r->subTotal)) {
+            $html .= $totalRow('Sub-Total', $r->subTotal);
+        }
+        foreach (['IVA Percibido' => $r->ivaPerci ?? $r->ivaPerci1 ?? 0,
+            'IVA Retenido' => $r->ivaRete ?? $r->ivaRete1 ?? 0, 'Monto total de la operación' => $r->montoTotalOperacion] as $label => $value) {
             $html .= $totalRow($label, $value);
         }
         $html .= '</table>';
