@@ -5,8 +5,14 @@ $(document).ready(function () {
 
     $(document).ajaxStop($.unblockUI);
 
+    function cargarArchivo() {
+    const anio = $('#filtroAnioArchivo').val();
+    $('#filtroAnioArchivo, #btnReintentarArchivo').prop('disabled', true);
+    $('#btnReintentarArchivo').prop('hidden', true);
+    $('#estadoCargaArchivo').text('Cargando documentos de ' + anio + '…');
     $.ajax({
         url: '/facturas/sellos-archivo',
+        data: { anio: anio },
         type: 'GET',
         dataType: 'json',
         beforeSend: function () {
@@ -29,16 +35,39 @@ $(document).ready(function () {
         },
         success: function (json) {
             inicializarDataTable(json.data);
+            $('#estadoCargaArchivo').text(json.data.length
+                ? 'Documentos de ' + anio + ': ' + json.data.length + '.'
+                : 'No hay documentos archivados de ' + anio + '. Puede seleccionar otro año.');
+        },
+        error: function () {
+            inicializarDataTable([]);
+            $('#estadoCargaArchivo').text('No se pudieron cargar los documentos de ' + anio + '. Intente nuevamente.');
+            $('#btnReintentarArchivo').prop('hidden', false);
         },
         complete: function () {
+            $('#filtroAnioArchivo, #btnReintentarArchivo').prop('disabled', false);
             $.unblockUI();
         }
     });
+    }
 
     let tablaSellos = null;
     let sellosData = [];
 
+    $('#filtroAnioArchivo').on('change', function () {
+        $('#filtroFechaDesde, #filtroFechaHasta').val('');
+        cargarArchivo();
+    });
+    $('#btnReintentarArchivo').on('click', cargarArchivo);
+
     function inicializarDataTable(data) {
+
+        if ($.fn.DataTable.isDataTable('#tablaSellos')) {
+            $('#tablaSellos').DataTable().clear().destroy();
+        }
+
+        const anio = $('#filtroAnioArchivo').val();
+        $('#filtroFechaDesde, #filtroFechaHasta').attr({ min: anio + '-01-01', max: anio + '-12-31' });
 
         sellosData = data || [];
 
@@ -140,12 +169,9 @@ $(document).ready(function () {
             tableBody.append(row);
         });
 
-        if ($.fn.DataTable.isDataTable('#tablaSellos')) {
-            $('#tablaSellos').DataTable().clear().destroy();
-        }
-
         tablaSellos = $('#tablaSellos').DataTable({
             order: [[5, 'desc']],
+            language: { emptyTable: 'No hay documentos para el año seleccionado.', zeroRecords: 'No hay documentos que coincidan con los filtros de este año.' },
             columnDefs: [{ targets: [7, 9], orderable: false, searchable: false }]
         });
 
@@ -226,6 +252,8 @@ $(document).ready(function () {
 
         return true;
     });
+
+    cargarArchivo();
 
     $(document).on('click', '.descargarJSON', function () {
 

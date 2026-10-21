@@ -446,7 +446,16 @@ class FacturasController extends BaseController
         $catTipoInvalidacionData = $catTipoInvalidacion->select('codigo, valores')->findAll();
 
 
-        return $this->render('pages/facturas_archivadas', ['catTipoDocumentoReceptor' => $catTipoDocumentoReceptorData, 'catTipoInvalidacion' => $catTipoInvalidacionData]);
+        $anioActual = (int) date('Y');
+        $aniosArchivo = array_unique(array_merge([$anioActual], (new SellosdteModel())->getAniosArchivo()));
+        rsort($aniosArchivo, SORT_NUMERIC);
+
+        return $this->render('pages/facturas_archivadas', [
+            'catTipoDocumentoReceptor' => $catTipoDocumentoReceptorData,
+            'catTipoInvalidacion' => $catTipoInvalidacionData,
+            'anioActual' => $anioActual,
+            'aniosArchivo' => $aniosArchivo,
+        ]);
     }
 
     public function facturas_archivadas_data()
@@ -454,7 +463,14 @@ class FacturasController extends BaseController
 
         $sellosDteModel = new SellosdteModel();
 
-        $resultados = $sellosDteModel->getDTEArchivo();
+        $anio = $this->request->getGet('anio') ?? date('Y');
+        if (!is_string($anio) || !preg_match('/^[1-9][0-9]{3}$/D', $anio) || (int) $anio > 9998) {
+            return $this->response->setStatusCode(400)->setJSON([
+                'error' => true, 'message' => 'Seleccione un año válido.', 'data' => [],
+            ]);
+        }
+
+        $resultados = $sellosDteModel->getDTEArchivo((int) $anio);
 
         $res['error'] = false;
         $res['message'] = 'success get data';

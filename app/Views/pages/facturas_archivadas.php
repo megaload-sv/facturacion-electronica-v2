@@ -20,6 +20,15 @@ Facturas Archivadas
 
 <?= $this->section('content') ?>
 <style>
+    .archive-toolbar { padding: .85rem 1rem .65rem; border-bottom: 1px solid #e2e8f0; background: #fafbfc; }
+    .archive-filters { display: grid; grid-template-columns: minmax(115px, .8fr) minmax(170px, 1.5fr) minmax(125px, 1fr) repeat(2, minmax(145px, 1fr)) auto; gap: .75rem; align-items: end; }
+    .archive-filters label { display: block; margin-bottom: .25rem; font-size: .75rem; font-weight: 600; color: #64748b; }
+    .archive-filters .form-control { width: 100%; border-color: #d8dee6; border-radius: .375rem; font-size: .875rem; }
+    .archive-filters .btn { white-space: nowrap; border-radius: .375rem; }
+    .archive-summary { display: flex; flex-wrap: wrap; align-items: center; gap: .35rem .75rem; margin-top: .5rem; font-size: .75rem; color: #64748b; }
+    .archive-table { padding: .65rem 1rem 0; }
+    @media (max-width: 1199.98px) { .archive-filters { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+    @media (max-width: 575.98px) { .archive-filters { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .5rem; } .archive-toolbar { padding: .75rem; } .archive-table { padding: .5rem .75rem 0; } }
     #tablaSellos tbody td { vertical-align: middle; }
     #tablaSellos .dte-actions { display: flex; align-items: center; gap: .5rem; white-space: nowrap; }
     #tablaSellos .dte-actions .btn { border-radius: .5rem; padding: .4rem .7rem; }
@@ -39,52 +48,55 @@ Facturas Archivadas
     </div>
     <!-- /.card-header -->
     <div class="card-body p-0">
-        <p class="px-3 pt-3 text-muted">Documentos procesados sin error y recibidos por el Ministerio de Hacienda. Incluye los anulados posteriormente, identificados por su estado.</p>
-
-        <div class="card mb-3">
-            <div class="card-header bg-light">
-                <h3 class="card-title mb-0">
-                    <i class="fas fa-filter"></i> Filtros de búsqueda
-                </h3>
-            </div>
-
-            <div class="card-body">
-                <div class="row">
-
-                    <div class="col-md-3">
-                        <label>Tipo de documento</label>
-                        <select id="filtroTipoDTE" class="form-control">
+        <div class="archive-toolbar" role="group" aria-label="Filtros de documentos archivados">
+            <div class="archive-filters">
+                <div>
+                    <label for="filtroAnioArchivo">Año de emisión</label>
+                    <select id="filtroAnioArchivo" class="form-control form-control-sm" aria-describedby="ayudaAnioArchivo">
+                        <?php foreach ($aniosArchivo as $anio): ?>
+                            <option value="<?= esc($anio) ?>" <?= $anio === $anioActual ? 'selected' : '' ?>><?= esc($anio) ?><?= $anio === $anioActual ? ' (actual)' : '' ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+                    <div>
+                        <label for="filtroTipoDTE">Tipo de documento</label>
+                        <select id="filtroTipoDTE" class="form-control form-control-sm">
                             <option value="">Todos</option>
                         </select>
                     </div>
 
-                    <div class="col-md-3">
-                        <label>Estado</label>
-                        <select id="filtroEstadoDTE" class="form-control">
+                    <div>
+                        <label for="filtroEstadoDTE">Estado</label>
+                        <select id="filtroEstadoDTE" class="form-control form-control-sm">
                             <option value="">Todos</option>
                         </select>
                     </div>
 
-                    <div class="col-md-2">
-                        <label>Fecha desde</label>
-                        <input type="date" id="filtroFechaDesde" class="form-control">
+                    <div>
+                        <label for="filtroFechaDesde">Desde</label>
+                        <input type="date" id="filtroFechaDesde" class="form-control form-control-sm">
                     </div>
 
-                    <div class="col-md-2">
-                        <label>Fecha hasta</label>
-                        <input type="date" id="filtroFechaHasta" class="form-control">
+                    <div>
+                        <label for="filtroFechaHasta">Hasta</label>
+                        <input type="date" id="filtroFechaHasta" class="form-control form-control-sm">
                     </div>
 
-                    <div class="col-md-2 d-flex align-items-end">
-                        <button type="button" id="btnLimpiarFiltros" class="btn btn-secondary btn-block">
-                            <i class="fas fa-eraser"></i> Limpiar
+                    <div>
+                        <button type="button" id="btnLimpiarFiltros" class="btn btn-sm btn-outline-secondary" title="Limpiar filtros del año seleccionado">
+                            <i class="fas fa-eraser" aria-hidden="true"></i> Limpiar
                         </button>
                     </div>
 
-                </div>
+            </div>
+            <div class="archive-summary">
+                <span id="estadoCargaArchivo" role="status" aria-live="polite"></span>
+                <span id="ayudaAnioArchivo">Filtros por año de emisión · Incluye documentos anulados.</span>
+                <button type="button" id="btnReintentarArchivo" class="btn btn-sm btn-outline-primary" hidden>Reintentar carga</button>
             </div>
         </div>
 
+        <div class="archive-table">
         <table class="table table-striped" id="tablaSellos">
             <thead>
             <tr>
@@ -104,6 +116,7 @@ Facturas Archivadas
 
             </tbody>
         </table>
+        </div>
     </div>
     <!-- /.card-body -->
     <!-- Modal Mensaje Error Ministerio Hacienda -->

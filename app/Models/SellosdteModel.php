@@ -86,10 +86,24 @@ class SellosdteModel extends Model
         return $query->getRowArray();
     }
 
-    public function getDTEArchivo(): array
+    public function getAniosArchivo(): array
     {
+        $rows = $this->db->table('sellosdte')
+            ->select('YEAR(fechaFactura) AS anio', false)
+            ->distinct()
+            ->whereIn('idEstadoDTE', [1, 4])
+            ->where('fechaFactura >=', '1000-01-01')
+            ->orderBy('anio', 'DESC')
+            ->get()->getResultArray();
 
-        $db = \Config\Database::connect();
+        return array_map(static fn (array $row): int => (int) $row['anio'], $rows);
+    }
+
+    public function getDTEArchivo(?int $anio = null): array
+    {
+        $anio ??= (int) date('Y');
+
+        $db = $this->db;
 
         // Obtener las facturas procesadas
         $builder = $db->table('sellosdte dte')
@@ -114,12 +128,14 @@ class SellosdteModel extends Model
             ->join('puntosdeventa pv', 'dte.codigoPuntoVenta = pv.codigoPuntoVenta')
             ->join('sucursales suc', 'suc.idSucursal = pv.idSucursal')
             ->join('dteempresas emp', 'suc.codigoEmpresa = emp.codigoEmpresa')
-            ->whereIn('dte.idEstadoDTE', [1, 4]);
+            ->whereIn('dte.idEstadoDTE', [1, 4])
+            ->where('dte.fechaFactura >=', sprintf('%04d-01-01', $anio))
+            ->where('dte.fechaFactura <', sprintf('%04d-01-01', $anio + 1));
 
         $rsData = $builder->get()->getResultArray();
 
         $data['data'] = $rsData;
-        $data['total'] = $this->totalDTEArchivo();
+        $data['total'] = count($rsData);
 
         return $data;
     }
