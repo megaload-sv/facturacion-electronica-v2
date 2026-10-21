@@ -49,6 +49,17 @@ Facturas Archivadas
             </div>
 
             <div class="card-body">
+                <div class="form-group">
+                    <label for="filtroAnioArchivo">Año de emisión</label>
+                    <select id="filtroAnioArchivo" class="form-control col-md-3" aria-describedby="ayudaAnioArchivo">
+                        <?php foreach ($aniosArchivo as $anio): ?>
+                            <option value="<?= esc($anio) ?>" <?= $anio === $anioActual ? 'selected' : '' ?>><?= esc($anio) ?><?= $anio === $anioActual ? ' (actual)' : '' ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                    <small id="ayudaAnioArchivo" class="form-text text-muted">Se carga un año a la vez. Seleccione otro año para consultar documentos anteriores. Los demás filtros se aplican dentro del año elegido.</small>
+                </div>
+                <div id="estadoCargaArchivo" class="mb-3" role="status" aria-live="polite"></div>
+                <button type="button" id="btnReintentarArchivo" class="btn btn-outline-primary mb-3" hidden>Reintentar carga</button>
                 <div class="row">
 
                     <div class="col-md-3">
