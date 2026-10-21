@@ -8,12 +8,13 @@ use Opis\JsonSchema\Errors\ValidationError;
 class JsonValidator
 {
     private const SCHEMAS = [
-        '01' => 'fe-fc-v1.json',
-        '03' => 'fe-ccf-v3.json',
-        '05' => 'fe-nc-v3.json',
-        '06' => 'fe-nd-v3.json',
-        '11' => 'fe-fex-v1.json',
-        '14' => 'fe-fse-v1.json',
+        '01' => 'fe-f-v2.json',
+        '03' => 'fe-ccf-v4.json',
+        '05' => 'fe-nc-v4.json',
+        '06' => 'fe-nd-v4.json',
+        '11' => 'fe-fex-v3.json',
+        '14' => 'fe-fse-v2.json',
+        'invalidacion' => 'invalidacion-schema-v3.json',
     ];
 
     private array $schemas = [];
@@ -53,8 +54,9 @@ class JsonValidator
             $errors[] = 'Falta el objeto data.identificacion.';
         } else {
             $tipo = $identificacion->tipoDte ?? null;
-            if (!is_string($tipo) || !isset(self::SCHEMAS[$tipo])) {
-                $errors[] = 'data.identificacion.tipoDte debe ser uno de: ' . implode(', ', array_keys(self::SCHEMAS)) . '.';
+            $tiposDte = array_map('strval', array_values(array_filter(array_keys(self::SCHEMAS), static fn ($key) => $key !== 'invalidacion')));
+            if (!is_string($tipo) || !in_array($tipo, $tiposDte, true)) {
+                $errors[] = 'data.identificacion.tipoDte debe ser uno de: ' . implode(', ', $tiposDte) . '.';
             }
             foreach (['codigoTipoDTE' => 'tipoDte', 'version' => 'version', 'codigoGeneracion' => 'codigoGeneracion'] as $metadata => $field) {
                 $meta = $response->datainfo->$metadata ?? null;
@@ -88,6 +90,13 @@ class JsonValidator
     public function completeEmisor(string $tipoDocumento, \stdClass $emisor, array $configuration): void
     {
         $properties = $this->schema($tipoDocumento)->properties->emisor->properties;
+        // Retirar únicamente campos conocidos de versiones anteriores que ya
+        // no pertenecen al emisor. Los campos desconocidos los rechaza el esquema.
+        foreach (['tipoEstablecimiento', 'codEstableMH', 'codPuntoVentaMH', 'nombreComercial', 'codEstable', 'codPuntoVenta'] as $field) {
+            if (!property_exists($properties, $field)) {
+                unset($emisor->$field);
+            }
+        }
         foreach ($configuration as $field => $value) {
             if (property_exists($properties, $field)) {
                 $emisor->$field = $value;
@@ -118,10 +127,11 @@ class JsonValidator
             return $this->schemas[$tipoDocumento];
         }
         $path = WRITEPATH . 'schemas/' . self::SCHEMAS[$tipoDocumento];
-        if (!is_file($path) || !is_readable($path)) {
+        if (!is_file($path)) {
             throw new \RuntimeException('No se puede leer el esquema para el DTE ' . $tipoDocumento . '.');
         }
-        $contents = file_get_contents($path);
+        // En Windows is_readable() puede fallar por ACL aunque la lectura funcione.
+        $contents = @file_get_contents($path);
         if ($contents === false) {
             throw new \RuntimeException('No se pudo cargar el esquema para el DTE ' . $tipoDocumento . '.');
         }

@@ -145,7 +145,7 @@
 
     $('#btnExportar').on('click', function () {
         if (resultadosExportables.length === 0) {
-            alert('⚠️ No hay resultados para exportar.');
+            AppAlerts.notify('No hay resultados para exportar.', 'warning');
             return;
         }
 
@@ -161,5 +161,6 @@
         URL.revokeObjectURL(url);
     });
 </script>
+<?= $this->include('templates/notifications') ?>
 </body>
 </html>

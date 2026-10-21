@@ -19,6 +19,20 @@ Facturas Archivadas
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
+<style>
+    #tablaSellos tbody td { vertical-align: middle; }
+    #tablaSellos .dte-actions { display: flex; align-items: center; gap: .5rem; white-space: nowrap; }
+    #tablaSellos .dte-actions .btn { border-radius: .5rem; padding: .4rem .7rem; }
+    #tablaSellos .dte-actions-toggle { background: #fff; border: 1px solid #cbd5e1; color: #334155; }
+    #tablaSellos .dte-actions-toggle:hover,
+    #tablaSellos .dte-actions-toggle[aria-expanded="true"] { background: #f1f5f9; border-color: #94a3b8; }
+    #tablaSellos .dte-actions-menu { min-width: 14rem; padding: .4rem; border: 1px solid #e2e8f0; border-radius: .65rem; box-shadow: 0 .5rem 1.5rem rgba(15, 23, 42, .12); }
+    #tablaSellos .dte-actions-menu .dropdown-item { padding: .65rem .75rem; border-radius: .35rem; }
+    #tablaSellos .dte-actions-menu .dropdown-item:focus { outline: 2px solid #1a1bb3; outline-offset: -2px; }
+    #tablaSellos .dte-actions-menu .text-danger:hover,
+    #tablaSellos .dte-actions-menu .text-danger:focus { background: #fef2f2; color: #b91c1c !important; }
+    #tablaSellos .dte-actions .btn:focus { outline: 2px solid #1a1bb3; outline-offset: 2px; }
+</style>
 <div class="card">
     <div class="card-header">
         <h3 class="card-title">Facturas aceptadas por Hacienda</h3>
@@ -83,7 +97,7 @@ Facturas Archivadas
                 <th>Nombre de Estado DTE</th>
                 <th>Estado/Respuesta</th>
                 <th>Correo</th>
-                <th>Accion</th>
+                <th>Acciones</th>
             </tr>
             </thead>
             <tbody>

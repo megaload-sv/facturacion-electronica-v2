@@ -11,13 +11,13 @@ Permisos
 </a>
 
 <div class="table-responsive">
-    <table class="table table-bordered table-striped">
-        <thead class="thead-dark">
+    <table class="table table-bordered table-striped" data-datatable>
+        <thead>
             <tr>
                 <th>ID</th>
                 <th>Nombre</th>
                 <th>Descripción</th>
-                <th>Acciones</th>
+                <th data-table-actions>Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -28,12 +28,12 @@ Permisos
                 <td><?= esc($permission['description']) ?></td>
                 <td>
                     <!-- Botón para editar -->
-                    <a href="<?= base_url('permissions/edit/' . $permission['id']) ?>" class="btn btn-sm btn-warning">
+                    <a href="<?= base_url('permissions/edit/' . $permission['id']) ?>" class="btn btn-sm btn-outline-primary">
                         <i class="fas fa-edit"></i> Editar
                     </a>
 
                     <!-- Botón para eliminar con confirmación -->
-                    <form method="post" action="<?= base_url('permissions/delete/' . $permission['id']) ?>" style="display:inline;" onsubmit="return confirm('¿Estás seguro de eliminar este permiso?')"><?= csrf_field() ?><button type="submit" class="btn btn-sm btn-danger">
+                    <form method="post" action="<?= base_url('permissions/delete/' . $permission['id']) ?>" style="display:inline;" data-confirm="¿Estás seguro de eliminar este permiso?"><?= csrf_field() ?><button type="submit" class="btn btn-sm btn-outline-danger">
                         <i class="fas fa-trash-alt"></i> Eliminar
                     </button></form>
                 </td>

@@ -200,9 +200,10 @@
 <!-- Datatable -->
 <script src="<?= base_url('plugins/datatables/jquery.dataTables.js') ?>"></script>
 <script src="<?= base_url('plugins/datatables-bs4/js/dataTables.bootstrap4.js') ?>"></script>
+<script src="<?= base_url('js/tables.js') ?>?v=1" data-language="<?= base_url('plugins/datatables/i18n/es-ES.json') ?>"></script>
 
 <!-- SweetAlert2 -->
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<?= $this->include('templates/notifications') ?>
 
 <?= $this->renderSection('js-page') ?>
 

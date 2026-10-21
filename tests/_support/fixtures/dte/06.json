@@ -1,0 +1,101 @@
+{
+    "identificacion": {
+        "version": 4,
+        "ambiente": "00",
+        "tipoDte": "06",
+        "numeroControl": "DTE-06-M001P001-000000000000001",
+        "codigoGeneracion": "12345678-1234-4234-8234-123456789ABC",
+        "tipoModelo": 1,
+        "tipoOperacion": 1,
+        "tipoContingencia": null,
+        "motivoContin": null,
+        "fecEmi": "2026-09-03",
+        "horEmi": "12:00:00",
+        "tipoMoneda": "USD",
+        "fusion": null
+    },
+    "documentoRelacionado": [
+        {
+            "tipoDocumento": "03",
+            "tipoGeneracion": 1,
+            "numeroDocumento": "X",
+            "fechaEmision": "2026-09-02"
+        }
+    ],
+    "emisor": {
+        "nit": "06140000000000",
+        "nrc": "1234567",
+        "nombre": "XXX",
+        "codActividad": "12345",
+        "descActividad": "XXXXX",
+        "nombreComercial": null,
+        "telefono": "XXXXXXXX",
+        "correo": "pruebas@example.com",
+        "direccion": {
+            "departamento": "01",
+            "municipio": "13",
+            "complemento": "X",
+            "distrito": "13"
+        }
+    },
+    "receptor": {
+        "nrc": "1234567",
+        "nombre": "X",
+        "codActividad": "12345",
+        "descActividad": "XXXXX",
+        "nombreComercial": null,
+        "direccion": {
+            "departamento": "01",
+            "municipio": "13",
+            "complemento": "X",
+            "distrito": "13"
+        },
+        "telefono": null,
+        "correo": "pruebas@example.com",
+        "tipoDocumento": "X",
+        "numDocumento": "X"
+    },
+    "ventaTercero": null,
+    "cuerpoDocumento": [
+        {
+            "numItem": 1,
+            "tipoItem": 1,
+            "numeroDocumento": "X",
+            "codigo": null,
+            "codTributo": null,
+            "descripcion": "X",
+            "cantidad": 1,
+            "uniMedida": 1,
+            "precioUni": 0,
+            "montoDescu": 0,
+            "ventaNoSuj": 0,
+            "ventaExenta": 0,
+            "ventaGravada": 0,
+            "tributos": null,
+            "noGravado": 0,
+            "ivaPerci": 0,
+            "totalIva": 0,
+            "ivaRete": 0
+        }
+    ],
+    "resumen": {
+        "totalNoSuj": 0,
+        "totalExenta": 0,
+        "totalGravada": 0,
+        "subTotalVentas": 0,
+        "totalDescu": 0,
+        "tributos": null,
+        "montoTotalOperacion": 1,
+        "totalLetras": "XXXXXXXX",
+        "condicionOperacion": 1,
+        "numPagoElectronico": null,
+        "ivaPerci": 0,
+        "totalIva": 0,
+        "ivaRete": 0,
+        "totalNoGravado": 0,
+        "totalPagar": 0,
+        "observaciones": null,
+        "codigoRetencionMH": null
+    },
+    "apendice": null
+}

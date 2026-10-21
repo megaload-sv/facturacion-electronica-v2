@@ -68,7 +68,7 @@ class InvalidacionPdf
         $brandEnd = $pdf->GetY();
         $header = '<div align="center"><b>Documento Tributario Electrónico<br>EVENTO DE INVALIDACIÓN</b></div><br>'
             . 'Código de generación: <b>' . $e($id->codigoGeneracion) . '</b><br>'
-            . 'Fecha y hora del evento: <b>' . $e($id->fecAnula . ' ' . $id->horAnula) . '</b><br>'
+            . 'Fecha y hora del evento: <b>' . $e(($id->fecEmi ?? $id->fecAnula ?? '-') . ' ' . ($id->horEmi ?? $id->horAnula ?? '-')) . '</b><br>'
             . 'Sello de recepción: <b>' . $e($respuesta->selloRecibido) . '</b><br><br>'
             . '<table border="1" cellpadding="2" cellspacing="0"><tr bgcolor="#dddddd">'
             . '<td width="35%">Estado del evento</td><td width="65%">Fecha y hora de recepción</td></tr><tr>'

@@ -55,10 +55,10 @@ $(document).ready(function () {
 
             let btnMensaje = `
             <button type="button"
-                    class="btn btn-success btn-sm mensajeMH"
+                    class="btn btn-outline-secondary btn-sm mensajeMH"
                     data-target="#modalMensaje"
                     data-codigo-generacion="${securityEscape(sello.codigoGeneracion)}">
-                Ver Mensaje
+                Ver mensaje
             </button>
         `;
 
@@ -84,15 +84,16 @@ $(document).ready(function () {
 
             let btnInvalidar = '';
             const btnPDFInvalidacion = parseInt(sello.idEstadoDTE) === 4
-                ? `<a target="_blank" rel="noopener" href="facturas/generar-pdf-invalidacion/${encodeURIComponent(sello.codigoGeneracion)}" class="btn btn-sm btn-outline-primary">PDF de invalidación</a><br>`
+                ? `<a target="_blank" rel="noopener" href="facturas/generar-pdf-invalidacion/${encodeURIComponent(sello.codigoGeneracion)}" class="dropdown-item"><i class="far fa-file-pdf fa-fw mr-2" aria-hidden="true"></i>PDF de invalidación</a>`
                 : '';
 
             if (parseInt(sello.idEstadoDTE) !== 4) {
                 btnInvalidar = `
+                <div class="dropdown-divider"></div>
                 <a href="facturas/invalidar-json/${securityEscape(sello.codigoGeneracion)}"
-                   class="btn btn-sm btn-outline-primary invalidarDTE"
+                   class="dropdown-item text-danger invalidarDTE"
                    data-codigo-generacion="${securityEscape(sello.codigoGeneracion)}">
-                    Invalidar DTE
+                    <i class="fas fa-ban fa-fw mr-2" aria-hidden="true"></i>Invalidar DTE
                 </a>
             `;
             }
@@ -119,12 +120,19 @@ $(document).ready(function () {
                 <td>${securityEscape(sello.estadoNombre)}</td>
                 <td>${btnMensaje}</td>
                 <td>${estadoCorreo}</td>
-                <td>
-                    <a target="_blank" href="facturas/generar-pdf/${securityEscape(sello.codigoGeneracion)}" class="btn btn-sm btn-outline-primary">Generar PDF</a><br>
-                    <a target="_blank" href="facturas/descargar-json/${securityEscape(sello.codigoGeneracion)}" class="btn btn-sm btn-outline-primary">Descargar JSON</a><br>
-                    <a href="facturas/enviar-correo/${securityEscape(sello.codigoGeneracion)}" class="btn btn-sm btn-outline-primary enviarCorreo" data-codigo-generacion="${securityEscape(sello.codigoGeneracion)}">Enviar Correo</a><br>
-                    ${btnInvalidar}
-                    ${btnPDFInvalidacion}
+                <td class="dte-actions-cell">
+                    <div class="dte-actions">
+                        <a target="_blank" rel="noopener" href="facturas/generar-pdf/${securityEscape(sello.codigoGeneracion)}" class="btn btn-sm btn-outline-primary" aria-label="Generar PDF del DTE ${securityEscape(sello.codigoGeneracion)}"><i class="far fa-file-pdf mr-1" aria-hidden="true"></i>PDF</a>
+                        <div class="dropdown">
+                            <button type="button" class="btn btn-sm dte-actions-toggle dropdown-toggle" id="dte-actions-${index}" data-toggle="dropdown" aria-expanded="false" aria-label="Acciones del DTE ${securityEscape(sello.codigoGeneracion)}">Acciones</button>
+                            <div class="dropdown-menu dropdown-menu-right dte-actions-menu" aria-labelledby="dte-actions-${index}">
+                                <a target="_blank" rel="noopener" href="facturas/descargar-json/${securityEscape(sello.codigoGeneracion)}" class="dropdown-item"><i class="fas fa-download fa-fw mr-2" aria-hidden="true"></i>Descargar JSON</a>
+                                <a href="facturas/enviar-correo/${securityEscape(sello.codigoGeneracion)}" class="dropdown-item enviarCorreo" data-codigo-generacion="${securityEscape(sello.codigoGeneracion)}"><i class="far fa-envelope fa-fw mr-2" aria-hidden="true"></i>Enviar correo</a>
+                                ${btnPDFInvalidacion}
+                                ${btnInvalidar}
+                            </div>
+                        </div>
+                    </div>
                 </td>
             </tr>
         `;
@@ -138,11 +146,7 @@ $(document).ready(function () {
 
         tablaSellos = $('#tablaSellos').DataTable({
             order: [[5, 'desc']],
-            pageLength: 10,
-            dom: 'Bfrtip',
-            language: {
-                url: "/plugins/datatables/i18n/es-ES.json"
-            }
+            columnDefs: [{ targets: [7, 9], orderable: false, searchable: false }]
         });
 
         aplicarEventosFiltros();
@@ -249,7 +253,7 @@ $(document).ready(function () {
                 document.body.removeChild(link);
             },
             error: function (xhr, status, error) {
-                alert('Error al descargar el archivo JSON.');
+                AppAlerts.notify('Error al descargar el archivo JSON.', 'error');
             }
         });
     });
@@ -450,7 +454,7 @@ $(document).ready(function () {
             });
 
             $.ajax({
-                url: '/dte-invalidar/',
+                url: '/dte-invalidar',
                 type: 'POST',
                 data: form.serialize(),
                 dataType: 'json',
@@ -720,7 +724,7 @@ $(document).ready(function () {
         }
 
         if (currentDate > limitDate) {
-            alert("Invalidación no permitida\nNo es posible invalidar este DTE. Ha excedido el tiempo permitido.");
+            AppAlerts.notify("No es posible invalidar este DTE. Ha excedido el tiempo permitido.", "warning");
             $('.processInvalidDTEModal').prop('disabled', true);
 
         } else {

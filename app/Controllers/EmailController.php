@@ -15,7 +15,7 @@ class EmailController extends BaseController
         $subject = 'Prueba de Correo';
         $message = '<h1>Hola!</h1><p>Este es un correo de prueba.</p>';
 
-        if ($emailService->sendEmail($to, $subject, $message)) {
+        if ($emailService->sendEmail($to, $subject, $message) === true) {
             return 'Correo enviado exitosamente!';
         } else {
             return 'Error al enviar el correo.';

@@ -86,6 +86,10 @@ class RolesUsersController extends BaseController
     // Método para eliminar un rol asignado a un usuario
     public function removeRole($userId, $roleId)
     {
+        if ((int) $userId === (int) session('user_id')) {
+            return redirect()->to(site_url('users/edit/' . (int) $userId))
+                ->with('error', 'Use el editor de accesos para modificar sus roles y conservar su acceso administrativo.');
+        }
         $roleUserModel = new RoleUserModel();
 
         // Eliminar el rol asignado al usuario

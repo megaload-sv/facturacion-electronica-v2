@@ -13,14 +13,14 @@ Asignar permiso a usuario
 </a>
 
 <div class="table-responsive">
-    <table class="table table-bordered table-striped">
-        <thead class="thead-dark">
+    <table class="table table-bordered table-striped" data-datatable>
+        <thead>
             <tr>
                 <th>ID del Usuario</th>
                 <th>Nombre del Usuario</th>
                 <th>ID del Permiso</th>
                 <th>Nombre del Permiso</th>
-                <th>Acciones</th>
+                <th data-table-actions>Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -32,19 +32,16 @@ Asignar permiso a usuario
                     <td><?= esc($permissionUser['permission_id']) ?></td>
                     <td><?= esc($permissionUser['permission_name']) ?></td>
                     <td>
-                        <a href="<?= base_url('permission_users/edit/' . $permissionUser['user_id'] . '/' . $permissionUser['permission_id']) ?>" class="btn btn-sm btn-warning">
+                        <a href="<?= base_url('permission_users/edit/' . $permissionUser['user_id'] . '/' . $permissionUser['permission_id']) ?>" class="btn btn-sm btn-outline-primary">
                             <i class="fas fa-edit"></i> Editar
                         </a>
-                        <form method="post" action="<?= base_url('permission_users/delete/' . $permissionUser['user_id'] . '/' . $permissionUser['permission_id']) ?>" style="display:inline;" onsubmit="return confirm('¿Estás seguro de eliminar este permiso del usuario?')"><?= csrf_field() ?><button type="submit" class="btn btn-sm btn-danger">
+                        <form method="post" action="<?= base_url('permission_users/delete/' . $permissionUser['user_id'] . '/' . $permissionUser['permission_id']) ?>" style="display:inline;" data-confirm="¿Estás seguro de eliminar este permiso del usuario?"><?= csrf_field() ?><button type="submit" class="btn btn-sm btn-outline-danger">
                             <i class="fas fa-trash-alt"></i> Quitar Permiso
                         </button></form>
                     </td>
                 </tr>
             <?php endforeach; ?>
-        <?php else: ?>
-            <tr>
-                <td colspan="5" class="text-center">No hay asignaciones de permisos a usuarios.</td>
-            </tr>
+        
         <?php endif; ?>
         </tbody>
     </table>

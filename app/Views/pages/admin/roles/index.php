@@ -1,55 +1,9 @@
-<?= $this->extend('layouts/main')?>
-
-<?= $this->section('title')?>
-Lista de Roles
-<?= $this->endSection()?>
-
-<?= $this->section('content')?>
-
-<h2 class="mb-4">Lista de Roles</h2>
-
-<a href="<?= base_url('roles/create') ?>" class="btn btn-primary mb-3">
-    <i class="fas fa-plus"></i> Agregar Rol
-</a>
-
-<div class="table-responsive">
-    <table class="table table-bordered table-striped">
-        <thead class="thead-dark">
-            <tr>
-                <th>ID</th>
-                <th>Nombre del Rol</th>
-                <th>Descripción</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-        <?php foreach ($roles as $role): ?>
-            <tr>
-                <td><?= esc($role['id']) ?></td>
-                <td><?= esc($role['role_name']) ?></td>
-                <td><?= esc($role['description']) ?></td>
-                <td>
-                    <a href="<?= base_url('roles/edit/' . $role['id']) ?>" class="btn btn-sm btn-warning">
-                        <i class="fas fa-edit"></i> Editar
-                    </a>
-                    <form method="post" action="<?= base_url('roles/delete/' . $role['id']) ?>" style="display:inline;" onsubmit="return confirm('¿Estás seguro?')"><?= csrf_field() ?><button type="submit" class="btn btn-sm btn-danger">
-                        <i class="fas fa-trash-alt"></i> Eliminar
-                    </button></form>
-                    <!-- Opción para asignar permisos al rol -->
-                    <a href="<?= base_url('permission_roles/create?role_id=' . $role['id']) ?>" class="btn btn-sm btn-info">
-                        <i class="fas fa-user-tag"></i> Asignar Permisos
-                    </a>
-                    <a href="<?= base_url('permission_roles/view/' . $role['id']) ?>" class="btn btn-sm btn-secondary">
-                        <i class="fas fa-eye"></i> Ver Permisos Asignados
-                    </a>
-                </td>
-            </tr>
-        <?php endforeach; ?>
-        </tbody>
-    </table>
-</div>
-
-<a href="<?= base_url('dashboard') ?>" class="btn btn-secondary mt-3">
-    <i class="fas fa-arrow-left"></i> Volver al Dashboard
-</a>
-<?= $this->endSection()?>
+<?= $this->extend('layouts/main') ?>
+<?= $this->section('title') ?>Roles y permisos | Megaload<?= $this->endSection() ?>
+<?= $this->section('content-header') ?><div class="ml-page-heading"><div><span class="ml-eyebrow">ADMINISTRACIÓN</span><h1>Roles y permisos</h1><p>Perfiles de acceso claros y consistentes para todo el equipo.</p></div><a class="btn btn-primary" href="<?= site_url('roles/create') ?>"><i class="fas fa-plus" aria-hidden="true"></i> Crear rol</a></div><?= $this->endSection() ?>
+<?= $this->section('content') ?>
+<?= $this->include('pages/admin/access/nav') ?>
+<section class="ml-panel"><span class="ml-eyebrow">PERFILES DEL EQUIPO</span><h2>Roles <span class="access-count"><?= count($roles) ?></span></h2><div class="table-responsive"><table class="table table-bordered table-striped" data-datatable><thead><tr><th scope="col">Rol</th><th scope="col">Descripción</th><th scope="col" class="text-right" data-table-actions>Acciones</th></tr></thead><tbody>
+<?php foreach ($roles as $role): ?><tr><td><strong><?= esc($role['role_name']) ?></strong><?php if (in_array($role['role_name'], ['admin', 'root'], true)): ?> <span class="access-tag">Sistema</span><?php endif ?></td><td><?= esc($role['description'] ?? '') ?></td><td class="text-right"><div class="access-row-actions"><a class="btn btn-sm btn-outline-primary" href="<?= site_url('roles/edit/' . $role['id']) ?>">Editar permisos<span class="sr-only"> de <?= esc($role['role_name']) ?></span></a><?php if (!in_array($role['role_name'], ['admin', 'root'], true)): ?><form method="post" action="<?= site_url('roles/delete/' . $role['id']) ?>" data-confirm="¿Eliminar este rol? Solo se eliminará si no tiene usuarios asignados."><?= csrf_field() ?><button class="btn btn-sm btn-outline-danger" aria-label="Eliminar rol <?= esc($role['role_name']) ?>"><i class="fas fa-trash-alt" aria-hidden="true"></i></button></form><?php endif ?></div></td></tr><?php endforeach ?>
+</tbody></table></div><?php if (!$roles): ?><p class="access-empty">Cree un rol para comenzar a organizar los accesos de su equipo.</p><?php endif ?></section>
+<?= $this->endSection() ?>

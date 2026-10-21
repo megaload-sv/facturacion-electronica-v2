@@ -22,11 +22,11 @@ class PermissionsController extends BaseController
     public function store()
     {
         $model = new PermissionModel();
-        $model->save([
+        $saved = $model->save([
             'permission_name' => $this->request->getPost('permission_name'),
             'description' => $this->request->getPost('description'),
         ]);
-        return redirect()->to('/permissions');
+        return redirect()->to('/permissions')->with($saved ? 'success' : 'error', $saved ? 'Permiso creado correctamente.' : 'No se pudo crear el permiso.');
     }
 
     public function edit($id)
@@ -39,17 +39,23 @@ class PermissionsController extends BaseController
     public function update($id)
     {
         $model = new PermissionModel();
-        $model->update($id, [
+        if (!$model->find($id)) {
+            return redirect()->to('/permissions')->with('error', 'El permiso no existe.');
+        }
+        $saved = $model->update($id, [
             'permission_name' => $this->request->getPost('permission_name'),
             'description' => $this->request->getPost('description'),
         ]);
-        return redirect()->to('/permissions');
+        return redirect()->to('/permissions')->with($saved ? 'success' : 'error', $saved ? 'Permiso actualizado correctamente.' : 'No se pudo actualizar el permiso.');
     }
 
     public function delete($id)
     {
         $model = new PermissionModel();
-        $model->delete($id);
-        return redirect()->to('/permissions');
+        if (!$model->find($id)) {
+            return redirect()->to('/permissions')->with('error', 'El permiso no existe.');
+        }
+        $deleted = $model->delete($id);
+        return redirect()->to('/permissions')->with($deleted ? 'success' : 'error', $deleted ? 'Permiso eliminado correctamente.' : 'No se pudo eliminar el permiso.');
     }
 }

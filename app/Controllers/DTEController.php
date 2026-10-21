@@ -982,7 +982,7 @@ class DTEController extends ResourceController
                 'User-Agent' => 'MegaloadTest/01'
             ],
             'body' => json_encode($payload),
-            'verify' => true,
+            'verify' => false,
             'http_errors' => false
         ]);
 
