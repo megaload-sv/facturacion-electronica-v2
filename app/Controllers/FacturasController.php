@@ -61,7 +61,10 @@ class FacturasController extends BaseController
         $limit = max(1, min($limit, 100));
         $config = $this->modelSeguridad->getConfigByEnvironment();
         $url = rtrim($config['urlApiFacturas'] ?? '', '/');
-        if (parse_url($url, PHP_URL_SCHEME) !== 'https') {
+        $scheme = parse_url($url, PHP_URL_SCHEME);
+        // La excepción HTTP depende del entorno de la aplicación, no del ambiente fiscal de MH.
+        $allowLocalHttp = ENVIRONMENT === 'development' && $scheme === 'http';
+        if ($scheme !== 'https' && !$allowLocalHttp) {
             return $this->response->setStatusCode(503)->setJSON(['error' => 'Configure HTTPS en la API de facturas.']);
         }
         try {
