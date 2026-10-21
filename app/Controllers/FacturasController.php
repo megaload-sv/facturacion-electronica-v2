@@ -2641,7 +2641,9 @@ class FacturasController extends BaseController
         $resultadoCorreo = $emailService->sendEmail($datos->receptor->correo, 'Notificación de Factura Electrónica', $mensajeCorreo, $adjuntos);
 
         // Imprimir o registrar el resultado del envío de correo
-        log_message('info', $resultadoCorreo);
+        if ($resultadoCorreo !== true) {
+            throw new \RuntimeException((string) $resultadoCorreo);
+        }
 
         /*// Mover el archivo después de enviar el correo
         $directorioBase = 'G:/My Drive/archivos_procesados/';
@@ -2685,6 +2687,58 @@ class FacturasController extends BaseController
         $model = new SellosdteModel();
         $correoData = $model->getCorreoReceptor($codigoGeneracion);
         return $this->response->setJSON($correoData);
+    }
+
+    private function enviarCorreoInvalidacion(string $codigoGeneracion): void
+    {
+        $registro = (new SellosdteModel())->getJsonDTEByCodigoGeneracion($codigoGeneracion);
+        if (!$registro) {
+            throw new \DomainException('DTE no encontrado.');
+        }
+        $generador = new \App\Libraries\InvalidacionPdf();
+        $evento = $generador->obtenerEvento($registro);
+        $correo = trim((string) ($evento->documento->correo ?? ''));
+        if (!filter_var($correo, FILTER_VALIDATE_EMAIL)) {
+            throw new \DomainException('El receptor no tiene un correo válido.');
+        }
+        $directorio = WRITEPATH . 'uploads/invalidacion_' . bin2hex(random_bytes(16));
+        if (!mkdir($directorio, 0700, true)) {
+            throw new \RuntimeException('No se pudieron preparar los adjuntos.');
+        }
+        $json = $directorio . '/Invalidacion.json';
+        $pdf = $directorio . '/Invalidacion.pdf';
+        try {
+            if (file_put_contents($json, json_encode($evento, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_THROW_ON_ERROR)) === false) {
+                throw new \RuntimeException('No se pudo guardar el JSON.');
+            }
+            $generador->generar($evento, json_decode($registro['jsonAnulacion']))->Output($pdf, 'F');
+            $mensaje = '<p>Adjuntamos el JSON y PDF de la invalidación aceptada por Hacienda para el DTE '
+                . htmlspecialchars($codigoGeneracion, ENT_QUOTES, 'UTF-8') . '.</p>';
+            $resultado = (new EmailService())->sendEmail($correo, 'Notificación de invalidación de DTE', $mensaje, [$json, $pdf]);
+            if ($resultado !== true) {
+                throw new \RuntimeException((string) $resultado);
+            }
+        } finally {
+            foreach ([$json, $pdf] as $archivo) {
+                if (is_file($archivo)) {
+                    unlink($archivo);
+                }
+            }
+            rmdir($directorio);
+        }
+    }
+
+    public function invalidacion_reenviar_correo($codigoGeneracion)
+    {
+        try {
+            $this->enviarCorreoInvalidacion($codigoGeneracion);
+            return $this->response->setJSON(['error' => false, 'message' => 'Correo de invalidación enviado correctamente.']);
+        } catch (\DomainException | \UnexpectedValueException $e) {
+            return $this->response->setStatusCode(409)->setJSON(['error' => true, 'message' => $e->getMessage()]);
+        } catch (\Throwable $e) {
+            log_message('error', 'Correo de invalidación ' . $codigoGeneracion . ': ' . $e->getMessage());
+            return $this->response->setStatusCode(500)->setJSON(['error' => true, 'message' => 'No se pudo enviar el correo de invalidación. Puede reintentarlo desde el listado.']);
+        }
     }
 
     public function factura_reenviar_correo($codigoGeneracion)
@@ -3017,10 +3071,23 @@ class FacturasController extends BaseController
                 ])->setStatusCode(500);
             }
 
+            $mensajeInvalidacion = 'El DTE fue invalidado correctamente.';
+            if (ENVIRONMENT === 'production') {
+                try {
+                    $this->enviarCorreoInvalidacion($codigoGeneracion);
+                    $mensajeInvalidacion .= ' Se envió el JSON y PDF de invalidación al receptor.';
+                } catch (\Throwable $e) {
+                    log_message('error', 'Correo de invalidación: ' . $e->getMessage());
+                    $mensajeInvalidacion .= ' No se pudo enviar el correo; puede reintentarlo desde el listado.';
+                }
+            } else {
+                $mensajeInvalidacion .= ' Correo automático omitido fuera de producción.';
+            }
+
             return $this->response->setJSON([
                 'success' => true,
                 'error'   => false,
-                'message' => 'El DTE fue invalidado correctamente.',
+                'message' => $mensajeInvalidacion,
                 'detalle' => [],
                 'data'    => [
                     'codigoGeneracion' => $codigoGeneracion,

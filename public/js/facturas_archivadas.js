@@ -113,7 +113,8 @@ $(document).ready(function () {
 
             let btnInvalidar = '';
             const btnPDFInvalidacion = parseInt(sello.idEstadoDTE) === 4
-                ? `<a target="_blank" rel="noopener" href="facturas/generar-pdf-invalidacion/${encodeURIComponent(sello.codigoGeneracion)}" class="dropdown-item"><i class="far fa-file-pdf fa-fw mr-2" aria-hidden="true"></i>PDF de invalidación</a>`
+                ? `<a target="_blank" rel="noopener" href="facturas/generar-pdf-invalidacion/${encodeURIComponent(sello.codigoGeneracion)}" class="dropdown-item"><i class="far fa-file-pdf fa-fw mr-2" aria-hidden="true"></i>PDF de invalidación</a>
+                   <a href="#" class="dropdown-item enviarCorreoInvalidacion" data-codigo-generacion="${securityEscape(sello.codigoGeneracion)}"><i class="far fa-envelope fa-fw mr-2" aria-hidden="true"></i>Enviar correo de invalidación</a>`
                 : '';
 
             if (parseInt(sello.idEstadoDTE) !== 4) {
@@ -156,7 +157,7 @@ $(document).ready(function () {
                             <button type="button" class="btn btn-sm dte-actions-toggle dropdown-toggle" id="dte-actions-${index}" data-toggle="dropdown" aria-expanded="false" aria-label="Acciones del DTE ${securityEscape(sello.codigoGeneracion)}">Acciones</button>
                             <div class="dropdown-menu dropdown-menu-right dte-actions-menu" aria-labelledby="dte-actions-${index}">
                                 <a target="_blank" rel="noopener" href="facturas/descargar-json/${securityEscape(sello.codigoGeneracion)}" class="dropdown-item"><i class="fas fa-download fa-fw mr-2" aria-hidden="true"></i>Descargar JSON</a>
-                                <a href="facturas/enviar-correo/${securityEscape(sello.codigoGeneracion)}" class="dropdown-item enviarCorreo" data-codigo-generacion="${securityEscape(sello.codigoGeneracion)}"><i class="far fa-envelope fa-fw mr-2" aria-hidden="true"></i>Enviar correo</a>
+                                <a href="facturas/enviar-correo/${securityEscape(sello.codigoGeneracion)}" class="dropdown-item enviarCorreo" data-codigo-generacion="${securityEscape(sello.codigoGeneracion)}"><i class="far fa-envelope fa-fw mr-2" aria-hidden="true"></i>Reenviar correo de factura</a>
                                 ${btnPDFInvalidacion}
                                 ${btnInvalidar}
                             </div>
@@ -604,6 +605,30 @@ $(document).ready(function () {
         });
 
 
+    });
+
+    $(document).on('click', '.enviarCorreoInvalidacion', async function (e) {
+        e.preventDefault();
+        const btn = $(this);
+        if (btn.data('enviando')) return;
+        btn.data('enviando', true);
+        if (!await AppAlerts.confirm('¿Enviar al receptor el JSON y PDF de la invalidación?')) {
+            btn.data('enviando', false);
+            return;
+        }
+        Swal.fire({ title: 'Enviando invalidación...', allowOutsideClick: false, allowEscapeKey: false, didOpen: () => Swal.showLoading() });
+        $.ajax({
+            url: url_base + 'facturas/invalidacion-correo/' + encodeURIComponent(btn.data('codigo-generacion')),
+            type: 'POST',
+            dataType: 'json',
+            success: function (response) {
+                Swal.fire({ icon: response.error ? 'error' : 'success', text: response.message });
+            },
+            error: function (xhr) {
+                Swal.fire({ icon: 'error', text: xhr.responseJSON?.message || 'No se pudo enviar el correo de invalidación.' });
+            },
+            complete: function () { btn.data('enviando', false); }
+        });
     });
 
     $(document).on('click', '.enviarCorreo',function (e){
