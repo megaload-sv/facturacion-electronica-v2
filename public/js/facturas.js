@@ -1,6 +1,19 @@
 function securityEscape(value) {
     return String(value == null ? '' : value).replace(/[&<>"']/g, c => ({'&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'}[c]));
 }
+function obtenerTipoDocumento(values) {
+    const nombre = String(values.tipoDoc == null ? '' : values.tipoDoc).trim();
+    if (nombre) return nombre;
+
+    const prefijo = String(values.prefix == null ? '' : values.prefix).trim().toUpperCase();
+    const codigo = String(values.codigoTipoDTE == null ? '' : values.codigoTipoDTE).trim();
+    const numeroControl = String(values.code_to_mh == null ? '' : values.code_to_mh).trim();
+    if (['FSE', 'FSEE', '14'].includes(prefijo) || codigo === '14' || /^DTE-14-/.test(numeroControl)) {
+        return 'Factura de Sujeto Excluido';
+    }
+
+    return prefijo || codigo || 'Sin tipo de documento';
+}
 $(document).ready(function(){
 
     let currentPage = 1;
@@ -74,7 +87,7 @@ $(document).ready(function(){
                         trTable += '</td>';
 
                         trTable += '<td>';
-                        trTable += securityEscape(values.tipoDoc);
+                        trTable += securityEscape(obtenerTipoDocumento(values));
                         trTable += '</td>';
 
                         trTable += '<td>';

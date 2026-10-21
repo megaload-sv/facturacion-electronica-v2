@@ -39,7 +39,7 @@ Sistema de Facturacion Electronica | Gestion Menu
                                             <a href="/menu/edit/<?= esc($menu['id']) ?>" class="btn btn-sm btn-warning mr-1">
                                                 <i class="fas fa-edit"></i> Editar
                                             </a>
-                                            <form method="post" action="/menu/delete/<?= esc($menu['id']) ?>" style="display:inline;" onsubmit="return confirm('¿Está seguro?')"><?= csrf_field() ?><button type="submit" class="btn btn-sm btn-danger">
+                                            <form method="post" action="/menu/delete/<?= esc($menu['id']) ?>" style="display:inline;" data-confirm="¿Está seguro?"><?= csrf_field() ?><button type="submit" class="btn btn-sm btn-danger">
                                                 <i class="fas fa-trash"></i> Eliminar
                                             </button></form>
                                         </div>
@@ -68,7 +68,7 @@ Sistema de Facturacion Electronica | Gestion Menu
                                                                 <a href="/menu/edit/<?= esc($submenu['id']) ?>" class="btn btn-sm btn-warning mr-1">
                                                                     <i class="fas fa-edit"></i> Editar
                                                                 </a>
-                                                                <form method="post" action="/menu/delete/<?= esc($submenu['id']) ?>" style="display:inline;" onsubmit="return confirm('¿Está seguro?')"><?= csrf_field() ?><button type="submit" class="btn btn-sm btn-danger">
+                                                                <form method="post" action="/menu/delete/<?= esc($submenu['id']) ?>" style="display:inline;" data-confirm="¿Está seguro?"><?= csrf_field() ?><button type="submit" class="btn btn-sm btn-danger">
                                                                     <i class="fas fa-trash"></i> Eliminar
                                                                 </button></form>
                                                             </div>

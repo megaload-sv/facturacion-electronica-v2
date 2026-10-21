@@ -16,8 +16,6 @@ Procesar JSON
 <div class="card">
     <div class="card-header"><h3 class="card-title">Cargar y procesar archivos JSON</h3></div>
     <div class="card-body">
-        <?php if (session()->getFlashdata('success')): ?><div class="alert alert-success"><?= session()->getFlashdata('success') ?></div><?php endif; ?>
-        <?php if (session()->getFlashdata('error')): ?><div class="alert alert-danger"><?= session()->getFlashdata('error') ?></div><?php endif; ?>
 
         <form action="<?= base_url('procesar-json/procesar') ?>" method="post" enctype="multipart/form-data">
 <?= csrf_field() ?>
@@ -59,7 +57,7 @@ Procesar JSON
                            class="btn btn-sm btn-primary">
                             Descargar Excel
                         </a>
-                        <form action="<?= base_url('procesar-json/eliminar/' . $group['id']) ?>" method="post" style="display:inline-block;" onsubmit="return confirm('¿Seguro que deseas eliminar este grupo y su carpeta?');">
+                        <form action="<?= base_url('procesar-json/eliminar/' . $group['id']) ?>" method="post" style="display:inline-block;" data-confirm="¿Seguro que deseas eliminar este grupo y su carpeta?">
 <?= csrf_field() ?>
                             <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
                         </form>

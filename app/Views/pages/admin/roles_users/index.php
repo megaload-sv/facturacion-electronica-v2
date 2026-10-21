@@ -5,8 +5,8 @@
 <h2 class="mb-4">Roles Asignados al Usuario: <?= esc($user['username']) ?></h2>
 
 <div class="table-responsive">
-    <table class="table table-bordered table-striped">
-        <thead class="thead-dark">
+    <table class="table table-bordered table-striped" data-datatable>
+        <thead>
             <tr>
                 <th>ID del Rol</th>
                 <th>Nombre del Rol</th>
@@ -22,10 +22,7 @@
                     <td><?= esc($role['description']) ?></td>
                 </tr>
             <?php endforeach; ?>
-        <?php else: ?>
-            <tr>
-                <td colspan="3" class="text-center">No hay roles asignados a este usuario.</td>
-            </tr>
+        
         <?php endif; ?>
         </tbody>
     </table>

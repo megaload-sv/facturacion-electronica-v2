@@ -43,19 +43,19 @@ $routes->group('', [], function ($routes) {
     $routes->post('roles/update/(:segment)', 'RolesController::update/$1', ['filter' => 'permission:security.manage']);
     $routes->post('roles/delete/(:segment)', 'RolesController::delete/$1', ['filter' => 'permission:security.manage']);
 
-    $routes->get('permission_roles', 'PermissionRolesController::index', ['filter' => 'permission:security.manage']);
-    $routes->get('permission_roles/create', 'PermissionRolesController::create', ['filter' => 'permission:security.manage']);
+    $routes->get('permission_roles', 'RolesController::index', ['filter' => 'permission:security.manage']);
+    $routes->get('permission_roles/create', 'RolesController::index', ['filter' => 'permission:security.manage']);
     $routes->post('permission_roles/store', 'PermissionRolesController::store', ['filter' => 'permission:security.manage']);
     $routes->post('permission_roles/delete/(:segment)', 'PermissionRolesController::delete/$1', ['filter' => 'permission:security.manage']);
 
 // Ruta para ver los permisos asignados a un rol
-    $routes->get('permission_roles/view/(:segment)', 'PermissionRolesController::view/$1', ['filter' => 'permission:security.manage']);
+    $routes->get('permission_roles/view/(:segment)', 'RolesController::edit/$1', ['filter' => 'permission:security.manage']);
 // Ruta para eliminar la asignación de un permiso a un rol
     $routes->post('permission_roles/delete/(:segment)/(:segment)', 'PermissionRolesController::delete_role_permission/$1/$2', ['filter' => 'permission:security.manage']);
 
-    $routes->get('permission_users', 'PermissionUsersController::index', ['filter' => 'permission:security.manage']);
-    $routes->get('permission_users/create', 'PermissionUsersController::create', ['filter' => 'permission:security.manage']);
-    $routes->get('permission_users/edit/(:segment)/(:segment)', 'PermissionUsersController::edit/$1/$2', ['filter' => 'permission:security.manage']);
+    $routes->get('permission_users', 'UsersController::index', ['filter' => 'permission:security.manage']);
+    $routes->get('permission_users/create', 'UsersController::index', ['filter' => 'permission:security.manage']);
+    $routes->get('permission_users/edit/(:segment)/(:segment)', 'UsersController::edit/$1', ['filter' => 'permission:security.manage']);
     $routes->post('permission_users/update/(:num)/(:num)', 'PermissionUsersController::update/$1/$2', ['filter' => 'permission:security.manage']);
     $routes->post('permission_users/store', 'PermissionUsersController::store', ['filter' => 'permission:security.manage']);
     $routes->post('permission_users/delete/(:num)/(:num)', 'PermissionUsersController::delete/$1/$2', ['filter' => 'permission:security.manage']);
@@ -68,11 +68,11 @@ $routes->group('', [], function ($routes) {
     $routes->post('users/update/(:segment)', 'UsersController::update/$1', ['filter' => 'permission:security.manage']);
     $routes->post('users/delete/(:segment)', 'UsersController::delete/$1', ['filter' => 'permission:security.manage']);
 // Ruta para ver los permisos asignados a un usuario
-    $routes->get('users/permissions/(:segment)', 'PermissionUsersController::viewPermissions/$1', ['filter' => 'permission:security.manage']);
+    $routes->get('users/permissions/(:segment)', 'UsersController::edit/$1', ['filter' => 'permission:security.manage']);
 // Ruta para ver los roles asignados a un usuario específico
-    $routes->get('users/roles/(:segment)', 'RolesUsersController::viewRoles/$1', ['filter' => 'permission:security.manage']);
+    $routes->get('users/roles/(:segment)', 'UsersController::edit/$1', ['filter' => 'permission:security.manage']);
 // Ruta para gestionar los roles asignados a un usuario
-    $routes->get('users/roles/manage/(:segment)', 'RolesUsersController::manageRoles/$1', ['filter' => 'permission:security.manage']);
+    $routes->get('users/roles/manage/(:segment)', 'UsersController::edit/$1', ['filter' => 'permission:security.manage']);
 // Ruta para asignar un rol a un usuario
     $routes->post('users/roles/assign', 'RolesUsersController::assignRole', ['filter' => 'permission:security.manage']);
 // Ruta para eliminar un rol asignado a un usuario
@@ -99,8 +99,8 @@ $routes->group('', [], function ($routes) {
 
     //$routes->get('/dte-invalidar/(:segment)', 'DTEController::getInvalidarDTEInfo/$1');
     //$routes->post('/dte-invalidar/', 'DTEController::procesarInvalidarDTE');
-    $routes->get('/dte-invalidar/(:segment)', 'DTEController::getInvalidarDTEInfo/$1', ['filter' => 'permission:invoices.invalidate']);
-    $routes->post('/dte-invalidar/', 'DTEController::procesarInvalidarDTE', ['filter' => 'permission:invoices.invalidate']);
+    $routes->get('/dte-invalidar/(:segment)', 'FacturasController::getInvalidarDTEInfo/$1', ['filter' => 'permission:invoices.invalidate']);
+    $routes->post('/dte-invalidar/', 'FacturasController::procesarInvalidarDTE', ['filter' => 'permission:invoices.invalidate']);
 
 // rutas para las pruebas
     $routes->get('email/enviar-correo', 'EmailController::enviarCorreo', ['filter' => 'permission:invoices.resend']);

@@ -32,11 +32,11 @@ Gestión de Menú por Roles
 <?= $this->section('content')?>
 <div class="container mt-5">
 
-    <table class="table table-bordered table-striped">
-        <thead class="thead-dark">
+    <table class="table table-bordered table-striped" data-datatable>
+        <thead>
             <tr>
                 <th style="width: 75px;">Rol</th>
-                <th style="width: 75px;">Acciones</th>
+                <th style="width: 75px;" data-table-actions>Acciones</th>
             </tr>
         </thead>
         <tbody>

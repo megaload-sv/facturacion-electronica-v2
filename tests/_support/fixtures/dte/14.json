@@ -1,0 +1,74 @@
+{
+    "identificacion": {
+        "version": 2,
+        "ambiente": "00",
+        "tipoDte": "14",
+        "numeroControl": "DTE-14-M001P001-000000000000001",
+        "codigoGeneracion": "12345678-1234-4234-8234-123456789ABC",
+        "tipoModelo": 1,
+        "tipoOperacion": 1,
+        "tipoContingencia": null,
+        "motivoContin": null,
+        "fecEmi": "2026-09-03",
+        "horEmi": "12:00:00",
+        "tipoMoneda": "USD"
+    },
+    "emisor": {
+        "nit": "06140000000000",
+        "nrc": null,
+        "nombre": "X",
+        "codActividad": "12345",
+        "descActividad": "XXXXX",
+        "direccion": {
+            "departamento": "01",
+            "municipio": "13",
+            "complemento": "X",
+            "distrito": "13"
+        },
+        "telefono": "22222222",
+        "codEstable": null,
+        "codPuntoVenta": null,
+        "correo": "pruebas@example.com"
+    },
+    "cuerpoDocumento": [
+        {
+            "numItem": 1,
+            "tipoItem": 1,
+            "cantidad": 1,
+            "codigo": null,
+            "uniMedida": 1,
+            "descripcion": "X",
+            "precioUni": 0,
+            "montoDescu": 0,
+            "compra": 0
+        }
+    ],
+    "resumen": {
+        "totalCompra": 0,
+        "descu": 0,
+        "totalDescu": 0,
+        "subTotal": 0,
+        "reteRenta": 0,
+        "totalPagar": 0,
+        "totalLetras": "X",
+        "condicionOperacion": 1,
+        "pagos": null,
+        "observaciones": null
+    },
+    "apendice": null,
+    "receptor": {
+        "tipoDocumento": "X",
+        "numDocumento": "X",
+        "nombre": "X",
+        "codActividad": null,
+        "descActividad": null,
+        "direccion": {
+            "departamento": "X",
+            "municipio": "X",
+            "distrito": "X",
+            "complemento": "X"
+        },
+        "telefono": null,
+        "correo": null
+    }
+}

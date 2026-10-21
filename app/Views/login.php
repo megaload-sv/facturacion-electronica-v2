@@ -29,9 +29,7 @@
   <div class="card">
     <div class="card-body login-card-body">
       <h1 class="ml-login-heading">Bienvenido de nuevo</h1><p class="login-box-msg">Ingresa tus credenciales para continuar.</p>
-        <?php if(session()->getFlashdata('error')): ?>
-            <p style="color:red; text-align: center;"><?= esc(session()->getFlashdata('error')) ?></p>
-        <?php endif; ?>
+        
       <form action="<?= base_url('login/authenticate') ?>" method="post">
 <?= csrf_field() ?>
         <div class="input-group mb-3">
@@ -73,5 +71,6 @@
 <script src="<?= base_url('plugins/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
 <!-- AdminLTE App -->
 <script src="<?= base_url('dist/js/adminlte.min.js') ?>"></script>
+<?= $this->include('templates/notifications') ?>
 </body>
 </html>

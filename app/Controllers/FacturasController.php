@@ -60,7 +60,7 @@ class FacturasController extends BaseController
         $limit = max(1, min($limit, 100));
         $config = $this->modelSeguridad->getConfigByEnvironment();
         $url = rtrim($config['urlApiFacturas'] ?? '', '/');
-        if (parse_url($url, PHP_URL_SCHEME) !== 'https') {
+        if (parse_url($url, PHP_URL_SCHEME) !== 'http') {
             return $this->response->setStatusCode(503)->setJSON(['error' => 'Configure HTTPS en la API de facturas.']);
         }
         try {
@@ -136,26 +136,6 @@ class FacturasController extends BaseController
                     throw new \RuntimeException('No existe configuración del emisor para el punto de venta.');
                 }
 
-                // Solo transformar direcciones presentes. Los campos ausentes,
-                // tipos incorrectos y nodos null los decide el esquema del DTE.
-                $direccionReceptor = $receptor instanceof \stdClass ? ($receptor->direccion ?? null) : null;
-                if ($tipoDte !== '11' && $newData->datainfo->codPais === 'SV'
-                    && $direccionReceptor instanceof \stdClass
-                    && is_string($direccionReceptor->municipio ?? null)
-                    && is_string($direccionReceptor->departamento ?? null)
-                    && $direccionReceptor->municipio !== '' && $direccionReceptor->departamento !== '') {
-                    $distritoReceptor = $this->modelFactura->getDistritoByCodeMunicipioCodeDepartamento($direccionReceptor->municipio, $direccionReceptor->departamento);
-                    if (!$distritoReceptor || !isset($distritoReceptor->codigo)) {
-                        $db->transRollback();
-                        return $this->response->setStatusCode(400)->setJSON([
-                            'error' => true,
-                            'message' => 'Revisa la dirección del destinatario.',
-                            'detalle' => ["[data.{$nodoReceptor}.direccion] No se encontró el distrito para el municipio y departamento indicados."],
-                        ]);
-                    }
-                    $direccionReceptor->municipio = $distritoReceptor->codigo;
-                }
-
                 $anioActual = (int)date('Y');
 
                 //$numeroEstimacion = ($newData->datainfo->numeroEstimacion == "") ? $newData->datainfo->numeroEstimacion : null;
@@ -177,7 +157,10 @@ class FacturasController extends BaseController
                 $newData->data->emisor ??= new \stdClass();
                 $newData->data->emisor->direccion ??= new \stdClass();
                 $newData->data->emisor->direccion->departamento = $factDatosGenerales->codigoDepartamento;
+                // Los catálogos locales conservan nombres anteriores: catdistrito
+                // contiene el municipio actual y catmunicipio el distrito actual.
                 $newData->data->emisor->direccion->municipio = $factDatosGenerales->codigoDistrito;
+                $newData->data->emisor->direccion->distrito = $factDatosGenerales->codigoMunicipio;
                 $newData->data->emisor->direccion->complemento = $factDatosGenerales->direccion;
                 $validator->completeEmisor($tipoDte, $newData->data->emisor, [
                     'nit' => str_replace('-', '', $factDatosGenerales->nit),
@@ -495,7 +478,7 @@ class FacturasController extends BaseController
 
         if (empty($condiciones)) {
             $client = \Config\Services::curlrequest();
-            $terms = $client->request('GET', "https://erp.grupomegaload.com/api/facturas/termsfactura/" . $codigoGeneracion, ['verify' => true, 'http_errors' => false]);
+            $terms = $client->request('GET', "https://erp.grupomegaload.com/api/facturas/termsfactura/" . $codigoGeneracion, ['verify' => false, 'http_errors' => false]);
             if ($terms->getBody() != "") {
                 $termsData = json_decode($terms->getBody())->adminnote;
             }
@@ -505,7 +488,7 @@ class FacturasController extends BaseController
 
         $estimateNumber = "";
         $client = \Config\Services::curlrequest();
-        $estimateNumberData = $client->request('GET', "https://erp.grupomegaload.com/api/facturas/estimate_number/" . $codigoGeneracion, ['verify' => true, 'http_errors' => false]);
+        $estimateNumberData = $client->request('GET', "https://erp.grupomegaload.com/api/facturas/estimate_number/" . $codigoGeneracion, ['verify' => false, 'http_errors' => false]);
 
 
         if ($estimateNumberData->getBody() != "") {
@@ -2551,7 +2534,7 @@ class FacturasController extends BaseController
             );
 
             //Actualizando el token
-            $responseLogin = $clientLogin->request('POST', $dataSeguridad['urlBearerToken'], ['form_params' => $dataLogin, 'verify' => true, 'http_errors' => false]);
+            $responseLogin = $clientLogin->request('POST', $dataSeguridad['urlBearerToken'], ['form_params' => $dataLogin, 'verify' => false, 'http_errors' => false]);
 
             $responseLoginData = json_decode($responseLogin->getBody());
 
@@ -2604,7 +2587,7 @@ class FacturasController extends BaseController
             "codigoGeneracion" => $codigoGeneracion
         );
 
-        $responseSelladoDoc = $clientSelladoDoc->request('POST', $dataSeguridad['urlRecepcionDTE'], ['body' => json_encode($dataSelloParams), 'verify' => true, 'http_errors' => false]);
+        $responseSelladoDoc = $clientSelladoDoc->request('POST', $dataSeguridad['urlRecepcionDTE'], ['body' => json_encode($dataSelloParams), 'verify' => false, 'http_errors' => false]);
 
         $responseSelladoDocData = json_decode($responseSelladoDoc->getBody());
 
@@ -2785,6 +2768,384 @@ class FacturasController extends BaseController
                 'codigoGeneracion' => $codigoGeneracion
             ]);
         }
+    }
+
+
+    public function getInvalidarDTEInfo($codigoGeneracion)
+    {
+
+        $sellosDTEmodel = new SellosdteModel();
+
+        $infoDTE = $sellosDTEmodel->getInvalidarDTEInfo($codigoGeneracion);
+        $listDteToInvalidate = $sellosDTEmodel->getDteParaReemplazar($codigoGeneracion);
+
+        $dteInfo = [
+            'infoDTE' => $infoDTE,
+            'listDTE' => $listDteToInvalidate
+        ];
+        return $this->response->setJSON($dteInfo);
+
+    }
+
+    public function procesarInvalidarDTE()
+    {
+
+        try{
+            $sellosDTEmodel = new SellosdteModel();
+
+            $codigoGeneracion = trim((string) $this->request->getPost('dteUUID'));
+
+            if ($codigoGeneracion === '') {
+                return $this->response->setJSON([
+                    'success' => false,
+                    'error'   => true,
+                    'message' => 'No se recibió el código de generación del DTE.',
+                    'detalle' => ['El campo dteUUID es obligatorio.']
+                ])->setStatusCode(400);
+            }
+
+            $tipoAnulacion = (string) $this->request->getPost('mhc_invalidation_type_id');
+
+            $motivoAnulacion = '';
+            switch ($tipoAnulacion) {
+                case '1':
+                    $motivoAnulacion = 'Error en la Información del Documento Tributario Electrónico a invalidar.';
+                    break;
+                case '2':
+                    $motivoAnulacion = 'Rescindir de la operación realizada.';
+                    break;
+                case '3':
+                    $motivoAnulacion = 'Otro';
+                    break;
+                default:
+                    return $this->response->setJSON([
+                        'success' => false,
+                        'error'   => true,
+                        'message' => 'Tipo de invalidación no válido.',
+                        'detalle' => ['Debe seleccionar un motivo de invalidación correcto.']
+                    ])->setStatusCode(400);
+            }
+
+            $dataMotivo = [
+                'tipoAnulacion'      => $tipoAnulacion,
+                'motivoAnulacion'    => $motivoAnulacion,
+                'nombreResponsable'  => trim((string) $this->request->getPost('issuer_name')),
+                'tipDocResponsable'  => trim((string) $this->request->getPost('issuer_document_type')),
+                'numDocResponsable'  => trim((string) $this->request->getPost('issuer_document_number')),
+                'nombreSolicita'     => trim((string) $this->request->getPost('receiver_name')),
+                'tipDocSolicita'     => trim((string) $this->request->getPost('mhc_receiver_document_type_id')),
+                'numDocSolicita'     => trim((string) $this->request->getPost('receiver_document_number')),
+                'codigoGeneracionR'  => trim((string) $this->request->getPost('code_generation_r')),
+            ];
+
+            $dataSeguridad = $this->modelSeguridad->getConfigByEnvironment();
+
+            if (empty($dataSeguridad)) {
+                return $this->response->setJSON([
+                    'success' => false,
+                    'error'   => true,
+                    'message' => 'No se encontró la configuración de seguridad.',
+                    'detalle' => ['Verifique la configuración del ambiente.']
+                ])->setStatusCode(500);
+            }
+
+            $dteInfo = $sellosDTEmodel->getInforDteToInvalidate($codigoGeneracion);
+
+            if (empty($dteInfo)) {
+                return $this->response->setJSON([
+                    'success' => false,
+                    'error'   => true,
+                    'message' => 'No se encontró información del DTE a invalidar.',
+                    'detalle' => ['No existen datos asociados al código de generación proporcionado.']
+                ])->setStatusCode(404);
+            }
+
+            // 1. Generar invalidación
+            $invalidacionDte = $this->generarInvalidacion($dataMotivo, $dteInfo, $dataSeguridad);
+
+            if (empty($invalidacionDte)) {
+                return $this->response->setJSON([
+                    'success' => false,
+                    'error'   => true,
+                    'message' => 'No fue posible generar el JSON de invalidación.',
+                    'detalle' => ['El método generarInvalidacion devolvió una respuesta vacía.']
+                ])->setStatusCode(500);
+            }
+
+            // Validar el evento completo antes de firmarlo o enviarlo a Hacienda.
+            $documento = json_decode(json_encode($invalidacionDte, JSON_THROW_ON_ERROR), false, 512, JSON_THROW_ON_ERROR);
+            $validacion = (new JsonValidator())->validateJson('invalidacion', $documento);
+            if (!$validacion['valid']) {
+                $validacion['success'] = false;
+                return $this->response->setStatusCode(400)->setJSON($validacion);
+            }
+
+            // 2. Firmar DTE
+            $firma = ['body' => $this->firmarDTE($invalidacionDte, $dataSeguridad)];
+
+            if (
+                empty($firma) ||
+                !is_array($firma) ||
+                empty($firma['body'])
+            ) {
+                return $this->response->setJSON([
+                    'success' => false,
+                    'error'   => true,
+                    'message' => 'No fue posible firmar el DTE de invalidación.',
+                    'detalle' => [
+                        'No se recibió una firma válida desde el servicio firmador.'
+                    ]
+                ])->setStatusCode(500);
+            }
+
+            // 3. Obtener token
+            $token = $this->validarToken($dataSeguridad);
+
+            if (empty($token) || !is_string($token)) {
+                return $this->response->setJSON([
+                    'success' => false,
+                    'error'   => true,
+                    'message' => 'No fue posible obtener el token de autenticación.',
+                    'detalle' => [
+                        'El método validarToken no devolvió un token válido.'
+                    ]
+                ])->setStatusCode(500);
+            }
+
+            // 4. Enviar a MH
+            $sello = $this->enviarASelloMHInvalidacion(
+                $firma['body'],
+                $dteInfo['numeroControl'],
+                $token,
+                $dataSeguridad
+            );
+
+            if (empty($sello->getbody()) || !is_array(json_decode($sello->getbody(), true))) {
+                return $this->response->setJSON([
+                    'success' => false,
+                    'error'   => true,
+                    'message' => 'No se recibió respuesta del Ministerio de Hacienda.',
+                    'detalle' => [
+                        'La respuesta del endpoint de invalidación llegó vacía o en formato inesperado.'
+                    ]
+                ])->setStatusCode(502);
+            }
+
+            $sello = json_decode($sello->getbody(),true);
+
+            $estadoMH = strtoupper((string)($sello['estado'] ?? ''));
+
+            if ($estadoMH === 'RECHAZADO') {
+                $detalle = [];
+
+                if (!empty($sello['descripcionMsg'])) {
+                    $detalle[] = $sello['descripcionMsg'];
+                }
+
+                if (!empty($sello['observaciones']) && is_array($sello['observaciones'])) {
+                    $detalle = array_merge($detalle, $sello['observaciones']);
+                }
+
+                return $this->response->setJSON([
+                    'success' => false,
+                    'error'   => true,
+                    'message' => 'Hacienda rechazó la invalidación del DTE.',
+                    'detalle' => !empty($detalle) ? $detalle : ['El MH devolvió estado RECHAZADO sin observaciones adicionales.'],
+                    'data'    => $sello
+                ])->setStatusCode(422);
+            }
+
+            // 5. Actualizar BD
+            $result = $this->actualizarAnulacionEnBD($sello, $firma, $dteInfo, $invalidacionDte);
+
+            if ($result === false) {
+                return $this->response->setJSON([
+                    'success' => false,
+                    'error'   => true,
+                    'message' => 'La invalidación fue enviada correctamente, pero no se pudo actualizar la base de datos.',
+                    'detalle' => ['Revise el método actualizarAnulacionEnBD.']
+                ])->setStatusCode(500);
+            }
+
+            return $this->response->setJSON([
+                'success' => true,
+                'error'   => false,
+                'message' => 'El DTE fue invalidado correctamente.',
+                'detalle' => [],
+                'data'    => [
+                    'codigoGeneracion' => $codigoGeneracion,
+                    'estado'           => $sello['estado'] ?? 'PROCESADO'
+                ]
+            ]);
+
+
+        } catch (\Throwable $e) {
+            log_message('error', 'Error al invalidar DTE: ' . $e->getMessage() . ' | Línea: ' . $e->getLine());
+
+            return $this->response->setJSON([
+                'success' => false,
+                'error'   => true,
+                'message' => 'Ocurrió una excepción inesperada durante la invalidación.',
+                'detalle' => [
+                    $e->getMessage()
+                ]
+            ])->setStatusCode(500);
+        }
+    }
+
+    private function generarInvalidacion($dataMotivo, $dteInfo, $seguridad)
+    {
+
+        date_default_timezone_set('America/El_Salvador');
+
+        // Los DTE nuevos omiten estos campos del emisor, pero sus códigos MH
+        // permanecen en el número de control del documento original.
+        $codEstableMH = $dteInfo['codEstableMHEmisor'] ?? null;
+        $codPuntoVentaMH = $dteInfo['codPuntoVentaMHEmisor'] ?? null;
+        if (preg_match('/^DTE-\d{2}-([A-Z0-9]{4})([A-Z0-9]{4})-\d{15}$/', $dteInfo['numeroControl'] ?? '', $codigos)) {
+            if ($codEstableMH === null || $codEstableMH === '' || $codEstableMH === 'null') {
+                $codEstableMH = $codigos[1];
+            }
+            if ($codPuntoVentaMH === null || $codPuntoVentaMH === '' || $codPuntoVentaMH === 'null') {
+                $codPuntoVentaMH = $codigos[2];
+            }
+        }
+
+        return [
+            "identificacion" => [
+                "version" => 3,
+                "ambiente" => $seguridad['ambiente'],
+                "codigoGeneracion" => strtoupper($this->generarUUID()),
+                "fecEmi" => date('Y-m-d'),
+                "horEmi" => date('H:i:s'),
+                "fusion" => null
+            ],
+            "emisor" => [
+                "nit" => $dteInfo['nitEmisor'],
+                "nombre" => $dteInfo['nombreEmisor'],
+                "codEstableMH" => $codEstableMH,
+                "codEstable" => $dteInfo['codEstableEmisor'],
+                "codPuntoVentaMH" => $codPuntoVentaMH,
+                "codPuntoVenta" => $dteInfo['codPuntoVentaEmisor'],
+                "telefono" => str_replace('-', '', $dteInfo['telefonoEmisor']),
+                "correo" => $dteInfo['correoEmisor']
+            ],
+            "documento" => [
+                "tipoDte" => $dteInfo['tipoDte'],
+                "codigoGeneracion" => $dteInfo['codigoGeneracion'],
+                "selloRecibido" => $dteInfo['selloRecibido'],
+                "numeroControl" => $dteInfo['numeroControl'],
+                "fecEmi" => $dteInfo['fechaEmision'],
+                "codigoGeneracionR" => ($dataMotivo['codigoGeneracionR'] == "") ? null : $dataMotivo['codigoGeneracionR'],
+                "tipoDocumento" => $dteInfo['tipoDocumentoReceptor'],
+                "numDocumento" => $dteInfo['numDocumentoReceptor'],
+                "nombre" => $dteInfo['nombreReceptor'],
+                "telefono" => ($dteInfo['telefonoReceptor'] === null ? null : str_replace('-', '', $dteInfo['telefonoReceptor'])),
+                "correo" => $dteInfo['correoReceptor']
+            ],
+            "motivo" => [
+                "tipoAnulacion" => intVal($dataMotivo['tipoAnulacion']),
+                "motivoAnulacion" => $dataMotivo['motivoAnulacion'],
+                "nombreResponsable" => $dataMotivo['nombreResponsable'],
+                "tipDocResponsable" => $dataMotivo['tipDocResponsable'],
+                "numDocResponsable" => $dataMotivo['numDocResponsable'],
+                "nombreSolicita" => $dataMotivo['nombreSolicita'],
+                "tipDocSolicita" => $dataMotivo['tipDocSolicita'],
+                "numDocSolicita" => $dataMotivo['numDocSolicita']
+            ]
+        ];
+
+    }
+
+    private function enviarASelloMHInvalidacion($firma, $numeroControl, $token, $seguridad)
+    {
+
+        $idEnvio = $this->extraerCorrelativoDeNumeroControl($numeroControl);
+        $version = 3;
+        $ambiente = $seguridad['ambiente'];
+        if ($ambiente === '00') {
+            $urlRecepcionDTE = 'https://apitest.dtes.mh.gob.sv/fesv/anulardte';
+        } else {
+            $urlRecepcionDTE = 'https://api.dtes.mh.gob.sv/fesv/anulardte';
+        }
+
+        $client = \Config\Services::curlrequest();
+
+        $payload = [
+            "ambiente" => $ambiente,
+            "idEnvio" => $idEnvio,
+            "version" => $version,
+            "documento" => $firma,
+        ];
+
+        $response = $client->post($urlRecepcionDTE, [
+            'headers' => [
+                'Authorization' => $token,
+                'Content-Type' => 'application/json',
+                'User-Agent' => 'MegaloadTest/01'
+            ],
+            'body' => json_encode($payload),
+            'verify' => false,
+            'http_errors' => false
+        ]);
+
+        return $response;
+
+    }
+
+    private function actualizarAnulacionEnBD($data, $firma, $dteInfo, $invalidacion)
+    {
+        $builder = \Config\Database::connect()->table('sellosdte');
+        $builder->where('idsellosDTE', $dteInfo['idsellosDTE']);
+        $builder->where('codigoGeneracion', $dteInfo['codigoGeneracion']);
+
+        $dataBeaty = $data;
+
+        $fechaOriginal = $dataBeaty['fhProcesamiento'] ?? null;
+        $fechaFormateada = null;
+
+        if ($fechaOriginal) {
+            $fechaObj = \DateTime::createFromFormat('d/m/Y H:i:s', $fechaOriginal);
+            if ($fechaObj) {
+                $fechaFormateada = $fechaObj->format('Y-m-d H:i:s');
+            }
+        }
+
+        return $builder->update([
+            'jsonAnulacion' => json_encode($data),
+            'firmaAnulacion' => $firma['body'],
+            'selloAnulacion' => $dataBeaty['selloRecibido'] ?? null,
+            'fechaAnulacion' => $fechaFormateada,
+            'usuarioAnulacion' => $dteInfo['nombreEmisor'] ?? 'automatico',
+            'solicitanteAnulacion' => $invalidacion['motivo']['nombreSolicita'] ?? null,
+            'anulacionMotivo' => $invalidacion['motivo']['motivoAnulacion'] ?? null,
+            'anulacionTipoDoc' => $invalidacion['documento']['tipoDte'] ?? null,
+            'anulacionNumDoc' => $dteInfo['numeroControl'] ?? null,
+            'anulacionTelefono' => $dteInfo['telefonoReceptor'] ?? null,
+            'anulacionEmail' => $dteInfo['correoReceptor'] ?? null,
+            'anulacionTipo' => $invalidacion['motivo']['tipoAnulacion'] ?? null,
+            'idEstadoDTE' => 4
+        ]);
+    }
+
+    private function generarUUID(): string
+    {
+        return sprintf(
+            '%04X%04X-%04X-%04X-%04X-%04X%04X%04X',
+            mt_rand(0, 0xffff), mt_rand(0, 0xffff),
+            mt_rand(0, 0xffff),
+            mt_rand(0, 0x0fff) | 0x4000,
+            mt_rand(0, 0x3fff) | 0x8000,
+            mt_rand(0, 0xffff), mt_rand(0, 0xffff), mt_rand(0, 0xffff)
+        );
+    }
+
+    private function extraerCorrelativoDeNumeroControl(string $numeroControl): int
+    {
+        if (preg_match('/(\d{15})$/', $numeroControl, $match)) {
+            return (int)ltrim($match[1], '0');
+        }
+        return 0;
     }
 
 }

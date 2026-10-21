@@ -13,13 +13,13 @@ Permisos a Usuarios
 </a>
 
 <div class="table-responsive">
-    <table class="table table-bordered table-striped">
+    <table class="table table-bordered table-striped" data-datatable>
         <thead>
             <tr>
                 <th>ID del Permiso</th>
                 <th>Nombre del Permiso</th>
                 <th>Descripción</th>
-                <th>Acciones</th>
+                <th data-table-actions>Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -30,16 +30,13 @@ Permisos a Usuarios
                     <td><?= esc($permission['permission_name']) ?></td>
                     <td><?= esc($permission['description']) ?></td>
                     <td>
-                        <form method="post" action="<?= base_url('permission_users/delete/' . $user['id'] . '/' . $permission['id']) ?>" style="display:inline;" onsubmit="return confirm('¿Estás seguro de quitar este permiso?')"><?= csrf_field() ?><button type="submit" class="btn btn-sm btn-danger">
+                        <form method="post" action="<?= base_url('permission_users/delete/' . $user['id'] . '/' . $permission['id']) ?>" style="display:inline;" data-confirm="¿Estás seguro de quitar este permiso?"><?= csrf_field() ?><button type="submit" class="btn btn-sm btn-outline-danger">
                            <i class="fas fa-trash-alt"></i> Quitar Permiso
                         </button></form>
                     </td>
                 </tr>
             <?php endforeach; ?>
-        <?php else: ?>
-            <tr>
-                <td colspan="4" class="text-center">No hay permisos asignados a este usuario.</td>
-            </tr>
+        
         <?php endif; ?>
         </tbody>
     </table>

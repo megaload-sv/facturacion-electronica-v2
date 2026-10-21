@@ -23,7 +23,46 @@ class MenuModel extends Model
             ->where('role_user.user_id', $userId)
             ->orderBy('menu_items.parent_id, menu_items.order', 'ASC');
 
-        $menuItems = $builder->get()->getResultArray();
+        $legacyItems = $builder->get()->getResultArray();
+        $legacyIds = array_column($legacyItems, 'id');
+        $allItems = $db->table('menu_items')->orderBy('parent_id')->orderBy('order')->get()->getResultArray();
+        $acl = new \App\Libraries\AccessControl();
+        $admin = $acl->allows((int) $userId, 'security.manage');
+        $visible = [];
+        $basePath = trim((string) parse_url(base_url(), PHP_URL_PATH), '/');
+        $decisions = [];
+        foreach ($allItems as $item) {
+            $path = trim((string) parse_url($item['url'], PHP_URL_PATH), '/');
+            if ($basePath !== '' && str_starts_with($path, $basePath . '/')) {
+                $path = substr($path, strlen($basePath) + 1);
+            }
+            $section = explode('/', $path)[0];
+            $permission = match ($section) {
+                'dashboard', 'facturas', 'facturas-procesadas', 'procesadas-archivadas', 'reportes' => 'invoices.view',
+                'procesar-json' => 'imports.manage',
+                'dte-invalidar' => 'invoices.invalidate',
+                'users', 'roles', 'permissions', 'permission_users', 'permission_roles', 'menu', 'role_menu', 'permission_menu' => 'security.manage',
+                default => null,
+            };
+            if ($permission !== null && !array_key_exists($permission, $decisions)) {
+                $decisions[$permission] = $acl->allows((int) $userId, $permission);
+            }
+            if ($admin || ($permission !== null ? $decisions[$permission] : in_array($item['id'], $legacyIds))) {
+                $visible[(int) $item['id']] = true;
+            }
+        }
+        // Include containers of authorized links, even when the new role has no legacy menu assignments.
+        $byId = array_column($allItems, null, 'id');
+        foreach (array_keys($visible) as $id) {
+            $visited = [];
+            while (!empty($byId[$id]['parent_id'])) {
+                $id = (int) $byId[$id]['parent_id'];
+                if (isset($visited[$id])) { break; }
+                $visited[$id] = true;
+                $visible[$id] = true;
+            }
+        }
+        $menuItems = array_values(array_filter($allItems, static fn ($item) => isset($visible[(int) $item['id']])));
 
         // Organizar el menú de forma jerárquica
         return $this->buildMenuHierarchy($menuItems);

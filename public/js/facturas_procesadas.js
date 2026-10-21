@@ -7,7 +7,7 @@ $(document).ready(function () {
         url: '/facturas/sellos', // nuevo endpoint sin paginar
         type: 'GET',
         dataType: 'json',
-        success: function (json) {
+        success: async function (json) {
             inicializarDataTableProcesadas(json.data);
         }
     });
@@ -43,30 +43,28 @@ $(document).ready(function () {
 
         let table = $('#tablaSellos').DataTable({
             order: [[5, 'desc']],
-            destroy: true,
-            pageLength: 10,
-            dom: 'Bfrtip',
-            language: {
-                url: "/plugins/datatables/i18n/es-ES.json"
-            }
+            destroy: true
         });
     }
 
-    $(document).on('click','.enviarToMH', function () {
+    $(document).on('click','.enviarToMH', async function () {
 
-        if (confirm("¿Estás seguro que deseas enviar a sellar y firmar?")) {
+        if (await AppAlerts.confirm("¿Estás seguro que deseas enviar a sellar y firmar?")) {
             $.ajax({
                 url: url_base + 'facturas/reenviar-dte/' + $(this).data('codemh'),
                 type: 'POST',
                 dataType: 'json',
-                success: function (json) {
-                    debugger
+                success: async function (json) {
+
                     if (json.error == false) {
-                        alert(json.message);
-                        llenarFacturas();
+                        await AppAlerts.notify(json.message, json.error == false ? 'success' : 'error');
+                        window.location.reload();
                     } else {
-                        alert(json.message);
+                        await AppAlerts.notify(json.message, json.error == false ? 'success' : 'error');
                     }
+                },
+                error: function () {
+                    AppAlerts.notify('No se pudo enviar el documento. Inténtelo nuevamente.', 'error');
                 }
             });
         }
