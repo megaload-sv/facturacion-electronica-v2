@@ -292,6 +292,7 @@ $(document).ready(function () {
         }
 
         $('#mhc_invalidation_type_id').val('');
+        actualizarDocumentoReemplazo();
 
         $('#issuer_name').val('');
         $('#issuer_document_type').val('');
@@ -651,8 +652,18 @@ $(document).ready(function () {
 
     $(document).on('change', '#mhc_invalidation_type_id', function (e) {
         e.preventDefault();
+        actualizarDocumentoReemplazo();
         validateDteInvalidation();
     });
+    function actualizarDocumentoReemplazo() {
+        var rescindir = $('#mhc_invalidation_type_id').val() === '2';
+        var reemplazo = $('#code_generation_r');
+        if (rescindir) {
+            reemplazo.val('').trigger('change');
+        }
+        reemplazo.prop('disabled', rescindir);
+        $('#rowCodeGenerationR').toggle(!rescindir);
+    }
     function validateDteInvalidation() {
 
 

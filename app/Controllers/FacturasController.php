@@ -3036,7 +3036,9 @@ class FacturasController extends BaseController
                 "selloRecibido" => $dteInfo['selloRecibido'],
                 "numeroControl" => $dteInfo['numeroControl'],
                 "fecEmi" => $dteInfo['fechaEmision'],
-                "codigoGeneracionR" => ($dataMotivo['codigoGeneracionR'] == "") ? null : $dataMotivo['codigoGeneracionR'],
+                // Rescindir la operación no lleva documento de reemplazo.
+                "codigoGeneracionR" => ((string) $dataMotivo['tipoAnulacion'] === '2' || $dataMotivo['codigoGeneracionR'] === '')
+                    ? null : $dataMotivo['codigoGeneracionR'],
                 "tipoDocumento" => $dteInfo['tipoDocumentoReceptor'],
                 "numDocumento" => $dteInfo['numDocumentoReceptor'],
                 "nombre" => $dteInfo['nombreReceptor'],
