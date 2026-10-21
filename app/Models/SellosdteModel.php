@@ -228,6 +228,7 @@ class SellosdteModel extends Model
                    dte.jsonDTE ->> '$.emisor.codPuntoVenta'            as codPuntoVentaEmisor,
                    dte.jsonDTE ->> '$.emisor.telefono'                 as telefonoEmisor,
                    dte.jsonDTE ->> '$.emisor.correo'                   as correoEmisor,
+                   dte.errorMH ->> '$.fhProcesamiento'               as fechaProcesamiento,
                    dte.jsonDTE ->> '$.identificacion.fecEmi'           as fechaEmision,
                    dte.jsonDTE ->> '$.identificacion.tipoDte'          as tipoDte,
                    dte.errorMH ->> '$.selloRecibido'                   as selloRecibido,

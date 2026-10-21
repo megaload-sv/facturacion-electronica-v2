@@ -146,6 +146,7 @@ debug.log
 !/tests/unit/SecurityHardeningTest.php
 !/tests/unit/AccessManagementTest.php
 !/tests/unit/JsonValidatorTest.php
+!/tests/unit/InvalidacionPlazosTest.php
 !/tests/_support/
 /tests/_support/*
 !/tests/_support/fixtures/

@@ -291,6 +291,12 @@ $(document).ready(function () {
             return false;
         }
 
+        $('#modalInvalidarDTE').removeData('plazos');
+        $('.processInvalidarDTE').prop('disabled', true);
+        if (!$('#invalidacionPlazo').length) {
+            $('#modalInvalidarDTE .modal-body').prepend($('<div>', {id: 'invalidacionPlazo', role: 'status', class: 'alert alert-info'}));
+        }
+        $('#invalidacionPlazo').text('Consultando plazos de invalidación...');
         $('#mhc_invalidation_type_id').val('');
         actualizarDocumentoReemplazo();
 
@@ -313,6 +319,16 @@ $(document).ready(function () {
             type: 'GET',
             success: function (response) {
 
+                if ($('#dteUUID').val() !== String(codigoGeneracion)) {
+                    return;
+                }
+                if (!response.infoDTE || !response.infoDTE.length) {
+                    $('#invalidacionPlazo').text('No se encontró información del DTE.');
+                    return;
+                }
+
+                $('#modalInvalidarDTE').data('plazos', response.plazos);
+                validateDteInvalidation();
                 $.each(response.listDTE, function (index, item) {
                     $('#code_generation_r').append(
                         $('<option>', {
@@ -335,6 +351,12 @@ $(document).ready(function () {
                 $('#receiver_document_number').val(response.infoDTE[0].numDocumentoReceptor);
 
 
+            },
+            error: function () {
+                if ($('#dteUUID').val() === String(codigoGeneracion)) {
+                    $('#invalidacionPlazo').text('No se pudieron consultar las reglas de invalidación. Cierre y vuelva a abrir el documento.');
+                    $('.processInvalidarDTE').prop('disabled', true);
+                }
             }
         });
 
@@ -665,84 +687,13 @@ $(document).ready(function () {
         $('#rowCodeGenerationR').toggle(!rescindir);
     }
     function validateDteInvalidation() {
-
-
-        var code = $('#mhCode').val();
-        var codeVal = "";
-        if (code === "01") {
-            codeVal = "FE";
-        } else if (code === "11") {
-            codeVal = "FEXE";
-        } else if (code === "14") {
-            codeVal = "FSEE";
-        } else if (code === "03") {
-            codeVal = "CCF";
-        } else if (code === "04") {
-            codeVal = "NRE";
-        }
-
-
-        var transmissionDatetimeStr = $('#transmission_datetime').val();
-        var internalCode = codeVal;// Tipo de DTE (FE, FEXE, NRE, FSEE)
-        var invalidationTypeId = $('select[name="mhc_invalidation_type_id"]').val();
-
-        if (!transmissionDatetimeStr || !internalCode || !invalidationTypeId) {
-            return;
-        }
-
-        var transmissionDate = new Date(transmissionDatetimeStr);
-        var currentDate = new Date();
-        var limitDate = new Date(transmissionDate);
-
-        //invalidación por tipo de documento y motivo
-        // siempre ando pensando en hacer una estrucura de datos que rerrorer
-        // pracicamente esta es la tabla de reglas de ministerio de hacienda
-        var rules = {
-            "FE": { // Factura Electrónica (FE)
-                "1": {days: 1, isDayLimited: true},
-                "2": {days: 90, isDayLimited: false},
-                "3": {days: 90, isDayLimited: false}
-            },
-            "FEXE": { // Factura de Exportación Electrónica (FEXE)
-                "1": {days: 1, isDayLimited: true},
-                "2": {days: 90, isDayLimited: false},
-                "3": {days: 90, isDayLimited: false}
-            },
-            "NRE": { // Nota de Remisión Electrónica (NRE)
-                "1": {days: 1, isDayLimited: true},
-                "2": {days: 1, isDayLimited: true},
-                "3": {days: 1, isDayLimited: true}
-            },
-            "FSEE": { // Factura de Sujeto Excluido Electrónica (FSEE)
-                "1": {days: 1, isDayLimited: true},
-                "2": {days: 1, isDayLimited: true},
-                "3": {days: 1, isDayLimited: true}
-            },
-            "CCF": { // Comprobante Credito Fiscal (CCF)
-                "1": {days: 1, isDayLimited: true},
-                "2": {days: 1, isDayLimited: true},
-                "3": {days: 1, isDayLimited: true}
-            }
-        };
-
-        var rule = rules[internalCode][invalidationTypeId];
-
-        if (rule.isDayLimited) {
-            limitDate.setDate(limitDate.getDate() + rule.days); // sumo lo dias para comparar mas abajo
-            limitDate.setHours(23, 59, 59); // esto es para ajuste la fecha y cumplir con la regla
-        } else {
-            limitDate.setDate(limitDate.getDate() + rule.days);
-        }
-
-        if (currentDate > limitDate) {
-            AppAlerts.notify("No es posible invalidar este DTE. Ha excedido el tiempo permitido.", "warning");
-            $('.processInvalidDTEModal').prop('disabled', true);
-
-        } else {
-            // Habilitar el botón de invalidación
-            $('.processInvalidDTEModal').prop('disabled', false);
-        }
+        var motivo = $('#mhc_invalidation_type_id').val();
+        var plazos = $('#modalInvalidarDTE').data('plazos') || {};
+        var plazo = plazos[motivo];
+        $('.processInvalidarDTE').prop('disabled', !plazo || !plazo.permitido);
+        $('#invalidacionPlazo').text(plazo ? plazo.message : 'Seleccione un motivo para consultar el plazo.');
     }
+
 
 
 });

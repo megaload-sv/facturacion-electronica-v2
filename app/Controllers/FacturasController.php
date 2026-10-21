@@ -2782,10 +2782,22 @@ class FacturasController extends BaseController
 
         $dteInfo = [
             'infoDTE' => $infoDTE,
-            'listDTE' => $listDteToInvalidate
+            'listDTE' => $listDteToInvalidate,
+            'plazos' => $this->consultarPlazosInvalidacion($sellosDTEmodel->getInforDteToInvalidate($codigoGeneracion) ?: [])
         ];
         return $this->response->setJSON($dteInfo);
 
+    }
+
+    private function consultarPlazosInvalidacion(array $dte): array
+    {
+        $servicio = new \App\Services\InvalidacionPlazos();
+        $resultado = [];
+        foreach (['1', '2', '3'] as $motivo) {
+            $resultado[$motivo] = $dte ? $servicio->evaluar($dte, $motivo)
+                : ['permitido' => false, 'message' => 'No se encontró el DTE.'];
+        }
+        return $resultado;
     }
 
     public function procesarInvalidarDTE()
@@ -2861,8 +2873,17 @@ class FacturasController extends BaseController
                 ])->setStatusCode(404);
             }
 
+            $plazo = (new \App\Services\InvalidacionPlazos())->evaluar($dteInfo, $tipoAnulacion);
+            if (!$plazo['permitido']) {
+                return $this->response->setStatusCode(422)->setJSON([
+                    'success' => false, 'error' => true, 'message' => $plazo['message'],
+                    'detalle' => [], 'plazo' => $plazo,
+                ]);
+            }
+
             // 1. Generar invalidación
             $invalidacionDte = $this->generarInvalidacion($dataMotivo, $dteInfo, $dataSeguridad);
+            $invalidacionDte['identificacion']['fecEmi'] = $plazo['fechaEvento'];
 
             if (empty($invalidacionDte)) {
                 return $this->response->setJSON([
