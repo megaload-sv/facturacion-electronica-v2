@@ -61,7 +61,7 @@ class FacturasController extends BaseController
         $limit = max(1, min($limit, 100));
         $config = $this->modelSeguridad->getConfigByEnvironment();
         $url = rtrim($config['urlApiFacturas'] ?? '', '/');
-        if (parse_url($url, PHP_URL_SCHEME) !== 'http') {
+        if (parse_url($url, PHP_URL_SCHEME) !== 'https') {
             return $this->response->setStatusCode(503)->setJSON(['error' => 'Configure HTTPS en la API de facturas.']);
         }
         try {
