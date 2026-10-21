@@ -291,7 +291,7 @@ Facturas Archivadas
 <script >
     var url_base = '<?= base_url()  ?>';
 </script>
-<script src="js/facturas_archivadas.js"></script>
+<script src="<?= base_url('js/facturas_archivadas.js') ?>?v=<?= filemtime(FCPATH . 'js/facturas_archivadas.js') ?>"></script>
 <?= $this->endSection() ?>
 
 
