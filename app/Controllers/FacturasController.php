@@ -884,26 +884,29 @@ class FacturasController extends BaseController
             ["Ventas Gravadas", 16]           // Ventas Gravadas, ancho de 30 unidades
         ];
 
-        // Crear el encabezado de la tabla con un fondo gris claro
-        $pdf->SetFillColor(200, 200, 200); // Color de fondo para el encabezado
-        $pdf->SetTextColor(0, 0, 0);       // Color de texto
-
-        $xPos = $pdf->GetX();
-        $y_pos = $pdf->GetY();
-        $pdf->SetFont('helvetica', 'B', 7);
-        foreach ($encabezados as $header) {
-            $pdf->SetXY($xPos + 2, $y_pos);
-            $pdf->MultiCell($header[1], $cellHeight, $header[0], 1, 'C', true); // Ancho de columna individual
-            $xPos += $header[1];
+        // Dibujar siempre el encabezado completo en una sola página.
+        $tableX = 4;
+        $drawTableHeader = static function () use ($pdf, $encabezados, $tableX) {
+            $pdf->SetFont('helvetica', 'B', 7);
+            $headerHeight = 8;
+            foreach ($encabezados as [$label, $width]) {
+                $headerHeight = max($headerHeight, $pdf->getStringHeight($width, $label));
+            }
+            $pdf->SetFillColor(200, 200, 200);
+            $x = $tableX;
+            $y = $pdf->GetY();
+            foreach ($encabezados as [$label, $width]) {
+                $pdf->MultiCell($width, $headerHeight, $label, 1, 'C', true, 0, $x, $y);
+                $x += $width;
+            }
+            $pdf->SetXY($tableX, $y + $headerHeight);
+            $pdf->SetFont('helvetica', '', 7);
+            $pdf->SetFillColor(255, 255, 255);
+        };
+        if ($pdf->GetY() + 18 > $pdf->getPageHeight() - $pdf->getBreakMargin()) {
+            $pdf->AddPage();
         }
-        $pdf->SetFont('helvetica', '', 7);
-
-        // Resetear el color de fondo para las siguientes filas
-        $pdf->SetFillColor(255, 255, 255); // Blanco para las filas de datos
-
-        $xPos = $pdf->GetX();
-        $yPos = $pdf->GetY();
-
+        $drawTableHeader();
         $cellHeight = 5;
 
         $totalIva = 0;
@@ -919,44 +922,46 @@ class FacturasController extends BaseController
 
             $unidad = $this->modelMantenimientos->obtenerUnidad($objeto->uniMedida);
 
-            // Calcular altura de la descripción
-            $descripcion = $objeto->descripcion;
-            $anchoDescripcion = $encabezados[3][1];
-            $alturaDescripcion = $pdf->getStringHeight($anchoDescripcion, $descripcion);
-
-            // Obtener altura final de fila (la más alta)
-            $alturaFila = max($alturaDescripcion, $cellHeight);
-
-            // Guardar posición inicial
-            $x = $xPos + 2;
-            $y = $yPos;
-
-            $pdf->SetXY($x, $y);
-            $pdf->Cell($encabezados[0][1], $alturaFila, $objeto->numItem, 1, 0, 'C');
-            $pdf->Cell($encabezados[1][1], $alturaFila, $objeto->cantidad, 1, 0, 'C');
-            $pdf->Cell($encabezados[2][1], $alturaFila, $unidad[0]['Unidad'], 1, 0, 'C');
-
-            // Descripción con MultiCell (reseteamos X después)
-            $xDescripcion = $pdf->GetX();
-            $yDescripcion = $pdf->GetY();
-            $pdf->MultiCell($anchoDescripcion, $cellHeight, $descripcion, 1, 'L', false, 0);
-
-            $pdf->SetXY($xDescripcion + $anchoDescripcion, $y); // mover a la derecha
-
-            $pdf->Cell($encabezados[4][1], $alturaFila, number_format($objeto->precioUni, 2, '.', ','), 1, 0, 'R');
-            $pdf->Cell($encabezados[5][1], $alturaFila, '0.00', 1, 0, 'R');
-            $pdf->Cell($encabezados[6][1], $alturaFila, ($objeto->montoDescu == "0") ? '0.00' : number_format($objeto->montoDescu, 2, '.', ','), 1, 0, 'R');
-            $pdf->Cell($encabezados[7][1], $alturaFila, '0.00', 1, 0, 'R');
-            $pdf->Cell($encabezados[8][1], $alturaFila, ($objeto->ventaExenta == "0") ? '0.00' : number_format($objeto->ventaExenta, 2, '.', ','), 1, 0, 'R');
-            $pdf->Cell($encabezados[9][1], $alturaFila, ($objeto->ventaGravada == "0") ? '0.00' : number_format($objeto->ventaGravada, 2, '.', ','), 1, 1, 'R');
-
-            $yPos += $alturaFila;
+            $values = [
+                $objeto->numItem,
+                $objeto->cantidad,
+                $unidad[0]['Unidad'],
+                $objeto->descripcion,
+                number_format($objeto->precioUni, 2, '.', ','),
+                '0.00',
+                number_format($objeto->montoDescu, 2, '.', ','),
+                '0.00',
+                number_format($objeto->ventaExenta, 2, '.', ','),
+                number_format($objeto->ventaGravada, 2, '.', ','),
+            ];
+            // Medir todas las columnas: también la unidad o un importe pueden envolver.
+            $alturaFila = $cellHeight;
+            foreach ($values as $column => $value) {
+                $alturaFila = max($alturaFila, $pdf->getStringHeight($encabezados[$column][1], (string) $value));
+            }
+            if ($pdf->GetY() + $alturaFila > $pdf->getPageHeight() - $pdf->getBreakMargin()) {
+                $pdf->AddPage();
+                $drawTableHeader();
+            }
+            $x = $tableX;
+            $y = $pdf->GetY();
+            foreach ($values as $column => $value) {
+                $align = $column < 3 ? 'C' : ($column === 3 ? 'L' : 'R');
+                $pdf->MultiCell($encabezados[$column][1], $alturaFila, (string) $value, 1, $align, false, 0, $x, $y);
+                $x += $encabezados[$column][1];
+            }
+            $pdf->SetXY($tableX, $y + $alturaFila);
         }
 
+        // La suma de ventas debe caber completa, igual que una fila del detalle.
+        if ($pdf->GetY() + $cellHeight > $pdf->getPageHeight() - $pdf->getBreakMargin()) {
+            $pdf->AddPage();
+            $drawTableHeader();
+        }
 
         $xPos = $pdf->GetX();
         $yPos = $pdf->GetY();
-        $pdf->SetXY($xPos + 2, $yPos);
+        $pdf->SetXY($tableX, $yPos);
         $pdf->Cell(10, $cellHeight, '', 1, 0, 'C');
         $pdf->Cell(15, $cellHeight, '', 1, 0, 'C');
         $pdf->Cell(12, $cellHeight, '', 1, 0, 'C');
@@ -970,6 +975,11 @@ class FacturasController extends BaseController
         $pdf->SetFont('helvetica', '', 7);
 
         // Posición inicial y altura de cada fila
+        // Reservar el bloque de totales y los datos finales antes de dibujarlo.
+        $summaryHeight = max(50, $pdf->getStringHeight(102, "Cotización: " . $estimateNumber . "\nNota: " . $condiciones));
+        if ($pdf->GetY() + 5 + $summaryHeight + 35 > $pdf->getPageHeight() - $pdf->getBreakMargin()) {
+            $pdf->AddPage();
+        }
         $xPos = 4;
         $yPos = $pdf->GetY() + 5;
         $totalRows = 10; // Número total de filas que abarcará la celda combinada
@@ -977,8 +987,9 @@ class FacturasController extends BaseController
         // Crear celda combinada verticalmente en la primera columna
         $pdf->SetXY($xPos, $yPos); // Establece la posición de inicio
 
+        $yPosSummary = $yPos;
         $texto = "Cotización: " . $estimateNumber . "\nNota: " . $condiciones;
-        $pdf->MultiCell(102, $cellHeight * $totalRows, $texto, 1, 'L', 0, 0);
+        $pdf->MultiCell(102, $summaryHeight, $texto, 1, 'L', 0, 0);
 
         $yPos = $pdf->GetY();
         $pdf->SetXY($xPos + 102, $yPos); // Ajusta la posición en X después de la celda combinada
@@ -1053,6 +1064,7 @@ class FacturasController extends BaseController
         $pdf->SetFont('helvetica', '', 7);
         $pdf->Cell(16, $cellHeight, number_format($jsonDTE->resumen->totalPagar, 2, '.', ','), 1, 1, 'R');
 
+        $pdf->SetY(max($pdf->GetY(), $yPosSummary + $summaryHeight));
         $pdf->Ln();
         // Parámetros del rectángulo
         $x = $pdf->GetX() + 2;     // Posición en el eje X
