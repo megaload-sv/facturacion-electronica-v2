@@ -4,8 +4,7 @@ namespace App\Controllers;
 
 use App\Models\MenuModel;
 use App\Models\PermissionMenuModel;
-use CodeIgniter\Controller;
-class PermissionMenuController extends Controller
+class PermissionMenuController extends BaseController
 {
     protected $permissionMenuModel;
     protected $menuModel;
@@ -23,19 +22,21 @@ class PermissionMenuController extends Controller
 
         $data['menu_items'] = $this->permissionMenuModel->getAllMenuItems();
         $data['permissions'] = $this->permissionMenuModel->getAllPermissions();
-        return view('pages/admin/permission_menu/index', $data);
+        return $this->render('pages/admin/permission_menu/index', $data);
     }
 
     public function edit($menu_item_id)
     {
-        $data['menu'] = $this->menuModel->getMenuById($menu_item_id);
-        $data['menu_item'] = $this->permissionMenuModel->getAllMenuItems(); // Asumiendo que mostrarás todos
+        $data['menu_item'] = $this->menuModel->find($menu_item_id);
+        if (!$data['menu_item']) {
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
+        }
         $data['permissions'] = $this->permissionMenuModel->getAllPermissions();
         $data['assigned_permissions'] = $this->permissionMenuModel->getPermissionsForMenu($menu_item_id);
 
         //var_dump($data);
 
-        return view('pages/admin/permission_menu/edit', $data);
+        return $this->render('pages/admin/permission_menu/edit', $data);
     }
 
     public function store()
