@@ -9,12 +9,11 @@ use App\Models\RoleModel;
 class MenuController extends BaseController
 {
 
-    protected MenuModel $_menuModel;
+    protected MenuModel $menuModel;
 
     public function __construct()
     {
-        parent::__construct();
-        $this->_menuModel = new MenuModel();
+        $this->menuModel = new MenuModel();
 
     }
 
@@ -31,7 +30,7 @@ class MenuController extends BaseController
         $userId = session()->get('user_id');
 
 
-        $menu = $menuModel->getMenuByUser($userId);
+        $menu = $this->menuModel->getMenuByUser($userId);
         $data['menu'] = $menu;
         return $this->render('pages/admin/menu/index', $data);
     }
