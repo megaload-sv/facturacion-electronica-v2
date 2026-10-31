@@ -2343,7 +2343,8 @@ class FacturasController extends BaseController
             function ($codigo) {
                 $unidad = $this->modelMantenimientos->obtenerUnidad($codigo);
                 return $unidad[0]['Unidad'] ?? (string) $codigo;
-            }
+            },
+            fn ($direccion) => $this->formatearDireccionPDF($direccion)
         );
         $codigoGeneracion = $jsonDTE->identificacion->codigoGeneracion;
         if ($guardarEnDisco) {
