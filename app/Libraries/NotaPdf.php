@@ -7,13 +7,16 @@ use TCPDF;
 /** Representación de los DTE 05 y 06; los importes provienen del DTE sellado. */
 class NotaPdf
 {
-    public function generar(object $dte, ?object $sello, string $condiciones = '', string $invalidado = '', string $cotizacion = '', ?callable $unidad = null): TCPDF
+    public function generar(object $dte, ?object $sello, string $condiciones = '', string $invalidado = '', string $cotizacion = '', ?callable $unidad = null, ?callable $direccion = null): TCPDF
     {
         $id = $dte->identificacion;
         if (!in_array($id->tipoDte, ['05', '06'], true)) {
             throw new \InvalidArgumentException('La plantilla admite únicamente notas de crédito y débito.');
         }
         $titulo = $id->tipoDte === '05' ? 'NOTA DE CRÉDITO' : 'NOTA DE DÉBITO';
+        $direccion ??= static fn ($valor): string => (string) ($valor->complemento ?? '-');
+        $direccionEmisor = $direccion($dte->emisor->direccion ?? null);
+        $direccionReceptor = $direccion($dte->receptor->direccion ?? null);
         $pdf = new TCPDF('P', 'mm', 'A4', true, 'UTF-8', false);
         $pdf->SetCreator('Sistema de facturación');
         $pdf->SetAuthor($dte->emisor->nombre);
@@ -40,7 +43,7 @@ class NotaPdf
             $pdf->Image($logo, 36, 6, 20, 20, 'PNG');
         }
         $brand = '<div style="text-align:center"><b>' . $e($dte->emisor->nombre) . '</b><br>'
-            . $e($dte->emisor->direccion->complemento ?? null) . '<br>'
+            . $e($direccionEmisor) . '<br>'
             . $e($dte->emisor->correo ?? null) . ', Tel: ' . $e($dte->emisor->telefono ?? null)
             . '<br>https://www.grupomegaload.com/</div>';
         $pdf->writeHTMLCell(82, 0, 5, 27, $brand, 0, 1);
@@ -68,10 +71,10 @@ class NotaPdf
         $pdf->Line(5, $headerEnd + 2, 205, $headerEnd + 2);
         $pdf->SetDrawColor(0, 0, 0);
         $pdf->SetY($headerEnd + 5);
-        $party = static function ($p, bool $issuer) use ($e): string {
+        $party = static function ($p, bool $issuer) use ($e, $direccionEmisor, $direccionReceptor): string {
             $fields = ['Nombre o razón social' => $p->nombre ?? null, 'NIT' => $p->nit ?? null,
                 'NRC' => $p->nrc ?? null, 'Actividad económica' => $p->descActividad ?? null,
-                'Dirección' => $p->direccion->complemento ?? null, 'Número de teléfono' => $p->telefono ?? null,
+                'Dirección' => $issuer ? $direccionEmisor : $direccionReceptor, 'Número de teléfono' => $p->telefono ?? null,
                 'Correo electrónico' => $p->correo ?? null, 'Nombre comercial' => $p->nombreComercial ?? null];
             if ($issuer) {
                 $fields['Tipo de establecimiento'] = ['01' => 'Sucursal / Agencia', '02' => 'Casa matriz',
