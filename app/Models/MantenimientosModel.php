@@ -6,6 +6,25 @@ use CodeIgniter\Model;
 
 class MantenimientosModel extends Model
 {
+    public function obtenerUbicacionDireccion($departamento, $municipio, $distrito = null): array
+    {
+        // catmunicipio almacena distritos; catdistrito almacena municipios actuales.
+        $builder = $this->db->table('catmunicipio dis')
+            ->select('dep.valores as departamento, mun.valores as municipio, dis.valores as distrito')
+            ->join('catdepartamento dep', 'dep.codigo = dis.codigodepartamento')
+            ->join('catdistrito mun', 'mun.id = dis.idDistrito')
+            ->where('dep.codigo', $departamento);
+
+        if ($distrito !== null && $distrito !== '') {
+            $builder->where('dis.codigo', $distrito)->where('mun.codigo', $municipio);
+        } else {
+            // Los DTE anteriores identifican el distrito en el campo municipio.
+            $builder->where('dis.codigo', $municipio);
+        }
+
+        return $builder->get()->getRowArray() ?? [];
+    }
+
     public function obtenerDepartamentoMunicipio(string $idDepartamento, string $idMunicipio){
 
         $builder = $this->db->table('catdepartamento dep')
