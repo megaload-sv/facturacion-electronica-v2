@@ -1684,8 +1684,29 @@ class FacturasController extends BaseController
         }*/
     }
 
+    private function formatearDireccionPDF($direccion): string
+    {
+        $complemento = trim((string) ($direccion->complemento ?? ''));
+        if (!isset($direccion->departamento, $direccion->municipio)) {
+            return $complemento !== '' ? $complemento : '-';
+        }
+        $ubicacion = $this->modelMantenimientos->obtenerUbicacionDireccion(
+            $direccion->departamento, $direccion->municipio, $direccion->distrito ?? null
+        );
+        $partes = $complemento !== '' ? [$complemento] : [];
+        foreach (['distrito' => 'Distrito', 'municipio' => 'Municipio', 'departamento' => 'Departamento'] as $campo => $etiqueta) {
+            if (!empty($ubicacion[$campo])) {
+                $partes[] = $etiqueta . ': ' . $ubicacion[$campo];
+            }
+        }
+        return $partes ? implode(', ', $partes) : '-';
+    }
+
     private function generarCreditoFiscal($jsonDTE, $jsonSello, $guardarEnDisco = true, $condiciones = "", $invalidado = "", $estimateNumber = "")
     {
+
+        $direccionEmisor = $this->formatearDireccionPDF($jsonDTE->emisor->direccion ?? null);
+        $direccionReceptor = $this->formatearDireccionPDF($jsonDTE->receptor->direccion ?? null);
 
         $codigoGeneracion = $jsonDTE->identificacion->codigoGeneracion;
 
@@ -1727,7 +1748,7 @@ class FacturasController extends BaseController
         $pdf->Cell(85, 7, $jsonDTE->emisor->nombre, 0, 0, 'C');
         $pdf->SetFont('helvetica', '', 8);
         $pdf->SetXY($x_inicio, $y_inicio += 4);
-        $pdf->Cell(85, 7, $jsonDTE->emisor->direccion->complemento, 0, 0, 'C');
+        $pdf->Cell(85, 7, $direccionEmisor, 0, 0, 'C', false, '', 1);
         $pdf->SetXY($x_inicio, $y_inicio + 4);
 
         $dataSurcursalPuntoVentaTipoEstablecimiento = $this->modelMantenimientos->obtenerSucursalPuntoVentaTipoEstablecimiento($jsonDTE->emisor->codEstable);
@@ -1837,7 +1858,7 @@ class FacturasController extends BaseController
             $jsonDTE->emisor->nit,
             $jsonDTE->emisor->nrc,
             $jsonDTE->emisor->descActividad,
-            $jsonDTE->emisor->direccion->complemento,
+            $direccionEmisor,
             $jsonDTE->emisor->telefono,
             $jsonDTE->emisor->correo,
             $jsonDTE->emisor->nombreComercial,
@@ -1866,6 +1887,8 @@ class FacturasController extends BaseController
             $y_pos += $maxHeight;
         }
 
+        $y_fin_emisor = $y_pos;
+
         // ------------------- Segunda Tabla (Derecha) -------------------
         $campos2 = [
             "Nombre o razón social:",
@@ -1882,7 +1905,7 @@ class FacturasController extends BaseController
             (isset($jsonDTE->receptor->nit) && $jsonDTE->receptor->nit !== null) ? $jsonDTE->receptor->nit : '-',
             (isset($jsonDTE->receptor->nrc) && $jsonDTE->receptor->nrc !== null) ? $jsonDTE->receptor->nrc : '-',
             $jsonDTE->receptor->descActividad ?? '-',
-            (isset($jsonDTE->receptor->direccion->complemento) && $jsonDTE->receptor->direccion->complemento !== null) ? $jsonDTE->receptor->direccion->complemento : '-',
+            $direccionReceptor,
             $jsonDTE->receptor->correo ?? '-',
             $jsonDTE->receptor->nombreComercial ?? '-'
         ];
@@ -1909,7 +1932,7 @@ class FacturasController extends BaseController
         }
 
         $xPos = $pdf->GetX();
-        $yPos = $pdf->GetY() + 5;
+        $yPos = max($y_fin_emisor, $y_pos) + 5;
         $pdf->SetXY($xPos, $yPos);
         $pdf->SetFont('helvetica', 'B', 8);
         $pdf->Cell(205, $cellHeight, 'OTROS DOCUMENTOS ASOCIADOS', 0, 0, 'C');
