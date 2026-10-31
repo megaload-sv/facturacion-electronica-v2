@@ -561,6 +561,9 @@ class FacturasController extends BaseController
     private function generarFactura($jsonDTE, $jsonSello, $guardarEnDisco, $condiciones = "", $invalidado = "", $estimateNumber = "")
     {
 
+        $direccionEmisor = $this->formatearDireccionPDF($jsonDTE->emisor->direccion ?? null);
+        $direccionReceptor = $this->formatearDireccionPDF($jsonDTE->receptor->direccion ?? null);
+
         $codigoGeneracion = $jsonDTE->identificacion->codigoGeneracion;
 
         $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
@@ -601,7 +604,7 @@ class FacturasController extends BaseController
         $pdf->Cell(85, 7, $jsonDTE->emisor->nombre, 0, 0, 'C');
         $pdf->SetFont('helvetica', '', 8);
         $pdf->SetXY($x_inicio, $y_inicio += 4);
-        $pdf->Cell(85, 7, $jsonDTE->emisor->direccion->complemento, 0, 0, 'C');
+        $pdf->Cell(85, 7, $direccionEmisor, 0, 0, 'C', false, '', 1);
         $pdf->SetXY($x_inicio, $y_inicio + 4);
 
         $dataSurcursalPuntoVentaTipoEstablecimiento = $this->modelMantenimientos->obtenerSucursalPuntoVentaTipoEstablecimiento($jsonDTE->emisor->codEstable);
@@ -711,7 +714,7 @@ class FacturasController extends BaseController
             $jsonDTE->emisor->nit,
             $jsonDTE->emisor->nrc,
             $jsonDTE->emisor->descActividad,
-            $jsonDTE->emisor->direccion->complemento,
+            $direccionEmisor,
             $jsonDTE->emisor->telefono,
             $jsonDTE->emisor->correo,
             $jsonDTE->emisor->nombreComercial,
@@ -749,6 +752,7 @@ class FacturasController extends BaseController
             "Nombre o razón social",
             "Tipo de doc. de Identificación:",
             "No de doc de Identificación",
+            "Dirección:",
             "Correo Electrónico",
             "Nombre Comercial"
         ];
@@ -757,6 +761,7 @@ class FacturasController extends BaseController
             $jsonDTE->receptor->nombre ?? '-',
             (isset($jsonDTE->receptor->tipoDocumento) && $jsonDTE->receptor->tipoDocumento !== null) ? $jsonDTE->receptor->tipoDocumento : '-',
             (isset($jsonDTE->receptor->numDocumento) && $jsonDTE->receptor->numDocumento !== null) ? $jsonDTE->receptor->numDocumento : '-',
+            $direccionReceptor,
             $jsonDTE->receptor->correo ?? '-',
             $jsonDTE->receptor->nombre ?? '-'
         ];
