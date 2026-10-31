@@ -975,9 +975,9 @@ class FacturasController extends BaseController
         $pdf->SetFont('helvetica', '', 7);
 
         // Posición inicial y altura de cada fila
-        // Reservar el bloque de totales y los datos finales antes de dibujarlo.
+        // Reservar solo notas y totales; los bloques finales se paginan por separado.
         $summaryHeight = max(50, $pdf->getStringHeight(102, "Cotización: " . $estimateNumber . "\nNota: " . $condiciones));
-        if ($pdf->GetY() + 5 + $summaryHeight + 35 > $pdf->getPageHeight() - $pdf->getBreakMargin()) {
+        if ($pdf->GetY() + 5 + $summaryHeight > $pdf->getPageHeight() - $pdf->getBreakMargin()) {
             $pdf->AddPage();
         }
         $xPos = 4;
@@ -1065,7 +1065,12 @@ class FacturasController extends BaseController
         $pdf->Cell(16, $cellHeight, number_format($jsonDTE->resumen->totalPagar, 2, '.', ','), 1, 1, 'R');
 
         $pdf->SetY(max($pdf->GetY(), $yPosSummary + $summaryHeight));
-        $pdf->Ln();
+        // Mantener cada bloque final completo sin desplazar también el resumen.
+        if ($pdf->GetY() + $pdf->getLastH() + 10 > $pdf->getPageHeight() - $pdf->getBreakMargin()) {
+            $pdf->AddPage();
+        } else {
+            $pdf->Ln();
+        }
         // Parámetros del rectángulo
         $x = $pdf->GetX() + 2;     // Posición en el eje X
         $y = $pdf->GetY();      // Posición en el eje Y
@@ -1087,7 +1092,11 @@ class FacturasController extends BaseController
         $pdf->Cell(100, $cellHeight, 'Condición de la Operación:  ' . $dataObtenerCondicionOperacion[0]['condicionOperacion'], 0, 0, 'L');
         $pdf->MultiCell(100, $cellHeight, 'Observaciones:  -', 0, 1, 'L');
 
-        $pdf->Ln();
+        if ($pdf->GetY() + $pdf->getLastH() + 10 > $pdf->getPageHeight() - $pdf->getBreakMargin()) {
+            $pdf->AddPage();
+        } else {
+            $pdf->Ln();
+        }
         // Parámetros del rectángulo
         $x = $pdf->GetX() + 2;     // Posición en el eje X
         $y = $pdf->GetY();      // Posición en el eje Y
